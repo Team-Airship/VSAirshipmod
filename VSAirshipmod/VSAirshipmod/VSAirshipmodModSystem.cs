@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-
 using Vintagestory.API.Client;
-using Vintagestory.API.Server;
-using Vintagestory.API.Config;
 using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
+using Vintagestory.API.Config;
 using Vintagestory.API.MathTools;
+using Vintagestory.API.Server;
+using Vintagestory.GameContent;
 
 namespace VSAirshipmod
 {
@@ -19,11 +19,11 @@ namespace VSAirshipmod
             base.Start(api);
             
             api.RegisterEntity("EntityAirship", typeof(EntityAirship));
-            //api.RegisterMountable("Airship", EntitySailboatSeat.GetMountable);
+            api.RegisterMountable("airship", EntityAirshipSeat.GetMountable);
 
 
 
-            Mod.Logger.Notification("Hello there from template mod: " + api.Side);
+            //Mod.Logger.Notification("Hello there from template mod: " + api.Side);
         }
 
         /*public override void StartServerSide(ICoreServerAPI api)
