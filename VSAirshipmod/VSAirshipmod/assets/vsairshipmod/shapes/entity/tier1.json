@@ -11395,7 +11395,7 @@
 			"code": "t1goup",
 			"quantityframes": 15,
 			"onActivityStopped": "Rewind",
-			"onAnimationEnd": "Repeat",
+			"onAnimationEnd": "Hold",
 			"keyframes": [
 				{
 					"frame": 0,
