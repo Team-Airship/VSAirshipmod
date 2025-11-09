@@ -1,0 +1,124 @@
+ [
+  {
+    "op": "addmerge",
+    "path": "/client/animations/-",
+    "value": {
+      "code": "SitBarrelIdle",
+      "animation": "sitbarrelidle",
+      "clientSide": true,
+      "blendMode": "Average",
+      "easeInSpeed": 2,
+      "elementWeight": {
+        "LowerTorso": 80,
+        "UpperTorso": 80,
+        "UpperFootR": 80,
+        "UpperFootL": 80,
+        "LowerFootR": 80,
+        "LowerFootL": 80,
+        "LowerArmR": 5,
+        "LowerArmL": 5
+      },
+      "elementBlendMode": {
+        "LowerTorso": "Average",
+        "UpperTorso": "Average",
+        "UpperFootR": "Average",
+        "UpperFootL": "Average",
+        "LowerFootR": "Average",
+        "LowerFootL": "Average",
+        "LowerArmR": "Average",
+        "LowerArmL": "Average"
+      }
+    },
+    "file": "game:entities/humanoid/player.json",
+    "side": "Server"
+  },
+  {
+    "op": "addmerge",
+    "path": "/animations/-",
+    "value": {
+      "code": "SitBarrelIdle",
+      "animation": "sitbarrelidle",
+      "quantityframes": 1,
+      "onActivityStopped": "Rewind",
+      "onAnimationEnd": "Repeat",
+      "keyframes": [
+        {
+          "frame": 0,
+          "elements": {
+            "LowerTorso": {
+              "offsetX": 0.0,
+              "offsetY": 0.0,
+              "offsetZ": 0.0,
+              "rotationX": 0.0,
+              "rotationY": 0.0,
+              "rotationZ": 0.0
+            },
+            "UpperFootL": {
+              "offsetX": 0.0,
+              "offsetY": 0.0,
+              "offsetZ": 0.8,
+              "rotationX": -45.0,
+              "rotationY": 3.0,
+              "rotationZ": -45.0
+            },
+            "LowerFootL": {
+              "offsetX": 0.9,
+              "offsetY": 1.3,
+              "offsetZ": 0.0,
+              "rotationX": 0.0,
+              "rotationY": 0.0,
+              "rotationZ": 70.0
+            },
+            "UpperFootR": {
+              "offsetX": 0.0,
+              "offsetY": 0.0,
+              "offsetZ": -0.8,
+              "rotationX": 45.0,
+              "rotationY": -3.0,
+              "rotationZ": -45.0
+            },
+            "LowerFootR": {
+              "offsetX": 0.8,
+              "offsetY": 1.1,
+              "offsetZ": 0.0,
+              "rotationX": 0.0,
+              "rotationY": 0.0,
+              "rotationZ": 70.0
+            },
+            "UpperTorso": {
+              "rotationX": 0.0,
+              "rotationY": 0.0,
+              "rotationZ": 8.0
+            },
+            "UpperArmR": {
+              "rotationX": 0.0,
+              "rotationY": -15.0,
+              "rotationZ": -20.0
+            },
+            "LowerArmR": {
+              "rotationX": 10.0,
+              "rotationY": -10.0,
+              "rotationZ": -72.0
+            },
+            "UpperArmL": {
+              "rotationX": 0.0,
+              "rotationY": 5.0,
+              "rotationZ": 30.0
+            },
+            "LowerArmL": {
+              "rotationX": -15.0,
+              "rotationY": 10.0,
+              "rotationZ": -130.0
+            },
+            "root": {
+              "offsetX": 0.0,
+              "offsetY": -5.0,
+              "offsetZ": 0.0
+            }
+          }
+        }
+      ]
+    },
+    "file": "game:shapes/entity/humanoid/seraph-faceless.json"
+  }
+]

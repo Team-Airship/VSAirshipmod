@@ -1,0 +1,113 @@
+{
+  "code": "airship",
+  "class": "ItemBoat",
+  "variantgroups": [
+    {
+      "code": "type",
+      "states": [ "tier1" ]
+    },
+    {
+      "code": "material",
+      "states": [ "oak" ]
+    }
+  ],
+  "shapeByType": {
+    "*": {
+      "base": "entity/{type}",
+      "ignoreElements": [ "hideWater", "FLATBALLOON" ]
+    }
+  },
+  "shapeInventoryByType": { "*": { "base": "entity/{type}" } },
+  "texturesByType": {
+    "*": {
+      "candle": { "base": "game:block/candle" },
+      "plain": { "base": "game:block/cloth/linen/plain" },
+      "bituminous": { "base": "game:block/coal/bituminous" },
+      "charcoal": { "base": "game:block/coal/charcoal" },
+      "poor": { "base": "game:block/leather/poor" },
+      "steel1": { "base": "game:block/metal/sheet-plain/steel1" },
+      "blackbronze2": { "base": "game:block/metal/sheet/blackbronze2" },
+      "blackbronze4": { "base": "game:block/metal/sheet/blackbronze4" },
+      "copper1": { "base": "game:block/metal/sheet/copper1" },
+      "cupronickel1": { "base": "game:block/metal/sheet/cupronickel1" },
+      "iron1": { "base": "game:block/metal/sheet/iron1" },
+      "copper-soldered": { "base": "game:block/metal/sheet/soldered-copper" },
+      "tinbronze1": { "base": "game:block/metal/sheet/tinbronze1" },
+      "rusty-iron": { "base": "game:block/metal/tarnished/rusty-iron" },
+      "bottom": { "base": "game:block/wood/barrel/bottom" },
+      "aged": { "base": "game:block/wood/debarked/aged" },
+      "plainoak": { "base": "game:block/wood/plainoak" },
+      "linen": { "base": "game:item/bag/linensack/linen" },
+      "top": { "base": "game:item/bag/linensack/top" },
+      "temporal": { "base": "game:item/resource/temporalgear" },
+      "rope": { "base": "game:item/resource/rope" }
+    }
+  },
+  "attributes": {
+    "handbook": { "groupBy": [ "airship-{type}-*" ] }
+  },
+  "heldTpIdleAnimation": "holdbothhandslarge",
+  "maxstacksize": 1,
+  "materialDensity": 1,
+  "liquidSelectable": 1,
+  "creativeinventory": {
+    "general": [ "*" ],
+    "airship": [ "*" ]
+  },
+  "guiTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": -19,
+      "y": -69,
+      "z": -180
+    },
+    "origin": {
+      "x": 1.6,
+      "y": 0,
+      "z": 0.1
+    },
+    "scale": 0.85
+  },
+  "groundTransformByType": {
+    "*": {
+      "translation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "origin": {
+        "x": 0.5,
+        "y": 0,
+        "z": 0.5
+      },
+      "scale": 3.5
+    }
+  },
+  "tpHandTransform": {
+    "translation": {
+      "x": -1.33,
+      "y": -0.06,
+      "z": -0.47
+    },
+    "rotation": {
+      "x": 6,
+      "y": 163,
+      "z": -26
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0,
+      "z": 0.5
+    },
+    "scale": 1
+  }
+}

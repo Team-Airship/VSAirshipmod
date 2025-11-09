@@ -257,6 +257,7 @@ namespace VSAirshipmod
         /// The speed this boat can reach at full power
         /// </summary>
         public virtual float SpeedMultiplier { get; set; } = 1f;
+        public virtual float TurnMultiplier { get; set; } = 1f;
 
         public double RenderOrder => 0;
         public int RenderRange => 999;
@@ -279,6 +280,7 @@ namespace VSAirshipmod
         {
             swimmingOffsetY = properties.Attributes["swimmingOffsetY"].AsDouble();
             SpeedMultiplier = properties.Attributes["speedMultiplier"].AsFloat(1f);
+            TurnMultiplier = properties.Attributes["turnMultiplier"].AsFloat(1f);
 
             MountAnimations = properties.Attributes["mountAnimations"].AsObject<Dictionary<string, string>>();
 
@@ -342,7 +344,7 @@ namespace VSAirshipmod
                 mountAngle.Z = -GameMath.Sin((float)(ellapseMs / 3000.0 * 2 * gamespeed)) * 8 * diff;
 
                 curRotMountAngleZ += ((float)AngularVelocity * 5 * Math.Sign(ForwardSpeed) - curRotMountAngleZ) * dt * 5;
-                forwardpitch = -(float)ForwardSpeed * 1.3f;
+                forwardpitch = (float)ForwardSpeed * 1.3f;
             }
 
             var esr = Properties.Client.Renderer as EntityShapeRenderer;
@@ -423,7 +425,7 @@ namespace VSAirshipmod
 
             // Add some easing to it
             ForwardSpeed += (motion.X * SpeedMultiplier - ForwardSpeed) * dt;
-            AngularVelocity += (motion.Z * (SpeedMultiplier / AngularVelocityDivider) - AngularVelocity) * dt;
+            AngularVelocity += (motion.Z * (TurnMultiplier / AngularVelocityDivider) - AngularVelocity) * dt;
             HorizontalVelocity = motion.Y * dt;//+= (motion.Y * SpeedMultiplier - HorizontalVelocity) * dt;
 
 
@@ -558,7 +560,7 @@ namespace VSAirshipmod
                 {
                     float dir = controls.Jump ? 1 : -1;
 
-                    horizontalMotion += dir * dt * 2f;
+                    horizontalMotion += dir * dt * 1f;
                 }
 
                 if (!controls.TriesToMove)

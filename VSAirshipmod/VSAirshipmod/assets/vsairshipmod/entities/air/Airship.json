@@ -4,7 +4,7 @@
 	"variantgroups": [
 		{
 			"code": "material",
-			"states": [ "aged", "bamboo" ],
+			"states": [ "aged" ],
 			"loadFromProperties": "block/wood"
 		}
 	],
@@ -70,6 +70,9 @@
 		"shouldSwivelFromMotion": false,
 		"speedMultiplierByType": {
 			"*": 1.2
+		},
+		"turnMultiplierByType": {
+			"*": 3
 		},
 		"swimmingOffsetYByType": {
 			"*": 1

@@ -1,0 +1,149 @@
+{
+  "code": "airship",
+  "class": "EntityAirship",
+  "tags": ["inanimate", "vehicle"],
+  "weight": 120,
+  "variantgroups": [
+    { "code": "type", "states": ["tier1"] },
+    { "code": "material", "states": ["oak"] }
+  ],
+  "attributes": {
+    "deconstructible": true,
+    "deconstructDropsByType": {
+      "*": [
+        { "type": "block", "code": "game:log-placed-{material}-ud", "quantity": 6 },
+        { "type": "item", "code": "game:rope", "quantity": 1 }
+      ]
+    },
+    "shouldSwivelFromMotion": false,
+    "speedMultiplier": 0.5,
+    "turnMultiplier": 6,
+    "swimmingOffsetYByType": { "*": 0.45 },
+    "requiresPaddlingTool": false,
+    "rightClickPickup": true,
+    "mountAnimations": { "idle": "SitBarrelIdle", "ready": "", "forwards": "", "backwards": "" }
+  },
+  "hitboxSize": { "x": 2, "y": 0.6, "z": 2 },
+  "behaviorConfigs": {
+    "passivephysicsmultibox": {
+      "collisionBoxes": [
+        {
+          "x1": -0.75,
+          "y1": 0,
+          "z1": 0,
+          "x2": 0.75,
+          "y2": 0.6,
+          "z2": 1.5
+        },
+        {
+          "x1": -0.75,
+          "y1": 0,
+          "z1": -1.5,
+          "x2": 0.75,
+          "y2": 0.6,
+          "z2": 0
+        }
+      ],
+      "groundDragFactor": 1,
+      "airDragFallingFactor": 0.5,
+      "gravityFactor": 1.0
+    },
+    "creaturecarrier": {
+      "seats": [
+        {
+          "apName": "riderseatAP",
+          "controllable": true,
+          "mountRotation": { "y": 180 },
+          "mountOffset": {
+            "x": 1.5,
+            "z": 1.308,
+            "y": -0.35
+          },
+          "bodyYawLimit": null,
+          "eyeHeight": 1.5
+        }
+      ]
+    },
+    "rideableaccessories": {
+      "dropContentsOnDeath": true,
+      "wearableSlots": [
+        {
+          "code": "Seat-{type}",
+          "forCategoryCodes": [],
+          "attachmentPointCode": "riderseatAP",
+          "stepParentTo": { "": { "elementName": "riderseat" } },
+          "emptyInteractPassThrough": true
+        },
+        {
+          "code": "LanternStorage-{type}",
+          "forCategoryCodes": [ "lantern" ],
+          "attachmentPointCode": "lanternstorageAP",
+          "stepParentTo": { "": { "elementName": "lanternstorage" } }
+     },
+    {
+          "code": "ShieldStorage-{type}",
+          "forCategoryCodes": [ "shield" ],
+          "attachmentPointCode": "shieldstorageAP",
+          "stepParentTo": { "LowerArmL": { "elementName": "shieldstorageSP" } }
+     }
+    ]
+  },
+    "selectionboxes": { "selectionBoxes": [ "riderseatAP", "lanternstorageAP", "shieldstorageAP" ] }
+  },
+  "client": {
+    "size": 1,
+    "renderer": "Shape",
+    "shapeByType": { "*": { "base": "entity/{type}", "ignoreElements": ["hideWater", "FLATBALLOON"] } },
+    "animations": [
+      { "code": "turnLeft", "animation": "turnLeft", "animationSpeed": 1, "easeInSpeed": 2, "easeOutSpeed": 2 },
+      { "code": "turnRight", "animation": "turnRight", "animationSpeed": 1, "easeInSpeed": 2, "easeOutSpeed": 2 },
+      { "code": "weathervane", "animation": "weathervane", "animationSpeed": 0, "weight": 1, "blendMode": "AddAverage" }
+    ],
+    "texturesByType": {
+      "*": {
+        "candle": { "base": "game:block/candle" },
+          "plain": { "base": "game:block/cloth/linen/plain" },
+          "bituminous": { "base": "game:block/coal/bituminous" },
+          "charcoal": { "base": "game:block/coal/charcoal" },
+          "poor": { "base": "game:block/leather/poor" },
+          "steel1": { "base": "game:block/metal/sheet-plain/steel1" },
+          "blackbronze2": { "base": "game:block/metal/sheet/blackbronze2" },
+          "blackbronze4": { "base": "game:block/metal/sheet/blackbronze4" },
+          "copper1": { "base": "game:block/metal/sheet/copper1" },
+          "cupronickel1": { "base": "game:block/metal/sheet/cupronickel1" },
+          "iron1": { "base": "game:block/metal/sheet/iron1" },
+          "copper-soldered": { "base": "game:block/metal/sheet/soldered-copper" },
+          "tinbronze1": { "base": "game:block/metal/sheet/tinbronze1" },
+          "rusty-iron": { "base": "game:block/metal/tarnished/rusty-iron" },
+          "bottom": { "base": "game:block/wood/barrel/bottom" },
+          "aged": { "base": "game:block/wood/debarked/aged" },
+          "plainoak": { "base": "game:block/wood/plainoak" },
+          "linen": { "base": "game:item/bag/linensack/linen" },
+          "top": { "base": "game:item/bag/linensack/top" },
+          "temporal": { "base": "game:item/resource/temporalgear" },
+        "rope": { "base": "game:item/resource/rope" }
+      }
+    },
+    "behaviors": [
+      { "code": "repulseagents" },
+      { "code": "passivephysicsmultibox" },
+      { "code": "interpolateposition" },
+      { "code": "selectionboxes" },
+      { "code": "rideableaccessories" },
+      { "code": "creaturecarrier" },
+      { "code": "hidewatersurface", "hideWaterElement": "ORIGINAirship/hideWater/*" }
+    ]
+  },
+  "server": {
+    "behaviors": [
+      { "code": "repulseagents" },
+      { "code": "passivephysicsmultibox" },
+      { "code": "selectionboxes" },
+      { "code": "rideableaccessories" },
+      { "code": "creaturecarrier" }
+    ]
+  },
+  "sounds": {
+
+  }
+}
