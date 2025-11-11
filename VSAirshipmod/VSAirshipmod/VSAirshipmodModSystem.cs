@@ -22,6 +22,7 @@ namespace VSAirshipmod
             
             api.RegisterEntity("EntityAirship", typeof(EntityAirship));
             api.RegisterMountable("airship", EntityAirshipSeat.GetMountable);
+            api.RegisterItemClass("ItemAirship", typeof(ItemAirship));
 
             api.RegisterBlockClass("BlockSpinner", typeof(BlockSpinner));
             api.RegisterBlockClass("BlockSewingMachine", typeof(BlockSewingMachine));

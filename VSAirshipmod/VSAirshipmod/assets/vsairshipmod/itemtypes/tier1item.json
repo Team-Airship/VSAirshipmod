@@ -1,6 +1,6 @@
 {
   "code": "airship",
-  "class": "ItemBoat",
+  "class": "ItemAirship",
   "variantgroups": [
     {
       "code": "type",
@@ -44,7 +44,8 @@
     }
   },
   "attributes": {
-    "handbook": { "groupBy": [ "airship-{type}-*" ] }
+    "handbook": { "groupBy": [ "airship-{type}-*" ] },
+    "Fuel": 0.0
   },
   "heldTpIdleAnimation": "holdbothhandslarge",
   "maxstacksize": 1,

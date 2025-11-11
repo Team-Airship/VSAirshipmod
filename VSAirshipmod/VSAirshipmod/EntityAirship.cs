@@ -4,6 +4,7 @@ using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
 using Vintagestory.API.Config;
+using Vintagestory.API.Datastructures;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
 using Vintagestory.GameContent;
@@ -258,6 +259,7 @@ namespace VSAirshipmod
         /// </summary>
         public virtual float SpeedMultiplier { get; set; } = 1f;
         public virtual float TurnMultiplier { get; set; } = 1f;
+        public virtual float Fuel { get; set; } = 0f;
 
         public double RenderOrder => 0;
         public int RenderRange => 999;
@@ -281,6 +283,7 @@ namespace VSAirshipmod
             swimmingOffsetY = properties.Attributes["swimmingOffsetY"].AsDouble();
             SpeedMultiplier = properties.Attributes["speedMultiplier"].AsFloat(1f);
             TurnMultiplier = properties.Attributes["turnMultiplier"].AsFloat(1f);
+            Fuel = this.Attributes.GetFloat("Fuel");
 
             MountAnimations = properties.Attributes["mountAnimations"].AsObject<Dictionary<string, string>>();
 
@@ -618,6 +621,12 @@ namespace VSAirshipmod
             {
                 if (tryPickup(byEntity, mode)) return;
             }
+            if (itemslot.Itemstack?.Collectible.Code == "rot")
+            {
+                Fuel += itemslot.TakeOutWhole().StackSize;
+                Api.Logger.Notification("Total: " + Fuel);
+                return;
+            }
 
             EnumHandling handled = EnumHandling.PassThrough;
             foreach (EntityBehavior behavior in SidedProperties.Behaviors)
@@ -652,6 +661,8 @@ namespace VSAirshipmod
             if (byEntity.Controls.ShiftKey)
             {
                 ItemStack stack = new ItemStack(World.GetItem(Code));
+                stack.Attributes.SetFloat("Fuel", Fuel);
+                Api.Logger.Notification("Fuel Picked Up: "+ stack.Attributes.GetFloat("Fuel"));
                 if (!byEntity.TryGiveItemStack(stack))
                 {
                     World.SpawnItemEntity(stack, ServerPos.XYZ);

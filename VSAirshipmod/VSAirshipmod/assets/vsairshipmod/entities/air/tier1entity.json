@@ -21,7 +21,14 @@
     "swimmingOffsetYByType": { "*": 0.45 },
     "requiresPaddlingTool": false,
     "rightClickPickup": true,
-    "mountAnimations": { "idle": "SitBarrelIdle", "ready": "", "forwards": "", "backwards": "" }
+    "mountAnimations": {
+      "idle": "SitBarrelIdle",
+      "ready": "",
+      "forwards": "",
+      "backwards": ""
+    },
+    "Fuel": 0.0
+
   },
   "hitboxSize": { "x": 2, "y": 0.6, "z": 2 },
   "behaviorConfigs": {
