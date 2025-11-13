@@ -147,7 +147,7 @@ namespace VSAirshipmod.NSBlockEntity
                         var field = anim.GetType().GetField("AnimationSpeed", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic);
                         if (field != null)
                         {
-                            field.SetValue(anim, GameMath.Clamp(mpc.TrueSpeed*1.3f, 0.0f, 5.5f));//last value is the max clamp
+                            field.SetValue(anim, GameMath.Clamp(mpc.TrueSpeed*3f, 0.0f, 5.5f));//last value is the max clamp
                             //Api.Logger.Debug($"Looming speed updated dynamically: {GameMath.Clamp(mpc.TrueSpeed*1.3f, 0.0f, 5.5f)}");
                         }
                     }

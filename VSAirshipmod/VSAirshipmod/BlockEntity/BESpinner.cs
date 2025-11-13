@@ -142,7 +142,7 @@ namespace VSAirshipmod.NSBlockEntity
                         var field = anim.GetType().GetField("AnimationSpeed", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic);
                         if (field != null)
                         {
-                            field.SetValue(anim, GameMath.Clamp(mpc.TrueSpeed*1.1f, 0.0f, 3.7f));//last value is the max clamp
+                            field.SetValue(anim, GameMath.Clamp(mpc.TrueSpeed*3.19f, 0.0f, 3.7f));//last value is the max clamp
                         }
                     }
                     else
