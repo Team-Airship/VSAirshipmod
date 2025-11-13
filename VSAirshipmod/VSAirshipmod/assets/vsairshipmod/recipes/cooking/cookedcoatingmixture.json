@@ -1,0 +1,26 @@
+{
+	code: "coatingmixture",
+	perishableProps: {
+		type: "None",
+		freshHours: { avg: 48 },
+		transitionHours: { avg: 48 },
+		transitionRatio: 1,
+		transitionedStack: { type: "item", code: "coatingmixture" }
+	},
+	shape: { base: "block/food/meal/liquid" },
+	ingredients: [
+		{
+			code: "wax", 
+			validStacks: [ { type: "item", code: "beeswax" } ],
+			minQuantity: 3,
+			maxQuantity: 3
+		},
+		{
+			code: "flaxfibers", 
+			validStacks: [ { type: "item", code: "flaxfibers" } ],
+			minQuantity: 1,
+			maxQuantity: 1
+		}
+	],
+	cooksInto: { type: "Item", code: "coatingmixture", quantity: 1 }
+}

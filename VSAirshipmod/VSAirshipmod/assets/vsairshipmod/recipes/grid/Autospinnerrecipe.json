@@ -1,0 +1,81 @@
+[
+	{
+		"code": "autospinnercraft",
+		"RecipeGroup": 1,
+		ingredientPattern:"ABC,DEF,GHI",
+		ingredients: {
+			"A": { type: "item", code: "game:metalnailsandstrips-*", "name": "metal","allowedVariants": ["tinbronze", "bismuthbronze", "blackbronze"], quantity: 20},
+			"B": { type: "item", code: "game:flaxtfibers", quantity:60},
+			"C": { type: "item", code: "game:metalnailsandstrips-iron", quantity: 8},
+			"D": { type: "item", code: "game:leather-normal-*", quantity:3},
+			"E": { type: "item", code: "game:rod-iron", quantity: 3},
+			"F": { type: "item", code: "game:jonasframes-gearbox01", quantity:2},
+			"G": { type: "item", code: "game:plank-*", quantity: 6},
+			"H": { type: "item", code: "game:ingot-lead", quantity: 2},
+			"I": { type: "block", code: "game:supportbeam-*", quantity:12}
+		},
+		width: 3,
+		height: 3,
+		output: {type: "block", code: "autospinner-{metal}-north" }
+	},
+	{
+		"code": "autospinnercraftclockmaker",
+		"RecipeGroup": 2,
+		requiresTrait: "clockmaker",
+		ingredientPattern:"ABC,DEF,GHI",
+		ingredients: {
+			"A": { type: "item", code: "game:metalnailsandstrips-*", "name": "metal","allowedVariants": ["tinbronze", "bismuthbronze", "blackbronze"], quantity: 16},
+			"B": { type: "item", code: "game:flaxtfibers", quantity:60},
+			"C": { type: "item", code: "game:metalnailsandstrips-iron", quantity: 8},
+			"D": { type: "item", code: "game:leather-normal-*", quantity:3},
+			"E": { type: "item", code: "game:rod-iron", quantity: 3},
+			"F": { type: "item", code: "game:jonasframes-gearbox01", quantity:1},
+			"G": { type: "item", code: "game:plank-*", quantity: 6},
+			"H": { type: "item", code: "game:ingot-lead", quantity: 2},
+			"I": { type: "block", code: "game:supportbeam-*", quantity:12}
+		},
+		width: 3,
+		height: 3,
+		output: {type: "item", code: "clothes-head-amonshat" }
+	},
+	{
+		"code": "autospinnercraft2",
+		"RecipeGroup": 3,
+		ingredientPattern:"ABC,DEF,GHI",
+		ingredients: {
+			"A": { type: "item", code: "game:metalnailsandstrips-*", "name": "metal","allowedVariants": ["tinbronze", "bismuthbronze", "blackbronze"], quantity: 20},
+			"B": { type: "item", code: "game:flaxtfibers", quantity:60},
+			"C": { type: "item", code: "game:metalnailsandstrips-iron", quantity: 8},
+			"D": { type: "item", code: "game:leather-normal-*", quantity:3},
+			"E": { type: "item", code: "game:rod-iron", quantity: 3},
+			"F": { type: "item", code: "game:metalplate-cupronickel", quantity:2},
+			"G": { type: "item", code: "game:plank-*", quantity: 6},
+			"H": { type: "item", code: "game:ingot-lead", quantity: 2},
+			"I": { type: "block", code: "game:supportbeam-*", quantity:12}
+		},
+		width: 3,
+		height: 3,
+		output: {type: "block", code: "autospinner-{metal}-north" },
+	},
+	{
+
+		"code": "autospinnercraftclockmaker2",
+		"RecipeGroup": 4,
+		requiresTrait: "clockmaker",
+		ingredientPattern:"ABC,DEF,GHI",
+		ingredients: {
+			"A": { type: "item", code: "game:metalnailsandstrips-*", "name": "metal","allowedVariants": ["tinbronze", "bismuthbronze", "blackbronze"], quantity: 16},
+			"B": { type: "item", code: "game:flaxtfibers", quantity:60},
+			"C": { type: "item", code: "game:metalnailsandstrips-iron", quantity: 8},
+			"D": { type: "item", code: "game:leather-normal-*", quantity:3},
+			"E": { type: "item", code: "game:rod-iron", quantity: 3},
+			"F": { type: "item", code: "game:metalplate-cupronickel", quantity:1},
+			"G": { type: "item", code: "game:plank-*", quantity: 6},
+			"H": { type: "item", code: "game:ingot-lead", quantity: 2},
+			"I": { type: "block", code: "game:supportbeam-*", quantity:12}
+		},
+		width: 3,
+		height: 3,
+		output: {type: "item", code: "clothes-head-amonshat" }
+	}
+]
