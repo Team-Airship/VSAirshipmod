@@ -1,0 +1,85 @@
+{
+	code: "customboatconstruction",
+	class: "EntityCustomBoatConstruction",
+	tags: ["inanimate", "structure"],
+	variantgroups: [
+		{ code: "boattype", states: ["punter"] },
+		{ code: "material", states: ["aged"], loadFromProperties: "game:block/wood" }
+	],
+	skipVariants: [
+		"*-aged"
+	],
+	hitboxSizeByType: {
+		"*": { x: 2, y: 1.2, z: 2 }
+	},
+	attributes: {
+		boattype: "punter",
+		relayRopeInteractions: true,
+		stages: [
+			{ addElements: ["ORIGIN/ORIGIN0rollers"] },
+			{ requireStacks: [ { type: "block", name: "shipbuilding-ingredient-logs", code: "supportbeam-*", quantity: 16, storeWildCard: "wood" } ], addElements: ["ORIGIN/ORIGINBoat/ORIGIN1Rim"] },
+			{ requireStacks: [ { type: "item", code: "firewood", quantity: 6 } ], addElements: ["ORIGIN/ORIGINBoat/ORIGIN2Rim2", "ORIGIN/ORIGIN1props"], removeElements: ["ORIGIN/ORIGINBoat/ORIGIN1Rim"] },
+			{ requireStacks: [ { type: "block", code: "supportbeam-{wood}", quantity: 16 } ], addElements: ["ORIGIN/ORIGINBoat/ORIGIN1DoubleKeel"] },
+			{ requireStacks: [ { type: "block", code: "supportbeam-{wood}", quantity: 16 } ], addElements: ["ORIGIN/ORIGINBoat/ORIGIN3Spines"] },
+			{ requireStacks: [ { type: "item", code: "plank-{wood}", quantity: 32 } ], addElements: ["ORIGIN/ORIGINBoat/ORIGIN4Floor"] },
+			{ requireStacks: [ { type: "item", code: "plank-{wood}", quantity: 24 } ], addElements: ["ORIGIN/ORIGINBoat/ORIGIN5Sides"] },
+			{ requireStacks: [ { type: "item", code: "plank-{wood}", quantity: 24 } ], addElements: ["ORIGIN/ORIGINBoat/ORIGIN6Sides2"], removeElements: ["ORIGIN/ORIGINBoat/ORIGIN5Sides","ORIGIN/ORIGINBoat/ORIGIN1DoubleKeel"] },
+			{ requireStacks: [ { type: "item", code: "plank-{wood}", quantity: 12 } ], addElements: ["ORIGIN/ORIGINBoat/ORIGIN7Planks"] },
+			{ requireStacks: [ ], actionLangCode: "Launch" },
+			{ removeElements: ["ORIGIN/ORIGIN1props"] }
+		],
+	},
+	behaviorConfigs: {
+		"passivephysicsmultibox": { 
+			collisionBoxes: [
+				{ x1: -1.4, y1: 0, z1: 0.1, x2: 1.4, y2: 1.2, z2: 2.9 },
+				{ x1: -1.4, y1: 0, z1: -2.9, x2: 1.4, y2: 1.2, z2: -0.1 },
+				{ x1: -1.4, y1: 0, z1: -4.9, x2: 1.4, y2: 1.2, z2: -2.9 }
+			],
+			groundDragFactor: 1,
+			airDragFallingFactor: 0.5,
+			gravityFactor: 1.0
+		},
+		"selectionboxes": {
+			selectionBoxes: ["SeleAP", "Sele2AP" ]
+		}
+	},
+	client: {
+		size: 1,
+		renderer: "Shape",
+		shapeByType: {
+			"*": { base: "entity/punter-construction"}
+		},
+		"textures": {
+        "transparent": { "base": "game:block/transparent" },
+        "debarked": { "base": "game:block/wood/debarked/{material}" },
+        "path1": { "base": "game:block/wood/path/{material}1" },
+        "path2": { "base": "game:block/wood/path/{material}2" },
+        "planks": { "base": "game:block/wood/planks/{material}1" }
+      },
+		animations: [
+			{
+				code: "launch",
+				animation: "launch", 
+				animationSpeed: 1,
+				weight: 10,
+				blendMode: "AddAverage" 
+			}
+		],
+		behaviors: [
+			{ code: "passivephysicsmultibox" },
+			{ code: "interpolateposition" },
+			{ code: "selectionboxes" },
+			{ code: "floatupwhenstuck" }
+		],
+	},
+	server: {
+		behaviors: [
+			{ code: "passivephysicsmultibox" },
+			{ code: "selectionboxes" },
+			{ code: "floatupwhenstuck" }
+		],
+	},
+	sounds: {
+	}
+}

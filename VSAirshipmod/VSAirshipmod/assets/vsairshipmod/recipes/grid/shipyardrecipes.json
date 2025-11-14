@@ -1,0 +1,16 @@
+[
+	{
+		"code": "tier1shipyardcraft",
+		ingredientPattern:"A,BCD,E",
+		ingredients: {
+			"A": { type: "item", code: "game:rope", quantity:3},
+			"B": { type: "item", code: "game:saw-*", isTool: true, toolDurabilityCost: 30 },
+			"C": { type: "block", code: "game:supportbeam-*", quantity:10},
+			"D": { type: "item", code: "game:hammer-*", isTool: true, toolDurabilityCost: 30 },
+			"E": { type: "item", code: "game:plank-*", quantity: 9}
+		},
+		width: 3,
+		height: 3,
+		output: { type: "item", code: "tier1shipyarditem"}
+	}
+]
