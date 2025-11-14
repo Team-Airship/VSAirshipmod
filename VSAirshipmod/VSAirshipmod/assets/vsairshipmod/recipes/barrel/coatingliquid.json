@@ -1,8 +1,8 @@
 {
 	code: "balloonliquidrecipe",
 	ingredients: [
-		{ type: "item", code: "waterportion", litres: 3 },
+		{ type: "item", code: "game:waterportion", litres: 3 },
 		{ type: "item", code: "coatingmix", quantity: 1 }
 	],
-	output: { type: "item", code: "balloonliquid", litres: 3 }
+	output: { type: "item", code: "coatingliquid", litres: 3 }
 }

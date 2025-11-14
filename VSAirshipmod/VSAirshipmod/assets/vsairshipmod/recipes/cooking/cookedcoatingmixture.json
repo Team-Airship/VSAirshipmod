@@ -34,5 +34,5 @@
 			maxQuantity: 1
 		}
 	],
-	cooksInto: { type: "block", code: "coatingmix", quantity: 2 }
+	cooksInto: { type: "item", code: "coatingmix", quantity: 2 }
 }

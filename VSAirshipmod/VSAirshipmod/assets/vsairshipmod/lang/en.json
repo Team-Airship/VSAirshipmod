@@ -3,7 +3,8 @@
   "vsairshipmod:block-autoloom-*": "Autoloom",
   "vsairshipmod:block-spinner-*": "Spinner",
   "vsairshipmod:block-sewingmachine-*": "Sewing Machine",
-  "vsairshipmod:block-coatingmix": "Balloon coating mixture",
+  "vsairshipmod:item-coatingmix": "Balloon coating mixture",
   "vsairshipmod:item-coatingliquid": "Balloon coating liquid",
-  "vsairshipmod:item-treatedcloth*": "Treated balloon cloth"
+  "vsairshipmod:item-treatedcloth*": "Treated balloon cloth",
+  "incontainer-item-coatingliquid": "Balloon coating mixture"
 }
