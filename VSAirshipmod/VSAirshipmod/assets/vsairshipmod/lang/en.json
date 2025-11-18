@@ -1,5 +1,6 @@
 {
   "game:tabname-airship": "Airship mod!",
+<<<<<<< HEAD
 
   "vsairshipmod:block-autoloom-tinbronze-*": "Tin Bronze Autoloom",
   "vsairshipmod:block-autoloom-bismuthbronze-*": "Bismuth Bronze Autoloom",
@@ -16,4 +17,13 @@
   "vsairshipmod:block-sewingmachine-*": "[Metal] Sewing Machine",
 
   "vsairshipmod:item-airship-tier1-*": "Tier 1 Airship"
+=======
+  "vsairshipmod:block-autoloom-*": "Autoloom",
+  "vsairshipmod:block-spinner-*": "Spinner",
+  "vsairshipmod:block-sewingmachine-*": "Sewing Machine",
+  "vsairshipmod:item-coatingmix": "Balloon coating mixture",
+  "vsairshipmod:item-coatingliquid": "Balloon coating liquid",
+  "incontainer-item-coatingliquid": "Balloon coating liquid",
+  "vsairshipmod:item-treatedcloth*": "Treated balloon cloth"
+>>>>>>> Experimental2
 }

@@ -1,26 +1,38 @@
 {
-	code: "coatingmixture",
+	code: "coatingmixrecipe",
 	perishableProps: {
 		type: "None",
 		freshHours: { avg: 48 },
 		transitionHours: { avg: 48 },
 		transitionRatio: 1,
-		transitionedStack: { type: "item", code: "coatingmixture" }
+		transitionedStack: { type: "item", code: "coatingmix" }
 	},
 	shape: { base: "block/food/meal/liquid" },
 	ingredients: [
 		{
-			code: "wax", 
-			validStacks: [ { type: "item", code: "beeswax" } ],
-			minQuantity: 3,
-			maxQuantity: 3
+			code: "resin", 
+			validStacks: [ { type: "item", code: "game:resin" } ],
+			minQuantity: 1,
+			maxQuantity: 1
 		},
 		{
-			code: "flaxfibers", 
-			validStacks: [ { type: "item", code: "flaxfibers" } ],
+			code: "quicklime", 
+			validStacks: [ { type: "item", code: "game:quicklime", quantity: 1 } ],
+			minQuantity: 1,
+			maxQuantity: 1
+		},
+		{
+			code: "salt", 
+			validStacks: [ { type: "item", code: "game:salt", quantity: 2 } ],
+			minQuantity: 1,
+			maxQuantity: 1
+		},
+		{
+			code: "fat", 
+			validStacks: [ { type: "item", code: "game:fat" } ],
 			minQuantity: 1,
 			maxQuantity: 1
 		}
 	],
-	cooksInto: { type: "Item", code: "coatingmixture", quantity: 1 }
+	cooksInto: { type: "item", code: "coatingmix", quantity: 2 }
 }

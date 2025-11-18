@@ -141,6 +141,7 @@
 	"textures": {
 		"metal": "block/metal/ingot/iron",
 		"oak2": "block/wood/debarked/oak",
+		"candle": "block/candle",
 		"rope": "item/resource/rope"
 	},
 	"elements": [

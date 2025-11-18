@@ -20,9 +20,8 @@
 	},
 	{
 		"code": "autoloomcraftclockmaker",
-		"RecipeGroup": 2,
+		"RecipeGroup": 3,
 		ingredientPattern: "ABC,DEF,GHI",
-		requiresTrait: "clockmaker",
 		ingredients: {
 			"A": { type: "item", code: "game:metalnailsandstrips-*", "name": "metal","allowedVariants": ["tinbronze", "bismuthbronze", "blackbronze"], quantity: 16},
 			"B": { type: "item", code: "game:flaxtwine", quantity:30},
@@ -36,11 +35,12 @@
 		},
 		width: 3,
 		height: 3,
+		requiresTrait: "tinkerer",
 		output: {type: "block", code: "autoloom-{metal}-north" }
 	},
 	{
 		"code": "autoloomcraft2",
-		"RecipeGroup": 3,
+		"RecipeGroup": 2,
 		ingredientPattern:"ABC,DED,GHI",
 		ingredients: {
 			"A": { type: "item", code: "game:metalnailsandstrips-*", "name": "metal","allowedVariants": ["tinbronze", "bismuthbronze", "blackbronze"], quantity: 20},
@@ -60,7 +60,6 @@
 		"code": "autoloomcraftclockmaker2",
 		"RecipeGroup": 4,
 		ingredientPattern: "ABC,DED,GHI",
-		requiresTrait: "clockmaker",
 		ingredients: {
 			"A": { type: "item", code: "game:metalnailsandstrips-*", "name": "metal","allowedVariants": ["tinbronze", "bismuthbronze", "blackbronze"], quantity: 16},
 			"B": { type: "item", code: "game:flaxtwine", quantity:30},
@@ -73,6 +72,7 @@
 		},
 		width: 3,
 		height: 3,
+		requiresTrait: "tinkerer",
 		output: {type: "block", code: "autoloom-{metal}-north" }
 	}
 ]

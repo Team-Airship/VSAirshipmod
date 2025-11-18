@@ -21,6 +21,18 @@
   <Content Include="assets\**">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
   </Content>
+  <Compile Remove="assets\vsairshipmod\recipes\autoloom\**" />
+  <Compile Remove="assets\vsairshipmod\recipes\sewingmachine\**" />
+  <Compile Remove="assets\vsairshipmod\recipes\spinner\**" />
+  <Content Remove="assets\vsairshipmod\recipes\autoloom\**" />
+  <Content Remove="assets\vsairshipmod\recipes\sewingmachine\**" />
+  <Content Remove="assets\vsairshipmod\recipes\spinner\**" />
+  <EmbeddedResource Remove="assets\vsairshipmod\recipes\autoloom\**" />
+  <EmbeddedResource Remove="assets\vsairshipmod\recipes\sewingmachine\**" />
+  <EmbeddedResource Remove="assets\vsairshipmod\recipes\spinner\**" />
+  <None Remove="assets\vsairshipmod\recipes\autoloom\**" />
+  <None Remove="assets\vsairshipmod\recipes\sewingmachine\**" />
+  <None Remove="assets\vsairshipmod\recipes\spinner\**" />
   <Content Include="modinfo.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
   </Content>
@@ -50,11 +62,6 @@
 			<HintPath>$(VINTAGE_STORY)/Mods/VSEssentials.dll</HintPath>
 			<Private>false</Private>
 		</Reference>
-	</ItemGroup>
-	<ItemGroup>
-	  <Folder Include="assets\vsairshipmod\recipes\autoloom\" />
-	  <Folder Include="assets\vsairshipmod\recipes\sewingmachine\" />
-	  <Folder Include="assets\vsairshipmod\recipes\spinner\" />
 	</ItemGroup>
 	
 
