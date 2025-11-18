@@ -1,5 +1,5 @@
 {
-	"enabled": false,
+	"enabled": true,
 	code: "airshipyard",
 	class: "ItemCustomBoatRoller", 
 	"variantgroups": [
