@@ -100,34 +100,71 @@
   "client": {
     "size": 1,
     "renderer": "Shape",
-    "shapeByType": { "*": { "base": "entity/{type}", "ignoreElements": ["hideWater", "FLATBALLOON"] } },
+    "shapeByType": {
+      "*": {
+        "base": "entity/{type}",
+        "ignoreElements": [ "hideWater", "FLATBALLOON" ]
+      }
+    },
     "animations": [
-      { "code": "turnLeft", "animation": "turnLeft", "animationSpeed": 1, "easeInSpeed": 2, "easeOutSpeed": 2 },
-      { "code": "turnRight", "animation": "turnRight", "animationSpeed": 1, "easeInSpeed": 2, "easeOutSpeed": 2 },
-      { "code": "weathervane", "animation": "weathervane", "animationSpeed": 0, "weight": 1, "blendMode": "AddAverage" }
+      {
+        "code": "turnLeft",
+        "animation": "t1turnLeft",
+        "animationSpeed": 1,
+        "easeInSpeed": 2,
+        "easeOutSpeed": 2
+      },
+      {
+        "code": "turnRight",
+        "animation": "t1turnRight",
+        "animationSpeed": 1,
+        "easeInSpeed": 2,
+        "easeOutSpeed": 2
+      },
+      {
+        "code": "goUp",
+        "animation": "t1goup",
+        "animationSpeed": 1,
+        "easeInSpeed": 2,
+        "easeOutSpeed": 2
+      },
+      {
+        "code": "goDown",
+        "animation": "t1godown",
+        "animationSpeed": 1,
+        "easeInSpeed": 2,
+        "easeOutSpeed": 2
+      },
+      {
+        "code": "weathervane",
+        "animation": "t1weathervane",
+        "animationSpeed": 0,
+        "weight": 1,
+        //"blendMode": "AddAverage"
+      }
     ],
     "texturesByType": {
       "*": {
         "candle": { "base": "game:block/candle" },
-          "plain": { "base": "game:block/cloth/linen/plain" },
-          "bituminous": { "base": "game:block/coal/bituminous" },
-          "charcoal": { "base": "game:block/coal/charcoal" },
-          "poor": { "base": "game:block/leather/poor" },
-          "steel1": { "base": "game:block/metal/sheet-plain/steel1" },
-          "blackbronze2": { "base": "game:block/metal/sheet/blackbronze2" },
-          "blackbronze4": { "base": "game:block/metal/sheet/blackbronze4" },
-          "copper1": { "base": "game:block/metal/sheet/copper1" },
-          "cupronickel1": { "base": "game:block/metal/sheet/cupronickel1" },
-          "iron1": { "base": "game:block/metal/sheet/iron1" },
-          "copper-soldered": { "base": "game:block/metal/sheet/soldered-copper" },
-          "tinbronze1": { "base": "game:block/metal/sheet/tinbronze1" },
-          "rusty-iron": { "base": "game:block/metal/tarnished/rusty-iron" },
-          "bottom": { "base": "game:block/wood/barrel/bottom" },
-          "aged": { "base": "game:block/wood/debarked/aged" },
-          "plainoak": { "base": "game:block/wood/plainoak" },
-          "linen": { "base": "game:item/bag/linensack/linen" },
-          "top": { "base": "game:item/bag/linensack/top" },
-          "temporal": { "base": "game:item/resource/temporalgear" },
+        "plain": { "base": "game:block/cloth/linen/plain" },
+        "bituminous": { "base": "game:block/coal/bituminous" },
+        "charcoal": { "base": "game:block/coal/charcoal" },
+        "poor": { "base": "game:block/leather/poor" },
+        "steel1": { "base": "game:block/metal/sheet-plain/steel1" },
+        "blackbronze2": { "base": "game:block/metal/sheet/blackbronze2" },
+        "blackbronze4": { "base": "game:block/metal/sheet/blackbronze4" },
+        "copper1": { "base": "game:block/metal/sheet/copper1" },
+        "cupronickel1": { "base": "game:block/metal/sheet/cupronickel1" },
+        "iron1": { "base": "game:block/metal/sheet/iron1" },
+        "copper-soldered": { "base": "game:block/metal/sheet/soldered-copper" },
+        "tinbronze1": { "base": "game:block/metal/sheet/tinbronze1" },
+        "rusty-iron": { "base": "game:block/metal/tarnished/rusty-iron" },
+        "bottom": { "base": "game:block/wood/barrel/bottom" },
+        "aged": { "base": "game:block/wood/debarked/aged" },
+        "plainoak": { "base": "game:block/wood/plainoak" },
+        "linen": { "base": "game:item/bag/linensack/linen" },
+        "top": { "base": "game:item/bag/linensack/top" },
+        "temporal": { "base": "game:item/resource/temporalgear" },
         "rope": { "base": "game:item/resource/rope" }
       }
     },
@@ -138,7 +175,10 @@
       { "code": "selectionboxes" },
       { "code": "rideableaccessories" },
       { "code": "creaturecarrier" },
-      { "code": "hidewatersurface", "hideWaterElement": "ORIGINAirship/hideWater/*" }
+      {
+        "code": "hidewatersurface",
+        "hideWaterElement": "ORIGINAirship/hideWater/*"
+      }
     ]
   },
   "server": {

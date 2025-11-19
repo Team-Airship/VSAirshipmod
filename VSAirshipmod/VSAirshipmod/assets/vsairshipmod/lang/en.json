@@ -15,15 +15,12 @@
 
   "vsairshipmod:block-sewingmachine-*": "[Metal] Sewing Machine",
 
-  "vsairshipmod:item-airship-tier1-*": "Tier 1 Airship",
-
   "vsairshipmod:item-coatingmix": "Balloon coating mixture",
   "vsairshipmod:item-coatingliquid": "Balloon coating liquid",
   "incontainer-item-coatingliquid": "Balloon coating liquid",
   "vsairshipmod:item-treatedcloth*": "Treated balloon cloth",
 
-
-  "vsairshipmod:item-creature-airship-tier1-*": "Tier 1 Airship",
+  "vsairshipmod:item-*airship-tier1-*": "Tier 1 Airship",
   "creature-vsairshipmod:airship-tier1-*-lanternstorageAP": "Lantern",
   "creature-vsairshipmod:airship-tier1-*-riderseatAP": "Seat",
   "creature-vsairshipmod:airship-tier1-*-shieldstorageAP": "Shield",

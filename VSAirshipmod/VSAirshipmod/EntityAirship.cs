@@ -369,32 +369,49 @@ namespace VSAirshipmod
             esr.xangle = mountAngle.X + curRotMountAngleZ;
             esr.yangle = mountAngle.Y;
             esr.zangle = mountAngle.Z + forwardpitch; // Weird. Pitch ought to be xangle.
-            /*
+            
             if (this.AnimManager.Animator != null)
             {
-                this.weatherVaneAnimCode = "t1weathervane";
+                if (HorizontalVelocity > 0)
+                {
+                    if (!AnimManager.IsAnimationActive("t1goup"))
+                        AnimManager.StartAnimation("t1goup");
+                    AnimManager.StopAnimation("t1godown");
+                } 
+                else if(HorizontalVelocity < 0)
+                {
+                    if (!AnimManager.IsAnimationActive("goDown"))
+                        AnimManager.StartAnimation("goDown");
+                    AnimManager.StopAnimation("goUp");
+                }
+                else
+                {
+                    AnimManager.StopAnimation("goUp");
+                    AnimManager.StopAnimation("goDown");
+                }
+                //AnimManager.AnimationsDirty = true;
 
-                if (this.weatherVaneAnimCode != null && !this.AnimManager.IsAnimationActive(new string[]
+                //this.weatherVaneAnimCode = "weathervane";
+
+                if (!AnimManager.IsAnimationActive("weathervane"))
                 {
-                    this.weatherVaneAnimCode
-                }))
-                {
-                    this.AnimManager.StartAnimation(this.weatherVaneAnimCode);
+                    this.AnimManager.StartAnimation("weathervane");
                 }
                 //float targetWindDir = GameMath.Mod((float)Math.Atan2((double)GlobalConstants.CurrentWindSpeedClient.X, (double)GlobalConstants.CurrentWindSpeedClient.Z) + 6.2831855f - this.Pos.Yaw, 6.2831855f);
-                RunningAnimation anim = this.AnimManager.GetAnimationState(this.weatherVaneAnimCode);
+                
+                RunningAnimation anim = this.AnimManager.GetAnimationState("t1weathervane");
                 if (anim != null)
                 {
-                    Api.Logger.Notification("" + anim.CurrentFrame);
-                    //anim.CurrentFrame = (Fuel/64f)*36f; // * 57.295776f / 10f;
+                    //Api.Logger.Notification("" + anim.CurrentFrame);
+                    anim.CurrentFrame = (Fuel/64f)*36f; // * 57.295776f / 10f;
                     anim.BlendedWeight = 1f;
                     anim.EasingFactor = 1f;
-                    anim.Running = true;
-                    anim.Active = true;
+                    //Api.Logger.Notification("" + anim.AnimProgress);
                 }
                 //Api.Logger.Notification(anim != null ? "Not Null":"Null");
+                
             }
-            */
+            
         }
 
 

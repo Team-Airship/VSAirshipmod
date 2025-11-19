@@ -13483,38 +13483,86 @@
 			"code": "t1godown",
 			"quantityframes": 15,
 			"onActivityStopped": "Rewind",
-			"onAnimationEnd": "Repeat",
+			"onAnimationEnd": "Hold",
 			"keyframes": [
 				{
 					"frame": 0,
 					"elements": {
-						"VENT LINE HANDLE PIVOT": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"barrel lid hinge3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"vent line 1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 }
+						"VENT LINE HANDLE PIVOT": {
+							"offsetX": 0.0,
+							"offsetY": 0.0,
+							"offsetZ": 0.0
+						},
+						"barrel lid hinge3": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"vent line 1": {
+							"offsetX": 0.0,
+							"offsetY": 0.0,
+							"offsetZ": 0.0
+						}
 					}
 				},
 				{
 					"frame": 5,
 					"elements": {
-						"VENT LINE HANDLE PIVOT": { "offsetX": -1.2, "offsetY": 0.0, "offsetZ": 0.0 },
-						"vent line 1": { "offsetX": -0.6, "offsetY": 0.0, "offsetZ": 0.0 },
-						"barrel lid hinge3": { "rotationX": 0.0, "rotationY": 21.0, "rotationZ": 0.0 }
+						"VENT LINE HANDLE PIVOT": {
+							"offsetX": -1.2,
+							"offsetY": 0.0,
+							"offsetZ": 0.0
+						},
+						"vent line 1": {
+							"offsetX": -0.6,
+							"offsetY": 0.0,
+							"offsetZ": 0.0
+						},
+						"barrel lid hinge3": {
+							"rotationX": 0.0,
+							"rotationY": 21.0,
+							"rotationZ": 0.0
+						}
 					}
 				},
 				{
 					"frame": 10,
 					"elements": {
-						"VENT LINE HANDLE PIVOT": { "offsetX": -1.8, "offsetY": 0.0, "offsetZ": 0.0 },
-						"vent line 1": { "offsetX": -0.9, "offsetY": 0.0, "offsetZ": 0.0 },
-						"barrel lid hinge3": { "rotationX": 0.0, "rotationY": 31.5, "rotationZ": 0.0 }
+						"VENT LINE HANDLE PIVOT": {
+							"offsetX": -1.8,
+							"offsetY": 0.0,
+							"offsetZ": 0.0
+						},
+						"vent line 1": {
+							"offsetX": -0.9,
+							"offsetY": 0.0,
+							"offsetZ": 0.0
+						},
+						"barrel lid hinge3": {
+							"rotationX": 0.0,
+							"rotationY": 31.5,
+							"rotationZ": 0.0
+						}
 					}
 				},
 				{
 					"frame": 14,
 					"elements": {
-						"VENT LINE HANDLE PIVOT": { "offsetX": -2.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"barrel lid hinge3": { "rotationX": 0.0, "rotationY": 35.0, "rotationZ": 0.0 },
-						"vent line 1": { "offsetX": -1.0, "offsetY": 0.0, "offsetZ": 0.0 }
+						"VENT LINE HANDLE PIVOT": {
+							"offsetX": -2.0,
+							"offsetY": 0.0,
+							"offsetZ": 0.0
+						},
+						"barrel lid hinge3": {
+							"rotationX": 0.0,
+							"rotationY": 35.0,
+							"rotationZ": 0.0
+						},
+						"vent line 1": {
+							"offsetX": -1.0,
+							"offsetY": 0.0,
+							"offsetZ": 0.0
+						}
 					}
 				}
 			]
