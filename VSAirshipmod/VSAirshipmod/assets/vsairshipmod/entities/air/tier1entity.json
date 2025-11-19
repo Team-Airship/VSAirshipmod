@@ -18,7 +18,7 @@
     "shouldSwivelFromMotion": false,
     "speedMultiplier": 0.5,
     "turnMultiplier": 6,
-    "swimmingOffsetYByType": { "*": 0.45 },
+    "swimmingOffsetYByType": { "*": 8 },
     "requiresPaddlingTool": false,
     "rightClickPickup": true,
     "mountAnimations": {
@@ -109,38 +109,54 @@
     "animations": [
       {
         "code": "turnLeft",
-        "animation": "t1turnLeft",
+        "animation": "turnLeft",
         "animationSpeed": 1,
         "easeInSpeed": 2,
         "easeOutSpeed": 2
       },
       {
         "code": "turnRight",
-        "animation": "t1turnRight",
+        "animation": "turnRight",
         "animationSpeed": 1,
         "easeInSpeed": 2,
         "easeOutSpeed": 2
       },
       {
         "code": "goUp",
-        "animation": "t1goup",
+        "animation": "goup",
         "animationSpeed": 1,
-        "easeInSpeed": 2,
+        "easeInSpeed": 5,
+        "easeOutSpeed": 2
+      },
+      {
+        "code": "pump",
+        "animation": "pump",
+        "animationSpeed": 1,
+        "easeInSpeed": 5,
         "easeOutSpeed": 2
       },
       {
         "code": "goDown",
-        "animation": "t1godown",
+        "animation": "godown",
         "animationSpeed": 1,
         "easeInSpeed": 2,
         "easeOutSpeed": 2
       },
       {
         "code": "weathervane",
-        "animation": "t1weathervane",
+        "animation": "weathervane",
         "animationSpeed": 0,
-        "weight": 1,
+        "weight": 1
         //"blendMode": "AddAverage"
+      },
+      {
+        "code": "idle",
+        "animation": "idle",
+        "animationSpeed": 1,
+        "weight": 10,
+        "easeInSpeed": 1,
+        "easeOutSpeed": 1,
+        "blendMode": "AddAverage"
       }
     ],
     "texturesByType": {

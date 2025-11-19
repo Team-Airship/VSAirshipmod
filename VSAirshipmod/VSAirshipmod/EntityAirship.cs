@@ -374,20 +374,23 @@ namespace VSAirshipmod
             {
                 if (HorizontalVelocity > 0)
                 {
-                    if (!AnimManager.IsAnimationActive("t1goup"))
-                        AnimManager.StartAnimation("t1goup");
-                    AnimManager.StopAnimation("t1godown");
+                    if (!AnimManager.IsAnimationActive("goup"))
+                        AnimManager.StartAnimation("goup");
+                        AnimManager.StartAnimation("pump");
+                    AnimManager.StopAnimation("godown");
                 } 
                 else if(HorizontalVelocity < 0)
                 {
-                    if (!AnimManager.IsAnimationActive("goDown"))
-                        AnimManager.StartAnimation("goDown");
-                    AnimManager.StopAnimation("goUp");
+                    if (!AnimManager.IsAnimationActive("godown"))
+                        AnimManager.StartAnimation("godown");
+                    AnimManager.StopAnimation("goup");
+                    AnimManager.StopAnimation("pump");
                 }
                 else
                 {
-                    AnimManager.StopAnimation("goUp");
-                    AnimManager.StopAnimation("goDown");
+                    AnimManager.StopAnimation("goup");
+                    AnimManager.StopAnimation("godown");
+                    AnimManager.StopAnimation("pump");
                 }
                 //AnimManager.AnimationsDirty = true;
 
@@ -399,7 +402,7 @@ namespace VSAirshipmod
                 }
                 //float targetWindDir = GameMath.Mod((float)Math.Atan2((double)GlobalConstants.CurrentWindSpeedClient.X, (double)GlobalConstants.CurrentWindSpeedClient.Z) + 6.2831855f - this.Pos.Yaw, 6.2831855f);
                 
-                RunningAnimation anim = this.AnimManager.GetAnimationState("t1weathervane");
+                RunningAnimation anim = this.AnimManager.GetAnimationState("weathervane");
                 if (anim != null)
                 {
                     //Api.Logger.Notification("" + anim.CurrentFrame);

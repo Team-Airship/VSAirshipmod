@@ -1,39 +1,26 @@
 {
-	"enabled": true,
-	code: "airshipyard",
-	class: "ItemCustomBoatRoller", 
+	code: "vsairshipmodroller",
+	class: "ItemVSAirshipmodRoller", 
 	"variantgroups": [
     {"code": "airshiptype", "states": ["tier1"]}
   ],
 	maxstacksize: 1,
 	attributesByType: {
-    "*tier1": {
-      airshiptype: "tier1",
-      placeSound: "game:block/planks",
-      constructionBoxGround: [
-        [-3, -1, -13],
-        [4, 0, 1]
-      ],
-      constructionBoxWater: [
-        [-2, -1, 1],
-        [3, 0, 2]
-      ]
-    }
-},
-	shape: { base: "item/{airshiptype}shipyarditem" },
-	"texturesByType": {
-		"*": {
-			"cracked2":  { "base": "game:block/clay/daub/yellow/cracked2"},
-			"normal2":  { "base": "game:block/clay/daub/yellow/normal2"},
-			"mordant":  { "base": "game:block/cloth/linen/mordant"},
-			"wattle":  { "base": "game:block/wattle"},
-			"aged":  { "base": "game:block/wood/debarked/aged"},
-			"oak":  { "base": "game:block/wood/debarked/oak"},
-			"oak1":  { "base": "game:block/wood/path/oak1"},
-			"furside":  { "base": "game:item/resource/hide/raw-huge"},
-			"rope": { "base": "game:item/resource/rope"}
+		"*tier1": {
+			"airshiptype": "tier1",
+			"hasWaterLaunch": false,
+			"placeSound": "game:block/planks",
+			"constructionBoxGround": [
+				[ 14, -1, -3 ],
+				[0, 1, 4 ]
+			],
+			"constructionBoxWater": [
+				[ -1, -1, -2 ],
+				[ 0, 0, 3 ]
+			]
 		}
-	},
+},
+	shape: { base: "item/{airshiptype}-shipyardhelditem" },
 	"creativeinventory": {
 		"general": [ "*" ],
 		"airship": [ "*" ]

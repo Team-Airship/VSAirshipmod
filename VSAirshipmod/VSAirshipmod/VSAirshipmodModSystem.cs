@@ -32,6 +32,8 @@ namespace VSAirshipmod
             api.RegisterBlockEntityClass("Spinner", typeof(BlockEntitySpinner));
             api.RegisterBlockEntityClass("Autoloom", typeof(BlockEntityAutoloom));
 
+            api.RegisterItemClass("ItemVSAirshipmodRoller", typeof(ItemVSAirshipmodRoller));
+            api.RegisterEntity("EntityVSAirshipmodConstruction", typeof(EntityVSAirshipmodConstruction));
             //Mod.Logger.Notification("Hello there from template mod: " + api.Side);
         }
 

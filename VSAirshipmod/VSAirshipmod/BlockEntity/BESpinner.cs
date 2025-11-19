@@ -1,4 +1,5 @@
 ﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -247,11 +248,11 @@ namespace VSAirshipmod.NSBlockEntity
             {
                 ambientSound = (Api as ICoreClientAPI).World.LoadSound(new SoundParams()
                 {
-                    Location = new AssetLocation("sounds/block/quern.ogg"),
+                    Location = new AssetLocation("sounds/effect/gears.ogg"),
                     ShouldLoop = true,
                     Position = Pos.ToVec3f().Add(0.5f, 0.25f, 0.5f),
                     DisposeOnFinish = false,
-                    Volume = 0.75f
+                    Volume = 0.15f
                 });
                 ambientSound.Start();
             }

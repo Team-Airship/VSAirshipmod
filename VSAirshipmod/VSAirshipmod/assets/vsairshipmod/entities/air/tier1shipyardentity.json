@@ -1,17 +1,14 @@
 {
-	"enabled": false,
-	code: "customboatconstruction",
-	class: "EntityCustomBoatConstruction",
+	"enabled": true,
+	code: "vsairshipmodconstruction",
+	class: "EntityVSAirshipmodConstruction",
 	tags: ["inanimate", "structure"],
 	variantgroups: [
 		{ code: "airshiptype", states: ["tier1"] },
-		{ code: "material", states: ["aged"], loadFromProperties: "game:block/wood" }
-	],
-	skipVariants: [
-		"*-aged"
+		{ code: "material", states: ["oak"] }
 	],
 	hitboxSizeByType: {
-		"*": { x: 2, y: 1.2, z: 2 }
+		"*": { x: 2, y: 0.2, z: 2 }
 	},
 	attributes: {
 		airshiptype: "tier1",
@@ -20,17 +17,17 @@
 			{ addElements: [ "ORIGIN/ORIGIN0-launchpad" ] },
 			{ requireStacks: [ { type: "block", name: "shipbuildingingredient", code: "barrel", quantity: 1 } ], addElements: ["ORIGIN/ORIGINAirship/ORIGIN1-barrel"] },
 			{ requireStacks: [ { type: "block", code: "metal-scraps", quantity: 16 } ], addElements: ["ORIGIN/ORIGINAirship/ORIGIN2-scrapmetal"] },
-			{ requireStacks: [ { type: "item", code: "leather-normal-*", quantity: 6 } ], addElements: ["ORIGIN/ORIGINAirship/ORIGIN3-leather"], removeElements: ["ORIGIN/ORIGINAirship/ORIGIN2-scrapmetal"] },
+			{ requireStacks: [ { type: "item", code: "leather-normal-plain", quantity: 6 } ], addElements: ["ORIGIN/ORIGINAirship/ORIGIN3-leather"], removeElements: ["ORIGIN/ORIGINAirship/ORIGIN2-scrapmetal"] },
 			{ requireStacks: [ { type: "block", code: "condenser-west", quantity: 1 } ], addElements: ["ORIGIN/ORIGINAirship/ORIGIN4-condenser"] },
-			{ requireStacks: [ { type: "item", code: "rod-*", quantity: 6 } ], addElements: ["ORIGIN/ORIGINAirship/ORIGIN5-metalrods"] },
+			{ requireStacks: [ { type: "item", code: "rod-*", name:"metal rods", quantity: 6 } ], addElements: ["ORIGIN/ORIGINAirship/ORIGIN5-metalrods"] },
 			{ requireStacks: [ { type: "item", code: "hoop-blackbronze", quantity: 1 } ], addElements: ["ORIGIN/ORIGINAirship/ORIGIN6-hoop"] },
 			{ requireStacks: [ { type: "item", code: "stick", quantity: 10 } ], addElements: ["ORIGIN/ORIGINAirship/ORIGIN7-sticks"] },
-			{ requireStacks: [ { type: "block", code: "linen-*-down", quantity: 2 } ], addElements: ["ORIGIN/ORIGINAirship/ORIGIN8-2linenflags", "ORIGIN/ORIGINAirship/ORIGIN9-2linenoars"], removeElements: ["ORIGIN/ORIGINAirship/ORIGIN7-sticks"] },
-			{ requireStacks: [ { type: "item", code: "rope", quantity: 8 } ], addElements: ["ORIGIN/ORIGINAirship/ORIGIN10-ropes"], removeElements: ["ORIGIN/ORIGINAirship/ORIGIN8-2linenflags", "ORIGIN/ORIGINAirship/ORIGIN9-2linenoars", "ORIGIN/ORIGINAirship/ORIGIN3-leather", "ORIGIN/ORIGINAirship/ORIGIN4-condenser", "ORIGIN/ORIGINAirship/ORIGIN4-condenser", "ORIGIN/ORIGINAirship/ORIGIN5-metalrods", "ORIGIN/ORIGINAirship/ORIGIN6-hoop"] },
+			{ requireStacks: [ { type: "block", code: "linen-*-down", name:"Linen", quantity: 2 } ], addElements: ["ORIGIN/ORIGINAirship/ORIGIN8-2linenflags", "ORIGIN/ORIGINAirship/ORIGIN9-2linenoars"], removeElements: ["ORIGIN/ORIGINAirship/ORIGIN7-sticks"] },
+			{ requireStacks: [ { type: "item", code: "rope", quantity: 8 } ], addElements: ["ORIGIN/ORIGINAirship/ORIGIN10-ropes"], removeElements: ["ORIGIN/ORIGINAirship/ORIGIN8-2linenflags", "ORIGIN/ORIGINAirship/ORIGIN3-leather", "ORIGIN/ORIGINAirship/ORIGIN4-condenser", "ORIGIN/ORIGINAirship/ORIGIN4-condenser", "ORIGIN/ORIGINAirship/ORIGIN5-metalrods", "ORIGIN/ORIGINAirship/ORIGIN6-hoop"] },
 			{ requireStacks: [ { type: "item", code: "jonasframes-gearbox02", quantity: 1 } ], addElements: ["ORIGIN/ORIGINAirship/ORIGIN11-jonaspart"] },
 			{ requireStacks: [ { type: "item", code: "gear-temporal", quantity: 1 } ], addElements: ["ORIGIN/ORIGINAirship/ORIGIN12-tempgear"] },
 			{ requireStacks: [ { type: "item", code: "linensack", quantity: 4 } ], addElements: ["ORIGIN/ORIGINAirship/ORIGIN13-bags"] },
-			{ requireStacks: [ { type: "item", code: "metalnailsandstrips-tinbronze", quantity: 6 } ], addElements: ["ORIGIN/ORIGINAirship/ORIGIN14-tinbronzeparts"] },
+			{ requireStacks: [ { type: "item", code: "metalnailsandstrips-tinbronze", quantity: 6 } ], addElements: ["ORIGIN/ORIGINAirship/ORIGIN14-tinbronzeparts"], removeElements: ["ORIGIN/ORIGINAirship/ORIGIN9-2linenoars"] },
 			{ requireStacks: [ { type: "item", code: "vsairshipmod:treatedcloth", quantity: 4 } ], addElements: ["ORIGIN/ORIGINAirship/ORIGIN15-balloon1"] },
 			{ requireStacks: [ { type: "item", code: "vsairshipmod:treatedcloth", quantity: 7 } ], addElements: ["ORIGIN/ORIGINAirship/ORIGIN16-balloon2"] },
 			{ requireStacks: [ { type: "item", code: "vsairshipmod:treatedcloth", quantity: 8 } ], addElements: ["ORIGIN/ORIGINAirship/ORIGIN17-balloon3"] },
@@ -65,7 +62,28 @@
 			"*": { base: "entity/tier1-construction"}
 		},
 		"textures": {
-      },
+			"candle": { "base": "game:block/candle" },
+			"plain": { "base": "game:block/cloth/linen/plain" },
+			"bituminous": { "base": "game:block/coal/bituminous" },
+			"charcoal": { "base": "game:block/coal/charcoal" },
+			"poor": { "base": "game:block/leather/poor" },
+			"steel1": { "base": "game:block/metal/sheet-plain/steel1" },
+			"blackbronze2": { "base": "game:block/metal/sheet/blackbronze2" },
+			"blackbronze4": { "base": "game:block/metal/sheet/blackbronze4" },
+			"copper1": { "base": "game:block/metal/sheet/copper1" },
+			"cupronickel1": { "base": "game:block/metal/sheet/cupronickel1" },
+			"iron1": { "base": "game:block/metal/sheet/iron1" },
+			"copper-soldered": { "base": "game:block/metal/sheet/soldered-copper" },
+			"tinbronze1": { "base": "game:block/metal/sheet/tinbronze1" },
+			"rusty-iron": { "base": "game:block/metal/tarnished/rusty-iron" },
+			"bottom": { "base": "game:block/wood/barrel/bottom" },
+			"aged": { "base": "game:block/wood/debarked/aged" },
+			"plainoak": { "base": "game:block/wood/plainoak" },
+			"linen": { "base": "game:item/bag/linensack/linen" },
+			"top": { "base": "game:item/bag/linensack/top" },
+			"rope": { "base": "game:item/resource/rope" },
+			"temporal": { "base": "game:item/resource/temporalgear" }
+		},
 		animations: [
 			{
 				code: "launch",

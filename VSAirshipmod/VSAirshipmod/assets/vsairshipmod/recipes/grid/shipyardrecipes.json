@@ -1,7 +1,7 @@
 [
 	{
 		"code": "tier1shipyardcraft",
-		ingredientPattern:"A,BCD,E",
+		ingredientPattern:"_A_,BCD,_E_",
 		ingredients: {
 			"A": { type: "item", code: "game:rope", quantity:3},
 			"B": { type: "item", code: "game:saw-*", isTool: true, toolDurabilityCost: 30 },
@@ -11,6 +11,6 @@
 		},
 		width: 3,
 		height: 3,
-		output: { type: "item", code: "tier1shipyarditem"}
+		output: { type: "item", code: "vsairshipmodroller-tier1"}
 	}
 ]

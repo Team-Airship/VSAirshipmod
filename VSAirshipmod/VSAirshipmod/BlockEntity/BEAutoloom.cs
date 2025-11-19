@@ -25,7 +25,7 @@ namespace VSAirshipmod.NSBlockEntity
         public float prevInputGrindTime;
 
         GuiDialogBlockEntityQuern clientDialog;
-        BEBehaviorMPConsumer mpc;
+        public BEBehaviorMPConsumer mpc;
         BEBehaviorAnimatable animatable => GetBehavior<BEBehaviorAnimatable>();
         BlockEntityAnimationUtil animUtil => animatable?.animUtil;
 
@@ -34,6 +34,17 @@ namespace VSAirshipmod.NSBlockEntity
         int nowOutputFace;
         bool beforeGrinding;
         public bool IsGrinding => automated && mpc?.TrueSpeed > 0f;
+
+        // axle rotation state
+        //internal float axleRotation;
+
+        // axle renderer
+        private IRenderer clientRenderer;
+        private MeshRef axleMeshRef;
+
+        //for shuttle sounds
+        float lastProgress = 0f;
+        int playedcount = 0;
 
 
         public string Material => Block.LastCodePart();
@@ -74,6 +85,21 @@ namespace VSAirshipmod.NSBlockEntity
             {
                 float rotY = Block?.Shape != null ? Block.Shape.rotateY : 0f;
                 animUtil?.InitializeAnimator("vsairshipmod:block/autoloom", null, null, new Vec3f(0, rotY, 0));
+
+                var capi = api as ICoreClientAPI;
+
+                // Generate mesh once
+                MeshData mesh = GenAxleMesh();
+                if (mesh != null)
+                {
+                    axleMeshRef = capi.Render.UploadMesh(mesh);
+                }
+
+                // Register renderer
+                clientRenderer = new AutoloomAxleRenderer(this);
+                capi.Event.RegisterRenderer(clientRenderer, EnumRenderStage.Opaque, "autoloom-axle-render");
+
+
             }
         }
 
@@ -127,13 +153,38 @@ namespace VSAirshipmod.NSBlockEntity
                     //}
                     if (mpc?.TrueSpeed > 0.01f)
                     {
-                        if (!animUtil.activeAnimationsByAnimCode.ContainsKey("looming"))
+
+                        string animCode = "looming";
+                        BlockFacing facing = BlockFacing.FromCode(Block.LastCodePart());
+                        if (mpc != null /*&& mpc.isRotationReversed()*/)
                         {
-                            //Api.Logger.Debug("Looming animation starting!");
+                            //animCode = "looming2";
+
+                            //0 is north
+                            //1 is east
+                            //2 is south
+                            //3 is west
+
+                            if(facing == BlockFacing.HORIZONTALS[3] && mpc.isRotationReversed()){
+                                animCode = "looming2";
+                            }
+                            if(facing == BlockFacing.HORIZONTALS[1] && !mpc.isRotationReversed()){
+                                animCode = "looming2";
+                            }
+                            if(facing == BlockFacing.HORIZONTALS[0] && !mpc.isRotationReversed()){
+                                animCode = "looming2";
+                            }
+                            if(facing == BlockFacing.HORIZONTALS[2] && mpc.isRotationReversed()){
+                                animCode = "looming2";
+                            }
+                        }
+
+                        if (!animUtil.activeAnimationsByAnimCode.ContainsKey(animCode))
+                        {
                             animUtil.StartAnimation(new AnimationMetaData()
                             {
-                                Animation = "looming",
-                                Code = "looming",
+                                Animation = animCode,
+                                Code = animCode,
                                 AnimationSpeed = 1,
                                 EaseInSpeed = 10,
                                 EaseOutSpeed = 10,
@@ -141,7 +192,8 @@ namespace VSAirshipmod.NSBlockEntity
                                 BlendMode = EnumAnimationBlendMode.Add
                             });
                         }
-                        var anim = animUtil.activeAnimationsByAnimCode["looming"];
+
+                        var anim = animUtil.activeAnimationsByAnimCode[animCode];
 
                         // Alright fuck it I'm just using reflection to access the field directly, no more starting stopping nonsense. Certified hYPERION (Pal5k) moment
                         var field = anim.GetType().GetField("AnimationSpeed", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic);
@@ -150,18 +202,57 @@ namespace VSAirshipmod.NSBlockEntity
                             field.SetValue(anim, GameMath.Clamp(mpc.TrueSpeed*3f, 0.0f, 5.5f));//last value is the max clamp
                             //Api.Logger.Debug($"Looming speed updated dynamically: {GameMath.Clamp(mpc.TrueSpeed*1.3f, 0.0f, 5.5f)}");
                         }
+
+                        //This is for a sound trigger based on animation progress
+                        var state = animUtil?.animator?.GetAnimationState(animCode);
+                        float progress = state?.AnimProgress ?? 0f;
+
+                        if (progress < lastProgress)
+                        {
+                            playedcount = 0;
+                        }
+
+                        // Fire sound at about 25% of animation cycle
+                        if ((progress > 0.25f && progress < 0.74) && playedcount == 0)//range incase of imprecision
+                        {
+                            Api.World.PlaySoundAt(
+                                new AssetLocation("sounds/tool/padlock.ogg"),
+                                Pos.X + 0.5,
+                                Pos.Y + 0.5,
+                                Pos.Z + 0.5,
+                                null,
+                                0.5f,//pitch
+                                20f//range
+                            );
+                            playedcount = 1;
+                        }
+                        if ((progress > 0.75f && progress < 0.99) && playedcount == 1)//another time
+                        {
+                            Api.World.PlaySoundAt(
+                                new AssetLocation("sounds/tool/padlock.ogg"),
+                                Pos.X + 0.5,
+                                Pos.Y + 0.5,
+                                Pos.Z + 0.5,
+                                null,
+                                0.5f,
+                                10f
+                            );
+                            playedcount = 2;
+                        }
+                        lastProgress = progress;
                     }
                     else
                     {
                         //Api.Logger.Debug("Looming animation stopped!");
                         animUtil.StopAnimation("looming");
+                        animUtil.StopAnimation("looming2");
                     }
 
 
                 if (ambientSound != null && automated && mpc.TrueSpeed != prevSpeed)
                 {
                     prevSpeed = mpc.TrueSpeed;
-                    ambientSound.SetPitch((0.5f + prevSpeed) * 0.9f);
+                    ambientSound.SetPitch((0.11f + prevSpeed) * 0.9f);
                     ambientSound.SetVolume(Math.Min(1f, prevSpeed * 3f));
                 }
                 else prevSpeed = float.NaN;
@@ -254,11 +345,11 @@ namespace VSAirshipmod.NSBlockEntity
             {
                 ambientSound = (Api as ICoreClientAPI).World.LoadSound(new SoundParams()
                 {
-                    Location = new AssetLocation("sounds/block/quern.ogg"),
+                    Location = new AssetLocation("sounds/effect/gears.ogg"),
                     ShouldLoop = true,
                     Position = Pos.ToVec3f().Add(0.5f, 0.25f, 0.5f),
                     DisposeOnFinish = false,
-                    Volume = 0.75f
+                    Volume = 0.25f
                 });
                 ambientSound.Start();
             }
@@ -287,6 +378,15 @@ namespace VSAirshipmod.NSBlockEntity
                 inputGrindTime = 0.0f;
                 MarkDirty();
             }
+        }
+        internal MeshData GenAxleMesh()
+        {
+            var block = Api.World.BlockAccessor.GetBlock(Pos);
+            if (block.BlockId == 0) return null;
+
+            MeshData modelData;
+            ((ICoreClientAPI)Api).Tesselator.TesselateShape(block, Shape.TryGet(Api, "vsairshipmod:shapes/block/autoloom-axle.json"), out modelData);
+            return modelData;
         }
 
 
@@ -392,8 +492,27 @@ namespace VSAirshipmod.NSBlockEntity
             }
 
             clientDialog?.TryClose();
-        }
+            if (Api.Side == EnumAppSide.Client && clientRenderer != null)
+            {
+                (Api as ICoreClientAPI).Event.UnregisterRenderer(clientRenderer, EnumRenderStage.Opaque);
+                clientRenderer = null;
 
+                axleMeshRef?.Dispose();
+                axleMeshRef = null;
+            }
+        }
+        public override void OnBlockUnloaded()
+        {
+            base.OnBlockUnloaded();
+            if (Api.Side == EnumAppSide.Client && clientRenderer != null)
+            {
+                (Api as ICoreClientAPI).Event.UnregisterRenderer(clientRenderer, EnumRenderStage.Opaque);
+                clientRenderer = null;
+
+                axleMeshRef?.Dispose();
+                axleMeshRef = null;
+            }
+        }
         public ItemSlot InputSlot => inventory[0];
         public ItemSlot OutputSlot => inventory[1];
 
@@ -409,4 +528,113 @@ namespace VSAirshipmod.NSBlockEntity
         }
 
     }
+
+    //Might wanna move this to its own file depending on how other people want to keep things organized
+    public class AutoloomAxleRenderer : IRenderer
+    {
+        BlockEntityAutoloom be;
+        ICoreClientAPI capi;
+        internal MeshRef meshRef;
+
+        public Matrixf ModelMat = new Matrixf();
+        public float AngleRad;
+
+        public AutoloomAxleRenderer(BlockEntityAutoloom be)
+        {
+            this.be = be;
+            capi = be.Api as ICoreClientAPI;
+
+            // Generate mesh once
+            MeshData mesh = be.GenAxleMesh();
+            if (mesh != null)
+            {
+                meshRef = capi.Render.UploadMesh(mesh);
+            }
+        }
+
+        public double RenderOrder => 0.5;
+        public int RenderRange => 24;
+
+        public void OnRenderFrame(float deltaTime, EnumRenderStage stage)
+        {
+            if (meshRef == null) return;
+            if (stage != EnumRenderStage.Opaque) return;
+
+
+            Vec3d camPos = capi.World.Player.Entity.CameraPos;
+            IRenderAPI rpi = capi.Render;
+
+            rpi.GlDisableCullFace();
+            rpi.GlToggleBlend(true);
+
+            IStandardShaderProgram prog = rpi.PreparedStandardShader(be.Pos.X, be.Pos.Y, be.Pos.Z);
+            prog.Tex2D = capi.BlockTextureAtlas.AtlasTextures[0].TextureId;
+
+
+            // Determine block rotation from facing
+            float GetFacingAngle(BlockFacing facing)
+            {
+                if (facing == BlockFacing.HORIZONTALS[0]) return 0f;    // North
+                if (facing == BlockFacing.HORIZONTALS[1]) return 270f;   // East
+                if (facing == BlockFacing.HORIZONTALS[2]) return 180f;  // South
+                if (facing == BlockFacing.HORIZONTALS[3]) return 90f;  // West
+                return 0f;
+            }
+
+            bool ShouldInvertRotation(BlockFacing facing)
+            {
+                //invert for north and east
+                return facing == BlockFacing.HORIZONTALS[0] || facing == BlockFacing.HORIZONTALS[1];
+            }
+
+            //Rotation angle based DIRECTLY on mechanical power
+            if (be.mpc != null)
+            {
+                BlockFacing facing = BlockFacing.FromCode(be.Block.LastCodePart());
+                AngleRad = be.mpc.AngleRad;
+
+                if (ShouldInvertRotation(facing))
+                {
+                    AngleRad = -AngleRad;
+                }
+            }
+
+            float rotY = 0f;
+            if (be.Block.LastCodePart() != null)
+            {
+                BlockFacing facing = BlockFacing.FromCode(be.Block.LastCodePart());
+                rotY = GetFacingAngle(facing);
+            }
+
+
+            prog.ModelMatrix = ModelMat
+                .Identity()
+                .Translate(be.Pos.X - camPos.X + 0.5f, be.Pos.Y - camPos.Y + 0.5f, be.Pos.Z - camPos.Z + 0.5f) //center of block
+                .RotateY(rotY * GameMath.DEG2RAD)// block orientation
+                .Rotate(AngleRad, 0f, 0f)
+                .Translate(-0.5f, -0.5f, -0.5f)
+                .Values;
+
+
+            prog.ViewMatrix = rpi.CameraMatrixOriginf;
+            prog.ProjectionMatrix = rpi.CurrentProjectionMatrix;
+
+            rpi.RenderMesh(meshRef);
+            prog.Stop();
+        }
+
+
+        public void Dispose()
+        {
+            if (meshRef != null)
+            {
+                meshRef.Dispose();
+                meshRef = null;
+            }
+
+            capi?.Event.UnregisterRenderer(this, EnumRenderStage.Opaque);
+        }
+    }
+
+
 }
