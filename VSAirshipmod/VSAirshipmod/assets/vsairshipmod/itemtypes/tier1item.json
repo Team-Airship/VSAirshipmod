@@ -13,11 +13,11 @@
   ],
   "shapeByType": {
     "*": {
-      "base": "entity/{type}",
-      "ignoreElements": [ "hideWater", "FLATBALLOON" ]
+      "base": "item/{type}packedbag",
+      "ignoreElements": [ "hideWater" ]
     }
   },
-  "shapeInventoryByType": { "*": { "base": "entity/{type}" } },
+  "shapeInventoryByType": { "*": { "base": "block/{type}packed" } },
   "texturesByType": {
     "*": {
       "candle": { "base": "game:block/candle" },
