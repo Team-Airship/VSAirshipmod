@@ -13214,7 +13214,7 @@
 			"code": "deflation",
 			"quantityframes": 120,
 			"onActivityStopped": "Rewind",
-			"onAnimationEnd": "Repeat",
+			"onAnimationEnd": "Hold",
 			"keyframes": [
 				{
 					"frame": 0,

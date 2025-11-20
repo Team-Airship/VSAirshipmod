@@ -20,7 +20,10 @@
   "incontainer-item-coatingliquid": "Balloon coating liquid",
   "vsairshipmod:item-treatedcloth*": "Treated balloon cloth",
 
-  "vsairshipmod:item-*vsairshipmodroller-tier1": "Tier 1 (air)Shipyard",
+  "vsairshipmod:item-vsairshipmodroller-tier1": "Tier 1 (air)Shipyard",
+  "vsairshipmod:item-*vsairshipmodconstruction-tier1-*": "Tier 1 (air)Shipyard",
+  "creature-vsairshipmod:vsairshipmodconstruction-tier1-*-SeleAP": "<br><font color='yellow'>• Launch Pad•</font>",
+
   "vsairshipmod:item-*airship-tier1-*": "Tier 1 Airship",
   "creature-vsairshipmod:airship-tier1-*-lanternstorageAP": "<br><font color='yellow'>• Lantern slot •</font>",
   "creature-vsairshipmod:airship-tier1-*-riderseatAP": "<br><font color='yellow'>• Pilot Seat!!! •</font>",

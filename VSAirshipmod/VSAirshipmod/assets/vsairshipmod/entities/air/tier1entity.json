@@ -143,6 +143,13 @@
         "easeOutSpeed": 2
       },
       {
+        "code": "deflation",
+        "animation": "deflation",
+        "animationSpeed": 1,
+        "easeInSpeed": 1,
+        "easeOutSpeed": 1
+      },
+      {
         "code": "weathervane",
         "animation": "weathervane",
         "animationSpeed": 0,

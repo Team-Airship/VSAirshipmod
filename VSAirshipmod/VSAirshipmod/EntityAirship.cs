@@ -268,6 +268,29 @@ namespace VSAirshipmod
             } 
         }
 
+        public virtual float Inflate
+        {
+            get {
+                return WatchedAttributes.GetFloat("Inflate");
+            }
+            set
+            {
+                WatchedAttributes.SetFloat("Inflate", value);
+            }
+        }
+
+        public virtual bool Ready
+        {
+            get
+            {
+                return WatchedAttributes.GetFloat("Inflate") >= 3;
+            }
+            set
+            {
+                WatchedAttributes.SetBool("Ready", value);
+            }
+        }
+
         public double RenderOrder => 0;
         public int RenderRange => 999;
 
@@ -308,10 +331,17 @@ namespace VSAirshipmod
             unfurlSails = properties.Attributes["unfurlSails"].AsBool(false);
 
             capi = api as ICoreClientAPI;
+
             if (capi != null)
             {
                 capi.Event.RegisterRenderer(this, EnumRenderStage.Before, "boatsim");
                 modsysSounds = api.ModLoader.GetModSystem<ModSystemAirshipSounds>();
+
+                if (!Ready)
+                {
+                    if (!AnimManager.IsAnimationActive("deflation"))
+                        AnimManager.StartAnimation("deflation");
+                }
             }
         }
 
@@ -392,6 +422,17 @@ namespace VSAirshipmod
                     AnimManager.StopAnimation("godown");
                     AnimManager.StopAnimation("pump");
                 }
+                //Api.Logger.Notification(Inflate ? "Yes" : "No");
+                if (Inflate > 0)
+                {
+                    AnimManager.StopAnimation("deflation");
+                }
+                else
+                {
+                    if (!AnimManager.IsAnimationActive("deflation"))
+                        AnimManager.StartAnimation("deflation");
+                }
+
                 //AnimManager.AnimationsDirty = true;
 
                 //this.weatherVaneAnimCode = "weathervane";
@@ -406,13 +447,13 @@ namespace VSAirshipmod
                 if (anim != null)
                 {
                     //Api.Logger.Notification("" + anim.CurrentFrame);
-                    anim.CurrentFrame = (Fuel/64f)*36f; // * 57.295776f / 10f;
+                    anim.CurrentFrame = (float)Math.Floor((Fuel/64f)*36f); // * 57.295776f / 10f;
                     anim.BlendedWeight = 1f;
                     anim.EasingFactor = 1f;
                     //Api.Logger.Notification("" + anim.AnimProgress);
                 }
                 //Api.Logger.Notification(anim != null ? "Not Null":"Null");
-                
+
             }
             
         }
@@ -479,6 +520,7 @@ namespace VSAirshipmod
         double horizontalmodifier = 3;
         double FuelTimer = 0;
 
+
         protected void updateBoatAngleAndMotion(float dt)
         {
             // Ignore lag spikes
@@ -493,21 +535,38 @@ namespace VSAirshipmod
             ForwardSpeed += (motion.X * SpeedMultiplier - ForwardSpeed) * dt;
             AngularVelocity += (motion.Z * (TurnMultiplier / AngularVelocityDivider) - AngularVelocity) * dt;
             HorizontalVelocity = 0;
-            if (motion.Y < 0 ||(motion.Y > 0 && (FuelTimer > 0 || Fuel > 0))) {
-                if (FuelTimer <= 0)
+            if (motion.Y > 0)
+            {
+                Inflate = Math.Min(Inflate + dt,3);
+                
+                if (FuelTimer > 0 || Fuel > 0)
                 {
-                    FuelTimer = 6;
-                    if(Api is ICoreServerAPI sapi) { 
-                        Fuel -= 1; 
+                    if (FuelTimer <= 0)
+                    {
+                        FuelTimer = 6;
+                        if (Api is ICoreServerAPI sapi)
+                        {
+                            Fuel -= 1;
+                        }
                     }
-                    
+                    else
+                    {
+                        FuelTimer -= dt;
+                    }
+                    if (Ready) 
+                        HorizontalVelocity = motion.Y * dt;//+= (motion.Y * SpeedMultiplier - HorizontalVelocity) * dt;
                 }
-                else
-                {
-                    FuelTimer -= dt;
-                }
-                HorizontalVelocity = motion.Y * dt;//+= (motion.Y * SpeedMultiplier - HorizontalVelocity) * dt;
             }
+            else if (motion.Y < 0 && Ready)
+            {
+                HorizontalVelocity = motion.Y * dt;
+            }
+            else if (!Ready || (OnGround && !playerSeated))
+            {
+                //Api.Logger.Notification("Try Deflate: "+ !Ready);
+                Inflate = 0;
+            }
+            //Api.Logger.Notification("Try Deflate: " + !Ready);
 
 
             if (!IsFlying && HorizontalVelocity == 0) return;
@@ -582,6 +641,7 @@ namespace VSAirshipmod
             return agent.RightHandItemSlot.Itemstack.Collectible.Attributes?.IsTrue("paddlingTool") == true;
         }
 
+        bool playerSeated = false;
         public virtual Vec3d SeatsToMotion(float dt)
         {
             int seatsRowing = 0;
@@ -592,12 +652,12 @@ namespace VSAirshipmod
 
             var bh = GetBehavior<EntityBehaviorSeatable>();
             bh.Controller = null;
-
+            playerSeated = false;
             foreach (var sseat in bh.Seats)
             {
                 var seat = sseat as EntityAirshipSeat;
                 if (seat == null || seat.Passenger == null) continue;
-
+                playerSeated = true;
                 if (!(seat.Passenger is EntityPlayer))
                 {
                     seat.Passenger.SidedPos.Yaw = SidedPos.Yaw;
