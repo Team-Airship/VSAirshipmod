@@ -2,8 +2,27 @@
 	"code": "spinner",
 	"class": "BlockSpinner",
 	"entityClass": "Spinner",
-	"entityBehaviors": [ { "name": "MPConsumer" }, { "name": "Animatable" } ],
-	"behaviors": [ { "name": "Container" }, { "name": "HorizontalOrientable" }, { "name": "Multiblock", "properties": { "sizex": 1, "sizey": 2, "sizez": 1, "cposition": { x: 0, y: 0, z: 0 } } } ],
+	"entityBehaviors": [
+		{ "name": "MPConsumer" },
+		{ "name": "Animatable" }
+	],
+	"behaviors": [
+		{ "name": "Container" },
+		{ "name": "HorizontalOrientable" },
+		{
+			"name": "Multiblock",
+			"properties": {
+				"sizex": 1,
+				"sizey": 2,
+				"sizez": 1,
+				"cposition": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				}
+			}
+		}
+	],
 	"attributes": {
 		"mapColorCode": "settlement",
 		"handbook": {
@@ -13,9 +32,12 @@
 	"variantgroups": [
 		{
 			"code": "metal",
-			"states": [ "tinbronze", "bismuthbronze", "blackbronze"]
+			"states": [ "tinbronze", "bismuthbronze", "blackbronze" ]
 		},
-		{ "code":"side", "loadFromProperties": "abstract/horizontalorientation" }
+		{
+			"code": "side",
+			"loadFromProperties": "abstract/horizontalorientation"
+		}
 	],
 	"creativeinventory": {
 		"general": [ "*-north" ],
@@ -24,10 +46,22 @@
 		"airship": [ "*-north" ]
 	},
 	"shapebytype": {
-		"*-north": { "base": "vsairshipmod:block/waterframe", "rotateY": 0 },
-		"*-east": { "base": "vsairshipmod:block/waterframe", "rotateY": 270 },
-		"*-south": { "base": "vsairshipmod:block/waterframe", "rotateY": 180 },
-		"*-west": { "base": "vsairshipmod:block/waterframe", "rotateY": 90 }
+		"*-north": {
+			"base": "vsairshipmod:block/waterframe",
+			"rotateY": 0
+		},
+		"*-east": {
+			"base": "vsairshipmod:block/waterframe",
+			"rotateY": 270
+		},
+		"*-south": {
+			"base": "vsairshipmod:block/waterframe",
+			"rotateY": 180
+		},
+		"*-west": {
+			"base": "vsairshipmod:block/waterframe",
+			"rotateY": 90
+		}
 	},
 	"drawtype": "json",
 	"blockmaterial": "Wood",
@@ -74,6 +108,17 @@
 	},
 	"lightAbsorption": 0,
 	"maxStackSize": 1,
+	"heldTpIdleAnimation": "holdbothhandslarge",
 	"replaceable": 600,
-	"resistance": 1.5
+	"resistance": 1.5,
+	guiTransform: {
+		translation: { x: 0, y: 9, z: 0 },
+		rotation: { x: -20, y: -145, z: 0 },
+		scale: 0.94
+	},
+	tpHandTransform: {
+		translation: { x: -1.2, y: -1.1, z: -0.85 },
+		rotation: { x: -83, y: 9, z: -99 },
+		scale: 0.37
+	}
 }
