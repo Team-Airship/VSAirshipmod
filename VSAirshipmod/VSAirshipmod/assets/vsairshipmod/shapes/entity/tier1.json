@@ -13459,180 +13459,1259 @@
 				{
 					"frame": 0,
 					"elements": {
-						"hosepivot_1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"hosepivot_2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"hosepivot_3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"hosepivot_4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"hosepivot_5": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"hose_pivot_7": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Rope_PIVOT_2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Rope_PIVOT_1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Rope4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Rope19": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Rope17": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Rope27": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Rope26": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Rope28": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Rope29": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Rope30": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Rope_piston 2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Rope_piston_1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"Rope31": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Rope32": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Rope33": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"hose_pivot_8": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"hose_pivot_9": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"hose_pivot_10": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"lanternPIVOT": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Rope_PIVOT_4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"VENT LINE 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"VENT LINE 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"hose_pivot_11": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -5.0 },
-						"vent line 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"vent line 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+						"hosepivot_1": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"hosepivot_2": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"hosepivot_3": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"hosepivot_4": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"hosepivot_5": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"hose_pivot_7": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"Rope_PIVOT_2": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"Rope_PIVOT_1": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"Rope4": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"Rope19": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"Rope17": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"Rope27": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"Rope26": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"Rope28": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"Rope29": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"Rope30": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"Rope_piston 2": {
+							"offsetX": 0.0,
+							"offsetY": 0.0,
+							"offsetZ": 0.0
+						},
+						"Rope_piston_1": {
+							"offsetX": 0.0,
+							"offsetY": 0.0,
+							"offsetZ": 0.0
+						},
+						"Rope31": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"Rope32": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"Rope33": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"hose_pivot_8": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"hose_pivot_9": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"hose_pivot_10": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"lanternPIVOT": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"Rope_PIVOT_4": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"VENT LINE 2": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"VENT LINE 3": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"hose_pivot_11": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -5.0
+						},
+						"vent line 1": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"vent line 4": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						}
 					}
 				},
 				{
 					"frame": 15,
 					"elements": {
-						"hose_pivot_9": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -10.0 },
-						"hose_pivot_11": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 8.5 }
+						"hose_pivot_9": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -10.0
+						},
+						"hose_pivot_11": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 8.5
+						}
 					}
 				},
 				{
 					"frame": 30,
 					"elements": {
-						"Rope_PIVOT_1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -23.5244 },
-						"Rope_piston 2": { "offsetX": 0.0, "offsetY": 3.521, "offsetZ": 0.0 },
-						"Rope_piston_1": { "offsetX": 0.0, "offsetY": 3.521, "offsetZ": 0.0 },
-						"Rope27": { "rotationX": 0.0, "rotationY": -14.2003, "rotationZ": 6.5672 },
-						"hose_pivot_9": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -10.0 },
-						"hose_pivot_10": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -5.0 },
-						"hose_pivot_11": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 10.0 }
+						"Rope_PIVOT_1": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -23.5244
+						},
+						"Rope_piston 2": {
+							"offsetX": 0.0,
+							"offsetY": 3.521,
+							"offsetZ": 0.0
+						},
+						"Rope_piston_1": {
+							"offsetX": 0.0,
+							"offsetY": 3.521,
+							"offsetZ": 0.0
+						},
+						"Rope27": {
+							"rotationX": 0.0,
+							"rotationY": -14.2003,
+							"rotationZ": 6.5672
+						},
+						"hose_pivot_9": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -10.0
+						},
+						"hose_pivot_10": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -5.0
+						},
+						"hose_pivot_11": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 10.0
+						}
 					}
 				},
 				{
 					"frame": 45,
 					"elements": {
-						"hose_pivot_9": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -11.0 },
-						"hose_pivot_10": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -3.5 },
-						"hose_pivot_7": { "rotationX": 8.5, "rotationY": 0.0, "rotationZ": -13.5 }
+						"hose_pivot_9": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -11.0
+						},
+						"hose_pivot_10": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -3.5
+						},
+						"hose_pivot_7": {
+							"rotationX": 8.5,
+							"rotationY": 0.0,
+							"rotationZ": -13.5
+						}
 					}
 				},
 				{
 					"frame": 60,
 					"elements": {
-						"Rope_PIVOT_1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -44.8723 },
-						"Rope28": { "rotationX": 1.3501, "rotationY": -1.0084, "rotationZ": 31.6891 },
-						"Rope17": { "rotationX": -7.563, "rotationY": -6.5546, "rotationZ": 18.2717 },
-						"Rope27": { "rotationX": 0.0, "rotationY": -16.4006, "rotationZ": 13.1345 },
-						"hosepivot_1": { "rotationX": -3.0, "rotationY": 0.0, "rotationZ": 10.0 },
-						"hosepivot_2": { "rotationX": -10.0, "rotationY": 0.0, "rotationZ": -10.0 },
-						"hosepivot_3": { "rotationX": 14.563, "rotationY": 0.0, "rotationZ": -40.1261 },
-						"hosepivot_4": { "rotationX": 14.0588, "rotationY": 0.0, "rotationZ": -30.0 },
-						"hosepivot_5": { "rotationX": -16.563, "rotationY": 0.0, "rotationZ": 5.0 },
-						"hose_pivot_7": { "rotationX": 6.0, "rotationY": 0.0, "rotationZ": -18.0 },
-						"hose_pivot_8": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -10.0 },
-						"hose_pivot_9": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -10.0 },
-						"hose_pivot_10": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"hose_pivot_11": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 15.0 }
+						"Rope_PIVOT_1": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -44.8723
+						},
+						"Rope28": {
+							"rotationX": 1.3501,
+							"rotationY": -1.0084,
+							"rotationZ": 31.6891
+						},
+						"Rope17": {
+							"rotationX": -7.563,
+							"rotationY": -6.5546,
+							"rotationZ": 18.2717
+						},
+						"Rope27": {
+							"rotationX": 0.0,
+							"rotationY": -16.4006,
+							"rotationZ": 13.1345
+						},
+						"hosepivot_1": {
+							"rotationX": -3.0,
+							"rotationY": 0.0,
+							"rotationZ": 10.0
+						},
+						"hosepivot_2": {
+							"rotationX": -10.0,
+							"rotationY": 0.0,
+							"rotationZ": -10.0
+						},
+						"hosepivot_3": {
+							"rotationX": 14.563,
+							"rotationY": 0.0,
+							"rotationZ": -40.1261
+						},
+						"hosepivot_4": {
+							"rotationX": 14.0588,
+							"rotationY": 0.0,
+							"rotationZ": -30.0
+						},
+						"hosepivot_5": {
+							"rotationX": -16.563,
+							"rotationY": 0.0,
+							"rotationZ": 5.0
+						},
+						"hose_pivot_7": {
+							"rotationX": 6.0,
+							"rotationY": 0.0,
+							"rotationZ": -18.0
+						},
+						"hose_pivot_8": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -10.0
+						},
+						"hose_pivot_9": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -10.0
+						},
+						"hose_pivot_10": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"hose_pivot_11": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 15.0
+						}
 					}
 				},
 				{
 					"frame": 70,
 					"elements": {
-						"VENT LINE 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -56.7647 },
-						"VENT LINE 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+						"VENT LINE 2": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -56.7647
+						},
+						"VENT LINE 3": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						}
 					}
 				},
 				{
 					"frame": 75,
 					"elements": {
-						"hose_pivot_9": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -10.0 },
-						"hose_pivot_10": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -2.0 },
-						"hose_pivot_7": { "rotationX": 8.4746, "rotationY": 0.0, "rotationZ": -21.0508 }
+						"hose_pivot_9": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -10.0
+						},
+						"hose_pivot_10": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -2.0
+						},
+						"hose_pivot_7": {
+							"rotationX": 8.4746,
+							"rotationY": 0.0,
+							"rotationZ": -21.0508
+						}
 					}
 				},
 				{
 					"frame": 90,
 					"elements": {
-						"Rope_PIVOT_1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -64.6593 },
-						"Rope_piston 2": { "offsetX": 0.0, "offsetY": 9.063, "offsetZ": 0.0 },
-						"Rope_piston_1": { "offsetX": 0.0, "offsetY": 9.063, "offsetZ": 0.0 },
-						"Rope28": { "rotationX": 2.0252, "rotationY": -1.5126, "rotationZ": 43.0336 },
-						"Rope29": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -13.563 },
-						"Rope30": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -18.1261 },
-						"Rope17": { "rotationX": -11.3445, "rotationY": -9.8319, "rotationZ": 22.9076 },
-						"Rope27": { "rotationX": 0.0, "rotationY": -14.1008, "rotationZ": 24.2017 },
-						"lanternPIVOT": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 71.0 },
-						"hose_pivot_9": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -10.0 },
-						"hose_pivot_7": { "rotationX": 10.0, "rotationY": 0.0, "rotationZ": -24.1017 }
+						"Rope_PIVOT_1": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -64.6593
+						},
+						"Rope_piston 2": {
+							"offsetX": 0.0,
+							"offsetY": 9.063,
+							"offsetZ": 0.0
+						},
+						"Rope_piston_1": {
+							"offsetX": 0.0,
+							"offsetY": 9.063,
+							"offsetZ": 0.0
+						},
+						"Rope28": {
+							"rotationX": 2.0252,
+							"rotationY": -1.5126,
+							"rotationZ": 43.0336
+						},
+						"Rope29": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -13.563
+						},
+						"Rope30": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -18.1261
+						},
+						"Rope17": {
+							"rotationX": -11.3445,
+							"rotationY": -9.8319,
+							"rotationZ": 22.9076
+						},
+						"Rope27": {
+							"rotationX": 0.0,
+							"rotationY": -14.1008,
+							"rotationZ": 24.2017
+						},
+						"lanternPIVOT": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 71.0
+						},
+						"hose_pivot_9": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -10.0
+						},
+						"hose_pivot_7": {
+							"rotationX": 10.0,
+							"rotationY": 0.0,
+							"rotationZ": -24.1017
+						}
 					}
 				},
 				{
 					"frame": 106,
 					"elements": {
-						"Rope_PIVOT_4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 82.484 }
+						"Rope_PIVOT_4": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 82.484
+						}
 					}
 				},
 				{
 					"frame": 107,
 					"elements": {
-						"Rope_PIVOT_4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 70.6006 }
+						"Rope_PIVOT_4": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 70.6006
+						}
 					}
 				},
 				{
 					"frame": 110,
 					"elements": {
-						"Rope_PIVOT_4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 58.2005 }
+						"Rope_PIVOT_4": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 58.2005
+						}
 					}
 				},
 				{
 					"frame": 115,
 					"elements": {
-						"Rope_PIVOT_4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 49.8669 }
+						"Rope_PIVOT_4": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 49.8669
+						}
 					}
 				},
 				{
 					"frame": 118,
 					"elements": {
-						"barrel lid hinge": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+						"barrel lid hinge": {
+							"offsetX": 0.0,
+							"offsetY": 0.0,
+							"offsetZ": 0.0,
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						}
 					}
 				},
 				{
 					"frame": 119,
 					"elements": {
-						"hosepivot_1": { "rotationX": -4.0, "rotationY": 0.0, "rotationZ": -15.0 },
-						"hosepivot_2": { "rotationX": -10.0, "rotationY": 0.0, "rotationZ": -30.0 },
-						"hosepivot_3": { "rotationX": 15.0, "rotationY": 0.0, "rotationZ": -30.0 },
-						"hosepivot_4": { "rotationX": 14.0, "rotationY": 0.0, "rotationZ": -30.0 },
-						"hosepivot_5": { "rotationX": -15.0, "rotationY": 0.0, "rotationZ": -25.0 },
-						"hose_pivot_7": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -30.0 },
-						"Rope_PIVOT_2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -95.0 },
-						"Rope_PIVOT_1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -83.0 },
-						"Rope4": { "rotationX": 3.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Rope19": { "rotationX": -3.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Rope17": { "rotationX": -15.0, "rotationY": -13.0, "rotationZ": 25.0 },
-						"Rope27": { "rotationX": 0.0, "rotationY": -16.0, "rotationZ": 32.0 },
-						"Rope26": { "rotationX": -13.0, "rotationY": 0.0, "rotationZ": 5.0 },
-						"Rope28": { "rotationX": 4.0, "rotationY": -2.0, "rotationZ": 45.0 },
-						"Rope29": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -10.0 },
-						"Rope30": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -20.0 },
-						"Rope_piston 2": { "offsetX": 0.0, "offsetY": 11.0, "offsetZ": 0.0 },
-						"Rope_piston_1": { "offsetX": 0.0, "offsetY": 11.0, "offsetZ": 0.0 },
-						"Rope31": { "rotationX": 25.0, "rotationY": 30.0, "rotationZ": 0.0 },
-						"Rope32": { "rotationX": 25.0, "rotationY": 1.0, "rotationZ": -26.0 },
-						"Rope33": { "rotationX": 40.0, "rotationY": 8.0, "rotationZ": -23.0 },
-						"hose_pivot_8": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -3.0 },
-						"hose_pivot_9": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -3.0 },
-						"hose_pivot_10": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -2.0 },
-						"lanternPIVOT": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 77.0 },
-						"Rope_PIVOT_4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 45.0 },
-						"VENT LINE 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -54.0 },
-						"VENT LINE 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -41.0 },
-						"vent line 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -10.0 },
-						"vent line 4": { "offsetX": 1.2, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 16.7 },
-						"barrel lid hinge": { "offsetX": 5.0, "offsetY": 0.0, "offsetZ": 1.3, "rotationX": 0.0, "rotationY": -12.0, "rotationZ": 0.0 }
+						"hosepivot_1": {
+							"rotationX": -4.0,
+							"rotationY": 0.0,
+							"rotationZ": -15.0
+						},
+						"hosepivot_2": {
+							"rotationX": -10.0,
+							"rotationY": 0.0,
+							"rotationZ": -30.0
+						},
+						"hosepivot_3": {
+							"rotationX": 15.0,
+							"rotationY": 0.0,
+							"rotationZ": -30.0
+						},
+						"hosepivot_4": {
+							"rotationX": 14.0,
+							"rotationY": 0.0,
+							"rotationZ": -30.0
+						},
+						"hosepivot_5": {
+							"rotationX": -15.0,
+							"rotationY": 0.0,
+							"rotationZ": -25.0
+						},
+						"hose_pivot_7": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -30.0
+						},
+						"Rope_PIVOT_2": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -95.0
+						},
+						"Rope_PIVOT_1": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -83.0
+						},
+						"Rope4": {
+							"rotationX": 3.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"Rope19": {
+							"rotationX": -3.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"Rope17": {
+							"rotationX": -15.0,
+							"rotationY": -13.0,
+							"rotationZ": 25.0
+						},
+						"Rope27": {
+							"rotationX": 0.0,
+							"rotationY": -16.0,
+							"rotationZ": 32.0
+						},
+						"Rope26": {
+							"rotationX": -13.0,
+							"rotationY": 0.0,
+							"rotationZ": 5.0
+						},
+						"Rope28": {
+							"rotationX": 4.0,
+							"rotationY": -2.0,
+							"rotationZ": 45.0
+						},
+						"Rope29": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -10.0
+						},
+						"Rope30": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -20.0
+						},
+						"Rope_piston 2": {
+							"offsetX": 0.0,
+							"offsetY": 11.0,
+							"offsetZ": 0.0
+						},
+						"Rope_piston_1": {
+							"offsetX": 0.0,
+							"offsetY": 11.0,
+							"offsetZ": 0.0
+						},
+						"Rope31": {
+							"rotationX": 25.0,
+							"rotationY": 30.0,
+							"rotationZ": 0.0
+						},
+						"Rope32": {
+							"rotationX": 25.0,
+							"rotationY": 1.0,
+							"rotationZ": -26.0
+						},
+						"Rope33": {
+							"rotationX": 40.0,
+							"rotationY": 8.0,
+							"rotationZ": -23.0
+						},
+						"hose_pivot_8": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -3.0
+						},
+						"hose_pivot_9": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -3.0
+						},
+						"hose_pivot_10": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -2.0
+						},
+						"lanternPIVOT": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 77.0
+						},
+						"Rope_PIVOT_4": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 45.0
+						},
+						"VENT LINE 2": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -54.0
+						},
+						"VENT LINE 3": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -41.0
+						},
+						"vent line 1": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -10.0
+						},
+						"vent line 4": {
+							"offsetX": 1.2,
+							"offsetY": 0.0,
+							"offsetZ": 0.0,
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 16.7
+						},
+						"barrel lid hinge": {
+							"offsetX": 5.0,
+							"offsetY": 0.0,
+							"offsetZ": 1.3,
+							"rotationX": 0.0,
+							"rotationY": -12.0,
+							"rotationZ": 0.0
+						}
+					}
+				}
+			]
+		},
+
+		{
+			"name": "Inflation",
+			"code": "inflation",
+			"quantityframes": 120,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "EaseOut",
+			"keyframes": [
+				{
+					"frame": 119,
+					"elements": {
+						"hosepivot_1": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"hosepivot_2": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"hosepivot_3": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"hosepivot_4": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"hosepivot_5": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"hose_pivot_7": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"Rope_PIVOT_2": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"Rope_PIVOT_1": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"Rope4": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"Rope19": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"Rope17": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"Rope27": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"Rope26": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"Rope28": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"Rope29": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"Rope30": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"Rope_piston 2": {
+							"offsetX": 0.0,
+							"offsetY": 0.0,
+							"offsetZ": 0.0
+						},
+						"Rope_piston_1": {
+							"offsetX": 0.0,
+							"offsetY": 0.0,
+							"offsetZ": 0.0
+						},
+						"Rope31": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"Rope32": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"Rope33": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"hose_pivot_8": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"hose_pivot_9": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"hose_pivot_10": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"lanternPIVOT": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"Rope_PIVOT_4": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"VENT LINE 2": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"VENT LINE 3": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"hose_pivot_11": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -5.0
+						},
+						"vent line 1": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"vent line 4": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						}
+					}
+				},
+				{
+					"frame": 104,
+					"elements": {
+						"hose_pivot_9": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -10.0
+						},
+						"hose_pivot_11": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 8.5
+						}
+					}
+				},
+				{
+					"frame": 89,
+					"elements": {
+						"Rope_PIVOT_1": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -23.5244
+						},
+						"Rope_piston 2": {
+							"offsetX": 0.0,
+							"offsetY": 3.521,
+							"offsetZ": 0.0
+						},
+						"Rope_piston_1": {
+							"offsetX": 0.0,
+							"offsetY": 3.521,
+							"offsetZ": 0.0
+						},
+						"Rope27": {
+							"rotationX": 0.0,
+							"rotationY": -14.2003,
+							"rotationZ": 6.5672
+						},
+						"hose_pivot_9": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -10.0
+						},
+						"hose_pivot_10": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -5.0
+						},
+						"hose_pivot_11": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 10.0
+						}
+					}
+				},
+				{
+					"frame": 74,
+					"elements": {
+						"hose_pivot_9": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -11.0
+						},
+						"hose_pivot_10": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -3.5
+						},
+						"hose_pivot_7": {
+							"rotationX": 8.5,
+							"rotationY": 0.0,
+							"rotationZ": -13.5
+						}
+					}
+				},
+				{
+					"frame": 59,
+					"elements": {
+						"Rope_PIVOT_1": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -44.8723
+						},
+						"Rope28": {
+							"rotationX": 1.3501,
+							"rotationY": -1.0084,
+							"rotationZ": 31.6891
+						},
+						"Rope17": {
+							"rotationX": -7.563,
+							"rotationY": -6.5546,
+							"rotationZ": 18.2717
+						},
+						"Rope27": {
+							"rotationX": 0.0,
+							"rotationY": -16.4006,
+							"rotationZ": 13.1345
+						},
+						"hosepivot_1": {
+							"rotationX": -3.0,
+							"rotationY": 0.0,
+							"rotationZ": 10.0
+						},
+						"hosepivot_2": {
+							"rotationX": -10.0,
+							"rotationY": 0.0,
+							"rotationZ": -10.0
+						},
+						"hosepivot_3": {
+							"rotationX": 14.563,
+							"rotationY": 0.0,
+							"rotationZ": -40.1261
+						},
+						"hosepivot_4": {
+							"rotationX": 14.0588,
+							"rotationY": 0.0,
+							"rotationZ": -30.0
+						},
+						"hosepivot_5": {
+							"rotationX": -16.563,
+							"rotationY": 0.0,
+							"rotationZ": 5.0
+						},
+						"hose_pivot_7": {
+							"rotationX": 6.0,
+							"rotationY": 0.0,
+							"rotationZ": -18.0
+						},
+						"hose_pivot_8": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -10.0
+						},
+						"hose_pivot_9": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -10.0
+						},
+						"hose_pivot_10": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"hose_pivot_11": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 15.0
+						}
+					}
+				},
+				{
+					"frame": 49,
+					"elements": {
+						"VENT LINE 2": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -56.7647
+						},
+						"VENT LINE 3": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						}
+					}
+				},
+				{
+					"frame": 44,
+					"elements": {
+						"hose_pivot_9": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -10.0
+						},
+						"hose_pivot_10": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -2.0
+						},
+						"hose_pivot_7": {
+							"rotationX": 8.4746,
+							"rotationY": 0.0,
+							"rotationZ": -21.0508
+						}
+					}
+				},
+				{
+					"frame": 29,
+					"elements": {
+						"Rope_PIVOT_1": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -64.6593
+						},
+						"Rope_piston 2": {
+							"offsetX": 0.0,
+							"offsetY": 9.063,
+							"offsetZ": 0.0
+						},
+						"Rope_piston_1": {
+							"offsetX": 0.0,
+							"offsetY": 9.063,
+							"offsetZ": 0.0
+						},
+						"Rope28": {
+							"rotationX": 2.0252,
+							"rotationY": -1.5126,
+							"rotationZ": 43.0336
+						},
+						"Rope29": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -13.563
+						},
+						"Rope30": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -18.1261
+						},
+						"Rope17": {
+							"rotationX": -11.3445,
+							"rotationY": -9.8319,
+							"rotationZ": 22.9076
+						},
+						"Rope27": {
+							"rotationX": 0.0,
+							"rotationY": -14.1008,
+							"rotationZ": 24.2017
+						},
+						"lanternPIVOT": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 71.0
+						},
+						"hose_pivot_9": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -10.0
+						},
+						"hose_pivot_7": {
+							"rotationX": 10.0,
+							"rotationY": 0.0,
+							"rotationZ": -24.1017
+						}
+					}
+				},
+				{
+					"frame": 13,
+					"elements": {
+						"Rope_PIVOT_4": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 82.484
+						}
+					}
+				},
+				{
+					"frame": 12,
+					"elements": {
+						"Rope_PIVOT_4": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 70.6006
+						}
+					}
+				},
+				{
+					"frame": 9,
+					"elements": {
+						"Rope_PIVOT_4": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 58.2005
+						}
+					}
+				},
+				{
+					"frame": 4,
+					"elements": {
+						"Rope_PIVOT_4": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 49.8669
+						}
+					}
+				},
+				{
+					"frame": 1,
+					"elements": {
+						"barrel lid hinge": {
+							"offsetX": 0.0,
+							"offsetY": 0.0,
+							"offsetZ": 0.0,
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						}
+					}
+				},
+				{
+					"frame": 0,
+					"elements": {
+						"hosepivot_1": {
+							"rotationX": -4.0,
+							"rotationY": 0.0,
+							"rotationZ": -15.0
+						},
+						"hosepivot_2": {
+							"rotationX": -10.0,
+							"rotationY": 0.0,
+							"rotationZ": -30.0
+						},
+						"hosepivot_3": {
+							"rotationX": 15.0,
+							"rotationY": 0.0,
+							"rotationZ": -30.0
+						},
+						"hosepivot_4": {
+							"rotationX": 14.0,
+							"rotationY": 0.0,
+							"rotationZ": -30.0
+						},
+						"hosepivot_5": {
+							"rotationX": -15.0,
+							"rotationY": 0.0,
+							"rotationZ": -25.0
+						},
+						"hose_pivot_7": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -30.0
+						},
+						"Rope_PIVOT_2": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -95.0
+						},
+						"Rope_PIVOT_1": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -83.0
+						},
+						"Rope4": {
+							"rotationX": 3.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"Rope19": {
+							"rotationX": -3.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"Rope17": {
+							"rotationX": -15.0,
+							"rotationY": -13.0,
+							"rotationZ": 25.0
+						},
+						"Rope27": {
+							"rotationX": 0.0,
+							"rotationY": -16.0,
+							"rotationZ": 32.0
+						},
+						"Rope26": {
+							"rotationX": -13.0,
+							"rotationY": 0.0,
+							"rotationZ": 5.0
+						},
+						"Rope28": {
+							"rotationX": 4.0,
+							"rotationY": -2.0,
+							"rotationZ": 45.0
+						},
+						"Rope29": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -10.0
+						},
+						"Rope30": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -20.0
+						},
+						"Rope_piston 2": {
+							"offsetX": 0.0,
+							"offsetY": 11.0,
+							"offsetZ": 0.0
+						},
+						"Rope_piston_1": {
+							"offsetX": 0.0,
+							"offsetY": 11.0,
+							"offsetZ": 0.0
+						},
+						"Rope31": {
+							"rotationX": 25.0,
+							"rotationY": 30.0,
+							"rotationZ": 0.0
+						},
+						"Rope32": {
+							"rotationX": 25.0,
+							"rotationY": 1.0,
+							"rotationZ": -26.0
+						},
+						"Rope33": {
+							"rotationX": 40.0,
+							"rotationY": 8.0,
+							"rotationZ": -23.0
+						},
+						"hose_pivot_8": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -3.0
+						},
+						"hose_pivot_9": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -3.0
+						},
+						"hose_pivot_10": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -2.0
+						},
+						"lanternPIVOT": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 77.0
+						},
+						"Rope_PIVOT_4": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 45.0
+						},
+						"VENT LINE 2": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -54.0
+						},
+						"VENT LINE 3": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -41.0
+						},
+						"vent line 1": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -10.0
+						},
+						"vent line 4": {
+							"offsetX": 1.2,
+							"offsetY": 0.0,
+							"offsetZ": 0.0,
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 16.7
+						},
+						"barrel lid hinge": {
+							"offsetX": 5.0,
+							"offsetY": 0.0,
+							"offsetZ": 1.3,
+							"rotationX": 0.0,
+							"rotationY": -12.0,
+							"rotationZ": 0.0
+						}
 					}
 				}
 			]
@@ -13641,44 +14720,174 @@
 		{
 			"name": "Deflated",
 			"code": "deflated",
-			"quantityframes": 120,
-			"onActivityStopped": "Rewind",
+			"quantityframes": 2,
+			"onActivityStopped": "Stop",
 			"onAnimationEnd": "Hold",
 			"keyframes": [
 				{
-					"frame": 119,
+					"frame": 0,
 					"elements": {
-						"hosepivot_1": { "rotationX": -4.0, "rotationY": 0.0, "rotationZ": -15.0 },
-						"hosepivot_2": { "rotationX": -10.0, "rotationY": 0.0, "rotationZ": -30.0 },
-						"hosepivot_3": { "rotationX": 15.0, "rotationY": 0.0, "rotationZ": -30.0 },
-						"hosepivot_4": { "rotationX": 14.0, "rotationY": 0.0, "rotationZ": -30.0 },
-						"hosepivot_5": { "rotationX": -15.0, "rotationY": 0.0, "rotationZ": -25.0 },
-						"hose_pivot_7": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -30.0 },
-						"Rope_PIVOT_2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -95.0 },
-						"Rope_PIVOT_1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -83.0 },
-						"Rope4": { "rotationX": 3.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Rope19": { "rotationX": -3.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Rope17": { "rotationX": -15.0, "rotationY": -13.0, "rotationZ": 25.0 },
-						"Rope27": { "rotationX": 0.0, "rotationY": -16.0, "rotationZ": 32.0 },
-						"Rope26": { "rotationX": -13.0, "rotationY": 0.0, "rotationZ": 5.0 },
-						"Rope28": { "rotationX": 4.0, "rotationY": -2.0, "rotationZ": 45.0 },
-						"Rope29": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -10.0 },
-						"Rope30": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -20.0 },
-						"Rope_piston 2": { "offsetX": 0.0, "offsetY": 11.0, "offsetZ": 0.0 },
-						"Rope_piston_1": { "offsetX": 0.0, "offsetY": 11.0, "offsetZ": 0.0 },
-						"Rope31": { "rotationX": 25.0, "rotationY": 30.0, "rotationZ": 0.0 },
-						"Rope32": { "rotationX": 25.0, "rotationY": 1.0, "rotationZ": -26.0 },
-						"Rope33": { "rotationX": 40.0, "rotationY": 8.0, "rotationZ": -23.0 },
-						"hose_pivot_8": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -3.0 },
-						"hose_pivot_9": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -3.0 },
-						"hose_pivot_10": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -2.0 },
-						"lanternPIVOT": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 77.0 },
-						"Rope_PIVOT_4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 45.0 },
-						"VENT LINE 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -54.0 },
-						"VENT LINE 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -41.0 },
-						"vent line 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -10.0 },
-						"vent line 4": { "offsetX": 1.2, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 16.7 },
-						"barrel lid hinge": { "offsetX": 5.0, "offsetY": 0.0, "offsetZ": 1.3, "rotationX": 0.0, "rotationY": -12.0, "rotationZ": 0.0 }
+						"hosepivot_1": {
+							"rotationX": -4.0,
+							"rotationY": 0.0,
+							"rotationZ": -15.0
+						},
+						"hosepivot_2": {
+							"rotationX": -10.0,
+							"rotationY": 0.0,
+							"rotationZ": -30.0
+						},
+						"hosepivot_3": {
+							"rotationX": 15.0,
+							"rotationY": 0.0,
+							"rotationZ": -30.0
+						},
+						"hosepivot_4": {
+							"rotationX": 14.0,
+							"rotationY": 0.0,
+							"rotationZ": -30.0
+						},
+						"hosepivot_5": {
+							"rotationX": -15.0,
+							"rotationY": 0.0,
+							"rotationZ": -25.0
+						},
+						"hose_pivot_7": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -30.0
+						},
+						"Rope_PIVOT_2": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -95.0
+						},
+						"Rope_PIVOT_1": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -83.0
+						},
+						"Rope4": {
+							"rotationX": 3.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"Rope19": {
+							"rotationX": -3.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"Rope17": {
+							"rotationX": -15.0,
+							"rotationY": -13.0,
+							"rotationZ": 25.0
+						},
+						"Rope27": {
+							"rotationX": 0.0,
+							"rotationY": -16.0,
+							"rotationZ": 32.0
+						},
+						"Rope26": {
+							"rotationX": -13.0,
+							"rotationY": 0.0,
+							"rotationZ": 5.0
+						},
+						"Rope28": {
+							"rotationX": 4.0,
+							"rotationY": -2.0,
+							"rotationZ": 45.0
+						},
+						"Rope29": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -10.0
+						},
+						"Rope30": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -20.0
+						},
+						"Rope_piston 2": {
+							"offsetX": 0.0,
+							"offsetY": 11.0,
+							"offsetZ": 0.0
+						},
+						"Rope_piston_1": {
+							"offsetX": 0.0,
+							"offsetY": 11.0,
+							"offsetZ": 0.0
+						},
+						"Rope31": {
+							"rotationX": 25.0,
+							"rotationY": 30.0,
+							"rotationZ": 0.0
+						},
+						"Rope32": {
+							"rotationX": 25.0,
+							"rotationY": 1.0,
+							"rotationZ": -26.0
+						},
+						"Rope33": {
+							"rotationX": 40.0,
+							"rotationY": 8.0,
+							"rotationZ": -23.0
+						},
+						"hose_pivot_8": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -3.0
+						},
+						"hose_pivot_9": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -3.0
+						},
+						"hose_pivot_10": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -2.0
+						},
+						"lanternPIVOT": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 77.0
+						},
+						"Rope_PIVOT_4": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 45.0
+						},
+						"VENT LINE 2": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -54.0
+						},
+						"VENT LINE 3": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -41.0
+						},
+						"vent line 1": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -10.0
+						},
+						"vent line 4": {
+							"offsetX": 1.2,
+							"offsetY": 0.0,
+							"offsetZ": 0.0,
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 16.7
+						},
+						"barrel lid hinge": {
+							"offsetX": 5.0,
+							"offsetY": 0.0,
+							"offsetZ": 1.3,
+							"rotationX": 0.0,
+							"rotationY": -12.0,
+							"rotationZ": 0.0
+						}
 					}
 				}
 			]
@@ -13694,15 +14903,31 @@
 				{
 					"frame": 0,
 					"elements": {
-						"flag2pivot": { "rotationX": 0.0, "rotationY": -180.0, "rotationZ": 0.0 },
-						"flag1pivot": { "rotationX": 0.0, "rotationY": -180.0, "rotationZ": 0.0 }
+						"flag2pivot": {
+							"rotationX": 0.0,
+							"rotationY": -180.0,
+							"rotationZ": 0.0
+						},
+						"flag1pivot": {
+							"rotationX": 0.0,
+							"rotationY": -180.0,
+							"rotationZ": 0.0
+						}
 					}
 				},
 				{
 					"frame": 35,
 					"elements": {
-						"flag1pivot": { "rotationX": 0.0, "rotationY": 180.0, "rotationZ": 0.0 },
-						"flag2pivot": { "rotationX": 0.0, "rotationY": 180.0, "rotationZ": 0.0 }
+						"flag1pivot": {
+							"rotationX": 0.0,
+							"rotationY": 180.0,
+							"rotationZ": 0.0
+						},
+						"flag2pivot": {
+							"rotationX": 0.0,
+							"rotationY": 180.0,
+							"rotationZ": 0.0
+						}
 					}
 				}
 			]
@@ -13712,33 +14937,105 @@
 			"name": "Pump",
 			"code": "pump",
 			"quantityframes": 360,
-			"onActivityStopped": "EaseOut",
+			"onActivityStopped": "PlayTillEnd",
 			"onAnimationEnd": "Repeat",
 			"keyframes": [
 				{
 					"frame": 0,
 					"elements": {
-						"Gear1a": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -360.0 },
-						"Gear2p6x18d10": { "rotationX": 0.0, "rotationY": -360.0, "rotationZ": 0.0 },
-						"Gear2p6x18d5": { "rotationX": 0.0, "rotationY": -360.0, "rotationZ": 0.0 },
-						"Gear2x22p5": { "rotationX": 0.0, "rotationY": 360.0, "rotationZ": 0.0 },
-						"Gear2p6x18d": { "rotationX": 0.0, "rotationY": 360.0, "rotationZ": 0.0 },
-						"Gear1p6x30a": { "rotationX": 0.0, "rotationY": -360.0, "rotationZ": 0.0 },
-						"Gear1p6x30a6": { "rotationX": 0.0, "rotationY": 360.0, "rotationZ": 0.0 },
-						"Gear1p6x30a3": { "rotationX": 0.0, "rotationY": -360.0, "rotationZ": 0.0 }
+						"Gear1a": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": -360.0
+						},
+						"Gear2p6x18d10": {
+							"rotationX": 0.0,
+							"rotationY": -360.0,
+							"rotationZ": 0.0
+						},
+						"Gear2p6x18d5": {
+							"rotationX": 0.0,
+							"rotationY": -360.0,
+							"rotationZ": 0.0
+						},
+						"Gear2x22p5": {
+							"rotationX": 0.0,
+							"rotationY": 360.0,
+							"rotationZ": 0.0
+						},
+						"Gear2p6x18d": {
+							"rotationX": 0.0,
+							"rotationY": 360.0,
+							"rotationZ": 0.0
+						},
+						"Gear1p6x30a": {
+							"rotationX": 0.0,
+							"rotationY": -360.0,
+							"rotationZ": 0.0
+						},
+						"Gear1p6x30a6": {
+							"rotationX": 0.0,
+							"rotationY": 360.0,
+							"rotationZ": 0.0
+						},
+						"Gear1p6x30a3": {
+							"rotationX": 0.0,
+							"rotationY": -360.0,
+							"rotationZ": 0.0
+						}
 					}
 				},
 				{
 					"frame": 359,
 					"elements": {
-						"Gear1a": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 359.0, "rotShortestDistanceZ": true },
-						"Gear2p6x18d10": { "rotationX": 0.0, "rotationY": 359.0, "rotationZ": 0.0, "rotShortestDistanceY": true },
-						"Gear2x22p5": { "rotationX": 0.0, "rotationY": -359.0, "rotationZ": 0.0, "rotShortestDistanceY": true },
-						"Gear2p6x18d": { "rotationX": 0.0, "rotationY": -359.0, "rotationZ": 0.0, "rotShortestDistanceY": true },
-						"Gear1p6x30a": { "rotationX": 0.0, "rotationY": 359.0, "rotationZ": 0.0, "rotShortestDistanceY": true },
-						"Gear2p6x18d5": { "rotationX": 0.0, "rotationY": 359.0, "rotationZ": 0.0, "rotShortestDistanceY": true },
-						"Gear1p6x30a6": { "rotationX": 0.0, "rotationY": -359.0, "rotationZ": 0.0, "rotShortestDistanceY": true },
-						"Gear1p6x30a3": { "rotationX": 0.0, "rotationY": 359.0, "rotationZ": 0.0, "rotShortestDistanceY": true }
+						"Gear1a": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 359.0,
+							"rotShortestDistanceZ": true
+						},
+						"Gear2p6x18d10": {
+							"rotationX": 0.0,
+							"rotationY": 359.0,
+							"rotationZ": 0.0,
+							"rotShortestDistanceY": true
+						},
+						"Gear2x22p5": {
+							"rotationX": 0.0,
+							"rotationY": -359.0,
+							"rotationZ": 0.0,
+							"rotShortestDistanceY": true
+						},
+						"Gear2p6x18d": {
+							"rotationX": 0.0,
+							"rotationY": -359.0,
+							"rotationZ": 0.0,
+							"rotShortestDistanceY": true
+						},
+						"Gear1p6x30a": {
+							"rotationX": 0.0,
+							"rotationY": 359.0,
+							"rotationZ": 0.0,
+							"rotShortestDistanceY": true
+						},
+						"Gear2p6x18d5": {
+							"rotationX": 0.0,
+							"rotationY": 359.0,
+							"rotationZ": 0.0,
+							"rotShortestDistanceY": true
+						},
+						"Gear1p6x30a6": {
+							"rotationX": 0.0,
+							"rotationY": -359.0,
+							"rotationZ": 0.0,
+							"rotShortestDistanceY": true
+						},
+						"Gear1p6x30a3": {
+							"rotationX": 0.0,
+							"rotationY": 359.0,
+							"rotationZ": 0.0,
+							"rotShortestDistanceY": true
+						}
 					}
 				}
 			]
@@ -13754,29 +15051,61 @@
 				{
 					"frame": 0,
 					"elements": {
-						"AXLE2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"temp gear axel PIVOT": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+						"AXLE2": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"temp gear axel PIVOT": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						}
 					}
 				},
 				{
 					"frame": 5,
 					"elements": {
-						"AXLE2": { "rotationX": 30.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"temp gear axel PIVOT": { "rotationX": 0.0, "rotationY": 15.0, "rotationZ": 0.0 }
+						"AXLE2": {
+							"rotationX": 30.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"temp gear axel PIVOT": {
+							"rotationX": 0.0,
+							"rotationY": 15.0,
+							"rotationZ": 0.0
+						}
 					}
 				},
 				{
 					"frame": 10,
 					"elements": {
-						"AXLE2": { "rotationX": 41.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"temp gear axel PIVOT": { "rotationX": 0.0, "rotationY": 20.5, "rotationZ": 0.0 }
+						"AXLE2": {
+							"rotationX": 41.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"temp gear axel PIVOT": {
+							"rotationX": 0.0,
+							"rotationY": 20.5,
+							"rotationZ": 0.0
+						}
 					}
 				},
 				{
 					"frame": 14,
 					"elements": {
-						"AXLE2": { "rotationX": 45.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"temp gear axel PIVOT": { "rotationX": 0.0, "rotationY": 22.5, "rotationZ": 0.0 }
+						"AXLE2": {
+							"rotationX": 45.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"temp gear axel PIVOT": {
+							"rotationX": 0.0,
+							"rotationY": 22.5,
+							"rotationZ": 0.0
+						}
 					}
 				}
 			]
@@ -13792,33 +15121,81 @@
 				{
 					"frame": 0,
 					"elements": {
-						"VENT LINE HANDLE PIVOT": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"barrel lid hinge": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"vent line 1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 }
+						"VENT LINE HANDLE PIVOT": {
+							"offsetX": 0.0,
+							"offsetY": 0.0,
+							"offsetZ": 0.0
+						},
+						"barrel lid hinge": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						},
+						"vent line 1": {
+							"offsetX": 0.0,
+							"offsetY": 0.0,
+							"offsetZ": 0.0
+						}
 					}
 				},
 				{
 					"frame": 5,
 					"elements": {
-						"VENT LINE HANDLE PIVOT": { "offsetX": -1.2, "offsetY": 0.0, "offsetZ": 0.0 },
-						"vent line 1": { "offsetX": -0.6, "offsetY": 0.0, "offsetZ": 0.0 },
-						"barrel lid hinge": { "rotationX": 0.0, "rotationY": 21.0, "rotationZ": 0.0 }
+						"VENT LINE HANDLE PIVOT": {
+							"offsetX": -1.2,
+							"offsetY": 0.0,
+							"offsetZ": 0.0
+						},
+						"vent line 1": {
+							"offsetX": -0.6,
+							"offsetY": 0.0,
+							"offsetZ": 0.0
+						},
+						"barrel lid hinge": {
+							"rotationX": 0.0,
+							"rotationY": 21.0,
+							"rotationZ": 0.0
+						}
 					}
 				},
 				{
 					"frame": 10,
 					"elements": {
-						"VENT LINE HANDLE PIVOT": { "offsetX": -1.8, "offsetY": 0.0, "offsetZ": 0.0 },
-						"vent line 1": { "offsetX": -0.9, "offsetY": 0.0, "offsetZ": 0.0 },
-						"barrel lid hinge": { "rotationX": 0.0, "rotationY": 31.5, "rotationZ": 0.0 }
+						"VENT LINE HANDLE PIVOT": {
+							"offsetX": -1.8,
+							"offsetY": 0.0,
+							"offsetZ": 0.0
+						},
+						"vent line 1": {
+							"offsetX": -0.9,
+							"offsetY": 0.0,
+							"offsetZ": 0.0
+						},
+						"barrel lid hinge": {
+							"rotationX": 0.0,
+							"rotationY": 31.5,
+							"rotationZ": 0.0
+						}
 					}
 				},
 				{
 					"frame": 14,
 					"elements": {
-						"VENT LINE HANDLE PIVOT": { "offsetX": -2.0, "offsetY": 0.0, "offsetZ": 0.0 },
-						"barrel lid hinge": { "rotationX": 0.0, "rotationY": 35.0, "rotationZ": 0.0 },
-						"vent line 1": { "offsetX": -1.0, "offsetY": 0.0, "offsetZ": 0.0 }
+						"VENT LINE HANDLE PIVOT": {
+							"offsetX": -2.0,
+							"offsetY": 0.0,
+							"offsetZ": 0.0
+						},
+						"barrel lid hinge": {
+							"rotationX": 0.0,
+							"rotationY": 35.0,
+							"rotationZ": 0.0
+						},
+						"vent line 1": {
+							"offsetX": -1.0,
+							"offsetY": 0.0,
+							"offsetZ": 0.0
+						}
 					}
 				}
 			]
@@ -13834,13 +15211,22 @@
 				{
 					"frame": 0,
 					"elements": {
-						"tempgearbase ": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+						"tempgearbase ": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						}
 					}
 				},
 				{
 					"frame": 359,
 					"elements": {
-						"tempgearbase ": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 720.0, "rotShortestDistanceZ": true }
+						"tempgearbase ": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 720.0,
+							"rotShortestDistanceZ": true
+						}
 					}
 				}
 			]
@@ -13856,13 +15242,21 @@
 				{
 					"frame": 0,
 					"elements": {
-						"FUELTEMP": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 }
+						"FUELTEMP": {
+							"offsetX": 0.0,
+							"offsetY": 0.0,
+							"offsetZ": 0.0
+						}
 					}
 				},
 				{
 					"frame": 29,
 					"elements": {
-						"FUELTEMP": { "offsetX": 0.0, "offsetY": -2.5, "offsetZ": 0.0 }
+						"FUELTEMP": {
+							"offsetX": 0.0,
+							"offsetY": -2.5,
+							"offsetZ": 0.0
+						}
 					}
 				}
 			]
@@ -13878,13 +15272,21 @@
 				{
 					"frame": 0,
 					"elements": {
-						"FUELROT": { "rotationX": 180.0, "rotationY": 0.0, "rotationZ": 0.0 }
+						"FUELROT": {
+							"rotationX": 180.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						}
 					}
 				},
 				{
 					"frame": 29,
 					"elements": {
-						"FUELROT": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+						"FUELROT": {
+							"rotationX": 0.0,
+							"rotationY": 0.0,
+							"rotationZ": 0.0
+						}
 					}
 				}
 			]

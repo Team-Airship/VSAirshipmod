@@ -319,7 +319,7 @@ namespace VSAirshipmod
 
             this.weatherVaneAnimCode = properties.Attributes["weatherVaneAnimCode"].AsString(null);
 
-            api.Logger.Notification("Fuel Handled: " + Fuel);
+            //api.Logger.Notification("Fuel Handled: " + Fuel);
 
             MountAnimations = properties.Attributes["mountAnimations"].AsObject<Dictionary<string, string>>();
 
@@ -339,8 +339,8 @@ namespace VSAirshipmod
 
                 if (!Ready)
                 {
-                    if (!AnimManager.IsAnimationActive("deflation"))
-                        AnimManager.StartAnimation("deflation");
+                    if (!AnimManager.IsAnimationActive("deflated"))
+                        AnimManager.StartAnimation("deflated");
                 }
             }
         }
@@ -363,6 +363,20 @@ namespace VSAirshipmod
                     entityShape.RemoveElementByName("SailUnfurled");
                 }
             }
+            shape = entityShape;
+            if (Api is ICoreClientAPI && AnimManager.Animator != null)// making it so on startup it can't unload required elements, this will be refined when a better option is possible.
+            {
+                if (shape == entityShape) entityShape = entityShape.Clone();
+
+                if (Deflated)
+                {
+                    entityShape.RemoveElementByName("FULLBALLOON");
+                }
+                else
+                {
+                    entityShape.RemoveElementByName("FLATBALLOON");
+                }
+            }
 
             base.OnTesselation(ref entityShape, shapePathForLogging);
         }
@@ -370,6 +384,7 @@ namespace VSAirshipmod
 
         float curRotMountAngleZ = 0f;
         public Vec3f mountAngle = new Vec3f();
+        bool Deflated = true;
 
         public void OnRenderFrame(float dt, EnumRenderStage stage)
         {
@@ -399,17 +414,17 @@ namespace VSAirshipmod
             esr.xangle = mountAngle.X + curRotMountAngleZ;
             esr.yangle = mountAngle.Y;
             esr.zangle = mountAngle.Z + forwardpitch; // Weird. Pitch ought to be xangle.
-            
+
             if (this.AnimManager.Animator != null)
             {
                 if (HorizontalVelocity > 0)
                 {
                     if (!AnimManager.IsAnimationActive("goup"))
                         AnimManager.StartAnimation("goup");
-                        AnimManager.StartAnimation("pump");
+                    AnimManager.StartAnimation("pump");
                     AnimManager.StopAnimation("godown");
-                } 
-                else if(HorizontalVelocity < 0)
+                }
+                else if (HorizontalVelocity < 0)
                 {
                     if (!AnimManager.IsAnimationActive("godown"))
                         AnimManager.StartAnimation("godown");
@@ -425,37 +440,65 @@ namespace VSAirshipmod
                 //Api.Logger.Notification(Inflate ? "Yes" : "No");
                 if (Inflate > 0)
                 {
-                    AnimManager.StopAnimation("deflation");
+                    if (AnimManager.IsAnimationActive("deflation"))
+                    {
+                        AnimManager.StopAnimation("deflation");
+                    }
+                    else if(AnimManager.IsAnimationActive("deflated"))
+                    {
+                        AnimManager.StartAnimation("inflation");
+                        AnimManager.StopAnimation("deflated");
+                    }
+                    if (Deflated)
+                    {
+                        Deflated = false;
+                        MarkShapeModified();
+                    }
                 }
-                else
+                else if(!Deflated)
                 {
                     if (!AnimManager.IsAnimationActive("deflation"))
                         AnimManager.StartAnimation("deflation");
+                    RunningAnimation deflation = this.AnimManager.GetAnimationState("deflation");
+                    if (deflation != null)
+                    {
+                        if (deflation.AnimProgress >= 1f)
+                        {
+                            Deflated = true;
+                            MarkShapeModified();
+                        }
+                    }
+                }
+                else
+                {
+                    AnimManager.StopAnimation("deflation");
+                    if (!AnimManager.IsAnimationActive("deflated"))
+                        AnimManager.StartAnimation("deflated");
                 }
 
                 //AnimManager.AnimationsDirty = true;
 
                 //this.weatherVaneAnimCode = "weathervane";
 
-                if (!AnimManager.IsAnimationActive("weathervane"))
+                if (!AnimManager.IsAnimationActive("fuelrot"))
                 {
-                    this.AnimManager.StartAnimation("weathervane");
+                    this.AnimManager.StartAnimation("fuelrot");
                 }
                 //float targetWindDir = GameMath.Mod((float)Math.Atan2((double)GlobalConstants.CurrentWindSpeedClient.X, (double)GlobalConstants.CurrentWindSpeedClient.Z) + 6.2831855f - this.Pos.Yaw, 6.2831855f);
-                
-                RunningAnimation anim = this.AnimManager.GetAnimationState("weathervane");
+
+                RunningAnimation anim = this.AnimManager.GetAnimationState("fuelrot");
                 if (anim != null)
                 {
                     //Api.Logger.Notification("" + anim.CurrentFrame);
-                    anim.CurrentFrame = (float)Math.Floor((Fuel/64f)*36f); // * 57.295776f / 10f;
+                    anim.CurrentFrame = (float)Math.Floor((1-(Fuel / 64f)) * 30f); // * 57.295776f / 10f;
                     anim.BlendedWeight = 1f;
-                    anim.EasingFactor = 1f;
+                    anim.EasingFactor = 0.1f;
                     //Api.Logger.Notification("" + anim.AnimProgress);
                 }
                 //Api.Logger.Notification(anim != null ? "Not Null":"Null");
 
             }
-            
+
         }
 
 

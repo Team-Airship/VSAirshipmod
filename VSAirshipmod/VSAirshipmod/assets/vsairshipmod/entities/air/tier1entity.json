@@ -103,7 +103,7 @@
     "shapeByType": {
       "*": {
         "base": "entity/{type}",
-        "ignoreElements": [ "hideWater", "FLATBALLOON" ]
+        "ignoreElements": [ "hideWater" ]
       }
     },
     "animations": [
@@ -147,7 +147,14 @@
         "animation": "deflation",
         "animationSpeed": 1,
         "easeInSpeed": 1,
-        "easeOutSpeed": 1
+        "easeOutSpeed": 10
+      },
+      {
+        "code": "inflation",
+        "animation": "inflation",
+        "animationSpeed": 1,
+        "easeInSpeed": 100,
+        "easeOutSpeed": 10
       },
       {
         "code": "weathervane",
@@ -155,6 +162,22 @@
         "animationSpeed": 0,
         "weight": 1
         //"blendMode": "AddAverage"
+      },
+      {
+        "code": "fuelrot",
+        "animation": "fuelrot",
+        "animationSpeed": 0,
+        "weight": 1
+        //"blendMode": "AddAverage"
+      },
+      {
+        "code": "deflated",
+        "animation": "deflated",
+        "animationSpeed": 1,
+        "weight": 1,
+        "easeInSpeed": 100,
+        "blendMode": "Add",
+        "triggeredBy": { "defaultAnim": true }
       },
       {
         "code": "idle",
