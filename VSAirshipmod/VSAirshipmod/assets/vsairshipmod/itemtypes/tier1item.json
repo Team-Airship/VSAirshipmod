@@ -58,12 +58,12 @@
   "guiTransform": {
     "translation": {
       "x": 0,
-      "y": 0,
+      "y": -2,
       "z": 0
     },
     "rotation": {
-      "x": -19,
-      "y": -69,
+      "x": -16,
+      "y": -81,
       "z": -180
     },
     "origin": {
@@ -71,7 +71,7 @@
       "y": 0,
       "z": 0.1
     },
-    "scale": 0.85
+    "scale": 1.31
   },
   "groundTransformByType": {
     "*": {
@@ -95,20 +95,20 @@
   },
   "tpHandTransform": {
     "translation": {
-      "x": -1.33,
-      "y": -0.06,
-      "z": -0.47
+      "x": -0.73,
+      "y": 0.24,
+      "z": -0.7
     },
     "rotation": {
-      "x": 6,
-      "y": 163,
-      "z": -26
+      "x": 9,
+      "y": 15,
+      "z": -75
     },
     "origin": {
       "x": 0.5,
       "y": 0,
       "z": 0.5
     },
-    "scale": 1
+    "scale": 0.72
   }
 }

@@ -2,27 +2,78 @@
 	"code": "autoloom",
 	"class": "BlockAutoloom",
 	"entityClass": "Autoloom",
-	"entityBehaviors": [ { "name": "MPConsumer" }, { "name": "Animatable" } ],
+	"entityBehaviors": [
+		{ "name": "MPConsumer" },
+		{ "name": "Animatable" }
+	],
 	"behaviorsbytype": {
 		"*-north": [
 			{ "name": "Container" },
 			{ "name": "HorizontalOrientable" },
-			{ "name": "Multiblock", "properties": { "sizex": 2, "sizey": 2, "sizez": 2, "cposition": { "x": 0, "y": 0, "z": 0 } } }
+			{
+				"name": "Multiblock",
+				"properties": {
+					"sizex": 2,
+					"sizey": 2,
+					"sizez": 2,
+					"cposition": {
+						"x": 0,
+						"y": 0,
+						"z": 0
+					}
+				}
+			}
 		],
 		"*-east": [
 			{ "name": "Container" },
 			{ "name": "HorizontalOrientable" },
-			{ "name": "Multiblock", "properties": { "sizex": 2, "sizey": 2, "sizez": 2, "cposition": { "x": 1, "y": 0, "z": 0 } } }
+			{
+				"name": "Multiblock",
+				"properties": {
+					"sizex": 2,
+					"sizey": 2,
+					"sizez": 2,
+					"cposition": {
+						"x": 1,
+						"y": 0,
+						"z": 0
+					}
+				}
+			}
 		],
 		"*-south": [
 			{ "name": "Container" },
 			{ "name": "HorizontalOrientable" },
-			{ "name": "Multiblock", "properties": { "sizex": 2, "sizey": 2, "sizez": 2, "cposition": { "x": 1, "y": 0, "z": 1 } } }
+			{
+				"name": "Multiblock",
+				"properties": {
+					"sizex": 2,
+					"sizey": 2,
+					"sizez": 2,
+					"cposition": {
+						"x": 1,
+						"y": 0,
+						"z": 1
+					}
+				}
+			}
 		],
 		"*-west": [
 			{ "name": "Container" },
 			{ "name": "HorizontalOrientable" },
-			{ "name": "Multiblock", "properties": { "sizex": 2, "sizey": 2, "sizez": 2, "cposition": { "x": 0, "y": 0, "z": 1 } } }
+			{
+				"name": "Multiblock",
+				"properties": {
+					"sizex": 2,
+					"sizey": 2,
+					"sizez": 2,
+					"cposition": {
+						"x": 0,
+						"y": 0,
+						"z": 1
+					}
+				}
+			}
 		]
 	},
 	"attributes": {
@@ -34,9 +85,12 @@
 	"variantgroups": [
 		{
 			"code": "metal",
-			"states": [ "tinbronze", "bismuthbronze", "blackbronze"]
+			"states": [ "tinbronze", "bismuthbronze", "blackbronze" ]
 		},
-		{ "code":"side", "loadFromProperties": "abstract/horizontalorientation" }
+		{
+			"code": "side",
+			"loadFromProperties": "abstract/horizontalorientation"
+		}
 	],
 	"creativeinventory": {
 		"general": [ "*-north" ],
@@ -45,10 +99,22 @@
 		"airship": [ "*-north" ]
 	},
 	"shapebytype": {
-		"*-north": { "base": "vsairshipmod:block/autoloom", "rotateY": 0 },
-		"*-east": { "base": "vsairshipmod:block/autoloom", "rotateY": 270 },
-		"*-south": { "base": "vsairshipmod:block/autoloom", "rotateY": 180 },
-		"*-west": { "base": "vsairshipmod:block/autoloom", "rotateY": 90 }
+		"*-north": {
+			"base": "vsairshipmod:block/autoloom",
+			"rotateY": 0
+		},
+		"*-east": {
+			"base": "vsairshipmod:block/autoloom",
+			"rotateY": 270
+		},
+		"*-south": {
+			"base": "vsairshipmod:block/autoloom",
+			"rotateY": 180
+		},
+		"*-west": {
+			"base": "vsairshipmod:block/autoloom",
+			"rotateY": 90
+		}
 	},
 	"drawtype": "json",
 	"blockmaterial": "Wood",
@@ -104,6 +170,17 @@
 	},
 	"lightAbsorption": 0,
 	"maxStackSize": 1,
+	"heldTpIdleAnimation": "holdbothhandslarge",
 	"replaceable": 600,
-	"resistance": 1.5
+	"resistance": 1.5,
+	guiTransform: {
+		translation: { x: 0, y: 4, z: 0 },
+		rotation: { x: -22.6, y: -129, z: 0 },
+		origin: { x: 1, y: 0.5, z: 1.1 },
+		scaleXyz: { x: -0.85, y: 0.85, z: 0.85 }
+	},
+	tpHandTransform: {
+		translation: { x: -2.2, y: -2, z: -0.45 },
+		rotation: { x: 100, y: -8, z: -76 }
+	}
 }
