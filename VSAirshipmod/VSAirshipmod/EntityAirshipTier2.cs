@@ -446,14 +446,22 @@ namespace VSAirshipmod
 
             }
 
-            //Force cruise off if no controllable passengers remain**
-            if (!anyControllablePassenger && cruise_control)
+            //Force things off if no controllable passengers remain**
+            if (!anyControllablePassenger)
             {
-                cruise_control = false;
-                cruiseControlWasSet = true;
+                if(cruise_control){
+                    cruise_control = false;
+                    cruiseControlWasSet = true;
+                }
 
-                // Clear animation flags so propeller/forward/etc. stops
+
+                //Clear animation flags so propeller/forward/etc.
                 animForward = animBackward = animLeft = animRight = animPropeller = false;
+                if (engineSoundPlaying)
+                {
+                    engineSoundPlaying = false;
+                    if (engine_sound != null) engine_sound.Stop();
+                }
             }
 
             // Apply animations after processing all seats
@@ -495,14 +503,13 @@ namespace VSAirshipmod
                         {
                             slot.TakeOut(1);
                             slot.MarkDirty();
-                            TemporalGearCount = Math.Min(3, TemporalGearCount + 1);
-                            WatchedAttributes.MarkPathDirty("TemporalGearCount");
-                            World.PlaySoundAt(new AssetLocation("game:sounds/effect/latch"), this);
-
                             //Directly adding fuel time here as well to make replacing the first gear less awkward otherwise it'd instantly drain after
                             if(TemporalGearCount == 0){
                                 TemporalFuelUsage = MinutesPerGear * 60 * 1000;
                             }
+                            TemporalGearCount = Math.Min(3, TemporalGearCount + 1);
+                            WatchedAttributes.MarkPathDirty("TemporalGearCount");
+                            World.PlaySoundAt(new AssetLocation("game:sounds/effect/latch"), this);
 
                             //Drop a rusty gear at the airship
                             var RustyGear = World.GetItem(new AssetLocation("game:gear-rusty"));
