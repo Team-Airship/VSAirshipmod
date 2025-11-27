@@ -2,13 +2,16 @@
     "type": "code",
     "modid": "vsairshipmod",
     "name": "The Airship Mod!",
-    "authors": [
-      "Rivvion",
-        "TygrysT"
-    ],
-    "description": "WORK IN PROGRESS! FOR TESTING",
-    "version": "0.1.2",
+  "authors": [
+    "Rivvion",
+    "TygrysT",
+    "DarthSack",
+    "Pal-5000",
+    "Freakyuser396"
+  ],
+    "description": "AIRSHIPS ARE WORK IN PROGRESS! MOD VERSION IS FOR TESTING",
+    "version": "0.2.0",
     "dependencies": {
-        "game": "1.20.5"
+        "game": "1.21.5"
     }
 }

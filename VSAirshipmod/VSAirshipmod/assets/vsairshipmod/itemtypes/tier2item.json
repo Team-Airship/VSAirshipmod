@@ -8,44 +8,45 @@
     },
     {
       "code": "material",
-      "states": [ "oak" ]
+      "states": [ "aged" ],
+      "loadFromProperties": "game:block/wood"
     }
   ],
-  "storageFlags": 2,
   "shapeByType": {
     "*": {
-      "base": "item/tier1packedbag",
+      "base": "entity/{type}",
       "ignoreElements": [ "hideWater" ]
     }
   },
-  behaviors: [
-		{ name: "GroundStorable", properties: { layout: "SingleCenter", collisionBox: { x1: 0.25, y1: 0, z1: 0.25, x2: 0.75, y2: 0.375, z2: 0.75 }}},
-		{ name: "HeldBag" }
-	],
   "shapeInventoryByType": { "*": { "base": "block/tier1-packed" } },
   "texturesByType": {
     "*": {
-      "candle": { "base": "game:block/candle" },
-      "plain": { "base": "game:block/cloth/linen/plain" },
-      "bituminous": { "base": "game:block/coal/bituminous" },
-      "charcoal": { "base": "game:block/coal/charcoal" },
-      "poor": { "base": "game:block/leather/poor" },
-      "steel1": { "base": "game:block/metal/sheet-plain/steel1" },
-      "blackbronze2": { "base": "game:block/metal/sheet/blackbronze2" },
-      "blackbronze4": { "base": "game:block/metal/sheet/blackbronze4" },
-      "copper1": { "base": "game:block/metal/sheet/copper1" },
-      "cupronickel1": { "base": "game:block/metal/sheet/cupronickel1" },
-      "iron1": { "base": "game:block/metal/sheet/iron1" },
-      "copper-soldered": { "base": "game:block/metal/sheet/soldered-copper" },
-      "tinbronze1": { "base": "game:block/metal/sheet/tinbronze1" },
-      "rusty-iron": { "base": "game:block/metal/tarnished/rusty-iron" },
-      "bottom": { "base": "game:block/wood/barrel/bottom" },
-      "aged": { "base": "game:block/wood/debarked/aged" },
-      "plainoak": { "base": "game:block/wood/plainoak" },
-      "linen": { "base": "game:item/bag/linensack/linen" },
-      "top": { "base": "game:item/bag/linensack/top" },
-      "temporal": { "base": "game:item/resource/temporalgear" },
-      "rope": { "base": "game:item/resource/rope" }
+        "candle":        { "base": "game:block/candle" },
+        "ceramic":       { "base": "game:block/clay/ceramic" },
+        "cracked2":      { "base": "game:block/clay/daub/yellow/cracked2" },
+        "normal2":       { "base": "game:block/clay/daub/yellow/normal2" },
+        "mordant":       { "base": "game:block/cloth/linen/mordant" },
+        "plain":         { "base": "game:block/cloth/linen/plain" },
+        "charcoal":      { "base": "game:block/coal/charcoal" },
+        "glass":         { "base": "game:block/glass/quartz" },
+        "poor":          { "base": "game:block/leather/poor" },
+        "rustyglow":     { "base": "game:block/machine/statictranslocator/rustyglow" },
+        "material-deco": { "base": "game:block/metal/lantern/copper-deco" },
+        "tinbronze":     { "base": "game:block/metal/lantern/tinbronze" },
+        "tinbronze1":    { "base": "game:block/metal/sheet-plain/tinbronze1" },
+        "blackbronze2":  { "base": "game:block/metal/sheet/blackbronze2" },
+        "copper1":       { "base": "game:block/metal/sheet/copper1" },
+        "copper-soldered": { "base": "game:block/metal/sheet/soldered-copper" },
+        "rusty-iron":    { "base": "game:block/metal/tarnished/rusty-iron" },
+        "wattle":        { "base": "game:block/wattle" },
+        "charred":       { "base": "game:block/wood/charred" },
+        "aged":          { "base": "game:block/wood/debarked/aged" },
+        "oak":           { "base": "game:block/wood/debarked/{material}" },
+        "plainoak":      { "base": "game:block/wood/debarked/{material}" },
+        "linen":         { "base": "game:item/bag/linensack/linen" },
+        "top":           { "base": "game:item/bag/linensack/top" },
+        "furside":       { "base": "game:item/resource/hide/raw-huge" },
+        "rope":          { "base": "game:item/resource/rope" }
     }
   },
   "attributes": {
@@ -65,24 +66,12 @@
     "general": [ "*" ],
     "airship": [ "*" ]
   },
-  "guiTransform": {
-    "translation": {
-      "x": 0,
-      "y": -2,
-      "z": 0
-    },
-    "rotation": {
-      "x": -16,
-      "y": -81,
-      "z": -180
-    },
-    "origin": {
-      "x": 1.6,
-      "y": 0,
-      "z": 0.1
-    },
-    "scale": 1.31
-  },
+	guiTransform: {
+		translation: { x: 0, y: 0, z: 0 },
+		rotation: { x: -16, y: -123, z: -166 },
+		origin: { x: 1.3, y: 0.1, z: 0.9 },
+		scaleXyz: { x: -0.72, y: 0.72, z: 0.72 }
+	},
   "groundTransformByType": {
     "*": {
       "translation": {
@@ -100,25 +89,13 @@
         "y": 0,
         "z": 0.5
       },
-      "scale": 3.5
+      "scale": 0.8
     }
   },
-  "tpHandTransform": {
-    "translation": {
-      "x": -0.73,
-      "y": 0.24,
-      "z": -0.7
-    },
-    "rotation": {
-      "x": 9,
-      "y": 15,
-      "z": -75
-    },
-    "origin": {
-      "x": 0.5,
-      "y": 0,
-      "z": 0.5
-    },
-    "scale": 0.72
-  }
+	tpHandTransform: {
+		translation: { x: -5.73, y: 0.24, z: -3.3 },
+		rotation: { x: 109, y: 9, z: -76 },
+		origin: { x: 0.5, y: 0, z: 0.5 },
+		scale: 0.1
+	}
 }

@@ -94,6 +94,7 @@
 			}
 		],
 		behaviors: [
+			{ "code": "repulseagents", "movable": false },
 			{ code: "passivephysicsmultibox" },
 			{ code: "interpolateposition" },
 			{ code: "selectionboxes" },
@@ -102,6 +103,7 @@
 	},
 	server: {
 		behaviors: [
+			{ "code": "repulseagents", "movable": false },
 			{ code: "passivephysicsmultibox" },
 			{ code: "selectionboxes" },
 			{ code: "floatupwhenstuck" }
