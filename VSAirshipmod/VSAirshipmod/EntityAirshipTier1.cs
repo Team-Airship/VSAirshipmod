@@ -115,10 +115,15 @@ namespace VSAirshipmod
                 }
             }
 
+            if (AnimManager.Animator == null)
+            {
+                reTryTesselation = true;
+            }
+
             base.OnTesselation(ref entityShape, shapePathForLogging);
         }
 
-
+        bool reTryTesselation = false;
         float curRotMountAngleZ = 0f;
         public Vec3f mountAngle = new Vec3f();
         bool Deflated = true;
@@ -157,6 +162,12 @@ namespace VSAirshipmod
 
             if (this.AnimManager.Animator != null)
             {
+                if (reTryTesselation)
+                {
+                    reTryTesselation = false;
+                    MarkShapeModified();
+                }
+
                 if (Idler)
                 {
                     if (!AnimManager.IsAnimationActive("burnervalve"))
