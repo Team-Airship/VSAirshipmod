@@ -1,6 +1,6 @@
 {
 	"editor": {
-		"collapsedPaths": "Root/TIER 2 AIRSHIP/Distiller pivot,Root/TIER 2 AIRSHIP/RIGGING PIVOT 1,Root/TIER 2 AIRSHIP/RIGGING PIVOT 2,Root/TIER 2 AIRSHIP/Propeller asset/prop frame A/prop frame B/TEMPGEAR PIVOT/TEMP2,Root/TIER 2 AIRSHIP/prop metal rudder,Root/TIER 2 AIRSHIP/Propeller asset/prop frame A/prop frame B/TEMPGEAR PIVOT/TEMP1,Root/ORIGINT2/prop metal shaft,Root/TIER 2 AIRSHIP/BEAR BOAT/origin SEAT,Root/TIER 2 AIRSHIP/heat hose pivot,Root/ORIGINT2/prop metal rudder,Root/TIER 2 AIRSHIP/beams all,Root/TIER 2 AIRSHIP/RIGGING PIVOT 3,Root/ORIGINBEARBOAT,Root/TIER 2 AIRSHIP/prop throttle/throtle lever bracket2,Root/TIER 2 AIRSHIP/prop metal shaft,Root/ORIGINT2/Propeller asset/prop frame A/prop frame B2/metal a24,Root/ORIGINT2/Propeller asset/prop frame A/prop frame B2/metal a44,Root/TIER 2 AIRSHIP/small round barrel3,Root/TIER 2 AIRSHIP/Propeller asset/prop frame A/prop frame B/gear_gearbox_temporal7,Root/TIER 2 AIRSHIP/small round barrel2,Root/TIER 2 AIRSHIP/Propeller asset/prop frame A/prop frame B/gear_gearbox_temporal8,Root/TIER 2 AIRSHIP/BEAR BOAT/pelt boat,Root/TIER 2 AIRSHIP/Propeller asset/prop frame A/prop frame B/gear_gearbox_temporal9,Root/TIER 2 AIRSHIP/hose end 1,Root/TIER 2 AIRSHIP/BEAR BOAT/pelt boat/boatstick,Root/TIER 2 AIRSHIP/prop frame E,Root/ORIGINT2/Propeller asset/prop frame A/prop frame B2/TEMPGEAR PIVOT2,Root/TIER 2 AIRSHIP/All ropes,Root/TIER 2 AIRSHIP/small round barrel,Root/TIER 2 AIRSHIP/Hose pipe,Root/TIER 2 AIRSHIP/BEAR BOAT/Distiller5,Root/TIER 2 AIRSHIP/BEAR BOAT/Distiller2,Root/TIER 2 AIRSHIP/prop throttle,Root/TIER 2 AIRSHIP/BEAR BOAT/origin SEAT3,Root/ORIGINT2/Propeller asset/prop frame A/prop frame B2/metal a50,Root/TIER 2 AIRSHIP/BEAR BOAT/Distiller,Root/TIER 2 AIRSHIP/prop throttle/wheel/Throttle wheel,Root/TIER 2 AIRSHIP/Propeller asset,Root/ORIGINBEARBOAT/hideWater",
+		"collapsedPaths": "Root/TIER 2 AIRSHIP/Distiller pivot,Root/ORIGINT2/RIGGING PIVOT 2/VENTLINE1/vent line handle,Root/TIER 2 AIRSHIP/Propeller asset/prop frame A/prop frame B/TEMPGEAR PIVOT/TEMP2,Root/TIER 2 AIRSHIP/prop metal rudder,Root/TIER 2 AIRSHIP/Propeller asset/prop frame A/prop frame B/TEMPGEAR PIVOT/TEMP1,Root/ORIGINT2/Distiller pivot,Root/TIER 2 AIRSHIP/BEAR BOAT/origin SEAT,Root/ORIGINT2/prop metal rudder,Root/ORIGINBEARBOAT,Root/ORIGINT2/prop frame E,Root/TIER 2 AIRSHIP/prop throttle/throtle lever bracket2,Root/ORIGINT2/Propeller asset/prop frame A/prop frame B2/metal a24,Root/ORIGINT2/Propeller asset,Root/TIER 2 AIRSHIP/small round barrel3,Root/TIER 2 AIRSHIP/Propeller asset/prop frame A/prop frame B/gear_gearbox_temporal7,Root/TIER 2 AIRSHIP/small round barrel2,Root/TIER 2 AIRSHIP/Propeller asset/prop frame A/prop frame B/gear_gearbox_temporal8,Root/TIER 2 AIRSHIP/BEAR BOAT/pelt boat,Root/TIER 2 AIRSHIP/Propeller asset/prop frame A/prop frame B/gear_gearbox_temporal9,Root/TIER 2 AIRSHIP/hose end 1,Root/ORIGINT2/All ropes,Root/ORIGINT2/RIGGING PIVOT 2/BALLOON PIVOT 1/pendulum PIVOT 3,Root/TIER 2 AIRSHIP/prop frame E,Root/ORIGINT2/Propeller asset/prop frame A/prop frame B2/TEMPGEAR PIVOT2,Root/ORIGINT2/BEARBOAT/pelt boat,Root/TIER 2 AIRSHIP/All ropes,Root/ORIGINT2/RIGGING PIVOT 2/BALLOON PIVOT 1/pendulum PIVOT 1,Root/TIER 2 AIRSHIP/small round barrel,Root/ORIGINT2/hose end 1,Root/ORIGINT2/RIGGING PIVOT 2/BALLOON PIVOT 1/pendulum PIVOT 2,Root/TIER 2 AIRSHIP/Hose pipe,Root/TIER 2 AIRSHIP/BEAR BOAT/Distiller5,Root/TIER 2 AIRSHIP/BEAR BOAT/Distiller2,Root/ORIGINT2/prop throttle,Root/TIER 2 AIRSHIP/BEAR BOAT/Distiller,Root/TIER 2 AIRSHIP/prop throttle/wheel/Throttle wheel,Root/TIER 2 AIRSHIP/Propeller asset,Root/ORIGINBEARBOAT/hideWater,Root/ORIGINT2/BEARBOAT/all ropes,Root/TIER 2 AIRSHIP/RIGGING PIVOT 1,Root/TIER 2 AIRSHIP/RIGGING PIVOT 2,Root/ORIGINT2/RIGGING PIVOT 3,Root/ORIGINT2/RIGGING PIVOT 1,Root/ORIGINT2/prop metal shaft,Root/ORIGINT2/small round barrel,Root/ORIGINT2/small round barrel2,Root/TIER 2 AIRSHIP/heat hose pivot,Root/TIER 2 AIRSHIP/beams all,Root/TIER 2 AIRSHIP/RIGGING PIVOT 3,Root/ORIGINT2/BEARBOAT/origin SEAT3,Root/ORIGINT2/small round barrel3,Root/ORIGINT2/heat hose pivot,Root/TIER 2 AIRSHIP/prop metal shaft,Root/ORIGINT2/Propeller asset/prop frame A/prop frame B2/metal a44,Root/TIER 2 AIRSHIP/BEAR BOAT/pelt boat/boatstick,Root/TIER 2 AIRSHIP/prop throttle,Root/ORIGINT2/beams all,Root/TIER 2 AIRSHIP/BEAR BOAT/origin SEAT3,Root/ORIGINT2/Propeller asset/prop frame A/prop frame B2/metal a50,Root/ORIGINT2/BEARBOAT/origin SEAT,Root/ORIGINT2/BEARBOAT/hideWater,Root/ORIGINT2/Hose pipe",
 		"allAngles": false,
 		"entityTextureMode": false
 	},
@@ -17193,7 +17193,7 @@
 							]
 						},
 						{
-							"name": "VENT LINE HANDLE PIVOT",
+							"name": "VENTLINE1",
 							"from": [ 4.3, -0.4, -5.2 ],
 							"to": [ 10.8, 0.1, -4.7 ],
 							"rotationOrigin": [ 10.8, -0.15, -4.95 ],
@@ -17207,163 +17207,179 @@
 							},
 							"children": [
 								{
-									"name": "vent line handle",
-									"from": [ -0.0482, -0.0518, 1.5 ],
-									"to": [ 2.9518, 0.5482, 2.1 ],
-									"rotationOrigin": [ -0.0482, 0.2482, 1.8 ],
-									"rotationX": 90.0,
-									"rotationY": 45.0,
-									"rotationZ": -90.0,
+									"name": "VENTLINE2",
+									"from": [ 0.0, -0.01, -0.01 ],
+									"to": [ 6.5, 0.49, 0.49 ],
+									"rotationOrigin": [ 6.5, 0.251, 0.26 ],
 									"faces": {
-										"north": { "texture": "#tinbronze1", "uv": [ 8.0, 7.0, 11.0, 7.5 ] },
-										"east": { "texture": "#tinbronze1", "uv": [ 3.0, 2.5, 3.5, 3.0 ], "windMode": [-1,-1,-1,-1], "windData": [1,1,1,1] },
-										"south": { "texture": "#tinbronze1", "uv": [ 2.5, 2.0, 5.5, 2.5 ] },
-										"west": { "texture": "#tinbronze1", "uv": [ 4.5, 4.5, 5.0, 5.0 ], "windMode": [-1,-1,-1,-1] },
-										"up": { "texture": "#tinbronze1", "uv": [ 3.5, 4.0, 6.5, 4.5 ] },
-										"down": { "texture": "#tinbronze1", "uv": [ 5.5, 11.0, 8.5, 11.5 ] }
+										"north": { "texture": "#plain", "uv": [ 0.0, 0.0, 6.5, 0.5 ] },
+										"east": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "enabled": false },
+										"south": { "texture": "#plain", "uv": [ 0.0, 0.0, 6.5, 0.5 ] },
+										"west": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "enabled": false },
+										"up": { "texture": "#plain", "uv": [ 0.0, 0.0, 6.5, 0.5 ] },
+										"down": { "texture": "#plain", "uv": [ 0.0, 0.0, 6.5, 0.5 ] }
 									},
 									"children": [
 										{
-											"name": "Cube53",
-											"from": [ 0.25, -2.9235, -0.0735 ],
-											"to": [ 0.75, 0.0765, 0.4265 ],
-											"rotationOrigin": [ 0.25, 0.1765, 0.1265 ],
-											"rotationX": 45.0,
-											"rotationZ": -16.0,
-											"faces": {
-												"north": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 3.0 ] },
-												"east": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 3.0 ] },
-												"south": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 3.0 ] },
-												"west": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 3.0 ] },
-												"up": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "enabled": false },
-												"down": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "enabled": false }
-											},
-											"children": [
-												{
-													"name": "handlehub3",
-													"from": [ -0.05, 2.91, -0.2646 ],
-													"to": [ 0.55, 3.91, 0.7354 ],
-													"rotationOrigin": [ -0.05, 3.41, 0.2354 ],
-													"rotationX": 45.0,
-													"faces": {
-														"north": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 1.0 ] },
-														"east": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
-														"south": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 1.0 ] },
-														"west": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
-														"up": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 1.0 ] },
-														"down": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 1.0 ] }
-													}
-												},
-												{
-													"name": "handlehub4",
-													"from": [ -0.05, -0.89, -0.2646 ],
-													"to": [ 0.55, 0.11, 0.7354 ],
-													"rotationOrigin": [ -0.05, -0.39, 0.2354 ],
-													"rotationX": 45.0,
-													"faces": {
-														"north": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 1.0 ] },
-														"east": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
-														"south": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 1.0 ] },
-														"west": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
-														"up": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 1.0 ] },
-														"down": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 1.0 ] }
-													}
-												}
-											]
-										},
-										{
-											"name": "Cube69",
-											"from": [ 2.35, -2.89, -0.1442 ],
-											"to": [ 2.85, 0.11, 0.3558 ],
-											"rotationOrigin": [ 2.85, 0.2058, 0.0558 ],
-											"rotationX": 45.0,
-											"rotationZ": 16.0,
-											"faces": {
-												"north": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 3.0 ] },
-												"east": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 3.0 ] },
-												"south": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 3.0 ] },
-												"west": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 3.0 ] },
-												"up": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "enabled": false },
-												"down": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "enabled": false }
-											},
-											"children": [
-												{
-													"name": "handlehub5",
-													"from": [ -0.05, 2.91, -0.2646 ],
-													"to": [ 0.55, 3.91, 0.7354 ],
-													"rotationOrigin": [ -0.05, 3.41, 0.2354 ],
-													"rotationX": 45.0,
-													"faces": {
-														"north": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 1.0 ] },
-														"east": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
-														"south": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 1.0 ] },
-														"west": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
-														"up": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 1.0 ] },
-														"down": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 1.0 ] }
-													}
-												},
-												{
-													"name": "handlehub6",
-													"from": [ -0.05, -0.89, -0.2646 ],
-													"to": [ 0.55, 0.11, 0.7354 ],
-													"rotationOrigin": [ -0.05, -0.39, 0.2354 ],
-													"rotationX": 45.0,
-													"faces": {
-														"north": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 1.0 ] },
-														"east": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
-														"south": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 1.0 ] },
-														"west": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
-														"up": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 1.0 ] },
-														"down": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 1.0 ] }
-													}
-												}
-											]
-										},
-										{
-											"name": "Cube55",
-											"from": [ 3.75, -2.4, -2.5538 ],
-											"to": [ 4.25, 2.7, -2.0538 ],
-											"rotationOrigin": [ 4.0, -2.2991, -2.3492 ],
+											"name": "vent line handle2",
+											"from": [ -0.0482, -0.0518, 1.5 ],
+											"to": [ 2.9518, 0.5482, 2.1 ],
+											"rotationOrigin": [ -0.0482, 0.2482, 1.8 ],
 											"rotationX": 90.0,
-											"rotationZ": 90.0,
+											"rotationY": 45.0,
+											"rotationZ": -90.0,
 											"faces": {
-												"north": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 5.0 ] },
-												"east": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 5.0 ] },
-												"south": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 5.0 ] },
-												"west": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 5.0 ] },
-												"up": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-												"down": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
+												"north": { "texture": "#tinbronze1", "uv": [ 8.0, 7.0, 11.0, 7.5 ] },
+												"east": { "texture": "#tinbronze1", "uv": [ 3.0, 2.5, 3.5, 3.0 ], "windMode": [-1,-1,-1,-1], "windData": [1,1,1,1] },
+												"south": { "texture": "#tinbronze1", "uv": [ 2.5, 2.0, 5.5, 2.5 ] },
+												"west": { "texture": "#tinbronze1", "uv": [ 4.5, 4.5, 5.0, 5.0 ], "windMode": [-1,-1,-1,-1] },
+												"up": { "texture": "#tinbronze1", "uv": [ 3.5, 4.0, 6.5, 4.5 ] },
+												"down": { "texture": "#tinbronze1", "uv": [ 5.5, 11.0, 8.5, 11.5 ] }
 											},
 											"children": [
 												{
-													"name": "Cube68",
-													"from": [ -0.1, 1.05, -0.1 ],
-													"to": [ 0.6, 4.05, 0.6 ],
-													"rotationOrigin": [ -0.1, 1.0, -0.1 ],
+													"name": "Cube74",
+													"from": [ 0.25, -2.9235, -0.0735 ],
+													"to": [ 0.75, 0.0765, 0.4265 ],
+													"rotationOrigin": [ 0.25, 0.1765, 0.1265 ],
+													"rotationX": 45.0,
+													"rotationZ": -16.0,
 													"faces": {
-														"north": { "texture": "#plainoak", "uv": [ 11.0, 0.5, 14.0, 1.0 ], "rotation": 90 },
-														"east": { "texture": "#plainoak", "uv": [ 9.5, 1.0, 12.5, 1.5 ], "rotation": 90 },
-														"south": { "texture": "#plainoak", "uv": [ 12.0, 5.5, 15.0, 6.0 ], "rotation": 90 },
-														"west": { "texture": "#plainoak", "uv": [ 12.0, 12.5, 15.0, 13.0 ], "rotation": 90 },
-														"up": { "texture": "#plainoak", "uv": [ 4.0, 1.0, 4.5, 1.5 ] },
-														"down": { "texture": "#plainoak", "uv": [ 5.0, 4.5, 5.5, 5.0 ] }
+														"north": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 3.0 ] },
+														"east": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 3.0 ] },
+														"south": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 3.0 ] },
+														"west": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 3.0 ] },
+														"up": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "enabled": false },
+														"down": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "enabled": false }
+													},
+													"children": [
+														{
+															"name": "handlehub7",
+															"from": [ -0.05, 2.91, -0.2646 ],
+															"to": [ 0.55, 3.91, 0.7354 ],
+															"rotationOrigin": [ -0.05, 3.41, 0.2354 ],
+															"rotationX": 45.0,
+															"faces": {
+																"north": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 1.0 ] },
+																"east": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+																"south": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 1.0 ] },
+																"west": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+																"up": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 1.0 ] },
+																"down": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 1.0 ] }
+															}
+														},
+														{
+															"name": "handlehub8",
+															"from": [ -0.05, -0.89, -0.2646 ],
+															"to": [ 0.55, 0.11, 0.7354 ],
+															"rotationOrigin": [ -0.05, -0.39, 0.2354 ],
+															"rotationX": 45.0,
+															"faces": {
+																"north": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 1.0 ] },
+																"east": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+																"south": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 1.0 ] },
+																"west": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+																"up": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 1.0 ] },
+																"down": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 1.0 ] }
+															}
+														}
+													]
+												},
+												{
+													"name": "Cube75",
+													"from": [ 2.35, -2.89, -0.1442 ],
+													"to": [ 2.85, 0.11, 0.3558 ],
+													"rotationOrigin": [ 2.85, 0.2058, 0.0558 ],
+													"rotationX": 45.0,
+													"rotationZ": 16.0,
+													"faces": {
+														"north": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 3.0 ] },
+														"east": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 3.0 ] },
+														"south": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 3.0 ] },
+														"west": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 3.0 ] },
+														"up": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "enabled": false },
+														"down": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "enabled": false }
+													},
+													"children": [
+														{
+															"name": "handlehub9",
+															"from": [ -0.05, 2.91, -0.2646 ],
+															"to": [ 0.55, 3.91, 0.7354 ],
+															"rotationOrigin": [ -0.05, 3.41, 0.2354 ],
+															"rotationX": 45.0,
+															"faces": {
+																"north": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 1.0 ] },
+																"east": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+																"south": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 1.0 ] },
+																"west": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+																"up": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 1.0 ] },
+																"down": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 1.0 ] }
+															}
+														},
+														{
+															"name": "handlehub10",
+															"from": [ -0.05, -0.89, -0.2646 ],
+															"to": [ 0.55, 0.11, 0.7354 ],
+															"rotationOrigin": [ -0.05, -0.39, 0.2354 ],
+															"rotationX": 45.0,
+															"faces": {
+																"north": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 1.0 ] },
+																"east": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+																"south": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 1.0 ] },
+																"west": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+																"up": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 1.0 ] },
+																"down": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 1.0 ] }
+															}
+														}
+													]
+												},
+												{
+													"name": "Cube76",
+													"from": [ 3.75, -2.4, -2.5538 ],
+													"to": [ 4.25, 2.7, -2.0538 ],
+													"rotationOrigin": [ 4.0, -2.2991, -2.3492 ],
+													"rotationX": 90.0,
+													"rotationZ": 90.0,
+													"faces": {
+														"north": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 5.0 ] },
+														"east": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 5.0 ] },
+														"south": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 5.0 ] },
+														"west": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 5.0 ] },
+														"up": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+														"down": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
+													},
+													"children": [
+														{
+															"name": "Cube77",
+															"from": [ -0.1, 1.05, -0.1 ],
+															"to": [ 0.6, 4.05, 0.6 ],
+															"rotationOrigin": [ -0.1, 1.0, -0.1 ],
+															"faces": {
+																"north": { "texture": "#plainoak", "uv": [ 11.0, 0.5, 14.0, 1.0 ], "rotation": 90 },
+																"east": { "texture": "#plainoak", "uv": [ 9.5, 1.0, 12.5, 1.5 ], "rotation": 90 },
+																"south": { "texture": "#plainoak", "uv": [ 12.0, 5.5, 15.0, 6.0 ], "rotation": 90 },
+																"west": { "texture": "#plainoak", "uv": [ 12.0, 12.5, 15.0, 13.0 ], "rotation": 90 },
+																"up": { "texture": "#plainoak", "uv": [ 4.0, 1.0, 4.5, 1.5 ] },
+																"down": { "texture": "#plainoak", "uv": [ 5.0, 4.5, 5.5, 5.0 ] }
+															}
+														}
+													]
+												},
+												{
+													"name": "AXLE4",
+													"from": [ 1.2, -0.1, -0.1 ],
+													"to": [ 1.9, 0.7, 0.7 ],
+													"rotationOrigin": [ 1.2, 0.3, 0.3 ],
+													"faces": {
+														"north": { "texture": "#plain", "uv": [ 8.0, 7.0, 8.5, 7.5 ] },
+														"east": { "texture": "#plain", "uv": [ 3.0, 2.5, 3.5, 3.0 ], "windMode": [-1,-1,-1,-1], "windData": [1,1,1,1] },
+														"south": { "texture": "#plain", "uv": [ 2.5, 2.0, 3.0, 2.5 ] },
+														"west": { "texture": "#plain", "uv": [ 4.5, 4.5, 5.0, 5.0 ], "windMode": [-1,-1,-1,-1] },
+														"up": { "texture": "#plain", "uv": [ 3.5, 4.0, 4.0, 4.5 ] },
+														"down": { "texture": "#plain", "uv": [ 5.5, 11.0, 6.0, 11.5 ] }
 													}
 												}
 											]
-										},
-										{
-											"name": "AXLE3",
-											"from": [ 1.2, -0.1, -0.1 ],
-											"to": [ 1.9, 0.7, 0.7 ],
-											"rotationOrigin": [ 1.2, 0.3, 0.3 ],
-											"faces": {
-												"north": { "texture": "#plain", "uv": [ 8.0, 7.0, 8.5, 7.5 ] },
-												"east": { "texture": "#plain", "uv": [ 3.0, 2.5, 3.5, 3.0 ], "windMode": [-1,-1,-1,-1], "windData": [1,1,1,1] },
-												"south": { "texture": "#plain", "uv": [ 2.5, 2.0, 3.0, 2.5 ] },
-												"west": { "texture": "#plain", "uv": [ 4.5, 4.5, 5.0, 5.0 ], "windMode": [-1,-1,-1,-1] },
-												"up": { "texture": "#plain", "uv": [ 3.5, 4.0, 4.0, 4.5 ] },
-												"down": { "texture": "#plain", "uv": [ 5.5, 11.0, 6.0, 11.5 ] }
-											}
 										}
 									]
 								}
@@ -25200,8 +25216,8 @@
 																															"children": [
 																																{
 																																	"name": "vent hatch line 33",
-																																	"from": [ 3.5, 0.0, 0.0 ],
-																																	"to": [ 5.0, 0.5, 0.5 ],
+																																	"from": [ 3.5, -0.01, 0.0 ],
+																																	"to": [ 5.0, 0.49, 0.5 ],
 																																	"rotationOrigin": [ 3.5, 0.25, 0.0 ],
 																																	"rotationY": -45.0,
 																																	"faces": {
@@ -25215,8 +25231,8 @@
 																																	"children": [
 																																		{
 																																			"name": "vent hatch line 34",
-																																			"from": [ 1.5, 0.0, 0.0 ],
-																																			"to": [ 5.0, 0.5, 0.5 ],
+																																			"from": [ 1.5, 0.01, 0.0 ],
+																																			"to": [ 5.0, 0.51, 0.5 ],
 																																			"rotationOrigin": [ 1.5, 0.25, 0.0 ],
 																																			"rotationY": -45.0,
 																																			"faces": {
@@ -31931,7 +31947,7 @@
 							},
 							"attachmentpoints": [
 								{
-									"code": "Throttlelock",
+									"code": "ThrottleLockAP",
 									"posX": "0.0","posY": "0.0","posZ": "0.0",
 									"rotationX": "0.0","rotationY": "0.0","rotationZ": "0.0"
 								}
@@ -32337,6 +32353,32 @@
 					"frame": 29,
 					"elements": {
 						"throtle lever bracket2": { "rotationX": 180.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "GoDown",
+			"code": "godown",
+			"quantityframes": 15,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"VENTLINE2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"barrel lid hinge2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"vent hatch line 34": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 14,
+					"elements": {
+						"VENTLINE2": { "offsetX": -2.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"barrel lid hinge2": { "rotationX": 0.0, "rotationY": 35.0, "rotationZ": 0.0 },
+						"vent hatch line 34": { "offsetX": -0.9, "offsetY": 0.0, "offsetZ": 0.3, "rotationX": 0.0, "rotationY": 17.0, "rotationZ": 0.0 }
 					}
 				}
 			]
