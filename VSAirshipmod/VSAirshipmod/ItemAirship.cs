@@ -32,6 +32,7 @@ namespace VSAirshipmod
             {
                 return;
             }
+            float Fuel = slot.Itemstack.Attributes.GetFloat("Fuel");
 
             if (!(byEntity is EntityPlayer) || player.WorldData.CurrentGameMode != EnumGameMode.Creative)
             {
@@ -65,7 +66,7 @@ namespace VSAirshipmod
 
                 entity.Attributes.SetString("origin", "playerplaced");
 
-                float Fuel = slot.Itemstack.Attributes.GetFloat("Fuel");
+                
 
                 entity.Attributes.SetFloat("Fuel", Fuel);
 
