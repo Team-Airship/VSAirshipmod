@@ -16,8 +16,6 @@ namespace VSAirshipmod
     public class EntityAirshipTier1 : EntityAirship
     {
 
-
-
         /// <summary>
         /// Amount of Fuel the Airship has.
         /// </summary>
@@ -45,7 +43,7 @@ namespace VSAirshipmod
             }
             set
             {
-                WatchedAttributes.SetFloat("Inflate", Math.Clamp(value,0,3));
+                WatchedAttributes.SetFloat("Inflate", Math.Clamp(value,0f,3f));
             }
         }
 
@@ -166,6 +164,8 @@ namespace VSAirshipmod
                     MarkShapeModified();
                 }
 
+                //---------------------------------------Burner valve animation toggle---------------------------------------//
+
                 if (Idler)
                 {
                     if (!AnimManager.IsAnimationActive("burnervalve"))
@@ -175,6 +175,8 @@ namespace VSAirshipmod
                 {
                     AnimManager.StopAnimation("burnervalve");
                 }
+
+                //---------------------------------------Up/ Down animation handlers---------------------------------------//
 
                 if (HorizontalVelocity > 0)
                 {
@@ -196,7 +198,9 @@ namespace VSAirshipmod
                     AnimManager.StopAnimation("godown");
                     AnimManager.StopAnimation("pump");
                 }
-                //Api.Logger.Notification(Inflate ? "Yes" : "No");
+
+                //---------------------------------------Inflation State Machine---------------------------------------//
+
                 if (Inflate > 0)
                 {
                     if (AnimManager.IsAnimationActive("deflation"))
@@ -262,7 +266,7 @@ namespace VSAirshipmod
             base.OnGameTick(dt);
             if (World.Side == EnumAppSide.Server)
             {
-                updateBoatAngleAndMotion(dt);
+                updateBoatAngleAndMotion(dt,true);
             }
         }
 
@@ -307,7 +311,7 @@ namespace VSAirshipmod
         }
 
 
-        protected void updateBoatAngleAndMotion(float dt)
+        protected void updateBoatAngleAndMotion(float dt,bool Gametick = false)
         {
             // Ignore lag spikes
             dt = Math.Min(0.5f, dt);
@@ -329,19 +333,22 @@ namespace VSAirshipmod
             {
                 if (FuelTimer > 0 || Fuel > 0)
                 {
-                    Inflate = Math.Min(Inflate + dt, 3);
-                    if (FuelTimer <= 0)
-                    {
-                        FuelTimer = 6;
-                        if (Api is ICoreServerAPI sapi)
+                    if (Gametick) {
+                        Inflate = Math.Min(Inflate + dt, 3);
+                        if (FuelTimer <= 0)
                         {
-                            Fuel -= 1;
+                            FuelTimer = 6;
+                            if (Api is ICoreServerAPI sapi)
+                            {
+                                Fuel -= 1;
+                            }
+                        }
+                        else
+                        {
+                            FuelTimer -= motion.Y > 0 ? dt : dt / 4f;
                         }
                     }
-                    else
-                    {
-                        FuelTimer -= motion.Y > 0 ? dt: dt/2;
-                    }
+
                     if (Ready && motion.Y > 0)
                         HorizontalVelocity = motion.Y * dt;//+= (motion.Y * SpeedMultiplier - HorizontalVelocity) * dt;
                 }
@@ -350,7 +357,7 @@ namespace VSAirshipmod
                     Idler = false;
                 }
             }
-            else if (!Ready || (OnGround && IsEmptyOfPlayers()))
+            else if (!Ready || ((OnGround || Swimming) && IsEmptyOfPlayers()))
             {
                 Inflate = 0;
             }
