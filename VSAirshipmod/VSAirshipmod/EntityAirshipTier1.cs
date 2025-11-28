@@ -102,7 +102,6 @@ namespace VSAirshipmod
         {
             var shape = entityShape;
 
-            shape = entityShape;
             if (AnimManager.Animator != null) {
                 if (Api is ICoreClientAPI)
                 {

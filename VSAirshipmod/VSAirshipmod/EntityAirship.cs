@@ -270,7 +270,8 @@ namespace VSAirshipmod
         public virtual float SpeedMultiplier { get; set; } = 1f;
         public virtual float TurnMultiplier { get; set; } = 1f;
 
-
+        public double swimmingOffsetY;
+        public override double SwimmingOffsetY => swimmingOffsetY;
 
         public double RenderOrder => 0;
         public int RenderRange => 999;
@@ -360,7 +361,7 @@ namespace VSAirshipmod
         public Dictionary<string, string> MountAnimations = new Dictionary<string, string>();
         public override void Initialize(EntityProperties properties, ICoreAPI api, long InChunkIndex3d)
         {
-            //swimmingOffsetY = properties.Attributes["swimmingOffsetY"].AsDouble();// doing this causes the airship to bob in the water
+            swimmingOffsetY = properties.Attributes["swimmingOffsetY"].AsDouble();
             SpeedMultiplier = properties.Attributes["speedMultiplier"].AsFloat(1f);
             TurnMultiplier = properties.Attributes["turnMultiplier"].AsFloat(1f);
             /*if (Fuel == 0)
