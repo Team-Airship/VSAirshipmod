@@ -32,8 +32,7 @@
     "shouldSwivelFromMotion": false,
     "speedMultiplier": 0.5,
     "turnMultiplier": 6,
-    "swimmingOffsetY": 8,
-    "requiresPaddlingTool": false,
+    "swimmingOffsetY": 0,
     "rightClickPickup": true,
     "mountAnimations": {
       "idle": "SitBarrelIdle",

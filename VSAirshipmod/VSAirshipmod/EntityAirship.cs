@@ -265,16 +265,13 @@ namespace VSAirshipmod
             get { return 100f; }
         }
 
-        public double swimmingOffsetY;
-        public override double SwimmingOffsetY
-        {
-            get { return swimmingOffsetY; }
-        }
+        
 
         public virtual float SpeedMultiplier { get; set; } = 1f;
         public virtual float TurnMultiplier { get; set; } = 1f;
 
-
+        public double swimmingOffsetY;
+        public override double SwimmingOffsetY => swimmingOffsetY;
 
         public double RenderOrder => 0;
         public int RenderRange => 999;
