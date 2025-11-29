@@ -6,6 +6,9 @@
         "value": {
             "*storage-tier1": {
                 "base": "vsairshipmod:item/wearable/tier1lantern"
+            },
+            "*storage-tier2": {
+                "base": "vsairshipmod:item/wearable/tier2lanterns"
             }
         },
         "side": "server"
