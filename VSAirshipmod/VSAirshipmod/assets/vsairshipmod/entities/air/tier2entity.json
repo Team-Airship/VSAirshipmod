@@ -31,8 +31,13 @@
       ]
     },
     "shouldSwivelFromMotion": false,
-    "speedMultiplier": 1.2,
-    "turnMultiplier": 6,
+    "speedMultiplierByType": { "*": 2.0 },
+    "ForwardAccelerationByType": { "*": 0.05 },
+    "TurnSpeedByType": { "*": 0.25 },
+    "TurnAccelerationByType": { "*": 0.15 },
+    "RiseSpeedByType": { "*": 15 },
+    "RiseAccelerationByType": { "*": 0.07 },
+    "pitchStrengthByType": { "*": 0.5 },
     "swimmingOffsetYByType": { "*": 1.5 },
     "rightClickPickup": false,
     "mountAnimations": {
