@@ -1,0 +1,13 @@
+ [
+  {
+    "file": "game:blocktypes/clay/fired/pot.json",
+    "op": "addmerge",
+    "path": "/attributes/attachableToEntity/attachedShapeBySlotCode",
+    "value": {
+      "*Storage-tier2": {
+        "base": "vsairshipmod:item/wearable/tier2cookingpot"
+      }
+    },
+    "side": "server"
+  }
+]

@@ -121,34 +121,34 @@
       "wearableSlots": [
         {
           "code": "LeftSeat",
-          "forCategoryCodes": ["basket", "lantern"],
+          "forCategoryCodes": [ "basket", "lantern" ],
           "attachmentPointCode": "LeftSeatAP",
           "stepParentTo": { "": { "elementName": "LeftSeat" } },
           "emptyInteractPassThrough": true
         },
         {
           "code": "RightSeat",
-          "forCategoryCodes": ["basket", "lantern", "boatcover"],
+          "forCategoryCodes": [ "basket", "lantern", "boatcover" ],
           "attachmentPointCode": "RightSeatAP",
           "stepParentTo": { "": { "elementName": "RightSeat" } },
           "emptyInteractPassThrough": true
         },
         {
           "code": "LeftStorage",
-          "forCategoryCodes": ["basket", "vessel", "chest", "storage"],
+          "forCategoryCodes": [ "basket", "vessel", "chest", "storage" ],
           "attachmentPointCode": "LeftStorageAP",
-          "behindSlots": ["RightStorage"],
+          "behindSlots": [ "RightStorage" ],
           "stepParentTo": { "": { "elementName": "LeftStorage" } }
         },
         {
           "code": "RightStorage",
-          "forCategoryCodes": ["basket", "vessel", "chest", "storage"],
+          "forCategoryCodes": [ "basket", "vessel", "chest", "storage" ],
           "attachmentPointCode": "RightStorageAP",
           "stepParentTo": { "": { "elementName": "RightStorage" } }
         },
         {
           "code": "BoatBedroll",
-          "forCategoryCodes": ["bedroll"],
+          "forCategoryCodes": [ "bedroll" ],
           "attachmentPointCode": "BedrollStorageAP",
           "stepParentTo": { "": { "elementName": "BedrollStorage" } }
         },
@@ -175,10 +175,45 @@
           "stepParentTo": {
             "": { "elementName": "prop frame B" }
           }
+        },
+        {
+          "code": "ShieldStorage1-{type}",
+          "forCategoryCodes": [ "shield" ],
+          "attachmentPointCode": "ShieldStorage1AP",
+          "stepParentTo": { "LowerArmL": { "elementName": "ShieldStorage1SP" } }
+        },
+        {
+          "code": "ShieldStorage2-{type}",
+          "forCategoryCodes": [ "shield" ],
+          "attachmentPointCode": "ShieldStorage2AP",
+          "stepParentTo": { "LowerArmL": { "elementName": "ShieldStorage2SP" } }
+        },
+        {
+          "code": "ShieldStorage3-{type}",
+          "forCategoryCodes": [ "shield" ],
+          "attachmentPointCode": "ShieldStorage3AP",
+          "stepParentTo": { "LowerArmL": { "elementName": "ShieldStorage3SP" } }
+        },
+        {
+          "code": "ShieldStorage4-{type}",
+          "forCategoryCodes": [ "shield" ],
+          "attachmentPointCode": "ShieldStorage4AP",
+          "stepParentTo": { "LowerArmL": { "elementName": "ShieldStorage4SP" } }
+        },
+        {
+          "code": "CookingPotStorage-{type}",
+          "forCategoryCodes": [ "pot" ],
+          "attachmentPointCode": "CookingPotAP",
+          "stepParentTo": { "": { "elementName": "CookingPot" } }
+        },
+        {
+          "code": "LanternStorage-{type}",
+          "forCategoryCodes": [ "lantern" ],
+          "attachmentPointCode": "LanternStorageAP"
         }
       ]
     },
-    "selectionboxes": { "selectionBoxes": ["LeftSeatAP", "RightSeatAP", "LeftStorageAP", "RightStorageAP", "BedrollStorageAP","ThrottleLockAP","CoalBarrelAP","GearCubeAP"] }
+    "selectionboxes": { "selectionBoxes": [ "LeftSeatAP", "RightSeatAP", "LeftStorageAP", "RightStorageAP", "BedrollStorageAP", "ThrottleLockAP", "CoalBarrelAP", "GearCubeAP", "ShieldStorage1AP", "ShieldStorage2AP", "ShieldStorage3AP", "ShieldStorage4AP", "CookingPotAP", "LanternStorageAP" ] }
   },
   "client": {
     "size": 1,
@@ -229,7 +264,7 @@
       {
         "code": "Propeller",
         "animation": "Propeller",
-        "animationSpeed": 1,
+        "animationSpeed": 0,
         "easeInSpeed": 1,
         "easeOutSpeed": 1
       },
@@ -263,6 +298,23 @@
         "weight": 10,
         "easeInSpeed": 3,
         "easeOutSpeed": 3
+      },
+      {
+        "code": "FuelCoal",
+        "animation": "FuelCoal",
+        "animationSpeed": 0
+      },
+      {
+        "code": "FuelTemp",
+        "animation": "FuelTemp",
+        "animationSpeed": 0
+      },
+      {
+        "code": "UsingCoal",
+        "animation": "UsingCoal",
+        "animationSpeed": 1,
+        "easeInSpeed": 1,
+        "easeOutSpeed": 1
       }
     ],
     "texturesByType": {
@@ -274,10 +326,11 @@
         "mordant": { "base": "game:block/cloth/linen/mordant" },
         "plain": { "base": "game:block/cloth/linen/plain" },
         "charcoal": { "base": "game:block/coal/charcoal" },
+        "ember": { "base": "game:block/coal/ember" },
         "glass": { "base": "game:block/glass/quartz" },
         "poor": { "base": "game:block/leather/poor" },
         "rustyglow": { "base": "game:block/machine/statictranslocator/rustyglow" },
-        "blackbronze": {"base": "game:block/metal/ingot/blackbronze"},
+        "blackbronze": { "base": "game:block/metal/ingot/blackbronze" },
         "material-deco": { "base": "game:block/metal/lantern/copper-deco" },
         "tinbronze": { "base": "game:block/metal/lantern/tinbronze" },
         "gold": { "base": "game:block/metal/plate/gold" },
@@ -286,19 +339,20 @@
         "blackbronze2": { "base": "game:block/metal/sheet/blackbronze2" },
         "copper1": { "base": "game:block/metal/sheet/copper1" },
         "cupronickel1": { "base": "game:block/metal/sheet/cupronickel1" },
-        "platinum1": {"base": "game:block/metal/sheet/platinum1"},
-          "copper-soldered": { "base": "game:block/metal/sheet/soldered-copper" },
-          "rusty-iron": { "base": "game:block/metal/tarnished/rusty-iron" },
-          "wattle": { "base": "game:block/wattle" },
-          "charred": { "base": "game:block/wood/charred" },
-          "aged": { "base": "game:block/wood/debarked/aged" },
-          "oak": { "base": "game:block/wood/debarked/{material}" },
-          "plainoak": { "base": "game:block/wood/debarked/{material}" },
-          "linen": { "base": "game:item/bag/linensack/linen" },
-          "top": { "base": "game:item/bag/linensack/top" },
-          "furside": { "base": "game:item/resource/hide/raw-huge" },
-          "rope": { "base": "game:item/resource/rope" }
-        }
+        "platinum1": { "base": "game:block/metal/sheet/platinum1" },
+        "copper-soldered": { "base": "game:block/metal/sheet/soldered-copper" },
+        "stainlesssteel1": { "base": "game:block/metal/sheet/stainlesssteel1" },
+        "steel1": { "base": "game:block/metal/sheet/steel1" },
+        "rusty-iron": { "base": "game:block/metal/tarnished/rusty-iron" },
+        "charred": { "base": "game:block/wood/charred" },
+        "aged": { "base": "game:block/wood/debarked/aged" },
+        "oak": { "base": "game:block/wood/debarked/{material}" },
+        "plainoak": { "base": "game:block/wood/debarked/{material}" },
+        "linen": { "base": "game:item/bag/linensack/linen" },
+        "top": { "base": "game:item/bag/linensack/top" },
+        "furside": { "base": "game:item/resource/hide/raw-huge" },
+        "rope": { "base": "game:item/resource/rope" }
+      }
     },
     "behaviors": [
       {
