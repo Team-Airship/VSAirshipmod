@@ -403,6 +403,32 @@ namespace VSAirshipmod
                 }*/
             }
         }
+        
+        //Actual properties for the descending particles
+        //This is based off the "IncomingEffects" I had for Rickety Translocation, which I had nicely labelled
+        public void DescendingEffects(Vec3d pos)
+        {
+            var particles = new SimpleParticleProperties(
+                0.5f, 0.6f,                                 //MinQuantity particle per tick, AddQuantity extra for randomness
+                ColorUtil.ToRgba(200, 200, 200, 210),       //Color of particles R,G,B, Alpha)
+                new Vec3d(pos.X - 0.3, pos.Y, pos.Z - 0.3), //MinPos: start corner of "spawn box"
+                new Vec3d(pos.X + 0.1, pos.Y + 0.5, pos.Z + 0.1), // MaxPos: opposite corner of "spawn box"
+                new Vec3f(-0.1f, 0.01f, -0.1f),           // MinVelocity: base velocity in XYZ
+                new Vec3f(0.1f, 0.05f, 0.1f),             //AddVelocity: added random velocity range
+                1f,                                     // LifeLength: base lifespan of each particle in seconds
+                -0.6f,                                    // MinSize: minimum particle size
+                0.9f,                                 // MaxSize: maximum particle size
+                0.1f,                                     // SizeEvolve?
+                EnumParticleModel.Quad                     // Model, set to quad so its like 2D planes
+            );
+
+            // Opacity evolution: fade linearly over lifespan
+            particles.OpacityEvolve = EvolvingNatFloat.create(EnumTransformFunction.LINEAR, -300f);
+
+            //Particle size gradually shrinks over time
+            particles.SizeEvolve = new EvolvingNatFloat(EnumTransformFunction.LINEAR, -0.8f);
+            Api.World.SpawnParticles(particles);
+        }
 
 
 
