@@ -86,6 +86,17 @@ namespace VSAirshipmod
         private bool CoalFuelJustSpent = false;
         private long CoalFuelSpentTimestamp = 0;
 
+         long nextLogTime = 0;
+
+
+            double ForwardAcceleration = 0.05;
+            double TurnSpeed = 0.25;
+            double TurnAcceleration = 0.15;
+            double RiseSpeed = 15;
+            double RiseAcceleration = 0.07;
+
+            float pitchStrength = 0.5f;
+
 
         static int MinutesPerGear = 15;//Central spot to set this, will be good for configs or something too :P
 
@@ -227,7 +238,7 @@ namespace VSAirshipmod
                 mountAngle.Z = -GameMath.Sin((float)(ellapseMs / 3000.0 * 2 * gamespeed)) * 8 * diff;
 
                 curRotMountAngleZ += ((float)AngularVelocity * 5 * Math.Sign(ForwardSpeed) - curRotMountAngleZ) * dt * 5;
-                forwardpitch = -(float)ForwardSpeed * 1.3f;
+                forwardpitch = -((float)this.ForwardSpeed * this.pitchStrength);
             }
 
             var esr = Properties.Client.Renderer as EntityShapeRenderer;
@@ -286,6 +297,13 @@ namespace VSAirshipmod
         public override void Initialize(EntityProperties properties, ICoreAPI api, long chunk)
         {
             base.Initialize(properties, api, chunk);
+
+             ForwardAcceleration = properties.Attributes["ForwardAcceleration"].AsDouble(0.05);
+             TurnSpeed = properties.Attributes["TurnSpeed"].AsDouble(0.25);
+             TurnAcceleration = properties.Attributes["TurnAcceleration"].AsDouble(0.15);
+             RiseSpeed = properties.Attributes["RiseSpeed"].AsDouble(15);
+             RiseAcceleration = properties.Attributes["RiseAcceleration"].AsDouble(0.07);
+             pitchStrength  = properties.Attributes["pitchStrength"].AsFloat(0.5f);
 
             //Listener for TemporalGearCount changes marks the shape modified like sail boat unfurling
             WatchedAttributes.RegisterModifiedListener("TemporalGearCount", MarkShapeModified);
@@ -432,10 +450,51 @@ namespace VSAirshipmod
             float step = GlobalConstants.PhysicsFrameTime;
             var motion = SeatsToMotion(step);
 
-            //Some easing to it
-            ForwardSpeed += (motion.X * SpeedMultiplier - ForwardSpeed) * dt;
-            AngularVelocity += (motion.Z * (SpeedMultiplier / AngularVelocityDivider) - AngularVelocity) * dt;
-            HorizontalVelocity = motion.Y * dt;//+= (motion.Y * SpeedMultiplier - HorizontalVelocity) * dt;
+  
+
+
+                double target = motion.X * SpeedMultiplier * 3;
+                double diff = Math.Abs(target - ForwardSpeed);
+                double normalized = target != 0.0 ? Math.Clamp(diff / target, 0.0, 1.0) : 0.0;
+
+                double accelPower = Math.Clamp(1.0 - ForwardAcceleration * 0.4, 0.1, 1.0);
+                double slowPower  = Math.Clamp(1.0 - ForwardAcceleration * 0.2, 0.1, 1.0);
+
+                double shaped = Math.Pow(normalized, accelPower) * Math.Pow(1.0 - normalized, slowPower);
+                double accelBoost = 1.0 + shaped * (ForwardAcceleration * 0.3);
+                double lerpFactor = 1.0 - Math.Exp(-ForwardAcceleration * accelBoost * dt);
+
+                lerpFactor = Math.Min(lerpFactor, 0.03);
+
+                if (target < 0 && ForwardSpeed >= 0.01 )
+                {
+                    ForwardSpeed += (3 * target - ForwardSpeed) * lerpFactor;
+                }
+                else if (target > 0 && ForwardSpeed <= -0.01)
+                {
+                    ForwardSpeed += (5 * target - ForwardSpeed) * lerpFactor;
+                }
+                else if (target == 0 && (ForwardSpeed >= 0.01|| ForwardSpeed <= -0.01))
+                {
+                    ForwardSpeed += (1.5 * target - ForwardSpeed) * lerpFactor;
+                }
+                else
+                {
+                    ForwardSpeed += (target - ForwardSpeed) * lerpFactor;
+                }
+
+
+            this.AngularVelocity += (motion.Z * (double)TurnSpeed - this.AngularVelocity) * (double)dt*TurnAcceleration;
+
+            this.HorizontalVelocity += (motion.Y * (double)RiseSpeed - this.HorizontalVelocity) * (double)dt*RiseAcceleration;
+
+
+
+
+
+
+
+
 
             //Coal fuel usage logic
             if (IsFlying)
@@ -490,20 +549,30 @@ namespace VSAirshipmod
 
             if (ForwardSpeed != 0.0)
             {
-                var targetmotion = pos.GetViewVector().Mul((float)-ForwardSpeed).ToVec3d();
-                pos.Motion.X = targetmotion.X;
-                pos.Motion.Z = targetmotion.Z;
+                if (Math.Abs(target) <= 0 && Math.Abs(this.ForwardSpeed) <= 0.02)
+                {
+                    this.ForwardSpeed = 0.0;
+                    pos.Motion.X = 0.0;
+                    pos.Motion.Z = 0.0;
+                }
+                else
+                {
+                    Vec3d targetmotion = pos.GetViewVector().Mul((float)(-(float)this.ForwardSpeed)).ToVec3d();
+                    pos.Motion.X = targetmotion.X;
+                    pos.Motion.Z = targetmotion.Z;
+                }
             }
 
             if (HorizontalVelocity > 0.0)
             {
-                pos.Motion.Y = 0.013 * horizontalmodifier;
+                pos.Motion.Y = 0.1 * this.HorizontalVelocity;
             }
 
             if (HorizontalVelocity < 0.0 && (IsFlying))
             {
-                pos.Motion.Y = -0.013 * horizontalmodifier;
+                pos.Motion.Y = 0.1 * this.HorizontalVelocity;
             }
+
             /*if ((CoalStackSize <= 0 && motion.Y <= 0f) && (!OnGround || !Swimming))
             {
                 pos.Motion.Y -= 0.003 * dt;
@@ -545,6 +614,27 @@ namespace VSAirshipmod
             }
 
             pos.Roll = 0;
+
+
+
+			if (this.Api is ICoreClientAPI && (this.ForwardSpeed != 0 || this.AngularVelocity != 0 ) )
+			{
+
+            long now = World.ElapsedMilliseconds;
+
+            if (now >= nextLogTime)
+
+            {
+                nextLogTime = now + 1000;
+
+                 //  Api.Logger.Debug("[AirshiptDebug] Flying at = {0:0} / {1:0} Speed", this.ForwardSpeed * 10000, target * 10000);
+                 //  Api.Logger.Debug("[AirshiptDebug] Turnspeed: {0:0.0} / RiseSpeed: {1:0.0}", this.AngularVelocity * 1000, this.HorizontalVelocity * 10);
+        
+
+                }
+			}
+
+
         }
 
         public virtual Vec3d SeatsToMotion(float dt)
