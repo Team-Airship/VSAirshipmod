@@ -420,7 +420,31 @@ namespace VSAirshipmod
                     CoalFuelJustSpent = false;
                 }
             }
+            //Descending Particle Logic, rotated and offset to be around the release hatch
+            if (Api.Side == EnumAppSide.Client && animDown)
+            {
+                double yawRad = Pos.Yaw;
+                yawRad = -yawRad;        //JUST HAD TO invert rotation to match entity visuals
 
+                //And not forget to normalize
+                yawRad %= 2 * Math.PI;
+                if (yawRad < 0) yawRad += 2 * Math.PI;
+
+                Vec3d offset = new Vec3d(0, 9.8, 0.7);//This is the offset to set it to the hatch
+
+                double cos = Math.Cos(yawRad);
+                double sin = Math.Sin(yawRad);
+
+                Vec3d emitPos = Pos.XYZ.AddCopy(new Vec3d(
+                    offset.X * cos - offset.Z * sin,
+                    offset.Y,
+                    offset.X * sin + offset.Z * cos
+                ));
+
+                DescendingEffects(emitPos);
+
+                //Api.Logger.Notification($"[AirshipTier2] Client Yaw: {GameMath.RAD2DEG * Pos.Yaw}");
+            }
             base.OnGameTick(dt);
         }
 
