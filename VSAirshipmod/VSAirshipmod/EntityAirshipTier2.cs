@@ -78,6 +78,9 @@ namespace VSAirshipmod
         private bool animPropeller = false;
         private bool animDown = false;
 
+        private bool animLeftHalf = false;//Rivvion's Orders, might wanna do animation blending in future?
+        private bool animRightHalf = false;
+
         private bool engineSoundPlaying = false;
 
         private bool TemporalFuelJustSpent = false;
@@ -144,17 +147,32 @@ namespace VSAirshipmod
 
         private void set_animations(EntityRideableSeat seat)
         {
-            bool isReversing = seat.controls.Backward;
-            if (isReversing == false)
+            //check for forward or backwards to do half turn animations for engine rotation
+            bool allowHalf = seat.controls.Forward || seat.controls.Backward;
+            if (allowHalf)
             {
+                animLeft = false;
+                animRight = false;
+
+                if (!seat.controls.Backward)
+                {
+                    animLeftHalf = seat.controls.Left;
+                    animRightHalf = seat.controls.Right;
+                }
+                else//Steering inversion
+                {
+                    animLeftHalf = seat.controls.Right;
+                    animRightHalf = seat.controls.Left;
+                }
+            }
+            else//No inversion needed since we can't go backwards without triggering the half ones
+            {
+                animLeftHalf = false;
+                animRightHalf = false;
                 animLeft = seat.controls.Left;
                 animRight = seat.controls.Right;
             }
-            else
-            {
-                animLeft = seat.controls.Right;
-                animRight = seat.controls.Left;
-            }
+
 
 
             animBackward = seat.controls.Backward;
@@ -176,6 +194,8 @@ namespace VSAirshipmod
             if (!animLeft) StopAnimation("TurnLeft");
             if (!animRight) StopAnimation("TurnRight");
             if (!animPropeller) StopAnimation("Propeller");
+            if (!animLeftHalf) StopAnimation("TurnLeftHalf");
+            if (!animRightHalf) StopAnimation("TurnRightHalf");
 
             //Start animations if active
             if (animForward) StartAnimation("Forward");
@@ -183,6 +203,8 @@ namespace VSAirshipmod
             if (animLeft) StartAnimation("TurnLeft");
             if (animRight) StartAnimation("TurnRight");
             if (animPropeller) StartAnimation("Propeller");
+            if (animLeftHalf) StartAnimation("TurnLeftHalf");
+            if (animRightHalf) StartAnimation("TurnRightHalf");
 
             //Inversion logic for making it turn backwards, using reflection here too like the loom
             bool isReversing = animBackward;
@@ -477,6 +499,58 @@ namespace VSAirshipmod
   
 
 
+
+            //Coal fuel usage logic
+            if (IsFlying)
+            {
+                //if (CoalStackSize > 0)
+                if (CoalStackSize >= 2)
+                {
+                    CoalFuelUsage -= (long)(dt * 1000f);
+
+                    if (CoalFuelUsage <= 0 && !CoalFuelJustSpent)
+                    {
+                        CoalFuelJustSpent = true;
+                        CoalFuelSpentTimestamp = World.ElapsedMilliseconds;
+
+                        //CoalStackSize--;
+                        CoalStackSize -= 2;
+                        CoalFuelUsage = (long)(CoalBurnDuration * 1000f);   //Reset timer for next coal piece
+
+                        WatchedAttributes.MarkPathDirty("CoalStackSize");
+                        WatchedAttributes.MarkPathDirty("CoalFuelUsage");
+
+                        StartAnimation("UsingCoal");
+
+                        if (Api.Side == EnumAppSide.Server)
+                        {
+                            /*int r = World.Rand.Next(1, 4);
+                            World.PlaySoundAt(
+                                new AssetLocation($"game:sounds/block/charcoal{r}"), 
+                                this
+                            );*/
+                            World.PlaySoundAt(new AssetLocation("game:sounds/held/torch-equip"), this);
+                        }
+                    }
+                }else
+                {
+                    motion.Y -= 0.01f;//turned this back on, turn it off if ya dont want it again Freaky :P
+                }
+                /*else
+                {
+                    //No coal left so tack on passive descent
+                        //if(verticalMotion >= 0){
+                        //   verticalMotion = 0;
+                        //}
+                        verticalMotion -= 0.01f;
+                }*/
+            }
+
+
+
+
+
+
                 double target = motion.X * SpeedMultiplier * 3;
                 double diff = Math.Abs(target - ForwardSpeed);
                 double normalized = target != 0.0 ? Math.Clamp(diff / target, 0.0, 1.0) : 0.0;
@@ -518,50 +592,6 @@ namespace VSAirshipmod
 
 
 
-
-
-            //Coal fuel usage logic
-            if (IsFlying)
-            {
-                //if (CoalStackSize > 0)
-                if (CoalStackSize >= 2)
-                {
-                    CoalFuelUsage -= (long)(dt * 1000f);
-
-                    if (CoalFuelUsage <= 0 && !CoalFuelJustSpent)
-                    {
-                        CoalFuelJustSpent = true;
-                        CoalFuelSpentTimestamp = World.ElapsedMilliseconds;
-
-                        //CoalStackSize--;
-                        CoalStackSize -= 2;
-                        CoalFuelUsage = (long)(CoalBurnDuration * 1000f);   //Reset timer for next coal piece
-
-                        WatchedAttributes.MarkPathDirty("CoalStackSize");
-                        WatchedAttributes.MarkPathDirty("CoalFuelUsage");
-
-                        StartAnimation("UsingCoal");
-
-                        if (Api.Side == EnumAppSide.Server)
-                        {
-                            /*int r = World.Rand.Next(1, 4);
-                            World.PlaySoundAt(
-                                new AssetLocation($"game:sounds/block/charcoal{r}"), 
-                                this
-                            );*/
-                            World.PlaySoundAt(new AssetLocation("game:sounds/held/torch-equip"), this);
-                        }
-                    }
-                }
-                /*else
-                {
-                    //No coal left so tack on passive descent
-                        //if(verticalMotion >= 0){
-                        //   verticalMotion = 0;
-                        //}
-                        verticalMotion -= 0.01f;
-                }*/
-            }
 
 
             applyGravity = IsEmptyOfPlayers() ? true : false;

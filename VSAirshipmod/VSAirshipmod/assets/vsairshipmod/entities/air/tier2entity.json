@@ -267,6 +267,20 @@
         "easeOutSpeed": 1
       },
       {
+        "code": "TurnLeftHalf",
+        "animation": "turnLefthalf",
+        "animationSpeed": 1,
+        "easeInSpeed": 1,
+        "easeOutSpeed": 1
+      },
+      {
+        "code": "TurnRightHalf",
+        "animation": "turnrighthalf",
+        "animationSpeed": 1,
+        "easeInSpeed": 1,
+        "easeOutSpeed": 1
+      },
+      {
         "code": "Propeller",
         "animation": "Propeller",
         "animationSpeed": 0,
