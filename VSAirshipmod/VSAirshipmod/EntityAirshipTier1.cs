@@ -463,10 +463,15 @@ namespace VSAirshipmod
                     pos.Motion.Y = Math.Max(pos.Motion.Y, -0.013 * horizontalmodifier);
                 }
             }
-            
+            else if (applyGravity && !Swimming)
+            {
+                pos.Motion.Y -= 0.013 * dt;
+                pos.Motion.Y = Math.Max(pos.Motion.Y, -0.013 * horizontalmodifier);
+            }
 
 
-            var bh = GetBehavior<EntityBehaviorPassivePhysicsMultiBox>();
+
+                var bh = GetBehavior<EntityBehaviorPassivePhysicsMultiBox>();
             bool canTurn = true;
 
             if (AngularVelocity != 0.0)
