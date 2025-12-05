@@ -1,0 +1,80 @@
+[
+	{
+		"op": "addmerge",
+		"path": "/attributes/attachableToEntity",
+		"value": {
+			"categoryCode": "shovel",
+			"texturePrefixCode": "tool-{material}",
+			"attachedShapeBySlotCodeByType": {
+				"@*(chert|granite|andesite|basalt|obsidian|peridotite|flint)": {
+					"ToolStorage*-tier2": { "base": "item/tool/shovel-stone" }
+				},
+				"*": {
+					"ToolStorage*-tier2": { "base": "item/tool/shovel-copper" }
+				}
+			}
+		},
+		"file": "game:itemtypes/tool/shovel.json",
+		"side": "Server"
+	},
+	{
+		"op": "addmerge",
+		"path": "/attributes/attachableToEntity",
+		"value": {
+
+			"categoryCode": "axe",
+			"texturePrefixCode": "tool-{material}",
+			"attachedShapeBySlotCode": {
+				"ToolStorage*-tier2": { "base": "item/tool/axe/stone" }
+			}
+		},
+		"file": "game:itemtypes/tool/axe-stone.json",
+		"side": "Server"
+	},
+	{
+		"op": "addmerge",
+		"path": "/attributes/attachableToEntity",
+		"value": {
+			"categoryCode": "prospectingpick",
+			"texturePrefixCode": "tool-{material}",
+			"attachedShapeBySlotCode": {
+				"ToolStorage*-tier2": { "base": "item/tool/prospectingpick" }
+			}
+		},
+		"file": "game:itemtypes/tool/prospectingpick.json",
+		"side": "Server"
+	},
+	{
+		"op": "addmerge",
+		"path": "/attributes/attachableToEntity",
+		"value": {
+			"categoryCode": "pickaxe",
+			"texturePrefixCode": "tool-{material}",
+			"attachedShapeBySlotCode": {
+				"ToolStorage*-tier2": { "base": "item/tool/pickaxe" }
+			}
+		},
+		"file": "game:itemtypes/tool/pickaxe.json",
+		"side": "Server"
+	},
+	{
+		"op": "addmerge",
+		"path": "/attributes/attachableToEntity",
+		"value": {
+			"categoryCodeByType": {
+				"axe-felling-*": "axe"
+			},
+			"texturePrefixCode": "tool-{material}",
+			"attachedShapeBySlotCodeByType": {
+				"@*(copper|bronze)": {
+					"ToolStorage*-tier2": { "base": "item/tool/axe/copper" }
+				},
+				"*": {
+					"ToolStorage*-tier2": { "base": "item/tool/axe/iron" }
+				}
+			}
+		},
+		"file": "game:itemtypes/tool/axe-metal.json",
+		"side": "Server"
+	}
+]

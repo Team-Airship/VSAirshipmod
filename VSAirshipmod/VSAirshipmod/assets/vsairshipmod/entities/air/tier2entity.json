@@ -55,19 +55,61 @@
   },
   "behaviorConfigs": {
     "passivephysicsmultibox": {
-      "collisionBoxes":[
-        { "x1": -1.9, "y1": 4, "z1":  3.1, "x2": 1.9, "y2": 9.6, "z2":  6.9 }, // balloon 1
-        { "x1": -1.9, "y1": 4, "z1":  0.1, "x2": 1.9, "y2": 9.6, "z2":  3.9 }, // balloon 2
-        { "x1": -1.4, "y1": 0, "z1":  0.1, "x2": 1.4, "y2": 2.9, "z2":  2.9 }, // boat 1
-        { "x1": -1.4, "y1": 0, "z1": -2.9, "x2": 1.4, "y2": 2.9, "z2": -0.1 }, // boat 2
-        { "x1": -1.9, "y1": 4, "z1": -3.9, "x2": 1.9, "y2": 9.6, "z2":  0.1 }, // balloon 3
-        { "x1": -1.9, "y1": 4, "z1": -6.9, "x2": 1.9, "y2": 9.6, "z2": -2.9 }  // balloon 4
+      "collisionBoxes": [
+        {
+          "x1": -1.9,
+          "y1": 4,
+          "z1": 3.1,
+          "x2": 1.9,
+          "y2": 9.6,
+          "z2": 6.9
+        }, // balloon 1
+        {
+          "x1": -1.9,
+          "y1": 4,
+          "z1": 0.1,
+          "x2": 1.9,
+          "y2": 9.6,
+          "z2": 3.9
+        }, // balloon 2
+        {
+          "x1": -1.4,
+          "y1": 0,
+          "z1": 0.1,
+          "x2": 1.4,
+          "y2": 2.9,
+          "z2": 2.9
+        }, // boat 1
+        {
+          "x1": -1.4,
+          "y1": 0,
+          "z1": -2.9,
+          "x2": 1.4,
+          "y2": 2.9,
+          "z2": -0.1
+        }, // boat 2
+        {
+          "x1": -1.9,
+          "y1": 4,
+          "z1": -3.9,
+          "x2": 1.9,
+          "y2": 9.6,
+          "z2": 0.1
+        }, // balloon 3
+        {
+          "x1": -1.9,
+          "y1": 4,
+          "z1": -6.9,
+          "x2": 1.9,
+          "y2": 9.6,
+          "z2": -2.9
+        } // balloon 4
       ],
       "groundDragFactor": 1,
       "airDragFallingFactor": 0.5,
       "gravityFactor": 1.0
     },
-/*    "ellipsoidalrepulseagentsByType": {
+    /*    "ellipsoidalrepulseagentsByType": {
             "*": {
                 "offset": {
                     "x": 3,
@@ -87,7 +129,10 @@
           "apName": "LeftSeatAP",
           "controllable": false,
           "mountRotation": { "y": 180 },
-          "mountOffset": { "x": 1.2, "z": 1.4 },
+          "mountOffset": {
+            "x": 1.2,
+            "z": 1.4
+          },
           "bodyYawLimit": null,
           "eyeHeight": 1,
           "animation": "sitboatidle"
@@ -96,7 +141,10 @@
           "apName": "RightSeatAP",
           "controllable": true,
           "mountRotation": { "y": 180 },
-          "mountOffset": { "x": 1.2, "z": 1.5 },
+          "mountOffset": {
+            "x": 1.2,
+            "z": 1.5
+          },
           "bodyYawLimit": null,
           "eyeHeight": 1,
           "animation": "sitboatidle"
@@ -105,7 +153,10 @@
           "apName": "LeftStorageAP",
           "controllable": false,
           "mountRotation": { "y": 180 },
-          "mountOffset": { "x": 1.5, "z": 1.5 },
+          "mountOffset": {
+            "x": 1.5,
+            "z": 1.5
+          },
           "bodyYawLimit": null,
           "eyeHeight": 1,
           "animation": "sitflooridle"
@@ -114,12 +165,28 @@
           "apName": "RightStorageAP",
           "controllable": false,
           "mountRotation": { "y": 180 },
-          "mountOffset": { "x": 1.5, "z": 1.5 },
+          "mountOffset": {
+            "x": 1.5,
+            "z": 1.5
+          },
           "bodyYawLimit": null,
           "eyeHeight": 1,
           "animation": "sitflooridle"
         }
       ]
+    },
+    "writingsurface": {
+      "fontConfig": {
+        "maxWidth": 208,
+        "maxHeight": 96,
+        "fontSize": 20,
+        "textVoxelOffsetY": -1,
+        "textVoxelOffsetZ": 0.25,
+        "textVoxelHeight": 6,
+        "fontName": "Almendra",
+        "verticalAlign": "Middle",
+        "boldFont": true
+      }
     },
     "rideableaccessories": {
       "dropContentsOnDeath": true,
@@ -150,12 +217,6 @@
           "forCategoryCodes": [ "basket", "vessel", "chest", "storage" ],
           "attachmentPointCode": "RightStorageAP",
           "stepParentTo": { "": { "elementName": "RightStorage" } }
-        },
-        {
-          "code": "BoatBedroll",
-          "forCategoryCodes": [ "bedroll" ],
-          "attachmentPointCode": "BedrollStorageAP",
-          "stepParentTo": { "": { "elementName": "BedrollStorage" } }
         },
         {
           "code": "TrottleLock",
@@ -238,13 +299,13 @@
           "code": "ToolStorage1-{type}",
           "forCategoryCodes": [ "shovel", "axe", "pickaxe", "prospectingpick" ],
           "attachmentPointCode": "ToolStorage1AP",
-          "stepParentTo": { "LowerArmL": { "elementName": "ToolStorage1SP" } }
+          "stepParentTo": { "": { "elementName": "ToolStorage1SP" } }
         },
         {
           "code": "ToolStorage2-{type}",
           "forCategoryCodes": [ "shovel", "axe", "pickaxe", "prospectingpick" ],
           "attachmentPointCode": "ToolStorage2AP",
-          "stepParentTo": { "LowerArmL": { "elementName": "ToolStorage2SP" } }
+          "stepParentTo": { "": { "elementName": "ToolStorage2SP" } }
         },
         {
           "code": "Left Plaque",
@@ -253,6 +314,30 @@
           "stepParentTo": {
             "": { "elementName": "PlaqueLeftFront" }
           }
+        },
+        {
+          "code": "CargoStorage1-{type}",
+          "forCategoryCodes": [ "bedroll", "airshipchest" ],
+          "attachmentPointCode": "CargoStorage1AP",
+          "stepParentTo": { "BedrollParent": { "elementName": "CargoStorage1" } }
+        },
+        {
+          "code": "CargoStorage2-{type}",
+          "forCategoryCodes": [ "bedroll", "airshipchest" ],
+          "attachmentPointCode": "CargoStorage2AP",
+          "stepParentTo": { "BedrollParent": { "elementName": "CargoStorage2" } }
+        },
+        {
+          "code": "CargoStorage3-{type}",
+          "forCategoryCodes": [ "bedroll", "airshipchest" ],
+          "attachmentPointCode": "CargoStorage3AP",
+          "stepParentTo": { "BedrollParent": { "elementName": "CargoStorage3" } }
+        },
+        {
+          "code": "CargoStorage4-{type}",
+          "forCategoryCodes": [ "bedroll", "airshipchest" ],
+          "attachmentPointCode": "CargoStorage4AP",
+          "stepParentTo": { "BedrollParent": { "elementName": "CargoStorage4" } }
         }
       ]
     },
@@ -262,7 +347,6 @@
         "RightSeatAP",
         "LeftStorageAP",
         "RightStorageAP",
-        "BedrollStorageAP",
         "ThrottleLockAP",
         "CoalBarrelAP",
         "GearCubeAP",
@@ -277,7 +361,11 @@
         "DeedBeamAP",
         "ToolStorage1AP",
         "ToolStorage2AP",
-        "LPlaqueAP"
+        "LPlaqueAP",
+        "CargoStorage1AP",
+        "CargoStorage2AP",
+        "CargoStorage3AP",
+        "CargoStorage4AP"
       ]
     }
   },
@@ -294,9 +382,9 @@
       {
         "code": "ThrottleLock",
         "animation": "ThrottleLock",
-        "animationSpeed": 2,
+        "animationSpeed": 1.5,
         "easeInSpeed": 30,
-        "easeOutSpeed": 2,
+        "easeOutSpeed": 1.5,
         "weight": 10
       },
       {
@@ -318,28 +406,28 @@
         "animation": "turnLeft",
         "animationSpeed": 1.5,
         "easeInSpeed": 20,
-        "easeOutSpeed": 2
+        "easeOutSpeed": 1.5
       },
       {
         "code": "TurnRight",
         "animation": "turnRight",
         "animationSpeed": 1.5,
         "easeInSpeed": 20,
-        "easeOutSpeed": 2
+        "easeOutSpeed": 1.5
       },
       {
         "code": "TurnLeftHalf",
         "animation": "turnLefthalf",
         "animationSpeed": 1.5,
         "easeInSpeed": 20,
-        "easeOutSpeed": 2
+        "easeOutSpeed": 1.5
       },
       {
         "code": "TurnRightHalf",
         "animation": "turnrighthalf",
         "animationSpeed": 1.5,
         "easeInSpeed": 20,
-        "easeOutSpeed": 2
+        "easeOutSpeed": 1.5
       },
       {
         "code": "Propeller",
@@ -446,6 +534,7 @@
       { "code": "selectionboxes" },
       { "code": "rideableaccessories" },
       { "code": "creaturecarrier" },
+      { "code": "writingsurface" },
       {
         "code": "hidewatersurface",
         "hideWaterElement": "ORIGINAirship/hideWater/*"
@@ -458,7 +547,8 @@
       { "code": "passivephysicsmultibox" },
       { "code": "selectionboxes" },
       { "code": "rideableaccessories" },
-      { "code": "creaturecarrier" }
+      { "code": "creaturecarrier" },
+      { "code": "writingsurface" }
     ]
   },
   "sounds": {

@@ -1,0 +1,37 @@
+[
+  {
+    "enabled": true,
+    "dependsOn": [
+      {
+        "modid": "cervinae",
+        "invert": true
+      },
+            {
+        "modid": "equus",
+        "invert": true
+      },
+            {
+        "modid": "cartwrightscaravan",
+        "invert": true
+      }
+    ],
+    "op": "remove",
+    "path": "/attributesByType/bed-hay-*/attachableToEntity/attachedShape",
+    "file": "game:blocktypes/wood/bed.json",
+    "side": "Server"
+  },
+  {
+    "op": "addmerge",
+    "path": "/attributesByType/bed-hay-*/attachableToEntity/attachedShapeBySlotCode",
+    "value": {
+      "CargoStorage*-tier2": {
+        "base": "block/hay/strawbed-inventory"
+      },
+      "lowerba*k": {
+        "base": "block/hay/strawbed-inventory"
+      }
+    },
+    "file": "game:blocktypes/wood/bed.json",
+    "side": "Server"
+  }
+]
