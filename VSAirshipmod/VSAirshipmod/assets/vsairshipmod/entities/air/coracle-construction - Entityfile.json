@@ -1,0 +1,91 @@
+{
+	"Enabled": false,
+	code: "shipwrightconstruction",
+	class: "EntityShipwrightConstruction",
+	tags: ["inanimate", "structure"],
+	variantgroups: [
+		{ code: "boattype", states: ["coracle"] },
+		{ code: "material", states: ["aged"], loadFromProperties: "game:block/wood" }
+	],
+	skipVariants: [
+		"*aged"
+	],
+	hitboxSizeByType: {
+		"*": { x: 3, y: 1.2, z: 3 }
+	},
+	attributes: {
+		boattype: "coracle",
+		relayRopeInteractions: true,
+		stages: [
+			{ addElements: ["ORIGIN/ORIGINRollerSplit"] },
+			{ requireStacks: [ { type: "item", code: "rope", quantity: 1 } ], removeElements: ["ORIGIN/ORIGINRollerSplit"], addElements: ["ORIGIN/ORIGIN0Roller"] },
+			{ requireStacks: [ { type: "block", name: "shipbuilding-ingredient-logs", code: "log-placed-*", quantity: 4, storeWildCard: "wood" } ], addElements: [ "ORIGIN/ORIGINBoat/ORIGIN1Rim"] },
+			{ requireStacks: [ { type: "block", code: "log-placed-{wood}-ud", quantity: 3 } ], addElements: ["ORIGIN/ORIGINBoat/ORIGIN2Keel"] },
+			{ requireStacks: [ { type: "block", code: "log-placed-{wood}-ud", quantity: 3 } ], addElements: ["ORIGIN/ORIGINBoat/ORIGIN3Keel2"] },
+			{ requireStacks: [ { type: "block", code: "log-placed-{wood}-ud", quantity: 4 } ], addElements: ["ORIGIN/ORIGINBoat/ORIGIN4Spines"] },
+			{ requireStacks: [ { type: "item", code: "rope", quantity: 2 } ], addElements: ["ORIGIN/ORIGINBoat/ORIGIN5Ropes"] },
+			{ requireStacks: [ { type: "item", code: "stick", quantity: 8 },{ type: "item", code: "rope", quantity: 2 } ], addElements: ["ORIGIN/ORIGINBoat/ORIGIN6Seat"] },
+			{ removeElements: ["ORIGIN/ORIGIN0Roller"], addElements: ["ORIGIN/ORIGINRollerSplit"]},
+			{ requireStacks: [ { type: "item", code: "hide-prepared-huge", quantity: 3 } ], addElements: ["ORIGIN/ORIGINBoat/ORIGIN7Pelt"] },
+			{ requireStacks: [ ], actionLangCode: "Launch" },
+			{ removeElements: ["ORIGIN/ORIGIN1props"] }
+		],
+	},
+	behaviorConfigs: {
+		"passivephysicsmultibox": { 
+			collisionBoxes: [
+				{ x1: -1.4, y1: 0, z1: 0.1, x2: 1.4, y2: 1.2, z2: 2.9 },
+				{ x1: -1.4, y1: 0, z1: -2.9, x2: 1.4, y2: 1.2, z2: -0.1 },
+				{ x1: -1.4, y1: 0, z1: -4.9, x2: 1.4, y2: 1.2, z2: -2.9 }
+			],
+			groundDragFactor: 1,
+			airDragFallingFactor: 0.5,
+			gravityFactor: 1.0
+		},
+		"selectionboxes": {
+			selectionBoxes: ["SeleAP" ]
+		}
+	},
+	client: {
+		size: 1,
+		renderer: "Shape",
+		shapeByType: {
+			"*": { base: "entity/coracle-construction"}
+		},
+		"textures": {
+		"cracked2":  { "base": "game:block/clay/daub/yellow/cracked2"},
+		"normal2":  { "base": "game:block/clay/daub/yellow/normal2"},
+		"mordant":  { "base": "game:block/cloth/linen/mordant"},
+		"wattle":  { "base": "game:block/wattle"},
+		"aged":  { "base": "game:block/wood/debarked/aged"},
+		"oak":  { "base": "game:block/wood/debarked/{material}"},
+		"oak1":  { "base": "game:block/wood/path/{material}1"},
+		"furside":  { "base": "game:item/resource/hide/raw-huge"},
+		"rope": { "base": "game:item/resource/rope"}
+		},
+		animations: [
+			{
+				code: "launch",
+				animation: "launch", 
+				animationSpeed: 1,
+				weight: 10,
+				blendMode: "AddAverage" 
+			},
+		],
+		behaviors: [
+			{ code: "passivephysicsmultibox" },
+			{ code: "interpolateposition" },
+			{ code: "selectionboxes" },
+			{ code: "floatupwhenstuck" }
+		],
+	},
+	server: {
+		behaviors: [
+			{ code: "passivephysicsmultibox" },
+			{ code: "selectionboxes" },
+			{ code: "floatupwhenstuck" }
+		],
+	},
+	sounds: {
+	}
+}

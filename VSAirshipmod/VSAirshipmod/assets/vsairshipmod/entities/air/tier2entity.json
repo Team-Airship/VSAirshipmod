@@ -15,6 +15,9 @@
     }
   ],
   "attributes": {
+    "handbook": {
+      "groupcode": "creaturegroup-airship"
+    },
     "deconstructible": true,
     "deconstructDropsByType": {
       "*": [
@@ -367,7 +370,10 @@
         "CargoStorage3AP",
         "CargoStorage4AP"
       ]
-    }
+    },
+  		ownable: {
+			groupCode: "airshiptier2"
+		}
   },
   "client": {
     "size": 1,
@@ -535,10 +541,8 @@
       { "code": "rideableaccessories" },
       { "code": "creaturecarrier" },
       { "code": "writingsurface" },
-      {
-        "code": "hidewatersurface",
-        "hideWaterElement": "ORIGINAirship/hideWater/*"
-      }
+      { "code": "hidewatersurface", "hideWaterElement": "ORIGINAirship/hideWater/*" },
+      { "code": "ownable" }
     ]
   },
   "server": {
@@ -548,7 +552,8 @@
       { "code": "selectionboxes" },
       { "code": "rideableaccessories" },
       { "code": "creaturecarrier" },
-      { "code": "writingsurface" }
+      { "code": "writingsurface" },
+      { "code": "ownable" }
     ]
   },
   "sounds": {

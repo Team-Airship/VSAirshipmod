@@ -1,0 +1,44 @@
+{
+	code: "airshipdeed",
+	"class": "ItemMedallion",
+	attributes: {
+		attachableToEntity: {
+			"categoryCode": "airshipdeed",
+			"texturePrefixCode": "airshipdeed",
+			"attachedShape": { "base": "item/wearable/airshipdeed" }
+		}
+	},
+	shape: { "base": "item/wearable/airshipdeed-inventory"
+	},
+	textures: {
+				"tinbronze1": { "base": "game:block/metal/sheet-plain/tinbronze1" },
+				"paper": { "base": "game:item/lore/item-paper" },
+				"map-blank": { "base": "game:item/utility/map-blank" },
+				"schematic": { "base": "game:item/utility/schematic-glider" }
+	},
+	heldTpIdleAnimationByType: {
+		"*": "holdbothhands"
+	},
+	maxStackSize: 1,
+	creativeinventory: { "general": ["*"], "items": ["*"], "airship": ["*"] },
+	renderAlphaTest: 0.25,
+	
+	guiTransform: {
+		translation: { x: 0, y: 0, z: 0 },
+		rotation: { x: -80, y: -10, z: 180 },
+		origin: { x: 0.21, y: -0.9, z: 0 },
+		scaleXyz: { x: -3.81, y: 3.81, z: 3.81 }
+	},
+	tpHandTransform: {
+		translation: { x: -0.05, y: -0.2, z: -0.1 },
+		rotation: { x: 50, y: -67, z: -13 },
+		origin: { x: 0.08, y: 0.4, z: 0.4 },
+		scale: 1
+	},
+		groundTransform: {
+		translation: { x: 0, y: 0, z: 0 },
+		rotation: { x: 0, y: 0, z: 0 },
+		origin: { x: 0, y: 0, z: 0 },
+		scale: 6
+	}
+}

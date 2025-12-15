@@ -1,0 +1,82 @@
+{
+	code: "airshipchest",
+	variantgroups: [
+		{ code: "type", states: [
+		"golden", "owl", "golden-aged", "owl-aged"
+		] }
+	],
+	attributes: {
+		attachableToEntity: {
+			"categoryCodeByType": {
+				"*": "airshipchest"
+			},
+			"attachedShapeBySlotCodeByType": {
+				"*owl*": {
+					"*": { "base": "item/wearable/airshipchestowl" }
+				},
+				"*": {
+					"*": { "base": "item/wearable/airshipchestgolden" }
+				}
+			},
+			"texturePrefixCode": "chest-{type}"
+		},
+		backpackByType: {
+			"*": { quantitySlots: 4 }
+		}
+	},
+	behaviorsByType: {
+		"*": [ { name: "HeldBag" } ]
+	},
+	shapeByType: {
+		"*owl*": { "base": "game:block/wood/chest/owl" },
+		"*golden*": { "base": "game:block/wood/chest/golden" }
+	},
+	texturesByType: {
+		"*": {
+			"top": { "base": "game:block/wood/chest/{type}/top" },
+			"sides2": { "base": "game:block/wood/chest/{type}/sides2" },
+			"sides1": { "base": "game:block/wood/chest/{type}/sides1" },
+			"inside": { "base": "game:block/wood/chest/{type}/inside" }
+		}
+	},
+	heldTpIdleAnimationByType: {
+		"*": "holdunderarm"
+	},
+	maxStackSize: 1,
+	creativeinventory: { "general": ["*"], "items": ["*"], "airship": ["*"] },
+	renderAlphaTest: 0.25,
+	sounds: {
+		"place": "block/planks"
+	},
+	materialDensity: 600,
+	tpHandTransform: {
+		translation: { x: -0.9, y: -0.5, z: -0.3 },
+		rotation: { x: 102, y: 0, z: 0 },
+		scale: 0.56
+	},
+	guiTransform: {
+		translation: {
+			x: 0,
+			y: 0,
+			z: 0
+		},
+		rotation: {
+			x: -20,
+			y: 44,
+			z: 180
+		},
+		origin: {
+			x: 0.5,
+			y: 0.4,
+			z: 0.4
+		},
+		scale: 1.23,
+		"rotate": true
+	},
+		groundTransform: {
+		translation: { x: 0, y: 0, z: 0 },
+		rotation: { x: 0, y: 0, z: 0 },
+		origin: { x: 0.5, y: 0, z: 0.5299 },
+		scale: 1.5
+	}
+}
