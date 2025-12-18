@@ -315,6 +315,20 @@ namespace VSAirshipmod
                     anim.BlendedWeight = 1f;
                     anim.EasingFactor = 0.1f;
                 }
+
+                if (!AnimManager.IsAnimationActive("weathervane"))
+                {
+                    AnimManager.StartAnimation("weathervane");
+                }
+
+                float targetWindDir = GameMath.Mod((float)Math.Atan2(WindDirection.X, WindDirection.Z) + GameMath.TWOPI - Pos.Yaw, GameMath.TWOPI);
+                anim = AnimManager.GetAnimationState("weathervane");
+                if (anim != null)
+                {
+                    anim.CurrentFrame = Math.Clamp((targetWindDir * GameMath.RAD2DEG)%360 / 10f,0f,35f);
+                    anim.BlendedWeight = 1f;
+                    //anim.EasingFactor = 1f;
+                }
             }
         }
 
@@ -440,11 +454,16 @@ namespace VSAirshipmod
 
             var pos = SidedPos;
 
+            Vec3d temp = new();
+
             if (ForwardSpeed != 0.0)
             {
                 var targetmotion = pos.GetViewVector().Mul((float)-ForwardSpeed).ToVec3d();
-                pos.Motion.X = targetmotion.X;
-                pos.Motion.Z = targetmotion.Z;
+
+                temp.X = targetmotion.X;
+                temp.Z = targetmotion.Z;
+                pos.Motion.X = temp.X;
+                pos.Motion.X = temp.Y;
             }
 
             if (HorizontalVelocity > 0.0)
@@ -452,7 +471,22 @@ namespace VSAirshipmod
                 pos.Motion.Y = 0.013 * horizontalmodifier;
             }
 
-            applyGravity = IsEmptyOfPlayers();
+
+            if (!Idler && !Swimming)
+            {
+                pos.Motion += WindDirection * 0.013f;
+                pos.Motion.X = Math.Clamp(pos.Motion.X, -Math.Abs(WindDirection.X), Math.Abs(WindDirection.X)) + temp.X;
+                //pos.Motion.Y = Math.Clamp(pos.Motion.Y, -WindDirection.Length(), WindDirection.Length()) + temp.Y;
+                pos.Motion.Z = Math.Clamp(pos.Motion.Z, -Math.Abs(WindDirection.Z), Math.Abs(WindDirection.Z)) + temp.Z;
+            }
+            else if(ForwardSpeed != 0.0)
+            {
+                pos.Motion.X = temp.X;
+                //pos.Motion.Y = temp.Y;
+                pos.Motion.Z = temp.Z;
+            }
+
+                applyGravity = IsEmptyOfPlayers();
 
             if (!OnGround && !Swimming && !applyGravity) {
                 if (HorizontalVelocity < 0.0)
@@ -469,9 +503,10 @@ namespace VSAirshipmod
                 pos.Motion.Y = Math.Max(pos.Motion.Y, -0.013 * horizontalmodifier);
             }
 
+            
 
 
-                var bh = GetBehavior<EntityBehaviorPassivePhysicsMultiBox>();
+            var bh = GetBehavior<EntityBehaviorPassivePhysicsMultiBox>();
             bool canTurn = true;
 
             if (AngularVelocity != 0.0)

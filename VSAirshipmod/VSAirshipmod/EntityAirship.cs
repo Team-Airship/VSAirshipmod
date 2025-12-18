@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
@@ -7,8 +8,8 @@ using Vintagestory.API.Config;
 using Vintagestory.API.Datastructures;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
-using Vintagestory.GameContent;
 using Vintagestory.API.Util;
+using Vintagestory.GameContent;
 
 namespace VSAirshipmod
 {
@@ -300,7 +301,16 @@ namespace VSAirshipmod
             set => WatchedAttributes.SetLong("TemporalFuelUsage", Math.Max(value, 0));
         }
 
-
+        public virtual Vec3d WindDirection
+        {
+            get 
+            {
+                double HightOverSea = Pos.Y - Api.World.SeaLevel;
+                double HightOverLand = Pos.Y - Api.World.BlockAccessor.GetRainMapHeightAt((int)Pos.X, (int)Pos.Z);
+                Vec3d BaseWind = Api.World.BlockAccessor.GetWindSpeedAt(Pos.XYZ);
+                return BaseWind.RotatedCopy(MathF.Max((float)HightOverSea-10f,0f)/25f) * Math.Max((HightOverLand - 5)/500f,0f);
+            }
+        }
         public virtual float SpeedMultiplier { get; set; } = 1f;
         public virtual float TurnMultiplier { get; set; } = 1f;
 
