@@ -462,14 +462,15 @@ namespace VSAirshipmod
 
                 temp.X = targetmotion.X;
                 temp.Z = targetmotion.Z;
-                pos.Motion.X = temp.X;
-                pos.Motion.Z = temp.Z;
             }
 
             if (HorizontalVelocity > 0.0)
             {
-                temp.Y = 0.013 * horizontalmodifier;
-                pos.Motion.Y = temp.Y;
+                if (pos.Y < Api.World.SeaLevel + MaxAltitude)
+                {
+                    pos.Motion.Y += 0.013 * dt ;
+                    pos.Motion.Y = Math.Min(0.013 * horizontalmodifier, pos.Motion.Y);
+                }
             }
 
             applyGravity = IsEmptyOfPlayers();
@@ -484,18 +485,23 @@ namespace VSAirshipmod
                 tempMotion.X = pos.Motion.HorLength() <= WindDirection.HorLength() ? pos.Motion.X + temp.X : pos.Motion.X *(WindDirection.HorLength() / pos.Motion.HorLength()) + temp.X;
                 tempMotion.Z = pos.Motion.HorLength() <= WindDirection.HorLength() ? pos.Motion.Z + temp.Z : pos.Motion.Z * (WindDirection.HorLength() / pos.Motion.HorLength()) + temp.Z;
                 pos.Motion = tempMotion;
-
+            }
+            else if(ForwardSpeed != 0.0)
+            {
+                pos.Motion.X = temp.X;
+                pos.Motion.Z = temp.Z;
             }
 
 
             if (!OnGround && !Swimming && !applyGravity) {
                 if (HorizontalVelocity < 0.0)
-                    pos.Motion.Y = -0.013 * horizontalmodifier;
+                    pos.Motion.Y -= 0.026 * dt;
                 else if (!Idler && motion.Y <= 0f)
                 {
                     pos.Motion.Y -= 0.013 * dt;
-                    pos.Motion.Y = Math.Max(pos.Motion.Y, -0.013 * horizontalmodifier);
+                    
                 }
+                pos.Motion.Y = Math.Max(pos.Motion.Y, -0.013 * horizontalmodifier);
             }
             else if (applyGravity && !Swimming)
             {

@@ -308,7 +308,7 @@ namespace VSAirshipmod
                 double HightOverSea = Pos.Y - Api.World.SeaLevel;
                 double HightOverLand = Pos.Y - Api.World.BlockAccessor.GetRainMapHeightAt((int)Pos.X, (int)Pos.Z);
                 Vec3d BaseWind = Api.World.BlockAccessor.GetWindSpeedAt(Pos.XYZ);
-                return BaseWind.RotatedCopy(MathF.Max((float)HightOverSea-10f,0f)/25f) * Math.Max((HightOverLand - 5)/500f,0f);
+                return BaseWind.RotatedCopy(MathF.Max((float)HightOverSea-10f,0f)/10f) * Math.Max((HightOverLand - 5)/500f,0f);
             }
         }
         public virtual float SpeedMultiplier { get; set; } = 1f;
@@ -400,7 +400,11 @@ namespace VSAirshipmod
 
             base.OnGameTick(dt);
         }
-
+        public virtual int MaxAltitude
+        {
+            get => WatchedAttributes.GetInt("MaxAltitude", 150);
+            set => WatchedAttributes.SetInt("MaxAltitude", value);
+        }
 
         public Dictionary<string, string> MountAnimations = new Dictionary<string, string>();
         public override void Initialize(EntityProperties properties, ICoreAPI api, long InChunkIndex3d)
@@ -409,6 +413,7 @@ namespace VSAirshipmod
             SpeedMultiplier = properties.Attributes["speedMultiplier"].AsFloat(1f);
             TurnMultiplier = properties.Attributes["turnMultiplier"].AsFloat(1f);
             TemporalGearMaxCount = properties.Attributes["TemporalGearMaxCount"].AsInt(1);
+            MaxAltitude = properties.Attributes["MaxAltitude"].AsInt(150);
             /*if (Fuel == 0)
                 Fuel = this.Attributes.GetFloat("Fuel");*/
 
