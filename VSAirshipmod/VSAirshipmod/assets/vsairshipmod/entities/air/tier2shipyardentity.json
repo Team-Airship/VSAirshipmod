@@ -1,0 +1,588 @@
+{
+	"enabled": true,
+	code: "vsairshipmodconstruction",
+	class: "EntityVSAirshipmodConstruction",
+	tags: ["inanimate", "structure"],
+	"variantgroups": [
+		{ "code": "airshiptype", "states": [ "tier2" ] },
+		{ "code": "material", "states": [ "aged" ], "loadFromProperties": "game:block/wood" }
+	],
+	hitboxSizeByType: {
+		"*": { x: 2, y: 0.2, z: 2 }
+	},
+	attributes: {
+		airshiptype: "tier2",
+		relayRopeInteractions: true,
+		stages: [
+			{
+				addElements: [ "ORIGIN/ORIGIN0-launchyard", "ORIGIN/T2/ORIGIN0-coracleboards" ]
+			},
+			//stage 1
+			{ requireStacks: [ 
+				{ type: "block", name: "shipbuilding-ingredient-logs", code: "log-placed-*", quantity: 32, storeWildCard: "wood" }
+			  ],
+				addElements: [
+					"ORIGIN/C0-coraclebuild/ORIGINBoat/ORIGIN1Rim",
+					"ORIGIN/T2/ORIGIN1-treetrunks1",
+					"ORIGIN/T2/ORIGIN2-extrashort1",
+					"ORIGIN/T2/ORIGIN3-extralong1"
+				] },
+			//stage 2 
+			{ requireStacks: [ 
+				{ type: "item", code: "saw-copper", quantity: 1 } //CHECK FOR "REQUIRED DURABILITY" FROM TRADERS BUYING TOOLS
+			  ],
+								removeElements: [
+					"ORIGIN/T2/ORIGIN1-treetrunks1"
+				],
+				addElements: [
+					"ORIGIN/C0-coraclebuild/ORIGINBoat/ORIGIN2Keel",
+					"ORIGIN/T2/ORIGIN4-sawntimber",
+					"ORIGIN/T2/ORIGIN5-extrashort2",
+					"ORIGIN/T2/ORIGIN6-extralong2"
+				] },
+			//stage 3 
+			{ requireStacks: [ 
+				{ type: "item", code: "rope", quantity: 4 },
+				{ type: "block", code: "supportbeam-{wood}", quantity: 8 }
+			  ],
+				removeElements: [
+					"ORIGIN/T2/ORIGIN3-extralong1",
+					"ORIGIN/T2/ORIGIN6-extralong2"
+				],
+				addElements: [
+					"ORIGIN/C0-coraclebuild/ORIGINBoat/ORIGIN3Keel2",
+					"ORIGIN/T2/ORIGIN7-bendlogslong"
+				] },
+			//stage 4
+			{ requireStacks: [ 
+				{ type: "item", code: "rope", quantity: 2 } ],
+				removeElements: [ "ORIGIN/T2/ORIGIN4-sawntimber"
+				],
+				addElements: [
+					"ORIGIN/C0-coraclebuild/ORIGINBoat/ORIGIN4Spines",
+					"ORIGIN/T2/ORIGIN4Spines",
+					"ORIGIN/T2/ORIGIN8-benttimbers1"
+				] },
+			//stage 5
+			{ requireStacks: [ 
+				{ type: "item", code: "rope", quantity: 4 },
+				{ type: "block", code: "supportbeam-{wood}", quantity: 16 }
+			  ],
+				removeElements: [
+					"ORIGIN/T2/ORIGIN2-extrashort1",
+					"ORIGIN/T2/ORIGIN5-extrashort2"
+				],
+				addElements: [
+					"ORIGIN/C0-coraclebuild/ORIGINBoat/ORIGIN5Ropes",
+					"ORIGIN/T2/ORIGIN9-bendlogsshort"
+				] },
+			//stage 6
+			{ requireStacks: [ 
+				{ type: "item", code: "rope", quantity: 2 },
+				{ type: "block", code: "supportbeam-{wood}", quantity: 2 }
+			  ],
+				removeElements: [
+					"ORIGIN/T2/ORIGIN0-coracleboards",
+					"ORIGIN/T2/ORIGIN8-benttimbers1"
+				],
+				addElements: [
+					"ORIGIN/T2/ORIGIN10-RollerSplit",
+					"ORIGIN/T2/ORIGIN11-benttimbers2",
+					"ORIGIN/T2/ORIGIN12-nooses"
+				] },
+			//stage 7
+			{ requireStacks: [ 
+				{ type: "item", code: "rope", quantity: 4 },
+				{ type: "block", code: "supportbeam-{wood}", quantity: 8 },
+				{ type: "item", code: "hide-pelt-huge", quantity: 3 }
+			  ],
+				removeElements: [
+					"ORIGIN/T2/ORIGIN10-RollerSplit"
+				],
+				addElements: [
+					"ORIGIN/C0-coraclebuild/ORIGINBoat/ORIGIN7Pelt",
+					"ORIGIN/T2/ORIGIN13-rigging1"
+				] },
+			//stage 8
+			{ requireStacks: [ 
+				{ type: "item", code: "chisel-copper", quantity: 1 }, //CHECK FOR "REQUIRED DURABILITY" FROM TRADERS BUYING TOOLS
+				{ type: "item", code: "hammer-copper", quantity: 1 } //CHECK FOR "REQUIRED DURABILITY" FROM TRADERS BUYING TOOLS
+			  ],
+				removeElements: [
+					"ORIGIN/C0-coraclebuild/ORIGINBoat/ORIGIN1Rim",
+					"ORIGIN/C0-coraclebuild/ORIGINBoat/ORIGIN2Keel",
+					"ORIGIN/C0-coraclebuild/ORIGINBoat/ORIGIN3Keel2",
+					"ORIGIN/C0-coraclebuild/ORIGINBoat/ORIGIN4Spines",
+					"ORIGIN/C0-coraclebuild/ORIGINBoat/ORIGIN5Ropes",
+					"ORIGIN/C0-coraclebuild/ORIGINBoat/ORIGIN7Pelt",
+					"ORIGIN/T2/ORIGIN7-bendlogslong",
+					"ORIGIN/T2/ORIGIN9-bendlogsshort",
+					"ORIGIN/T2/ORIGIN12-nooses"
+				],
+				addElements: [
+					"ORIGIN/T2/ORIGIN14-coracle1"
+				] },
+			//stage 9
+			{ requireStacks: [ 
+				{ type: "block", code: "supportbeam-{wood}", quantity: 8 },
+				{ type: "item", code: "plank-{wood}", quantity: 4 }
+			  ],
+				removeElements: [
+					"ORIGIN/T2/ORIGIN14-coracle1"
+				],
+				addElements: [
+					"ORIGIN/T2/ORIGIN15-crossbeams"
+				] },
+			//stage 10 
+			{ requireStacks: [ 
+				{ type: "item", code: "rope", quantity: 1 }
+			  ],
+				addElements: [
+					"ORIGIN/T2/ORIGIN16-sideropes"
+				] },
+			//stage 11
+			{ requireStacks: [ 
+				{ type: "item", code: "rope", quantity: 1 },
+				{ type: "item", code: "linensack", quantity: 4 }
+			  ],
+				addElements: [
+					"ORIGIN/T2/ORIGIN17-bags"
+				] },
+			//stage 12
+			{ requireStacks: [ 
+				{ type: "item", code: "rope", quantity: 1 },
+				{ type: "block", code: "barrel", quantity: 2 }
+			  ],
+				addElements: [
+					"ORIGIN/T2/ORIGIN18-barrels"
+				] },
+			//stage 13
+			{ requireStacks: [ 
+				{ type: "item", code: "rope", quantity: 1 }
+			  ],
+				addElements: [
+					"ORIGIN/T2/ORIGIN19-bowgear"
+				] },
+			//stage 14
+			{ requireStacks: [ 
+				{ type: "item", code: "metalnailsandstrips-copper", quantity: 10 }
+			  ],
+				addElements: [
+					"ORIGIN/T2/ORIGIN20-cargohooks"
+				] },
+			//stage 15
+			{ requireStacks: [ 
+				{ type: "item", code: "rope", quantity: 1 }
+			  ],
+				addElements: [
+					"ORIGIN/T2/ORIGIN21-tentropes"
+				] },
+			//stage 16
+			{ requireStacks: [ 
+				{ type: "item", code: "rope", quantity: 1 },
+				{ type: "item", code: "rod-tinbronze", quantity: 1 },
+				{ type: "item", code: "jonasframes-spring01", quantity: 1 }
+			  ],
+				addElements: [
+					"ORIGIN/T2/ORIGIN22-fuelbarrel1"
+				] },
+			//stage 17
+			{ requireStacks: [ 
+				{ type: "item", code: "rope", quantity: 1 },
+				{ type: "block", code: "barrel", quantity: 1 },
+				{ type: "item", code: "charcoal", quantity: 64 }
+			  ],
+				addElements: [
+					"ORIGIN/T2/ORIGIN23-fuelbarrel2"
+				] },
+			//stage 18
+			{ requireStacks: [ 
+				{ type: "block", code: "verticalboiler-west", quantity: 1 },
+				{ type: "item", code: "metalplate-copper", quantity: 1 },
+				{ type: "item", code: "solderingiron", quantity: 1 },
+				{ type: "item", code: "solderbar-silver", quantity: 5 },
+				{ type: "block", code: "glass-quartz", quantity: 1 }
+			  ],
+				addElements: [
+					"ORIGIN/T2/ORIGIN24-gassifier2"
+				] },
+			//stage 19
+			{ requireStacks: [ 
+				{ type: "item", code: "metalnailsandstrips-tinbronze", quantity: 6 },
+				{ type: "item", code: "flaxtwine", quantity: 4 },
+				{ type: "item", code: "plank-{wood}", quantity: 4 }
+			  ],
+				addElements: [
+					"ORIGIN/T2/ORIGIN25-gaslever"
+				] },
+			//stage 20
+			{ requireStacks: [ 
+				{ type: "item", code: "metalnailsandstrips-tinbronze", quantity: 12 },
+				{ type: "item", code: "rod-tinbronze", quantity: 3 }
+			  ],
+				addElements: [
+					"ORIGIN/T2/ORIGIN26-rudder"
+				] },
+			//stage 21
+			{ requireStacks: [ 
+				{ type: "item", code: "metalnailsandstrips-tinbronze", quantity: 2 },
+				{ type: "item", code: "rod-tinbronze", quantity: 2 }
+			  ],
+				addElements: [
+					"ORIGIN/T2/ORIGIN27-throttlearm"
+				] },
+			//stage 22
+			{ requireStacks: [ 
+				{ type: "item", code: "metalnailsandstrips-tinbronze", quantity: 6 },
+				{ type: "item", code: "flaxtwine", quantity: 3 },
+				{ type: "item", code: "plank-{wood}", quantity: 1 }
+			  ],
+				removeElements: [
+					"ORIGIN/T2/ORIGIN27-throttlearm"
+				],
+				addElements: [
+					"ORIGIN/T2/ORIGIN28-throttlearm2",
+					"ORIGIN/T2/ORIGIN29-throttle"
+				] },
+			//stage 23
+			{ requireStacks: [ 
+				{ type: "item", code: "hoop-tinbronze", quantity: 1 }, //PUT CLOCKWORK MOTOR SHAFT HERE
+				{ type: "item", code: "metalnailsandstrips-tinbronze", quantity: 2 }
+			  ],
+				addElements: [
+					"ORIGIN/T2/ORIGIN30-engineshaft"
+				] },
+			//stage 24
+			{ requireStacks: [ 
+				{ type: "item", code: "hoop-tinbronze", quantity: 1 } //PUT CLOCKWORK MOTOR BRACE HERE
+			  ],
+				addElements: [
+					"ORIGIN/T2/ORIGIN31-engineframe"
+				] },
+			//stage 25
+			{ requireStacks: [ 
+				{ type: "item", code: "rope", quantity: 1 },
+				{ type: "block", code: "supportbeam-{wood}", quantity: 4 },
+				{ type: "item", code: "metalnailsandstrips-tinbronze", quantity: 2 }
+			  ],
+				addElements: [
+					"ORIGIN/T2/ORIGIN32-sternposts"
+				] },
+			//stage 26
+			{ requireStacks: [ 
+				{ type: "item", code: "rod-tinbronze", quantity: 2 }
+			  ],
+				addElements: [
+					"ORIGIN/T2/ORIGIN33-engineaxles"
+				] },
+			//stage 27
+			{ requireStacks: [ 
+				{ type: "item", code: "metalnailsandstrips-blackbronze", quantity: 12 }
+			  ],
+				addElements: [
+					"ORIGIN/T2/ORIGIN34-blackbronzegears"
+				] },
+			//stage 28
+			{ requireStacks: [ 
+				{ type: "item", code: "metalnailsandstrips-tinbronze", quantity: 2 }
+			  ],
+				addElements: [
+					"ORIGIN/T2/ORIGIN35-propnut"
+				] },
+			//stage 29
+			{ requireStacks: [ 
+				{ type: "item", code: "plank-{wood}", quantity: 3 }
+			  ],
+				addElements: [
+					"ORIGIN/T2/ORIGIN36-props"
+				] },
+			//stage 30
+			{ requireStacks: [ 
+				{ type: "item", code: "gear-temporal", quantity: 3 }
+			  ],
+				addElements: [
+					"ORIGIN/T2/ORIGIN37-tempgears"
+				] },
+			//stage 31
+			{ requireStacks: [ 
+				{ type: "block", code: "glass-quartz", quantity: 1 },
+				{ type: "item", code: "metalnailsandstrips-tinbronze", quantity: 6 },
+				{ type: "item", code: "jonasparts-cylinder01", quantity: 1 }
+			  ],
+				addElements: [
+					"ORIGIN/T2/ORIGIN38-sensor"
+				] },
+			//stage 32
+			{ requireStacks: [ 
+				{ type: "block", code: "linen-normal-down", quantity: 4 }
+			  ],
+				addElements: [
+					"ORIGIN/T2/ORIGIN39-tents2"
+				] },
+			//stage 33
+			{ requireStacks: [ 
+				{ type: "item", code: "rope", quantity: 24 }, // 8ropes +16 ropes for the balloon rings
+				{ type: "block", code: "supportbeam-{wood}", quantity: 24 },
+				{ type: "item", code: "plank-{wood}", quantity: 4 },
+				{ type: "item", code: "rod-bismuthbronze", quantity: 15 } //MAYBE MOVE THIS STAGE SOMEWHERE EARLIER
+			  ],
+				addElements: [
+					"ORIGIN/T2/ORIGIN40-ropeknots",
+					"ORIGIN/T2/ORIGIN41-hoseportground",
+					"ORIGIN/T2/ORIGIN42-balloonrings" // do not move this though, keep this here.
+				] },
+			//stage 34
+			{ requireStacks: [ 
+				{ type: "item", code: "metalnailsandstrips-tinbronze", quantity: 6 },
+				{ type: "item", code: "flaxtwine", quantity: 10 }
+			  ],
+				addElements: [
+					"ORIGIN/T2/ORIGIN43-venthatch"
+				] },
+			//stage 35
+			{ requireStacks: [ 
+				{ type: "item", code: "vsairshipmod:treatedcloth", quantity: 12 }
+			  ],
+				addElements: [
+					"ORIGIN/T2/ORIGIN44-balloon1"
+				] },
+			//stage 36
+			{ requireStacks: [ 
+				{ type: "item", code: "vsairshipmod:treatedcloth", quantity: 12 }
+			  ],
+				addElements: [
+					"ORIGIN/T2/ORIGIN45-balloon2"
+				] },
+			//stage 37
+			{ requireStacks: [ 
+				{ type: "item", code: "vsairshipmod:treatedcloth", quantity: 12 }
+			  ],
+				addElements: [
+					"ORIGIN/T2/ORIGIN46-balloon3"
+				] },
+			//stage 38
+			{ requireStacks: [ 
+				{ type: "item", code: "vsairshipmod:treatedcloth", quantity: 12 }
+			  ],
+				addElements: [
+					"ORIGIN/T2/ORIGIN47-balloon4"
+				] },
+			//stage 39
+			{ requireStacks: [ 
+				{ type: "item", code: "vsairshipmod:treatedcloth", quantity: 12 }
+			  ],
+				addElements: [
+					"ORIGIN/T2/ORIGIN48-balloon5"
+				] },
+			//stage 40
+			{ requireStacks: [ 
+				{ type: "item", code: "vsairshipmod:treatedcloth", quantity: 12 }
+			  ],
+				addElements: [
+					"ORIGIN/T2/ORIGIN49-balloon6"
+				] },
+			//stage 41
+			{ requireStacks: [ 
+				{ type: "item", code: "vsairshipmod:treatedcloth", quantity: 12 }
+			  ],
+				addElements: [
+					"ORIGIN/T2/ORIGIN50-balloon7"
+				] },
+			//stage 42
+			{ requireStacks: [ 
+				{ type: "item", code: "vsairshipmod:treatedcloth", quantity: 12 }
+			  ],
+				addElements: [
+					"ORIGIN/T2/ORIGIN51-balloon8"
+				] },
+			//stage 43
+			{ requireStacks: [ 
+				{ type: "item", code: "vsairshipmod:treatedcloth", quantity: 12 }
+			  ],
+				addElements: [
+					"ORIGIN/T2/ORIGIN52-balloon9"
+				] },
+			//stage 44
+			{ requireStacks: [ 
+				{ type: "item", code: "vsairshipmod:treatedcloth", quantity: 22 }
+			  ],
+				addElements: [
+					"ORIGIN/T2/ORIGIN53-balloon10"
+				] },
+			//stage 45
+			{ requireStacks: [ 
+				{ type: "item", code: "vsairshipmod:treatedcloth", quantity: 30 }
+			  ],
+				addElements: [
+					"ORIGIN/T2/ORIGIN54-balloon11"
+				] },
+			//stage 46
+			{ requireStacks: [ 
+				{ type: "item", code: "vsairshipmod:treatedcloth", quantity: 12 }
+			  ],
+				addElements: [
+					"ORIGIN/T2/ORIGIN55-balloon12"
+				] },
+			//stage 47
+			{ requireStacks: [ 
+				{ type: "item", code: "vsairshipmod:treatedcloth", quantity: 22 }
+			  ],
+				addElements: [
+					"ORIGIN/T2/ORIGIN56-balloon13"
+				] },
+			//stage 48
+			{ requireStacks: [ 
+				{ type: "item", code: "vsairshipmod:treatedcloth", quantity: 30 }
+			  ],
+				addElements: [
+					"ORIGIN/T2/ORIGIN57-balloon14"
+				] },
+			//stage 49
+			{ requireStacks: [ 
+				{ type: "item", code: "leather-normal-plain", quantity: 10 },
+				{ type: "block", code: "chute-elbow-down-east", quantity: 1 }
+			  ],
+				addElements: [
+					"ORIGIN/T2/ORIGIN58-hose1"
+				] },
+			//stage 50
+			{ requireStacks: [
+				{ type: "block", code: "torch-basic-lit-up", quantity: 1 }
+			  ],
+				removeElements: [
+					"ORIGIN/T2/ORIGIN40-ropeknots",
+					"ORIGIN/T2/ORIGIN41-hoseportground",
+					"ORIGIN/T2/ORIGIN42-balloonrings",
+					"ORIGIN/T2/ORIGIN43-venthatch",
+					"ORIGIN/T2/ORIGIN44-balloon1",
+					"ORIGIN/T2/ORIGIN45-balloon2",
+					"ORIGIN/T2/ORIGIN46-balloon3",
+					"ORIGIN/T2/ORIGIN47-balloon4",
+					"ORIGIN/T2/ORIGIN48-balloon5",
+					"ORIGIN/T2/ORIGIN49-balloon6",
+					"ORIGIN/T2/ORIGIN50-balloon7",
+					"ORIGIN/T2/ORIGIN51-balloon8",
+					"ORIGIN/T2/ORIGIN52-balloon9",
+					"ORIGIN/T2/ORIGIN53-balloon10",
+					"ORIGIN/T2/ORIGIN54-balloon11",
+					"ORIGIN/T2/ORIGIN55-balloon12",
+					"ORIGIN/T2/ORIGIN57-balloon14"
+				],
+				addElements: [
+					"ORIGIN/T2/ORIGIN59-coals",
+					"ORIGIN/T2/ORIGIN60-fullballoon"
+				],
+				actionLangCode: "Launch"
+			}
+		]
+	},
+	behaviorConfigs: {
+		"passivephysicsmultibox": { 
+			collisionBoxes: [
+				{ x1: -1.4, y1: 0, z1: 0.1, x2: 1.4, y2: 1.2, z2: 2.9 },
+				{ x1: -1.4, y1: 0, z1: -2.9, x2: 1.4, y2: 1.2, z2: -0.1 },
+				{ x1: -1.4, y1: 0, z1: -4.9, x2: 1.4, y2: 1.2, z2: -2.9 }
+			],
+			groundDragFactor: 1,
+			airDragFallingFactor: 0.5,
+			gravityFactor: 1.0
+		},
+		"selectionboxes": {
+			selectionBoxes: ["SeleAP"]
+		}
+	},
+	client: {
+		size: 1,
+		renderer: "Shape",
+		shapeByType: {
+			"*": { base: "entity/tier2-construction"}
+		},
+		"textures": {
+			"candle": { "base": "game:block/candle" },
+			"ceramic": { "base": "game:block/clay/ceramic" },
+			"cracked2": { "base": "game:block/clay/daub/yellow/cracked2" },
+			"normal2": { "base": "game:block/clay/daub/yellow/normal2" },
+			"mordant": { "base": "game:block/cloth/linen/mordant" },
+			"plain": { "base": "game:block/cloth/linen/plain" },
+			"charcoal": { "base": "game:block/coal/charcoal" },
+			"ember": { "base": "game:block/coal/ember" },
+			"glass": { "base": "game:block/glass/quartz" },
+			"poor": { "base": "game:block/leather/poor" },
+			"rustyglow": { "base": "game:block/machine/statictranslocator/rustyglow" },
+			"blackbronze": { "base": "game:block/metal/ingot/blackbronze" },
+			"tinbronze": { "base": "game:block/metal/lantern/tinbronze" },
+			"gold": { "base": "game:block/metal/plate/gold" },
+			"lead2": { "base": "game:block/metal/sheet-plain/lead2" },
+			"tinbronze1": { "base": "game:block/metal/sheet-plain/tinbronze1" },
+			"blackbronze2": { "base": "game:block/metal/sheet/blackbronze2" },
+			"copper1": { "base": "game:block/metal/sheet/copper1" },
+			"cupronickel1": { "base": "game:block/metal/sheet/cupronickel1" },
+			"platinum1": { "base": "game:block/metal/sheet/platinum1" },
+			"copper-soldered": { "base": "game:block/metal/sheet/soldered-copper" },
+			"stainlesssteel1": { "base": "game:block/metal/sheet/stainlesssteel1" },
+			"steel1": { "base": "game:block/metal/sheet/steel1" },
+			"rusty-iron": { "base": "game:block/metal/tarnished/rusty-iron" },
+			"oak3": { "base": "game:block/wood/bark/quad/ends/placed/oak" },
+			"oak1": { "base": "game:block/wood/bark/quad/placed/oak1" },
+			"charred": { "base": "game:block/wood/charred" },
+			"aged": { "base": "game:block/wood/debarked/aged" },
+			"oak": { "base": "game:block/wood/debarked/oak" },
+			"plainoak": { "base": "game:block/wood/plainoak" },
+			"linen": { "base": "game:item/bag/linensack/linen" },
+			"top": { "base": "game:item/bag/linensack/top" },
+			"furside": { "base": "game:item/resource/hide/raw-huge" },
+			"rope": { "base": "game:item/resource/rope" }
+		},
+		animations: [
+			{
+				code: "gearsspin",
+				animation: "gearsspin", 
+				animationSpeed: 1,
+				weight: 10,
+				blendMode: "AddAverage" 
+			},
+			{
+				code: "fuelcoal",
+				animation: "fuelcoal", 
+				animationSpeed: 0
+			},
+			{
+				"code": "usingcoal",
+				"animation": "usingcoal",
+				"animationSpeed": 1,
+				"easeInSpeed": 2000,
+				"easeOutSpeed": 100
+			},
+			{
+				"code": "goup",
+				"animation": "goup",
+				"animationSpeed": 2,
+				"easeInSpeed": 10
+			},
+			{
+				code: "launch",
+				animation: "launch", 
+				animationSpeed: 1,
+				weight: 10,
+				blendMode: "AddAverage" 
+			}
+		],
+		behaviors: [
+			{ "code": "repulseagents", "movable": false },
+			{ code: "passivephysicsmultibox" },
+			{ code: "interpolateposition" },
+			{ code: "selectionboxes" },
+			{ code: "floatupwhenstuck" }
+		]
+	},
+	server: {
+		behaviors: [
+			{ "code": "repulseagents", "movable": false },
+			{ code: "passivephysicsmultibox" },
+			{ code: "selectionboxes" },
+			{ code: "floatupwhenstuck" }
+		]
+	},
+	sounds: {
+	}
+}

@@ -36,9 +36,8 @@
 			{ requireStacks: [ { type: "item", code: "vsairshipmod:treatedcloth", quantity: 16 } ], addElements: ["ORIGIN/ORIGINAirship/ORIGIN20-balloon6"] },
 			{ requireStacks: [ { type: "item", code: "vsairshipmod:treatedcloth", quantity: 28 } ], addElements: ["ORIGIN/ORIGINAirship/ORIGIN21-balloon7"] },
 			{ requireStacks: [ { type: "item", code: "vsairshipmod:treatedcloth", quantity: 7 } ], addElements: ["ORIGIN/ORIGINAirship/ORIGIN22-balloon8"] },
-			{ requireStacks: [ ], actionLangCode: "Launch" },
-			{ removeElements: ["ORIGIN/ORIGIN1props"] }
-		],
+			{ requireStacks: [ ], actionLangCode: "Launch" }
+		]
 	},
 	behaviorConfigs: {
 		"passivephysicsmultibox": { 
@@ -99,7 +98,7 @@
 			{ code: "interpolateposition" },
 			{ code: "selectionboxes" },
 			{ code: "floatupwhenstuck" }
-		],
+		]
 	},
 	server: {
 		behaviors: [
@@ -107,7 +106,7 @@
 			{ code: "passivephysicsmultibox" },
 			{ code: "selectionboxes" },
 			{ code: "floatupwhenstuck" }
-		],
+		]
 	},
 	sounds: {
 	}
