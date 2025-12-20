@@ -466,6 +466,7 @@
 					"ORIGIN/T2/ORIGIN53-balloon10",
 					"ORIGIN/T2/ORIGIN54-balloon11",
 					"ORIGIN/T2/ORIGIN55-balloon12",
+					"ORIGIN/T2/ORIGIN56-balloon13",
 					"ORIGIN/T2/ORIGIN57-balloon14"
 				],
 				addElements: [
@@ -565,7 +566,7 @@
 			{
 				code: "launch",
 				animation: "launch", 
-				animationSpeed: 1,
+				animationSpeed: 0.1,
 				weight: 10,
 				blendMode: "AddAverage" 
 			}
