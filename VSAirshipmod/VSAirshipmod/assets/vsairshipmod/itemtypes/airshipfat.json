@@ -1,7 +1,8 @@
 ﻿{
   "code": "airshipfat",
-  "shape": { "base": "vsairshipmod:item/airshipfat" },
-  "texture": { "base": "game:item/resource/fat" },
+  "shape": { "base": "item/airshipfat" },
+  "textures": { "fat": { "base": "game:item/resource/fat" }
+  },
   "creativeinventory": {
     "general": [ "*" ],
     "items": [ "*" ],
@@ -24,8 +25,8 @@
     }
   ],
   "attributes": {
-    "displaycaseable": true,
-    "shelvable": true,
+    "displaycaseable": false,
+    "shelvable": false,
     "onDisplayTransform": {
       "origin": {
         "x": 0.5,
@@ -41,13 +42,13 @@
         "z": 0
       }
     },
-    "canSealCrock": true
+    "canSealCrock": false
   },
-  "maxstacksize": 64,
+  "maxstacksize": 128,
   "materialDensity": 620,
   "combustibleProps": {
     "burnTemperature": 400,
-    "burnDuration": 96
+    "burnDuration": 12
   },
   "guiTransform": {
     "translation": {

@@ -42,7 +42,7 @@
 	heldTpIdleAnimationByType: {
 		"*": "holdunderarm"
 	},
-	maxStackSize: 1,
+	maxStackSize: 4,
 	creativeinventory: { "general": ["*"], "items": ["*"], "airship": ["*"] },
 	renderAlphaTest: 0.25,
 	sounds: {

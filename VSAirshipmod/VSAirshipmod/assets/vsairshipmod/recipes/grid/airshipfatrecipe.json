@@ -16,7 +16,8 @@
     "height": 1,
     "output": {
       "type": "item",
-      "code": "airshipfat"
+      "code": "airshipfat",
+      "quantity": 8
     }
   },
   {
@@ -24,7 +25,8 @@
     "ingredients": {
       "L": {
         "type": "item",
-        "code": "airshipfat"
+        "code": "airshipfat",
+        "quantity": 8
       }
     },
     "width": 1,

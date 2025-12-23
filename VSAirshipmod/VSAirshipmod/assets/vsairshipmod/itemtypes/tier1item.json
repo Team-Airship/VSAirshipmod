@@ -14,14 +14,25 @@
   "storageFlags": 2,
   "shapeByType": {
     "*": {
-      "base": "item/{type}packedbag",
-      "ignoreElements": [ "hideWater" ]
+      "base": "block/{type}packed"
     }
   },
-  behaviors: [
-		{ name: "GroundStorable", properties: { layout: "SingleCenter", collisionBox: { x1: 0.25, y1: 0, z1: 0.25, x2: 0.75, y2: 0.375, z2: 0.75 }}}
-	],
-  "shapeInventoryByType": { "*": { "base": "block/{type}packed" } },
+  "behaviors": [
+    {
+      "name": "GroundStorable",
+      "properties": {
+        "layout": "SingleCenter",
+        "collisionBox": {
+          "x1": 0.25,
+          "y1": 0,
+          "z1": 0.25,
+          "x2": 0.75,
+          "y2": 0.375,
+          "z2": 0.75
+        }
+      }
+    }
+  ],
   "texturesByType": {
     "*": {
       "candle": { "base": "game:block/candle" },
@@ -51,9 +62,15 @@
     "handbook": { "groupBy": [ "airship-{type}-*" ] },
     "Fuel": 0.0,
     "attachableToEntity": {
-      "categoryCode": "backpack",
-      "attachedShape": { "base": "item/{type}packedbag" }
+      "attachedShape": { "base": "item/{type}packedbag" },
+      "texturePrefixCode": "airship"
     },
+		groundStorageTransform: {
+			translation: { x: -0.05, y: 0, z: 0 },
+			rotation: { x: 0, y: 90, z: 0 },
+			origin: { x: 0.3, y: -0.1, z: 0.7 },
+			scale: 0.85
+		},
     "wearableAttachment": true
   },
   "heldTpIdleAnimation": "holdbothhandslarge",
@@ -64,24 +81,12 @@
     "general": [ "*" ],
     "airship": [ "*" ]
   },
-  "guiTransform": {
-    "translation": {
-      "x": 0,
-      "y": -2,
-      "z": 0
-    },
-    "rotation": {
-      "x": -16,
-      "y": -81,
-      "z": -180
-    },
-    "origin": {
-      "x": 1.6,
-      "y": 0,
-      "z": 0.1
-    },
-    "scale": 1.31
-  },
+	guiTransform: {
+		translation: { x: 0, y: 0, z: 0 },
+		rotation: { x: -16, y: -106, z: -180 },
+		origin: { x: 1.5, y: 0.6, z: 1.3 },
+		scale: 0.85
+	},
   "groundTransformByType": {
     "*": {
       "translation": {
@@ -102,22 +107,18 @@
       "scale": 3.5
     }
   },
-  "tpHandTransform": {
+	tpHandTransform: {
+		translation: { x: 0, y: 0, z: 0 },
+		rotation: { x: -172, y: -11, z: -92 },
+		origin: { x: 0.1, y: 0, z: -0.2 },
+		scale: 0.3
+	},
+  "groundStorageTransform": {
     "translation": {
-      "x": -0.73,
-      "y": 0.24,
-      "z": -0.7
+      "x": 0,
+      "y": -0.1,
+      "z": -0.36
     },
-    "rotation": {
-      "x": 9,
-      "y": 15,
-      "z": -75
-    },
-    "origin": {
-      "x": 0.5,
-      "y": 0,
-      "z": 0.5
-    },
-    "scale": 0.72
+    "scale": 0.81
   }
 }

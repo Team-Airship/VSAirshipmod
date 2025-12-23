@@ -663,18 +663,19 @@ namespace VSAirshipmod
             {
                 if (tryPickup(byEntity, mode)) return;
             }
-            if (itemslot.Itemstack?.Collectible.Code == "rot" && Fuel < MaxStackofRot)
+            if (((itemslot.Itemstack?.Collectible.Code == "rot") || (itemslot.Itemstack?.Collectible.Code == "vsairshipmod:airshipfat")) && Fuel < MaxStackofRot)
+            //freaky told me to do it aaaaa testing
             {
                 Fuel += itemslot.TakeOut((int)(MaxStackofRot - Math.Ceiling(Fuel))).StackSize;
                 Api.Logger.Notification("Total: " + Fuel);
                 return;
             }
-            if (itemslot.Itemstack?.Collectible.Code == "vsairshipmod:airshipfat" && Fuel < MaxStackofRot-7)
+            /*if (itemslot.Itemstack?.Collectible.Code == "vsairshipmod:airshipfat" && Fuel < MaxStackofRot-7)
             {
                 Fuel += itemslot.TakeOut((int)((MaxStackofRot - Math.Ceiling(Fuel))/8)).StackSize*8;
                 Api.Logger.Notification("Total: " + Fuel);
                 return;
-            }
+            }*/
             if (itemslot.Itemstack?.Collectible.Code == "gear-temporal" && (TemporalGearCount + TemporalFuelUsage > 0? 1:0 ) < TemporalGearMaxCount)
             {
                 TemporalGearCount += itemslot.TakeOut((int)((TemporalGearMaxCount - TemporalGearCount) - TemporalFuelUsage > 0 ? 1 : 0)).StackSize;

@@ -1,0 +1,17 @@
+[
+	{
+		"code": "deedrecipe",
+		ingredientPattern:"ABC,_D_,EFE",
+		ingredients: {
+			"A": { type: "item", code: "game:gear-temporal", returnedStack: { type: "item", code: "game:gear-temporal" } },
+			"B": { type: "item", code: "game:candle", "quantity": 1},
+			"C": { type: "block", "code": "game:metal-parts", returnedStack: { type: "block", code: "game:metal-parts" } },
+			"D": { type: "item", code: "game:metalnailsandstrips-*",  quantity:1},
+			"E": { type: "item", code: "game:paper-parchment", quantity: 1},
+			"F": { type: "item", code: "game:inkandquill", "quantity": 1}
+		},
+		width: 3,
+		height: 3,
+		output: { type: "item", code: "airshipdeed"}
+	}
+]

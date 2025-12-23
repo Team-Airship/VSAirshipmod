@@ -1,0 +1,19 @@
+[
+	{
+		"code": "tier2firueheadcraft",
+		ingredientPattern:"ABC,DBE,FGH",
+		ingredients: {
+			"A": { type: "item", code: "game:saw-*", isTool: true, toolDurabilityCost: 30 },
+			"B": { type: "block", code: "game:logquad-placed-aged-ud", quantity:2},
+			"C": { type: "item", code: "game:hammer-*", isTool: true, toolDurabilityCost: 30 },
+			"D": { type: "item", code: "game:axe-*", isTool: true, toolDurabilityCost: 30 },
+			"E": { type: "item", code: "game:chisel-*", isTool: true, toolDurabilityCost: 30 },
+			"F": { type: "item", code: "game:inkandquill", quantity: 1},
+			"G": { type: "block", code: "figurehead-erel", quantity: 0 },
+			"H": { type: "item", code: "game:paper-parchment", quantity: 1}
+		},
+		width: 3,
+		height: 3,
+		output: { type: "item", code: "airshipfigurehead-erel"}
+	}
+]

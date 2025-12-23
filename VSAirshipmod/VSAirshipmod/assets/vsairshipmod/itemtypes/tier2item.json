@@ -51,12 +51,7 @@
   },
   "attributes": {
     "handbook": { "groupBy": [ "airship-tier1-*" ] },
-    "Fuel": 0.0,
-    "attachableToEntity": {
-      "categoryCode": "backpack",
-      "attachedShape": { "base": "item/tier1packedbag" }
-    },
-    "wearableAttachment": true
+    "Fuel": 0.0
   },
   "heldTpIdleAnimation": "holdbothhandslarge",
   "maxstacksize": 1,

@@ -1,0 +1,163 @@
+[
+  {
+    "ingredientPattern": "LK",
+    "ingredients": {
+      "K": {
+        "type": "item",
+        "code": "game:knife-*",
+        "isTool": true,
+        "toolDurabilityCost": 4
+      },
+      "L": {
+        "type": "block",
+        "code": "game:chest-east",
+        "attributes": { "type": "owl" }
+      }
+    },
+    "width": 2,
+    "height": 1,
+    "output": {
+      "type": "item",
+      "code": "airshipchest-owl",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "L",
+    "ingredients": {
+      "L": {
+        "type": "item",
+        "code": "airshipchest-owl",
+        "quantity": 1
+      }
+    },
+    "width": 1,
+    "height": 1,
+    "output": {
+      "type": "block",
+      "code": "game:chest-east",
+      "attributes": { "type": "owl" }
+    }
+  },
+  {
+    "ingredientPattern": "LK",
+    "ingredients": {
+      "K": {
+        "type": "item",
+        "code": "game:knife-*",
+        "isTool": true,
+        "toolDurabilityCost": 4
+      },
+      "L": {
+        "type": "block",
+        "code": "game:chest-east",
+        "attributes": { "type": "owl-aged" }
+      }
+    },
+    "width": 2,
+    "height": 1,
+    "output": {
+      "type": "item",
+      "code": "airshipchest-owl-aged",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "L",
+    "ingredients": {
+      "L": {
+        "type": "item",
+        "code": "airshipchest-owl-aged",
+        "quantity": 1
+      }
+    },
+    "width": 1,
+    "height": 1,
+    "output": {
+      "type": "block",
+      "code": "game:chest-east",
+      "attributes": { "type": "owl-aged" }
+    }
+  },
+  {
+    "ingredientPattern": "LK",
+    "ingredients": {
+      "K": {
+        "type": "item",
+        "code": "game:knife-*",
+        "isTool": true,
+        "toolDurabilityCost": 4
+      },
+      "L": {
+        "type": "block",
+        "code": "game:chest-east",
+        "attributes": { "type": "golden" }
+      }
+    },
+    "width": 2,
+    "height": 1,
+    "output": {
+      "type": "item",
+      "code": "airshipchest-golden",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "L",
+    "ingredients": {
+      "L": {
+        "type": "item",
+        "code": "airshipchest-golden",
+        "quantity": 1
+      }
+    },
+    "width": 1,
+    "height": 1,
+    "output": {
+      "type": "block",
+      "code": "game:chest-east",
+      "attributes": { "type": "golden" }
+    }
+  },
+  {
+    "Enabled": true,
+    "ingredientPattern": "LK",
+    "ingredients": {
+      "K": {
+        "type": "item",
+        "code": "game:knife-*",
+        "isTool": true,
+        "toolDurabilityCost": 4
+      },
+      "L": {
+        "type": "block",
+        "code": "game:chest-east",
+        "attributes": { "type": "golden-aged" }
+      }
+    },
+    "width": 2,
+    "height": 1,
+    "output": {
+      "type": "item",
+      "code": "airshipchest-golden-aged",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "L",
+    "ingredients": {
+      "L": {
+        "type": "item",
+        "code": "airshipchest-golden-aged",
+        "quantity": 1
+      }
+    },
+    "width": 1,
+    "height": 1,
+    "output": {
+      "type": "block",
+      "code": "game:chest-east",
+      "attributes": { "type": "golden-aged" }
+    }
+  }
+]
