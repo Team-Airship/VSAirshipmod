@@ -519,7 +519,7 @@ namespace VSAirshipmod
 
             if (HorizontalVelocity > 0.0)
             {
-                if (pos.Y < Api.World.SeaLevel + MaxAltitude)
+                if (pos.Y < /*Api.World.SeaLevel +*/ MaxAltitude)
                 {
                     pos.Motion.Y += 0.013 * dt ;
                     pos.Motion.Y = Math.Min(0.013 * horizontalmodifier, pos.Motion.Y);
