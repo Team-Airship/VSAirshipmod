@@ -146,8 +146,8 @@
 			"easeInSpeed": 20,
 			"easeOutSpeed": 5,
 			"elementWeight": {
-				"UpperArmR": 0,
-				"LowerArmR": 0,
+				"UpperArmR": 1,
+				"LowerArmR": 1,
 				"UpperArmL": 100,
 				"LowerArmL": 100,
 				"LowerTorso": 0,
@@ -255,8 +255,8 @@
 			"easeInSpeed": 20,
 			"easeOutSpeed": 5,
 			"elementWeight": {
-				"UpperArmR": 0,
-				"LowerArmR": 0,
+				"UpperArmR": 1,
+				"LowerArmR": 1,
 				"UpperArmL": 100,
 				"LowerArmL": 100,
 				"LowerTorso": 0,
@@ -359,8 +359,8 @@
 			"easeInSpeed": 10,
 			"easeOutSpeed": 10,
 			"elementWeight": {
-				"UpperArmR": 600,
-				"LowerArmR": 600,
+				"UpperArmR": 999,
+				"LowerArmR": 999,
 				"UpperArmL": 0,
 				"LowerArmL": 0,
 				"LowerTorso": 0,
@@ -596,8 +596,8 @@
 			"easeInSpeed": 10,
 			"easeOutSpeed": 5,
 			"elementWeight": {
-				"UpperArmR": 600,
-				"LowerArmR": 600,
+				"UpperArmR": 999,
+				"LowerArmR": 999,
 				"UpperArmL": 0,
 				"LowerArmL": 0,
 				"LowerTorso": 0,

@@ -598,6 +598,158 @@ namespace VSAirshipmod
             pos.Roll = 0;
         }
 
+        private void ApplyShipAnimation(EntityAirshipSeat seat)
+        {
+            bool keyW = seat.controls.Forward;
+            bool keyA = seat.controls.Left;
+            bool keyS = seat.controls.Backward;
+            bool keyD = seat.controls.Right;
+            bool keyUp = seat.controls.Jump;
+            bool keyDown = seat.controls.Sprint;
+
+            bool animForwardLeft = false;
+            bool animForwardRight = false;
+            bool animBackwardLeft = false;
+            bool animBackwardRight = false;
+            bool animGoUp = false;
+            bool animGoDown = false;
+
+            //Vertical has priority
+            if (keyUp)
+            {
+                animGoUp = true;
+
+                if (keyW || keyA)
+                {
+                    animForwardRight = true;
+                }
+                else if (keyS || keyD)
+                {
+                    animBackwardRight = true;
+                }
+            }
+            else if (keyDown)
+            {
+                animGoDown = true;
+
+                if (keyW || keyD)
+                {
+                    animForwardLeft = true;
+                }
+                else if (keyA || keyS)
+                {
+                    animBackwardLeft = true;
+                }
+            }
+            else
+            {
+                //No vertical input, horizontal behavior
+                if (keyW)
+                {
+                    animForwardLeft = true;
+                    animForwardRight = true;
+                }
+                else if (keyS)
+                {
+                    animBackwardLeft = true;
+                    animBackwardRight = true;
+                }
+                else if (keyA)
+                {
+                    animForwardRight = true;
+                }
+                else if (keyD)
+                {
+                    animForwardLeft = true;
+                }
+            }
+
+
+            if (!animForwardLeft)  StopAnimation("ForwardLeft");
+            if (animForwardLeft)  StartAnimation("ForwardLeft");
+
+            if (!animForwardRight) StopAnimation("ForwardRight");
+            if (animForwardRight) StartAnimation("ForwardRight");
+
+            if (!animBackwardLeft) StopAnimation("BackwardLeft");
+            if (animBackwardLeft) StartAnimation("BackwardLeft");
+
+            if (!animBackwardRight) StopAnimation("BackwardRight");
+            if (animBackwardRight) StartAnimation("BackwardRight");
+
+            if (!animGoUp)   StopAnimation("GoUp");
+            if (animGoUp)   StartAnimation("GoUp");
+
+            if (!animGoDown) StopAnimation("GoDown");
+            if (animGoDown) StartAnimation("GoDown");
+
+        }
+
+        private void ApplySeatAnimation(EntityAirshipSeat seat)
+        {
+            bool keyW = seat.controls.Forward;
+            bool keyA = seat.controls.Left;
+            bool keyS = seat.controls.Backward;
+            bool keyD = seat.controls.Right;
+            bool keyUp = seat.controls.Jump;
+            bool keyDown = seat.controls.Sprint;
+
+            bool animLeft = false;
+            bool animRight = false;
+            bool animUp = false;
+            bool animDown = false;
+
+            // Vertical states
+            if (keyUp)
+            {
+                animUp = true;
+
+                //Only row if a horizontal key is actually held
+                if (keyW || keyS || keyA || keyD)
+                {
+                    animRight = true; //UP + anything rows right
+                }
+            }
+            else if (keyDown)
+            {
+                animDown = true;
+
+                if (keyW || keyS || keyA || keyD)
+                {
+                    animLeft = true; //DOWN + anything rows left
+                }
+            }
+            else
+            {
+                //No vertical input, horizontal logic
+                if (keyW || keyS)
+                {
+                    animLeft = true;
+                    animRight = true;
+                }
+                else if (keyA)
+                {
+                    animRight = true;
+                }
+                else if (keyD)
+                {
+                    animLeft = true;
+                }
+            }
+
+            // Stop inactive animations
+            if (!animLeft)  seat.Passenger.AnimManager.StopAnimation(MountAnimations["PilotTurnLeft"]);
+            if (!animRight) seat.Passenger.AnimManager.StopAnimation(MountAnimations["PilotTurnRight"]);
+            if (!animUp)    seat.Passenger.AnimManager.StopAnimation(MountAnimations["PilotGoUp"]);
+            if (!animDown)  seat.Passenger.AnimManager.StopAnimation(MountAnimations["PilotGoDown"]);
+
+            // Start active animations
+            if (animLeft)  seat.Passenger.AnimManager.StartAnimation(MountAnimations["PilotTurnLeft"]);
+            if (animRight) seat.Passenger.AnimManager.StartAnimation(MountAnimations["PilotTurnRight"]);
+            if (animUp)    seat.Passenger.AnimManager.StartAnimation(MountAnimations["PilotGoUp"]);
+            if (animDown)  seat.Passenger.AnimManager.StartAnimation(MountAnimations["PilotGoDown"]);
+        }
+
 
         public virtual Vec3d SeatsToMotion(float dt)
         {
@@ -626,7 +778,7 @@ namespace VSAirshipmod
                 var controls = seat.controls;
 
                 bh.Controller = seat.Passenger;
-
+/*
                 if (controls.Left == controls.Right)
                 {
                     StopAnimation("turnLeft");
@@ -641,7 +793,12 @@ namespace VSAirshipmod
                 {
                     StopAnimation("turnLeft");
                     StartAnimation("turnRight");
-                }
+                }*/
+
+                //Apply ship animations
+                ApplyShipAnimation(seat);
+                //Apply player animations
+                ApplySeatAnimation(seat);
 
                 //controls altitude (horizontal motion). its before tries to move, becouse tries to move ignores up and down motion and it was not working 
                 if (controls.Jump || controls.Sprint)

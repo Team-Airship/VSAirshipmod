@@ -6,7 +6,9 @@
 			"code": "T1PilotUp",
 			"animation": "t1pilotup",
 			"clientSide": true,
-			"easeInSpeed": 2,
+			"animationSpeed": 1,
+			"easeInSpeed": 5,
+			"easeOutSpeed": 8,
 			"elementWeight": {
 				"UpperArmR": 0,
 				"LowerArmR": 0,
@@ -57,8 +59,7 @@
 						"UpperArmR": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -20.0 },
 						"LowerArmR": { "rotationX": 40.0, "rotationY": 3.0, "rotationZ": -75.0 },
 						"UpperArmL": { "offsetX": -1.5, "offsetY": 1.0, "offsetZ": 0.5, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 75.0 },
-						"LowerArmL": { "rotationX": 5.0, "rotationY": -14.0, "rotationZ": -30.0 },
-						"root": { "offsetX": 0.0, "offsetY": -5.0, "offsetZ": 0.0 }
+						"LowerArmL": { "rotationX": 5.0, "rotationY": -14.0, "rotationZ": -30.0 }
 					}
 				},
 				{
@@ -93,8 +94,9 @@
 			"code": "T1PilotDown",
 			"animation": "t1pilotdown",
 			"clientSide": true,
-
-			"easeInSpeed": 2,
+			"animationSpeed": 1,
+			"easeInSpeed": 5,
+			"easeOutSpeed": 8,
 			"elementWeight": {
 				"UpperArmR": 100,
 				"LowerArmR": 100,
@@ -145,8 +147,7 @@
 						"UpperArmR": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -1.0, "rotationX": 25.0, "rotationY": -20.0, "rotationZ": 5.0 },
 						"LowerArmR": { "offsetX": 0.5, "offsetY": 0.5, "offsetZ": 0.0, "rotationX": -20.0, "rotationY": -15.0, "rotationZ": -142.0 },
 						"UpperArmL": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -20.0 },
-						"LowerArmL": { "rotationX": -40.0, "rotationY": -3.0, "rotationZ": -75.0 },
-						"root": { "offsetX": 0.0, "offsetY": -5.0, "offsetZ": 0.0 }
+						"LowerArmL": { "rotationX": -40.0, "rotationY": -3.0, "rotationZ": -75.0 }
 					}
 				},
 				{
@@ -181,9 +182,9 @@
 			"code": "T1PilotIdle",
 			"animation": "t1pilotidle",
 			"clientSide": true,
-			"easeInSpeed": 2,
-			"Weight": 1,
-			"BlendMode": "AddAverage"
+			"easeInSpeed": 5,
+			"weight": 1,
+			"blendMode": "AddAverage"
 		},
     "file": "game:entities/humanoid/player.json",
     "side": "Server"
@@ -210,22 +211,23 @@
 						"UpperArmR": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -20.0 },
 						"LowerArmR": { "rotationX": 40.0, "rotationY": 3.0, "rotationZ": -75.0 },
 						"UpperArmL": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -20.0 },
-						"LowerArmL": { "rotationX": -40.0, "rotationY": -3.0, "rotationZ": -75.0 },
-						"root": { "offsetX": 0.0, "offsetY": -5.0, "offsetZ": 0.0 }
+						"LowerArmL": { "rotationX": -40.0, "rotationY": -3.0, "rotationZ": -75.0 }
 					}
 				}
 			]
 		},
     "file": "game:shapes/entity/humanoid/seraph-faceless.json"
   },
-  {
+/*  {
     "op": "addmerge",
     "path": "/client/animations/-",
 		"value": {
 			"code": "T1PilotRowing",
 			"animation": "t1pilotrowing",
 			"clientSide": true,
-			"easeInSpeed": 2,
+			"animationSpeed": 1,
+			"easeInSpeed": 5,
+			"easeOutSpeed": 5,
 			"elementWeight": {
 				"UpperArmR": 100,
 				"LowerArmR": 100,
@@ -276,8 +278,7 @@
 						"UpperArmR": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -17.0 },
 						"LowerArmR": { "rotationX": 40.0, "rotationY": 1.0, "rotationZ": -80.0 },
 						"UpperArmL": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -17.0 },
-						"LowerArmL": { "rotationX": -40.0, "rotationY": -1.0, "rotationZ": -80.0 },
-						"root": { "offsetX": 0.0, "offsetY": -5.0, "offsetZ": 0.0 }
+						"LowerArmL": { "rotationX": -40.0, "rotationY": -1.0, "rotationZ": -80.0 }
 					}
 				},
 				{
@@ -353,7 +354,7 @@
 			]
 		},
     "file": "game:shapes/entity/humanoid/seraph-faceless.json"
-  },
+  }, */
   {
     "op": "addmerge",
     "path": "/client/animations/-",
@@ -361,7 +362,9 @@
 			"code": "T1PilotRowingLeft",
 			"animation": "t1pilotrowingleft",
 			"clientSide": true,
-			"easeInSpeed": 2,
+			"animationSpeed": 1,
+			"easeInSpeed": 5,
+			"easeOutSpeed": 5,
 			"elementWeight": {
 				"UpperArmR": 0,
 				"LowerArmR": 0,
@@ -410,8 +413,7 @@
 						"LowerFootR": { "offsetX": 0.8, "offsetY": 1.1, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 70.0 },
 						"UpperTorso": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 8.0 },
 						"UpperArmL": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -17.0 },
-						"LowerArmL": { "rotationX": -40.0, "rotationY": -1.0, "rotationZ": -80.0 },
-						"root": { "offsetX": 0.0, "offsetY": -5.0, "offsetZ": 0.0 }
+						"LowerArmL": { "rotationX": -40.0, "rotationY": -1.0, "rotationZ": -80.0 }
 					}
 				},
 				{
@@ -480,7 +482,9 @@
 			"code": "T1PilotRowingRight",
 			"animation": "t1pilotrowingright",
 			"clientSide": true,
-			"easeInSpeed": 2,
+			"animationSpeed": 1,
+			"easeInSpeed": 5,
+			"easeOutSpeed": 5,
 			"elementWeight": {
 				"UpperArmR": 100,
 				"LowerArmR": 100,
@@ -529,8 +533,7 @@
 						"LowerFootR": { "offsetX": 0.8, "offsetY": 1.1, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 70.0 },
 						"UpperTorso": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 8.0 },
 						"UpperArmR": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -17.0 },
-						"LowerArmR": { "rotationX": 40.0, "rotationY": 1.0, "rotationZ": -80.0 },
-						"root": { "offsetX": 0.0, "offsetY": -5.0, "offsetZ": 0.0 }
+						"LowerArmR": { "rotationX": 40.0, "rotationY": 1.0, "rotationZ": -80.0 }
 					}
 				},
 				{

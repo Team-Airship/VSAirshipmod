@@ -31,11 +31,15 @@
     "turnMultiplier": 6,
     "swimmingOffsetY": 0,
     "rightClickPickup": true,
-    "mountAnimations": {
+"mountAnimations": {
       "idle": "T1PilotIdle",
       "ready": "",
-      "forwards": "T1PilotRowing", //TESTING
-      "backwards": "T1PilotDown" //TESTING
+      "forwards": "",
+      "backwards": "",
+      "PilotTurnLeft":     "t1pilotrowingleft",
+      "PilotTurnRight" :   "t1pilotrowingright",
+      "PilotGoUp":         "t1pilotup",
+      "PilotGoDown":       "t1pilotdown"
     },
     "Fuel": 0.0,
     "TemporalGearCount": 1,
@@ -77,9 +81,9 @@
           "controllable": true,
           "mountRotation": { "y": 180 },
           "mountOffset": {
-            "x": 1.5,
+            "x": 1.565,
             "z": 1.308,
-            "y": -0.35
+            "y": -0.65
           },
           "bodyYawLimit": null,
           "eyeHeight": 1.5
@@ -129,7 +133,7 @@
       }
     },
     "animations": [
-      {
+/*      {
         "code": "turnLeft",
         "animation": "turnLeft",
         "animationSpeed": 1,
@@ -142,7 +146,7 @@
         "animationSpeed": 1,
         "easeInSpeed": 2,
         "easeOutSpeed": 2
-      },
+      }, */
       {
         "code": "goUp",
         "animation": "goup",
@@ -161,7 +165,7 @@
         "code": "goDown",
         "animation": "godown",
         "animationSpeed": 1,
-        "easeInSpeed": 2,
+        "easeInSpeed": 5,
         "easeOutSpeed": 2
       },
       {
@@ -224,6 +228,34 @@
         "easeInSpeed": 1,
         "easeOutSpeed": 1
         //"blendMode": "AddAverage"
+      },
+      {
+        "code": "ForwardRight",
+        "animation": "ForwardRight",
+        "animationSpeed": 1,
+        "easeInSpeed": 5,
+        "easeOutSpeed": 5
+      },
+      {
+        "code": "ForwardLeft",
+        "animation": "ForwardLeft",
+        "animationSpeed": 1,
+        "easeInSpeed": 5,
+        "easeOutSpeed": 5
+      },
+      {
+        "code": "BackwardRight",
+        "animation": "BackwardRight",
+        "animationSpeed": 1,
+        "easeInSpeed": 5,
+        "easeOutSpeed": 5
+      },
+      {
+        "code": "BackwardLeft",
+        "animation": "BackwardLeft",
+        "animationSpeed": 1,
+        "easeInSpeed": 5,
+        "easeOutSpeed": 5
       }
     ],
     "texturesByType": {
