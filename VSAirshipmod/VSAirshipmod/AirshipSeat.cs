@@ -45,6 +45,11 @@ namespace Vintagestory.GameContent
             return base.CanMount(entityAgent);
         }
 
+        public override bool CanUnmount(EntityAgent entityAgent)
+        {
+            return !(Entity as EntityAirship).IsFlying || controls.Sprint || controls.ShiftKey;
+        }
+
         public override void DidMount(EntityAgent entityAgent)
         {
             base.DidMount(entityAgent);
