@@ -18,7 +18,7 @@ namespace VSAirshipmod
     public class EntityAirshipTier2 : EntityAirship
     {
 
-
+        
         public override int TemporalGearCount
         {
             get => WatchedAttributes.GetInt("TemporalGearCount", 3);
@@ -98,6 +98,7 @@ namespace VSAirshipmod
             double TurnAcceleration = 0.15;
             double RiseSpeed = 15;
             double RiseAcceleration = 0.07;
+            float EmptyStoppingPower = 5f;
 
             float pitchStrength = 0.5f;
 
@@ -359,6 +360,7 @@ namespace VSAirshipmod
              RiseSpeed = properties.Attributes["RiseSpeed"].AsDouble(15);
              RiseAcceleration = properties.Attributes["RiseAcceleration"].AsDouble(0.07);
              pitchStrength  = properties.Attributes["pitchStrength"].AsFloat(0.5f);
+            EmptyStoppingPower = properties.Attributes["EmptyStoppingPower"].AsFloat(5f);
 
             //Listener for TemporalGearCount changes marks the shape modified like sail boat unfurling
             WatchedAttributes.RegisterModifiedListener("TemporalGearCount", MarkShapeModified);
@@ -607,7 +609,7 @@ namespace VSAirshipmod
                 }
                 else if (target == 0 && (ForwardSpeed >= 0.01|| ForwardSpeed <= -0.01))
                 {
-                    ForwardSpeed += (1.5 * target - ForwardSpeed) * lerpFactor;
+                    ForwardSpeed += (target - ForwardSpeed) * lerpFactor * (IsEmptyOfPlayers() ? EmptyStoppingPower : 1f);
                 }
                 else
                 {
