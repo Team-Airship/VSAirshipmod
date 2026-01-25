@@ -170,7 +170,7 @@ namespace VSAirshipmod
                     }
                 };
             }  */
-if (this.CurrentStage == this.stages.Length - 4 && !this.AnimManager.IsAnimationActive(new string[] { "moveboat" }))
+			if (this.CurrentStage == this.stages.Length - 4 && !this.AnimManager.IsAnimationActive(new string[] { "moveboat" }))
             {
                 this.StartAnimation("moveboat");
                 {
@@ -180,15 +180,15 @@ if (this.CurrentStage == this.stages.Length - 4 && !this.AnimManager.IsAnimation
                  //   }
                 };
             }
-else if (this.CurrentStage >= this.stages.Length - 2 && !this.AnimManager.IsAnimationActive(new string[] { "launch" }))
-{
-    this.launchingEntity = byEntity;
-    this.launchStartPos = this.getCenterPos();
-    this.StartAnimation("launch");
-    {
-        this.genNextInteractionStage();
-    };
-}
+			else if (this.CurrentStage >= this.stages.Length - 2 && !this.AnimManager.IsAnimationActive(new string[] { "launch" }))
+			{
+				this.launchingEntity = byEntity;
+				this.launchStartPos = this.getCenterPos();
+				this.StartAnimation("launch");
+				{
+					this.genNextInteractionStage();
+				};
+			}
 
 		}
 
@@ -202,7 +202,11 @@ else if (this.CurrentStage >= this.stages.Length - 2 && !this.AnimManager.IsAnim
 				Matrixf mat = new Matrixf();
 				mat.RotateY(this.ServerPos.Yaw + 1.5707964f);
 				apap.Mul(mat);
-				return mat.TransformVector(new Vec4f(0f, 0f, 0f, 1f)).XYZ;
+                Vec3f output = mat.TransformVector(new Vec4f(0f, 0f, 0f, 1f)).XYZ;
+
+				Api.Logger.Event("Ship Placed:" + output.ToString());
+
+                return output;
 			}
 			return null;
 		}
@@ -428,7 +432,7 @@ else if (this.CurrentStage >= this.stages.Length - 2 && !this.AnimManager.IsAnim
 		{
 
 			Vec3f nowOff = this.getCenterPos();
-			Vec3f offset = (nowOff == null) ? new Vec3f() : (nowOff - this.launchStartPos);
+			Vec3f offset = (nowOff == null) ? new Vec3f() : (nowOff);
 			EntityProperties type = this.World.GetEntityType(new AssetLocation("vsairshipmod:airship-"+this.boattype+"-"+this.material));
 			Entity entity = this.World.ClassRegistry.CreateEntity(type);
 			if ((int)Math.Abs(this.ServerPos.Yaw * 57.295776f) == 90 || (int)Math.Abs(this.ServerPos.Yaw * 57.295776f) == 270)
@@ -437,7 +441,7 @@ else if (this.CurrentStage >= this.stages.Length - 2 && !this.AnimManager.IsAnim
 			}
 			offset.Y = 0.5f;
 			entity.ServerPos.SetFrom(this.ServerPos).Add(offset);
-			entity.ServerPos.Motion.Add((double)offset.X / 50.0, 0.0, (double)offset.Z / 50.0);
+			//entity.ServerPos.Motion.Add((double)offset.X / 50.0, 0.0, (double)offset.Z / 50.0);
 			EntityPlayer entityPlayer = this.launchingEntity as EntityPlayer;
 			IPlayer plr = (entityPlayer != null) ? entityPlayer.Player : null;
 			if (plr != null)
