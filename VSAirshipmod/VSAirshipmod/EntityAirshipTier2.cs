@@ -287,7 +287,7 @@ namespace VSAirshipmod
             if (IsFlying)//(Swimming)//
             {
                 double gamespeed = capi.World.Calendar.SpeedOfTime / 60f;
-                float intensity = 0.15f + GlobalConstants.CurrentWindSpeedClient.X * 0.9f;
+                float intensity = (0.15f + GlobalConstants.CurrentWindSpeedClient.X * 0.9f) * (!Swimming ? Math.Min((float)Pos.Y/100f,1f) : 1f);
                 float diff = GameMath.DEG2RAD / 2f * intensity;
                 mountAngle.X = GameMath.Sin((float)(ellapseMs / 1000.0 * 2 * gamespeed)) * 8 * diff;
                 mountAngle.Y = GameMath.Cos((float)(ellapseMs / 2000.0 * 2 * gamespeed)) * 3 * diff;
@@ -621,7 +621,7 @@ namespace VSAirshipmod
                 }
                 else if (target == 0 && (ForwardSpeed >= 0.01|| ForwardSpeed <= -0.01))
                 {
-                    ForwardSpeed += (target - ForwardSpeed) * lerpFactor * (IsEmptyOfPlayers() ? EmptyStoppingPower : 1f);
+                    ForwardSpeed += (target - ForwardSpeed) * lerpFactor * (IsEmptyOfPlayers() ? EmptyStoppingPower * (OnGround ? 5f : 1f) : 1f);
                 }
                 else
                 {
