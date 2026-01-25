@@ -563,7 +563,8 @@
 			"feather": { "base": "game:item/resource/feather" },
 			"map-blank": { "base": "game:item/utility/map-blank" },
 			"schematic": { "base": "item/tier2-schematic" },
-			"quartz": { "base": "game:block/glass/quartz" }
+			"quartz": { "base": "game:block/glass/quartz" },
+			"bismuth": { "base": "game:block/metal/ingot/bismuth" }
 		},
 		animations: [
 			{
