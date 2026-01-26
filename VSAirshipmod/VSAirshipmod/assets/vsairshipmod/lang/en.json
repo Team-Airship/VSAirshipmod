@@ -60,7 +60,7 @@
   "vsairshipmod:itemdesc-vsairshipmodroller-tier1": "A tightly packed construction yard.",
   "vsairshipmod:item-*vsairshipmodconstruction-tier1-*": "Tier 1 Airraft-yard",
   "creature-vsairshipmod:vsairshipmodconstruction-tier1-*-SeleAP": "<br><font color='yellow'>• Launch Pad •</font>",
-  "vsairshipmod:item-*airship-tier1-*": "Packed Airraft",
+  "vsairshipmod:item-airship-tier1-*": "Packed Airraft",
   "vsairshipmod:itemdesc-*airship-tier1-*": "It's pretty heavy regardless of how much fuel is still in there.'",
 
   //tier 2 items
@@ -69,19 +69,19 @@
   "vsairshipmod:item-*vsairshipmodconstruction-tier2-*": "Tier 2 airboat-yard",
   "creature-vsairshipmod:vsairshipmodconstruction-tier2-*-SeleAP": "<br><font color='yellow'>• Launch Pad •</font>",
 
-  "vsairshipmod:item-airship-tier2-acacia": " Tier 2 Airboat (acacia)",
-  "vsairshipmod:item-airship-tier2-aged": " Tier 2 Airboat (aged)",
-  "vsairshipmod:item-airship-tier2-baldcypress": " Tier 2 Airboat (baldcypress)",
-  "vsairshipmod:item-airship-tier2-birch": " Tier 2 Airboat (birch)",
-  "vsairshipmod:item-airship-tier2-ebony": " Tier 2 Airboat (ebony)",
-  "vsairshipmod:item-airship-tier2-kapok": " Tier 2 Airboat (kapok)",
-  "vsairshipmod:item-airship-tier2-larch": " Tier 2 Airboat (larch)",
-  "vsairshipmod:item-airship-tier2-maple": " Tier 2 Airboat (maple)",
-  "vsairshipmod:item-airship-tier2-oak": " Tier 2 Airboat (oak)",
-  "vsairshipmod:item-airship-tier2-pine": " Tier 2 Airboat (pine)",
-  "vsairshipmod:item-airship-tier2-purpleheart": " Tier 2 Airboat (purpleheart)",
-  "vsairshipmod:item-airship-tier2-redwood": " Tier 2 Airboat (redwood)",
-  "vsairshipmod:item-airship-tier2-walnut": " Tier 2 Airboat (walnut)",
+  "vsairshipmod:item-*airship-tier2-acacia": " Tier 2 Airboat (acacia)",
+  "vsairshipmod:item-*airship-tier2-aged": " Tier 2 Airboat (aged)",
+  "vsairshipmod:item-*airship-tier2-baldcypress": " Tier 2 Airboat (baldcypress)",
+  "vsairshipmod:item-*airship-tier2-birch": " Tier 2 Airboat (birch)",
+  "vsairshipmod:item-*airship-tier2-ebony": " Tier 2 Airboat (ebony)",
+  "vsairshipmod:item-*airship-tier2-kapok": " Tier 2 Airboat (kapok)",
+  "vsairshipmod:item-*airship-tier2-larch": " Tier 2 Airboat (larch)",
+  "vsairshipmod:item-*airship-tier2-maple": " Tier 2 Airboat (maple)",
+  "vsairshipmod:item-*airship-tier2-oak": " Tier 2 Airboat (oak)",
+  "vsairshipmod:item-*airship-tier2-pine": " Tier 2 Airboat (pine)",
+  "vsairshipmod:item-*airship-tier2-purpleheart": " Tier 2 Airboat (purpleheart)",
+  "vsairshipmod:item-*airship-tier2-redwood": " Tier 2 Airboat (redwood)",
+  "vsairshipmod:item-*airship-tier2-walnut": " Tier 2 Airboat (walnut)",
   "vsairshipmod:itemdesc-airship-tier2-*": " Don't be a cheater lol :)'",
 
   //tier 1 airship
@@ -89,6 +89,7 @@
   "creature-vsairshipmod:airship-tier1-*-riderseatAP": "<br><font color='yellow'>• Pilot Seat! •</font>",
   "creature-vsairshipmod:airship-tier1-*-shieldstorageAP": "<br><font color='yellow'>• Shield slot •</font>",
   "creature-vsairshipmod:airship-tier1-*-burnervalveAP": "<br><font color='yellow'>• Toggle hover •</font>",
+  "vsairshipmod:item-creature-airship-tier1-*": "Tier 1 Airraft",
 
   //tier 2 airship
   "creature-vsairshipmod:airship-tier2-*-LanternStorageAP": "<br><font color='yellow'>• Lantern slot •</font>",
