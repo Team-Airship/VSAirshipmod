@@ -319,7 +319,7 @@ namespace VSAirshipmod
         public override double SwimmingOffsetY => swimmingOffsetY;
 
         public double RenderOrder => 0;
-        public int RenderRange => 999;
+        public int RenderRange => 1999;
 
 
         public virtual void OnRenderFrame(float deltaTime, EnumRenderStage stage)
@@ -401,10 +401,13 @@ namespace VSAirshipmod
 
             base.OnGameTick(dt);
         }
-        public virtual int MaxAltitude
+        /// <summary>
+        /// Max Altitude is based on sea level to max world height
+        /// </summary>
+        public virtual double MaxAltitude
         {
-            get => WatchedAttributes.GetInt("MaxAltitude", 200);
-            set => WatchedAttributes.SetInt("MaxAltitude", value);
+            get => WatchedAttributes.GetDouble("MaxAltitude", 0.6);
+            set => WatchedAttributes.SetDouble("MaxAltitude", Math.Clamp(value,0.0,1.0));
         }
 
         public Dictionary<string, string> MountAnimations = new Dictionary<string, string>();
@@ -414,7 +417,7 @@ namespace VSAirshipmod
             SpeedMultiplier = properties.Attributes["speedMultiplier"].AsFloat(1f);
             TurnMultiplier = properties.Attributes["turnMultiplier"].AsFloat(1f);
             TemporalGearMaxCount = properties.Attributes["TemporalGearMaxCount"].AsInt(1);
-            MaxAltitude = properties.Attributes["MaxAltitude"].AsInt(150);
+            MaxAltitude = properties.Attributes["MaxAltitude"].AsDouble(0.6);
             /*if (Fuel == 0)
                 Fuel = this.Attributes.GetFloat("Fuel");*/
 

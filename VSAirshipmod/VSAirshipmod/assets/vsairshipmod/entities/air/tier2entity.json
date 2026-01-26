@@ -44,6 +44,7 @@
     "TurnAccelerationByType": { "*": 0.15 },
     "RiseSpeedByType": { "*": 15 },
     "RiseAccelerationByType": { "*": 0.07 },
+    "MaxAltitude": 0.8,
     "pitchStrengthByType": { "*": 0.5 },
     "swimmingOffsetYByType": { "*": 1.5 },
     "rightClickPickup": false,

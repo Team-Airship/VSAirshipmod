@@ -16,7 +16,7 @@ namespace VSAirshipmod
     public class EntityAirshipTier1 : EntityAirship
     {
 
-        
+
 
         /// <summary>
         /// Amount of time we have been Inflating the balloon.
@@ -32,7 +32,7 @@ namespace VSAirshipmod
             }
             set
             {
-                WatchedAttributes.SetFloat("Inflate", Math.Clamp(value,0f,3f));
+                WatchedAttributes.SetFloat("Inflate", Math.Clamp(value, 0f, 3f));
             }
         }
 
@@ -147,7 +147,8 @@ namespace VSAirshipmod
         {
             var shape = entityShape;
 
-            if (AnimManager.Animator != null) {
+            if (AnimManager.Animator != null)
+            {
                 if (Api is ICoreClientAPI)
                 {
                     if (shape == entityShape) entityShape = entityShape.Clone();
@@ -160,9 +161,12 @@ namespace VSAirshipmod
                     {
                         entityShape.RemoveElementByName("FLATBALLOON");
                     }
-                    if(TemporalFuelUsage == 0){
+                    if (TemporalFuelUsage == 0)
+                    {
                         entityShape.RemoveElementByName("TEMPHIDE");
-                    }else{
+                    }
+                    else
+                    {
                         entityShape.RemoveElementByName("RUSTHIDE");
                     }
                 }
@@ -249,7 +253,7 @@ namespace VSAirshipmod
                 forwardpitch = 0;
             }
 
-                var esr = Properties.Client.Renderer as EntityShapeRenderer;
+            var esr = Properties.Client.Renderer as EntityShapeRenderer;
             if (esr == null) return;
 
             esr.xangle = mountAngle.X + curRotMountAngleZ;
@@ -391,7 +395,7 @@ namespace VSAirshipmod
                 anim = this.AnimManager.GetAnimationState("fueltemp");
                 if (anim != null)
                 {
-                    anim.CurrentFrame = (float)Math.Clamp((1f - (TemporalFuelUsage / (MinutesPerGear * 60 ) / 1000f)) * 29f, 0f, 29f);
+                    anim.CurrentFrame = (float)Math.Clamp((1f - (TemporalFuelUsage / (MinutesPerGear * 60) / 1000f)) * 29f, 0f, 29f);
                     anim.BlendedWeight = 1f;
                     anim.EasingFactor = 0.1f;
                 }
@@ -405,7 +409,7 @@ namespace VSAirshipmod
                 anim = AnimManager.GetAnimationState("weathervane");
                 if (anim != null)
                 {
-                    anim.CurrentFrame = Math.Clamp((targetWindDir * GameMath.RAD2DEG)%360 / 10f,0f,35f);
+                    anim.CurrentFrame = Math.Clamp((targetWindDir * GameMath.RAD2DEG) % 360 / 10f, 0f, 35f);
                     anim.BlendedWeight = 1f;
                     //anim.EasingFactor = 1f;
                 }
@@ -418,7 +422,7 @@ namespace VSAirshipmod
             base.OnGameTick(dt);
             if (World.Side == EnumAppSide.Server)
             {
-                updateBoatAngleAndMotion(dt,true);
+                updateBoatAngleAndMotion(dt, true);
             }
 
             bool shouldSpin = TemporalFuelUsage > 0;
@@ -479,7 +483,7 @@ namespace VSAirshipmod
         }
 
 
-        protected void updateBoatAngleAndMotion(float dt,bool Gametick = false)
+        protected void updateBoatAngleAndMotion(float dt, bool Gametick = false)
         {
             // Ignore lag spikes
             dt = Math.Min(0.5f, dt);
@@ -500,9 +504,10 @@ namespace VSAirshipmod
             else if (motion.Y > 0 || Idler)
             {
                 //if ((FuelTimer > 0 || Fuel > 0)&& (TemporalFuelUsage > 0 || TemporalGearCount > 0))
-                if ((FuelTimer > 0 || Fuel > 0)&& TemporalFuelUsage > 0 )
+                if ((FuelTimer > 0 || Fuel > 0) && TemporalFuelUsage > 0)
                 {
-                    if (Gametick) {
+                    if (Gametick)
+                    {
                         Inflate = Math.Min(Inflate + dt, 3);
                         if (FuelTimer <= 0)
                         {
@@ -563,9 +568,9 @@ namespace VSAirshipmod
 
             if (HorizontalVelocity > 0.0)
             {
-                if (pos.Y < /*Api.World.SeaLevel +*/ MaxAltitude)
+                if (pos.Y - Api.World.SeaLevel < (Api.World.BlockAccessor.MapSizeY - Api.World.SeaLevel - 10) * MaxAltitude)
                 {
-                    pos.Motion.Y += 0.013 * dt ;
+                    pos.Motion.Y += 0.013 * dt;
                     pos.Motion.Y = Math.Min(0.013 * horizontalmodifier, pos.Motion.Y);
                 }
             }
@@ -579,24 +584,25 @@ namespace VSAirshipmod
                 //pos.Motion.Y = Math.Clamp(pos.Motion.Y, -WindDirection.Length(), WindDirection.Length()) + temp.Y;
                 //pos.Motion.Z = Math.Clamp(pos.Motion.Z, -Math.Abs(WindDirection.Z), Math.Abs(WindDirection.Z)) + temp.Z;
                 Vec3d tempMotion = pos.Motion;
-                tempMotion.X = pos.Motion.HorLength() <= WindDirection.HorLength() ? pos.Motion.X + temp.X : pos.Motion.X *(WindDirection.HorLength() / pos.Motion.HorLength()) + temp.X;
+                tempMotion.X = pos.Motion.HorLength() <= WindDirection.HorLength() ? pos.Motion.X + temp.X : pos.Motion.X * (WindDirection.HorLength() / pos.Motion.HorLength()) + temp.X;
                 tempMotion.Z = pos.Motion.HorLength() <= WindDirection.HorLength() ? pos.Motion.Z + temp.Z : pos.Motion.Z * (WindDirection.HorLength() / pos.Motion.HorLength()) + temp.Z;
                 pos.Motion = tempMotion;
             }
-            else if(ForwardSpeed != 0.0)
+            else if (ForwardSpeed != 0.0)
             {
                 pos.Motion.X = temp.X;
                 pos.Motion.Z = temp.Z;
             }
 
 
-            if (!OnGround && !Swimming && !applyGravity) {
+            if (!OnGround && !Swimming && !applyGravity)
+            {
                 if (HorizontalVelocity < 0.0)
                     pos.Motion.Y -= 0.026 * dt;
                 else if (!Idler && motion.Y <= 0f)
                 {
                     pos.Motion.Y -= 0.013 * dt;
-                    
+
                 }
                 pos.Motion.Y = Math.Max(pos.Motion.Y, -0.013 * horizontalmodifier);
             }
@@ -606,7 +612,7 @@ namespace VSAirshipmod
                 pos.Motion.Y = Math.Max(pos.Motion.Y, -0.013 * horizontalmodifier);
             }
 
-            
+
 
 
             var bh = GetBehavior<EntityBehaviorPassivePhysicsMultiBox>();
@@ -709,8 +715,8 @@ namespace VSAirshipmod
             }
 
 
-            if (!animForwardLeft)  StopAnimation("ForwardLeft");
-            if (animForwardLeft)  StartAnimation("ForwardLeft");
+            if (!animForwardLeft) StopAnimation("ForwardLeft");
+            if (animForwardLeft) StartAnimation("ForwardLeft");
 
             if (!animForwardRight) StopAnimation("ForwardRight");
             if (animForwardRight) StartAnimation("ForwardRight");
@@ -721,8 +727,8 @@ namespace VSAirshipmod
             if (!animBackwardRight) StopAnimation("BackwardRight");
             if (animBackwardRight) StartAnimation("BackwardRight");
 
-            if (!animGoUp)   StopAnimation("GoUp");
-            if (animGoUp)   StartAnimation("GoUp");
+            if (!animGoUp) StopAnimation("GoUp");
+            if (animGoUp) StartAnimation("GoUp");
 
             if (!animGoDown) StopAnimation("GoDown");
             if (animGoDown) StartAnimation("GoDown");
@@ -782,16 +788,16 @@ namespace VSAirshipmod
             }
 
             // Stop inactive animations
-            if (!animLeft)  seat.Passenger.AnimManager.StopAnimation(MountAnimations["PilotTurnLeft"]);
+            if (!animLeft) seat.Passenger.AnimManager.StopAnimation(MountAnimations["PilotTurnLeft"]);
             if (!animRight) seat.Passenger.AnimManager.StopAnimation(MountAnimations["PilotTurnRight"]);
-            if (!animUp)    seat.Passenger.AnimManager.StopAnimation(MountAnimations["PilotGoUp"]);
-            if (!animDown)  seat.Passenger.AnimManager.StopAnimation(MountAnimations["PilotGoDown"]);
+            if (!animUp) seat.Passenger.AnimManager.StopAnimation(MountAnimations["PilotGoUp"]);
+            if (!animDown) seat.Passenger.AnimManager.StopAnimation(MountAnimations["PilotGoDown"]);
 
             // Start active animations
-            if (animLeft)  seat.Passenger.AnimManager.StartAnimation(MountAnimations["PilotTurnLeft"]);
+            if (animLeft) seat.Passenger.AnimManager.StartAnimation(MountAnimations["PilotTurnLeft"]);
             if (animRight) seat.Passenger.AnimManager.StartAnimation(MountAnimations["PilotTurnRight"]);
-            if (animUp)    seat.Passenger.AnimManager.StartAnimation(MountAnimations["PilotGoUp"]);
-            if (animDown)  seat.Passenger.AnimManager.StartAnimation(MountAnimations["PilotGoDown"]);
+            if (animUp) seat.Passenger.AnimManager.StartAnimation(MountAnimations["PilotGoUp"]);
+            if (animDown) seat.Passenger.AnimManager.StartAnimation(MountAnimations["PilotGoDown"]);
 
         }
 
@@ -809,7 +815,7 @@ namespace VSAirshipmod
             {
                 seat = sseat as EntityAirshipSeat;
                 if (seat == null || seat.Passenger == null) continue;
-                
+
                 if (!(seat.Passenger is EntityPlayer))
                 {
                     seat.Passenger.SidedPos.Yaw = SidedPos.Yaw;
@@ -824,22 +830,22 @@ namespace VSAirshipmod
                 var controls = seat.controls;
 
                 bh.Controller = seat.Passenger;
-/*
-                if (controls.Left == controls.Right)
-                {
-                    StopAnimation("turnLeft");
-                    StopAnimation("turnRight");
-                }
-                if (controls.Left && !controls.Right)
-                {
-                    StartAnimation("turnLeft");
-                    StopAnimation("turnRight");
-                }
-                if (controls.Right && !controls.Left)
-                {
-                    StopAnimation("turnLeft");
-                    StartAnimation("turnRight");
-                }*/
+                /*
+                                if (controls.Left == controls.Right)
+                                {
+                                    StopAnimation("turnLeft");
+                                    StopAnimation("turnRight");
+                                }
+                                if (controls.Left && !controls.Right)
+                                {
+                                    StartAnimation("turnLeft");
+                                    StopAnimation("turnRight");
+                                }
+                                if (controls.Right && !controls.Left)
+                                {
+                                    StopAnimation("turnLeft");
+                                    StartAnimation("turnRight");
+                                }*/
 
                 //Apply ship animations
                 ApplyShipAnimation(seat);
@@ -1078,6 +1084,12 @@ namespace VSAirshipmod
             if (Idler)
                 text += "\n" + Lang.Get("vsairshipmod:idle");
             return text;
+        }
+
+        public override void OnEntityDespawn(EntityDespawnData despawn)
+        {
+            this.engine_sound?.Dispose();
+            base.OnEntityDespawn(despawn);
         }
     }
 }

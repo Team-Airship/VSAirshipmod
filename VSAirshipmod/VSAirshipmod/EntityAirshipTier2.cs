@@ -548,12 +548,12 @@ namespace VSAirshipmod
 
 
             //Coal fuel usage logic
-            if (IsFlying)
+            if (IsFlying  && !IsEmptyOfPlayers())
             {
                 //if (CoalStackSize > 0)
                 if (CoalStackSize >= 2)
                 {
-                    CoalFuelUsage -= (long)(dt * 1000f);
+                    CoalFuelUsage -= (long)(dt * 1000f * (motion.Y == 0? 1f : (motion.Y < 0 ? 0.5f : 2f)));
 
                     if (CoalFuelUsage <= 0 && !CoalFuelJustSpent)
                     {
@@ -676,10 +676,13 @@ namespace VSAirshipmod
 
             if (HorizontalVelocity > 0.0)
             {
-                pos.Motion.Y = 0.1 * this.HorizontalVelocity;
+                if (pos.Y - Api.World.SeaLevel < (Api.World.BlockAccessor.MapSizeY - Api.World.SeaLevel - 10) * MaxAltitude)
+                {
+                    pos.Motion.Y = 0.1 * this.HorizontalVelocity;
+                }
             }
 
-            if (HorizontalVelocity < 0.0 && (IsFlying))
+            if (HorizontalVelocity < 0.0 && !(OnGround || Swimming))
             {
                 pos.Motion.Y = 0.1 * this.HorizontalVelocity;
             }
