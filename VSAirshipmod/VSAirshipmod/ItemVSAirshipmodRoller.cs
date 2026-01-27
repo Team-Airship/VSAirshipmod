@@ -8,6 +8,7 @@ using Vintagestory.API.MathTools;
 using Vintagestory.API.Util;
 using Vintagestory.GameContent;
 using Newtonsoft.Json.Linq;
+using System.Linq.Expressions;
 
 namespace VSAirshipmod
 {
@@ -123,14 +124,20 @@ namespace VSAirshipmod
 		{
 			Matrixf matrixf = new Matrixf();
 			matrixf.RotateY((float)i * 1.5707964f);
-			if (i == 2)
+			switch (i)
 			{
-				matrixf.Translate(0f, 0f, -1f);
-			}
-			if (i == 3)
-			{
-				matrixf.Translate(1f, 0f, -1f);
-			}
+                case 1:
+                    matrixf.Translate(-1f, 0f, 0f);
+                    break;
+                case 2:
+                    matrixf.Translate(-1f, 0f, -1f);
+                    break;
+                case 3:
+                    matrixf.Translate(0f, 0f, -1f);
+                    break;
+                default:
+                    break;
+            }
 			List<BlockPos> list = new List<BlockPos>();
 			Vec4f vec = matrixf.TransformVector(new Vec4f((float)startlist[0].X, (float)startlist[0].Y, (float)startlist[0].Z, 1f));
 			Vec4f vec2 = matrixf.TransformVector(new Vec4f((float)startlist[1].X, (float)startlist[1].Y, (float)startlist[1].Z, 1f));
@@ -275,18 +282,24 @@ namespace VSAirshipmod
 					Entity entity = byEntity.World.ClassRegistry.CreateEntity(type);
 					entity.ServerPos.SetPos(blockSel.Position.ToVec3d().AddCopy(0.5, 1.0, 0.5));
 					entity.ServerPos.Yaw = -1.5707964f + (float)orient * 1.5707964f;
-					if (orient == 1)
-					{
-						entity.ServerPos.Z -= 1.0;
-					}
-					if (orient == 2)
-					{
-						entity.ServerPos.X -= 1.0;
-					}
-					if (orient == 3)
-					{
-						entity.ServerPos.Z += 1.0;
-					}
+
+					switch(orient)
+					{ 
+						case 0:
+							entity.ServerPos.X += 1.0;
+							break;
+						case 1:
+							entity.ServerPos.Z -= 1.0;
+                            break;
+                        case 2:
+							entity.ServerPos.X -= 1.0;
+                            break;
+                        case 3:
+							entity.ServerPos.Z += 1.0;
+                            break;
+						default:
+                            break;
+                    }
 					entity.Pos.SetFrom(entity.ServerPos);
 					byEntity.World.SpawnEntity(entity);
 					this.api.World.PlaySoundAt(new AssetLocation("sounds/block/planks"), byEntity, player, true, 32f, 1f);
