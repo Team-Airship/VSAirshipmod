@@ -909,52 +909,51 @@ namespace VSAirshipmod
 
 
             //Temporal Gear Refilling
+            if (selBoxes != null && selBoxes.IsAPCode(player?.EntitySelection, "GearCubeAP"))
             {
-                if (selBoxes != null && selBoxes.IsAPCode(player?.EntitySelection, "GearCubeAP"))
+                ItemSlot slot = itemslot;
+
+                //Only accept the temporal gears
+                bool isTemporalGear =
+                    slot?.Itemstack?.Collectible?.Code != null &&
+                    slot.Itemstack.Collectible.Code.Path == "gear-temporal";
+
+                //Only allow adding if not full
+                if (isTemporalGear && TemporalGearCount < 3)
                 {
-                    ItemSlot slot = itemslot;
-
-                    //Only accept the temporal gears
-                    bool isTemporalGear =
-                        slot?.Itemstack?.Collectible?.Code != null &&
-                        slot.Itemstack.Collectible.Code.Path == "gear-temporal";
-
-                    //Only allow adding if not full
-                    if (isTemporalGear && TemporalGearCount < 3)
+                    //Server side
+                    if (Api.Side == EnumAppSide.Server)
                     {
-                        //Server side
-                        if (Api.Side == EnumAppSide.Server)
+                        slot.TakeOut(1);
+                        slot.MarkDirty();
+                        //Directly adding fuel time here as well to make replacing the first gear less awkward otherwise it'd instantly drain after
+                        if (TemporalGearCount == 0)
                         {
-                            slot.TakeOut(1);
-                            slot.MarkDirty();
-                            //Directly adding fuel time here as well to make replacing the first gear less awkward otherwise it'd instantly drain after
-                            if (TemporalGearCount == 0)
-                            {
-                                TemporalFuelUsage = MinutesPerGear * 60 * 1000;
-                            }
-                            TemporalGearCount = Math.Min(3, TemporalGearCount + 1);
-                            WatchedAttributes.MarkPathDirty("TemporalGearCount");
-                            World.PlaySoundAt(new AssetLocation("game:sounds/effect/latch"), this);
-
-                            //Drop a rusty gear at the airship
-                            var RustyGear = World.GetItem(new AssetLocation("game:gear-rusty"));
-                            if (RustyGear != null)
-                            {
-                                var stack = new ItemStack(RustyGear, 1);
-                                World.SpawnItemEntity(stack, byEntity.ServerPos.XYZ);
-                            }
+                            TemporalFuelUsage = MinutesPerGear * 60 * 1000;
                         }
-                        return;
-                    }
+                        TemporalGearCount = Math.Min(3, TemporalGearCount + 1);
+                        WatchedAttributes.MarkPathDirty("TemporalGearCount");
+                        World.PlaySoundAt(new AssetLocation("game:sounds/effect/latch"), this);
 
-                    //Warning for max gears
-                    if (isTemporalGear && TemporalGearCount >= 3)
-                    {
-                        (byEntity.World.Api as ICoreClientAPI)?.TriggerIngameError(this, "tier2fullofgears", Lang.Get("vsairshipmod:engineatmax3gears"));
-                        return;
+                        //Drop a rusty gear at the airship
+                        var RustyGear = World.GetItem(new AssetLocation("game:gear-rusty"));
+                        if (RustyGear != null)
+                        {
+                            var stack = new ItemStack(RustyGear, 1);
+                            World.SpawnItemEntity(stack, byEntity.ServerPos.XYZ);
+                        }
                     }
+                    return;
+                }
+
+                //Warning for max gears
+                if (isTemporalGear && TemporalGearCount >= 3)
+                {
+                    (byEntity.World.Api as ICoreClientAPI)?.TriggerIngameError(this, "tier2fullofgears", Lang.Get("vsairshipmod:engineatmax3gears"));
+                    return;
                 }
             }
+            
 
 
             //Coal Refilling

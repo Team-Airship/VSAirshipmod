@@ -54,7 +54,7 @@ namespace Vintagestory.GameContent
                 //if (!can){
                 //    (entityAgent.Api as ICoreClientAPI)?.TriggerIngameError(this,"Can't_Dismount","Can't dismount in air without pressing Sprint key");
                 //}
-            return true;
+            return base.CanUnmount(entityAgent);
         }
 
         public override void DidMount(EntityAgent entityAgent)

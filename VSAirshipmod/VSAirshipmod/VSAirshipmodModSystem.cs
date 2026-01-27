@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CombatOverhaul.RangedSystems;
+using HarmonyLib;
+using System;
 using System.Collections.Generic;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
@@ -12,6 +14,7 @@ namespace VSAirshipmod
 {
     public class VSAirshipmodModSystem : ModSystem
     {
+        Harmony harmony = null;
         // Called on server and client
         // Useful for registering block/entity classes on both sides
         public override void Start(ICoreAPI api)
@@ -25,6 +28,11 @@ namespace VSAirshipmod
 
             api.RegisterItemClass("ItemVSAirshipmodRoller", typeof(ItemVSAirshipmodRoller));
             api.RegisterEntity("EntityVSAirshipmodConstruction", typeof(EntityVSAirshipmodConstruction));
+
+            if (api.ModLoader.IsModEnabled("overhaullib")){
+                harmony = new Harmony(Mod.Info.ModID);
+                harmony.PatchAll();
+            }
             //Mod.Logger.Notification("Hello there from template mod: " + api.Side);
         }
 
@@ -38,6 +46,20 @@ namespace VSAirshipmod
             Mod.Logger.Notification("Hello from template mod client side: " + Lang.Get("vsairshipmod:hello"));
         }*/
 
+        [HarmonyPatch(typeof(ProjectileEntity), "Initialize")]
+        public class FixMountBug
+        {
+            public static void Postfix(ref ProjectileEntity __instance)
+            {
+                Entity mount = (__instance.Api.World.GetEntityById(__instance.ShooterId) as EntityAgent).MountedOn?.Entity;
+                if(mount is not null)
+                    __instance.CollidedWith.Add(mount.EntityId);
+            }
+        }
+        public override void Dispose()
+        {
+            harmony?.UnpatchAll(Mod.Info.ModID);
+        }
     }
 }
 

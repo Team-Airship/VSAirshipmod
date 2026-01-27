@@ -70,7 +70,7 @@
   },
   "hitboxSize": {
     "x": 2,
-    "y": 2,
+    "y": 0.8,
     "z": 2
   },
   "behaviorConfigs": {
