@@ -35,6 +35,7 @@ namespace Vintagestory.GameContent
         public EntityAirshipSeat(IMountable mountablesupplier, string seatId, SeatConfig config) : base(mountablesupplier, seatId, config)
         {
             RideableClassName = "airship";
+            controls.OnAction = onControls;
         }
 
         public override bool CanMount(EntityAgent entityAgent)
@@ -49,11 +50,11 @@ namespace Vintagestory.GameContent
 
         public override bool CanUnmount(EntityAgent entityAgent)
         {
-            bool can = !(Entity as EntityAirship).IsFlying || controls.Sprint || controls.ShiftKey;
-            if (!can){
-                (entityAgent.Api as ICoreClientAPI)?.TriggerIngameError(this,"Can't_Dismount","Can't dismount in air without pressing Sprint key");
-            }
-            return can;
+                //bool can = !(Entity as EntityAirship).IsFlying || controls.Sprint || controls.ShiftKey;
+                //if (!can){
+                //    (entityAgent.Api as ICoreClientAPI)?.TriggerIngameError(this,"Can't_Dismount","Can't dismount in air without pressing Sprint key");
+                //}
+            return true;
         }
 
         public override void DidMount(EntityAgent entityAgent)
@@ -132,6 +133,23 @@ namespace Vintagestory.GameContent
                         break;
                     }
                 }
+            }
+        }
+
+        internal void onControls(EnumEntityAction action, bool on, ref EnumHandling handled)
+        {
+            if ((action == EnumEntityAction.Sneak || (Entity as EntityAirship).IsFlying && action == EnumEntityAction.Sprint) && on)// the logic for dismounting is here now
+            {
+                if (!(Entity as EntityAirship).IsFlying || (action == EnumEntityAction.Sneak?controls.Sprint: controls.Sneak)) {
+                    (Passenger as EntityAgent)?.TryUnmount();
+                    controls.StopAllMovement();
+                    return;
+                } 
+                else if(action == EnumEntityAction.Sneak)
+                {
+                    (Passenger.Api as ICoreClientAPI)?.TriggerIngameError(this, "Can't_Dismount", "Can't dismount in air without pressing Sprint key");
+                }
+                
             }
         }
     }
