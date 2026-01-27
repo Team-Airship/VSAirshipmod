@@ -311,7 +311,7 @@ namespace VSAirshipmod
 				{
 					return;
 				}
-				coreClientAPI2.TriggerIngameError(this, "unsuitableLocation", Lang.Get("Requires a suitable location near water to place a boat construction site. Boat will roll towards the blue highlighted area. Use tool mode to rotate", Array.Empty<object>()));
+				coreClientAPI2.TriggerIngameError(this, "unsuitableLocation", Lang.Get("Requires a suitable location to place a Airship construction site. Use tool mode to rotate", Array.Empty<object>()));
 				return;
 			}
 		}
