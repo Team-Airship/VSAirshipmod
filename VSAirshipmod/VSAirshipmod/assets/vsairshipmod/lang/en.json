@@ -56,18 +56,18 @@
   "vsairshipmod:blockdesc-figurehead-*": "A smaller and lighter replica that fits on airships",
 
   //tier1 items
-  "vsairshipmod:item-vsairshipmodroller-tier1": "Tier 1 Airraft-yard kit (14x7)",
+  "vsairshipmod:item-vsairshipmodroller-tier1": "Tier 1 Air-raft-yard kit (14x7)",
   "vsairshipmod:itemdesc-vsairshipmodroller-tier1": "A tightly packed construction yard.",
   "vsairshipmod:item-*vsairshipmodconstruction-tier1-*": "Tier 1 Airraft-yard",
-  "creature-vsairshipmod:vsairshipmodconstruction-tier1-*-SeleAP": "<br><font color='yellow'>• Launch Pad •</font>",
+  "creature-vsairshipmod:vsairshipmodconstruction-tier1-*-SeleAP": "<br><font color='yellow'>• Shipyard Lectern •</font>",
   "vsairshipmod:item-airship-tier1-*": "Packed Airraft",
   "vsairshipmod:itemdesc-*airship-tier1-*": "It's pretty heavy regardless of how much fuel is still in there.'",
 
   //tier 2 items
-  "vsairshipmod:item-vsairshipmodroller-tier2": "Tier 2 airboat-yard kit (16x11)",
+  "vsairshipmod:item-vsairshipmodroller-tier2": "Tier 2 air-boat-yard kit (16x11)",
   "vsairshipmod:itemdesc-vsairshipmodroller-tier2": "A tightly packed construction yard.",
   "vsairshipmod:item-*vsairshipmodconstruction-tier2-*": "Tier 2 airboat-yard",
-  "creature-vsairshipmod:vsairshipmodconstruction-tier2-*-SeleAP": "<br><font color='yellow'>• Launch Pad •</font>",
+  "creature-vsairshipmod:vsairshipmodconstruction-tier2-*-SeleAP": "<br><font color='yellow'>• Shipyard Lectern •</font>",
 
   "vsairshipmod:item-*airship-tier2-acacia": " Tier 2 Airboat (acacia)",
   "vsairshipmod:item-*airship-tier2-aged": " Tier 2 Airboat (aged)",
@@ -122,12 +122,10 @@
   "vsairshipmod:insert-temporal-gear": "Add Temporal Gears",
   "vsairshipmod:toggle-cruise": "Toggle Cruise",
   "vsairshipmod:remove-coal": "Remove Coal",
-  "vsairshipmod:add-coal": "Add Coal"
+  "vsairshipmod:add-coal": "Add Coal",
 
-
-
-
-
+  "vsairshipmod:dismount-warning": "Warning! in the air! Tap again to dismount!",
+  "vsairshipmod:toggleburner": "Toggle Burner",
 
 
 

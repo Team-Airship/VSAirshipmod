@@ -138,19 +138,42 @@ namespace Vintagestory.GameContent
 
         internal void onControls(EnumEntityAction action, bool on, ref EnumHandling handled)
         {
-            if ((action == EnumEntityAction.Sneak || (Entity as EntityAirship).IsFlying && action == EnumEntityAction.Sprint) && on)// the logic for dismounting is here now
+            if (action != EnumEntityAction.Sneak || !on) return;
+
+            var airship = Entity as EntityAirship;
+            var agent = Passenger as EntityAgent;
+            if (airship == null || agent == null) return;
+
+            //If not flying single tap dismounts immediately
+            if (!airship.IsFlying)
             {
-                if (!(Entity as EntityAirship).IsFlying || (action == EnumEntityAction.Sneak?controls.Sprint: controls.Sneak)) {
-                    (Passenger as EntityAgent)?.TryUnmount();
-                    controls.StopAllMovement();
-                    return;
-                } 
-                else if(action == EnumEntityAction.Sneak)
-                {
-                    ((Passenger as EntityPlayer)?.Api as ICoreClientAPI)?.TriggerIngameError(this, "Can't_Dismount", "Can't dismount in air without pressing Sprint key");
-                }
-                
+                agent.TryUnmount();
+                controls.StopAllMovement();
+                return;
             }
+
+            //if (agent.Api.Side == EnumAppSide.Server) return;
+
+            long nowMs = agent.World.ElapsedMilliseconds;
+            long lastTapMs = agent.Attributes.GetLong("airshipLastSneakTap", 0);
+
+            if (lastTapMs < nowMs)
+            {
+                long delta = nowMs - lastTapMs;
+
+                if (delta < 300 && delta > 50) //first value is the threshold needed in ms, second is the gap between taps in ms
+                {
+                    agent.TryUnmount();
+                    controls.StopAllMovement();
+                    agent.Attributes.SetLong("airshipLastSneakTap", 0);
+                    return;
+                }
+            }
+
+            //Record single tap
+            agent.Attributes.SetLong("airshipLastSneakTap", nowMs);
+
+            ((agent as EntityPlayer)?.Api as ICoreClientAPI)?.TriggerIngameError(this, "dismountwarnining", "vsairshipmod:dismount-warning");
         }
     }
 
