@@ -144,8 +144,8 @@
 		"med-pattern1": [12,12]
 	},
 	"textures": {
-		"material": "block/metal/lantern/copper",
-		"lining": "block/metal/lantern/copper",
+		"material": "game:block/metal/lantern/copper",
+		"lining": "game:block/metal/lantern/copper",
 		"rope": "game:item/resource/rope",
 		"candle": "game:block/candle"
 	},

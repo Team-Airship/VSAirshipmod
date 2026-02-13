@@ -163,7 +163,7 @@
 		"path1": [16,16]
 	},
 	"textures": {
-		"tinbronze1": "block/metal/sheet-plain/tinbronze1"
+		"tinbronze1": "game:block/metal/sheet-plain/tinbronze1"
 	},
 	"elements": [
 		{

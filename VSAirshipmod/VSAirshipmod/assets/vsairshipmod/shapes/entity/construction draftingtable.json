@@ -9,12 +9,12 @@
 	"textureSizes": {
 	},
 	"textures": {
-		"ceramic": "block/clay/ceramic",
-		"copper": "block/metal/ingot/copper",
-		"iron": "block/metal/ingot/iron",
-		"feather": "item/resource/feather",
-		"map-blank": "item/utility/map-blank",
-		"schematic": "item/utility/schematic-glider"
+		"ceramic": "game:block/clay/ceramic",
+		"copper": "game:block/metal/ingot/copper",
+		"iron": "game:block/metal/ingot/iron",
+		"feather": "game:item/resource/feather",
+		"map-blank": "game:item/utility/map-blank",
+		"schematic": "game:item/utility/schematic-glider"
 	},
 	"elements": [
 		{
