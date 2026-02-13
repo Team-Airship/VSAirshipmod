@@ -136,6 +136,8 @@ namespace Vintagestory.GameContent
             }
         }
 
+
+        long airshipLastSneakTap = 0;
         internal void onControls(EnumEntityAction action, bool on, ref EnumHandling handled)
         {
             if (action != EnumEntityAction.Sneak || !on) return;
@@ -155,7 +157,7 @@ namespace Vintagestory.GameContent
             //if (agent.Api.Side == EnumAppSide.Server) return;
 
             long nowMs = agent.World.ElapsedMilliseconds;
-            long lastTapMs = agent.Attributes.GetLong("airshipLastSneakTap", 0);
+            long lastTapMs = airshipLastSneakTap;
 
             if (lastTapMs < nowMs)
             {
@@ -165,13 +167,13 @@ namespace Vintagestory.GameContent
                 {
                     agent.TryUnmount();
                     controls.StopAllMovement();
-                    agent.Attributes.SetLong("airshipLastSneakTap", 0);
+                    airshipLastSneakTap = 0;
                     return;
                 }
             }
 
             //Record single tap
-            agent.Attributes.SetLong("airshipLastSneakTap", nowMs);
+            airshipLastSneakTap = nowMs;
 
             ((agent as EntityPlayer)?.Api as ICoreClientAPI)?.TriggerIngameError(this, "dismountwarnining", "vsairshipmod:dismount-warning");
         }
