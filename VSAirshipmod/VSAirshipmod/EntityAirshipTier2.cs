@@ -718,7 +718,7 @@ namespace VSAirshipmod
             {
                 pos.Motion.Y -= 0.003 * dt;
             }*/
-            if ((CoalStackSize < 2 && motion.Y <= 0f) && (!OnGround || !Swimming))
+            if ((CoalStackSize < 2 && motion.Y <= 0f) && !(OnGround || Swimming))
             {
                 pos.Motion.Y -= 0.003 * dt;
             }
