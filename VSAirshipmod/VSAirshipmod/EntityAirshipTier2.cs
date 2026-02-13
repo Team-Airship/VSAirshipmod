@@ -198,7 +198,25 @@ namespace VSAirshipmod
             //up animation.
             animUp = seat.controls.Jump;
         }
-
+        public override void DidUnmount(EntityAgent entityAgent)
+        {
+            base.DidUnmount(entityAgent);
+            IMountableSeat pilotSeat = GetBehavior<EntityBehaviorSeatable>().Seats.FirstOrDefault((x) => x.Config.Controllable && x.Passenger is not null);
+            if (pilotSeat is null) {
+                animForward = false;
+                animBackward = false;
+                animLeft = false;
+                animRight = false;
+                animLeftHalf = false;
+                animRightHalf = false;
+                animUp = false;
+                animDown = false;
+                animLeft = false;
+                animLeft = false;
+                animLeft = false;
+                animLeft = false;
+            }
+        }
 
         private void ApplySeatAnimation(EntityAirshipSeat seat)
         {
@@ -233,7 +251,7 @@ namespace VSAirshipmod
             if (!animPropeller) StopAnimation("Propeller");
             if (!animLeftHalf) StopAnimation("TurnLeftHalf");
             if (!animRightHalf) StopAnimation("TurnRightHalf");
-            if (!animDown) StopAnimation("GoUp");
+            //if (!animDown) StopAnimation("GoUp");
 
             //Start animations if active
             if (animForward) StartAnimation("Forward");
@@ -243,7 +261,7 @@ namespace VSAirshipmod
             if (animPropeller) StartAnimation("Propeller");
             if (animLeftHalf) StartAnimation("TurnLeftHalf");
             if (animRightHalf) StartAnimation("TurnRightHalf");
-            if (animDown) StartAnimation("GoUp");
+            //if (animDown) StartAnimation("GoUp");
 
             //Inversion logic for making it turn backwards, using reflection here too like the loom
             bool isReversing = animBackward;
@@ -700,7 +718,7 @@ namespace VSAirshipmod
             {
                 pos.Motion.Y -= 0.003 * dt;
             }*/
-            if ((CoalStackSize < 2 && motion.Y <= 0f) && (!OnGround || !Swimming))
+            if ((CoalStackSize < 2 && motion.Y <= 0f) && !(OnGround || Swimming))
             {
                 pos.Motion.Y -= 0.003 * dt;
             }

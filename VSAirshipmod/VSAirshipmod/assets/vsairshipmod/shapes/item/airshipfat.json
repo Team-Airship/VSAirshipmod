@@ -9,7 +9,7 @@
 		"fat": [16,16]
 	},
 	"textures": {
-		"fat": "item/resource/fat"
+		"fat": "game:item/resource/fat"
 	},
 	"elements": [
 		{

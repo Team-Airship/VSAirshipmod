@@ -10,7 +10,7 @@
 	},
 	"textures": {
 		"comptex-tier1": "item/tier1-componentscroll",
-		"utility-map": "item/utility/map"
+		"utility-map": "game:item/utility/map"
 	},
 	"elements": [
 		{

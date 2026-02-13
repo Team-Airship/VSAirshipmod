@@ -163,8 +163,8 @@
 		"path1": [16,16]
 	},
 	"textures": {
-		"tinbronze1": "block/metal/sheet-plain/tinbronze1",
-		"oak": "block/wood/debarked/oak"
+		"tinbronze1": "game:block/metal/sheet-plain/tinbronze1",
+		"oak": "game:block/wood/debarked/oak"
 	},
 	"elements": [
 		{
