@@ -1,13 +1,14 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
 using Vintagestory.API.Config;
 using Vintagestory.API.MathTools;
-using Vintagestory.GameContent;
-using System.Linq;
 using Vintagestory.API.Util;
+using Vintagestory.GameContent;
+using static VSAirshipmod.VSAirshipmodModSystem;
 
 
 
@@ -57,13 +58,13 @@ namespace VSAirshipmod
         //private const int anthracitefueltimeinseconds = 30; //plumb these to configs
         //private const int charcoalfueltimeinseconds = 10; //plumb these to configs
 
-        public int browncoalfueltimeinseconds = VSAirshipmodModSystem.Config.Tier2browncoalfueltimeinseconds;
-        public int blackcoalfueltimeinseconds = VSAirshipmodModSystem.Config.Tier2blackcoalfueltimeinseconds;
-        public int anthracitefueltimeinseconds = VSAirshipmodModSystem.Config.Tier2anthracitefueltimeinseconds;
-        public int charcoalfueltimeinseconds = VSAirshipmodModSystem.Config.Tier2charcoalfueltimeinseconds;
+        public int browncoalfueltimeinseconds;
+        public int blackcoalfueltimeinseconds;
+        public int anthracitefueltimeinseconds;
+        public int charcoalfueltimeinseconds;
 
 
-        public long Tier2SpeedMultiplier2 = VSAirshipmodModSystem.Config.Tier2SpeedMultiplier2;
+        public long Tier2SpeedMultiplier2;
 
         const int MaxCoalStack = 64;
 
@@ -112,7 +113,7 @@ namespace VSAirshipmod
 
 
         //static int MinutesPerGear = 15;//Central spot to set this, will be good for configs or something too :P
-        public int MinutesPerGear = VSAirshipmodModSystem.Config.Tier2MinutesPerGear; //Yes it was past me hyper :P
+        public int MinutesPerGear; //Yes it was past me hyper :P
 
 
         private void apply_engine_sound()
@@ -392,6 +393,16 @@ namespace VSAirshipmod
         public override void Initialize(EntityProperties properties, ICoreAPI api, long chunk)
         {
             base.Initialize(properties, api, chunk);
+
+            browncoalfueltimeinseconds = VSAirshipmodModSystem.Config.Tier2browncoalfueltimeinseconds;
+            blackcoalfueltimeinseconds = VSAirshipmodModSystem.Config.Tier2blackcoalfueltimeinseconds;
+            anthracitefueltimeinseconds = VSAirshipmodModSystem.Config.Tier2anthracitefueltimeinseconds;
+            charcoalfueltimeinseconds = VSAirshipmodModSystem.Config.Tier2charcoalfueltimeinseconds;
+
+
+            Tier2SpeedMultiplier2 = VSAirshipmodModSystem.Config.Tier2SpeedMultiplier2;
+
+            MinutesPerGear = VSAirshipmodModSystem.Config.Tier2MinutesPerGear; //Yes it was past me hyper :P
 
             ForwardAcceleration = properties.Attributes["ForwardAcceleration"].AsDouble(0.05);
             TurnSpeed = properties.Attributes["TurnSpeed"].AsDouble(0.25);

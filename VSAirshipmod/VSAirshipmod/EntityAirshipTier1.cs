@@ -110,10 +110,10 @@ namespace VSAirshipmod
         /// Amount of time in minutes given per temporal gear.
         /// </summary>
         //private static int MinutesPerGear = 15;//Plumb to config!
-        public int MinutesPerGear = VSAirshipmodModSystem.Config.Tier1MinutesPerGear;
-        public int SecondsPerRot = VSAirshipmodModSystem.Config.Tier1SecondsPerFuel;
+        public int MinutesPerGear;
+        public int SecondsPerRot;
 
-        public long Tier1SpeedMultiplier2 = VSAirshipmodModSystem.Config.Tier1SpeedMultiplier2;
+        public long Tier1SpeedMultiplier2;
 
 
         float pitchStrength = 2f;
@@ -149,6 +149,11 @@ namespace VSAirshipmod
             //this.weatherVaneAnimCode = properties.Attributes["weatherVaneAnimCode"].AsString(null);
 
             //api.Logger.Notification("Fuel Handled: " + Fuel);
+
+            MinutesPerGear = VSAirshipmodModSystem.Config.Tier1MinutesPerGear;
+            SecondsPerRot = VSAirshipmodModSystem.Config.Tier1SecondsPerFuel;
+
+            Tier1SpeedMultiplier2 = VSAirshipmodModSystem.Config.Tier1SpeedMultiplier2;
 
         }
 
