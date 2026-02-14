@@ -135,6 +135,12 @@ namespace VSAirshipmod
         public override void Initialize(EntityProperties properties, ICoreAPI api, long InChunkIndex3d)
         {
             base.Initialize(properties, api, InChunkIndex3d);
+
+            MinutesPerGear = VSAirshipmodModSystem.Config.Tier1MinutesPerGear;
+            SecondsPerRot = VSAirshipmodModSystem.Config.Tier1SecondsPerFuel;
+
+            Tier1SpeedMultiplier2 = VSAirshipmodModSystem.Config.Tier1SpeedMultiplier2;
+
             if (Fuel == 0)
                 Fuel = this.Attributes.GetFloat("Fuel");
             //if (TemporalGearCount == -1)
@@ -149,11 +155,6 @@ namespace VSAirshipmod
             //this.weatherVaneAnimCode = properties.Attributes["weatherVaneAnimCode"].AsString(null);
 
             //api.Logger.Notification("Fuel Handled: " + Fuel);
-
-            MinutesPerGear = VSAirshipmodModSystem.Config.Tier1MinutesPerGear;
-            SecondsPerRot = VSAirshipmodModSystem.Config.Tier1SecondsPerFuel;
-
-            Tier1SpeedMultiplier2 = VSAirshipmodModSystem.Config.Tier1SpeedMultiplier2;
 
         }
 

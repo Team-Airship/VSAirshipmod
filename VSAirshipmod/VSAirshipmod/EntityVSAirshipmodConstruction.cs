@@ -449,6 +449,10 @@ namespace VSAirshipmod
 				entity.WatchedAttributes.SetString("createdByPlayername", plr.PlayerName);
 				entity.WatchedAttributes.SetString("createdByPlayerUID", plr.PlayerUID);
 			}
+			if (entity is EntityAirshipTier1 tier1)
+			{
+				tier1.TemporalFuelUsage = VSAirshipmodModSystem.Config.Tier1MinutesPerGear * 60 * 1000;
+            }
 			entity.Pos.SetFrom(entity.ServerPos);
 			this.World.SpawnEntity(entity);
 		}
