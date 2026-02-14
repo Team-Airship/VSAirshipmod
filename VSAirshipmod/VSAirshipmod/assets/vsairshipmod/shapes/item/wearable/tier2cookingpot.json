@@ -1,6 +1,5 @@
 {
 	"editor": {
-		"backDropShape": "entity/animal/mammal/hooved/deer/elk/female",
 		"collapsedPaths": "Root/ORIGINsaddlebags/StrawBedBody",
 		"allAngles": true,
 		"entityTextureMode": false
