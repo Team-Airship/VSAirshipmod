@@ -1,7 +1,7 @@
 ﻿[
   {
     "file": "entities/air/tier1shipyardentity",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes/stages/12/requireStacks/0/code",
     "value": { "code": "backpacks:backbag-smalllinensack-stickframe-general" },
     
@@ -13,7 +13,7 @@
   },
   {
     "file": "entities/air/tier2shipyardentity",
-    "op": "add",
+    "op": "addmerge",
     "path": "/attributes/stages/11/requireStacks/1/code",
     "value": { "code": "backpacks:backbag-smalllinensack-stickframe-general" },
     
