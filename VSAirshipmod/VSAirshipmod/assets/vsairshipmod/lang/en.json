@@ -97,7 +97,7 @@
 
   //tier 2 airship
   "creature-vsairshipmod:airship-tier2-*-LanternStorageAP": "<br><font color='yellow'>• Lantern slot •</font>",
-  "creature-vsairshipmod:airship-tier2-*-LeftSeatAP": "<br><font color='yellow'>• Passenger seat / Small cargo slot •</font>",
+  "creature-vsairshipmod:airship-tier2-*-LeftSeatAP": "<br><font color='yellow'>• Passenger seat •</font>",
   "creature-vsairshipmod:airship-tier2-*-RightSeatAP": "<br><font color='yellow'>• Pilot Seat! •</font>",
   "creature-vsairshipmod:airship-tier2-*-ShieldStorage*AP": "<br><font color='yellow'>• Shield slot •</font>",
   "creature-vsairshipmod:airship-tier2-*-LeftStorageAP": "<br><font color='yellow'>• Cargo / Passenger slot •</font>",

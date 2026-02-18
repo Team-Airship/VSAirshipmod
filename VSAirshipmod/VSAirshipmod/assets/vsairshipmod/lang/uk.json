@@ -98,7 +98,7 @@
 
   //tier 2 airship
   "creature-vsairshipmod:airship-tier2-*-LanternStorageAP": "<br><font color='yellow'>• Місце для ліхтаря •</font>",
-  "creature-vsairshipmod:airship-tier2-*-LeftSeatAP": "<br><font color='yellow'>• Пасажирське місце/малий вантажний слот •</font>",
+  "creature-vsairshipmod:airship-tier2-*-LeftSeatAP": "<br><font color='yellow'>• Пасажирське місце •</font>",
   "creature-vsairshipmod:airship-tier2-*-RightSeatAP": "<br><font color='yellow'>• Місце пілота •</font>",
   "creature-vsairshipmod:airship-tier2-*-ShieldStorage*AP": "<br><font color='yellow'>• Місце для щита •</font>",
   "creature-vsairshipmod:airship-tier2-*-LeftStorageAP": "<br><font color='yellow'>• Вантажний/пасажирський слот •</font>",

@@ -10,7 +10,7 @@
     "Freakyuser396"
   ],
     "description": "Adds realistic lore friendly airships!",
-    "version": "1.0.3",
+    "version": "1.0.4",
   "dependencies": {
     "game": "1.21.5"
   }

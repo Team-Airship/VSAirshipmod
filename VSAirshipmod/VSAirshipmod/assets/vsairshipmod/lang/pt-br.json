@@ -96,7 +96,7 @@
 
   //dirigível nível 2
   "creature-vsairshipmod:airship-tier2-*-LanternStorageAP": "<br><font color='yellow'>• Espaço para lanterna •</font>",
-  "creature-vsairshipmod:airship-tier2-*-LeftSeatAP": "<br><font color='yellow'>• Assento de passageiro / Pequeno espaço de carga •</font>",
+  "creature-vsairshipmod:airship-tier2-*-LeftSeatAP": "<br><font color='yellow'>• Assento de passageiro •</font>",
   "creature-vsairshipmod:airship-tier2-*-RightSeatAP": "<br><font color='yellow'>• Assento do Piloto! •</font>",
   "creature-vsairshipmod:airship-tier2-*-ShieldStorage*AP": "<br><font color='yellow'>• Espaço para escudo •</font>",
   "creature-vsairshipmod:airship-tier2-*-LeftStorageAP": "<br><font color='yellow'>• Carga / Espaço de passageiro •</font>",
