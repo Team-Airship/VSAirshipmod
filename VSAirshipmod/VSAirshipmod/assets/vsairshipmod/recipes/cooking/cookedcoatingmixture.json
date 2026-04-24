@@ -29,7 +29,7 @@
 		},
 		{
 			code: "fat", 
-			validStacks: [ { type: "item", code: "game:fat" } ],
+			validStacks: [ { type: "item", code: "airshipfat", quantity: 3 } ],
 			minQuantity: 1,
 			maxQuantity: 1
 		}
