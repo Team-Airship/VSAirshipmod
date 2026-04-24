@@ -685,7 +685,7 @@ namespace VSAirshipmod
             if (!IsFlying && HorizontalVelocity == 0) return;
 
 
-            var pos = SidedPos;
+            var pos = Pos;
 
             if (ForwardSpeed != 0.0)
             {
@@ -742,7 +742,7 @@ namespace VSAirshipmod
             {
                 float yawDelta = (float)AngularVelocity * dt * 30f;
 
-                if (bh.AdjustCollisionBoxesToYaw(dt, true, SidedPos.Yaw + yawDelta))
+                if (bh.AdjustCollisionBoxesToYaw(dt, true, Pos.Yaw + yawDelta))
                 {
                     pos.Yaw += yawDelta;
                 }
@@ -750,16 +750,16 @@ namespace VSAirshipmod
             }
             else
             {
-                canTurn = bh.AdjustCollisionBoxesToYaw(dt, true, SidedPos.Yaw);
+                canTurn = bh.AdjustCollisionBoxesToYaw(dt, true, Pos.Yaw);
             }
 
             if (!canTurn)
             {
-                if (bh.AdjustCollisionBoxesToYaw(dt, true, SidedPos.Yaw - 0.1f))
+                if (bh.AdjustCollisionBoxesToYaw(dt, true, Pos.Yaw - 0.1f))
                 {
                     pos.Yaw -= 0.0002f;
                 }
-                else if (bh.AdjustCollisionBoxesToYaw(dt, true, SidedPos.Yaw + 0.1f))
+                else if (bh.AdjustCollisionBoxesToYaw(dt, true, Pos.Yaw + 0.1f))
                 {
                     pos.Yaw += 0.0002f;
                 }
