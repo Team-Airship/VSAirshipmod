@@ -154,7 +154,7 @@ namespace VSAirshipmod
 			return GetOrient(byPlayer);
 		}
 
-        public new int GetOrient(IPlayer byPlayer)
+        public int GetOrient(IPlayer byPlayer)
         {
             return ObjectCacheUtil.GetOrCreate<int>(byPlayer.Entity.Api, "rollerOrient-" + byPlayer.PlayerUID, () => 0);
         }
@@ -280,27 +280,27 @@ namespace VSAirshipmod
 					int orient = GetOrient(player);
 					EntityProperties type = byEntity.World.GetEntityType(new AssetLocation("vsairshipmod:vsairshipmodconstruction-" + boattype + "-" + material));
 					Entity entity = byEntity.World.ClassRegistry.CreateEntity(type);
-					entity.ServerPos.SetPos(blockSel.Position.ToVec3d().AddCopy(0.5, 1.0, 0.5));
-					entity.ServerPos.Yaw = -1.5707964f + (float)orient * 1.5707964f;
+					entity.Pos.SetPos(blockSel.Position.ToVec3d().AddCopy(0.5, 1.0, 0.5));
+					entity.Pos.Yaw = -1.5707964f + (float)orient * 1.5707964f;
 
 					switch(orient)
 					{ 
 						case 0:
-							entity.ServerPos.X += 1.0;
+							entity.Pos.X += 1.0;
 							break;
 						case 1:
-							entity.ServerPos.Z -= 1.0;
+							entity.Pos.Z -= 1.0;
                             break;
                         case 2:
-							entity.ServerPos.X -= 1.0;
+							entity.Pos.X -= 1.0;
                             break;
                         case 3:
-							entity.ServerPos.Z += 1.0;
+							entity.Pos.Z += 1.0;
                             break;
 						default:
                             break;
                     }
-					entity.Pos.SetFrom(entity.ServerPos);
+					entity.Pos.SetFrom(entity.Pos);
 					byEntity.World.SpawnEntity(entity);
 					this.api.World.PlaySoundAt(new AssetLocation("sounds/block/planks"), byEntity, player, true, 32f, 1f);
 					handling = EnumHandHandling.PreventDefault;

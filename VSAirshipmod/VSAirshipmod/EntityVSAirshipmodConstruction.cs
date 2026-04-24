@@ -201,7 +201,7 @@ namespace VSAirshipmod
 			if (apap != null)
 			{
 				Matrixf mat = new Matrixf();
-				mat.RotateY(this.ServerPos.Yaw + 1.5707964f);
+				mat.RotateY(this.Pos.Yaw + 1.5707964f);
 				apap.Mul(mat);
                 Vec3f output = mat.TransformVector(new Vec4f(0f, 0f, 0f, 1f)).XYZ;
 
@@ -228,10 +228,10 @@ namespace VSAirshipmod
 			}
 			List<WorldInteraction> wis = new List<WorldInteraction>();
 			int i = 0;
-			ConstructionIgredient[] requireStacks = stage.RequireStacks;
+			ConstructionIngredient[] requireStacks = stage.RequireStacks;
 			for (int j = 0; j < requireStacks.Length; j++)
 			{
-				ConstructionIgredient ingred = requireStacks[j];
+				ConstructionIngredient ingred = requireStacks[j];
 				List<ItemStack> stacksl = new List<ItemStack>();
 				foreach (KeyValuePair<string, string> val in this.storedWildCards)
 				{
@@ -279,7 +279,7 @@ namespace VSAirshipmod
 			ConstructionStage stage = this.stages[this.CurrentStage + 1];
 			IInventory hotbarinv = plr.InventoryManager.GetHotbarInventory();
 			List<KeyValuePair<ItemSlot, int>> takeFrom = new List<KeyValuePair<ItemSlot, int>>();
-			List<ConstructionIgredient> requireIngreds = new List<ConstructionIgredient>();
+			List<ConstructionIngredient> requireIngreds = new List<ConstructionIngredient>();
 			if (stage.RequireStacks == null)
 			{
 				return true;
@@ -300,7 +300,7 @@ namespace VSAirshipmod
 					}
 					for (int j = 0; j < requireIngreds.Count; j++)
 					{
-						ConstructionIgredient ingred = requireIngreds[j];
+						ConstructionIngredient ingred = requireIngreds[j];
 						foreach (KeyValuePair<string, string> val in this.storedWildCards)
 						{
 							ingred.FillPlaceHolder(val.Key, val.Value);
@@ -330,14 +330,14 @@ namespace VSAirshipmod
 			}
 			if (!skipMatCost && requireIngreds.Count > 0)
             {
-                ConstructionIgredient ingred2 = requireIngreds[0];
+                ConstructionIngredient ingred2 = requireIngreds[0];
                 string langCode = plr.LanguageCode;
                 if (ingred2.Quantity == 0)
                 {
                     plr.SendIngameError("missingstack", null, new object[]
                 {
                     1, //adding a seperate missing item error for when a component is intentionally NOT consumed
-                    ingred2.IsWildCard ? Lang.GetL(langCode, ingred2.Name ?? "", Array.Empty<object>()) : ingred2.ResolvedItemstack.GetName()
+                    ingred2.MatchingType != EnumRecipeMatchType.Exact ? Lang.GetL(langCode, ingred2.Name ?? "", Array.Empty<object>()) : ingred2.ResolvedItemStack.GetName()
                 });
                 }
                 else
@@ -345,7 +345,7 @@ namespace VSAirshipmod
                     plr.SendIngameError("missingstack", null, new object[]
                 {
                     ingred2.Quantity,
-                    ingred2.IsWildCard ? Lang.GetL(langCode, ingred2.Name ?? "", Array.Empty<object>()) : ingred2.ResolvedItemstack.GetName()
+                    ingred2.MatchingType != EnumRecipeMatchType.Exact ? Lang.GetL(langCode, ingred2.Name ?? "", Array.Empty<object>()) : ingred2.ResolvedItemStack.GetName()
                 });
                 }
                 return false;
@@ -366,7 +366,7 @@ namespace VSAirshipmod
 						if (stack.Block != null)
 						{
 							BlockSounds sounds = stack.Block.Sounds;
-							soundLoc = ((sounds != null) ? sounds.Place : null);
+							soundLoc = ((sounds != null) ? sounds.Place.Location : null);
 						}
 						if (soundLoc == null)
 						{
@@ -436,13 +436,13 @@ namespace VSAirshipmod
 			Vec3f offset = (nowOff == null) ? new Vec3f() : (nowOff);
 			EntityProperties type = this.World.GetEntityType(new AssetLocation("vsairshipmod:airship-"+this.boattype+"-"+this.material));
 			Entity entity = this.World.ClassRegistry.CreateEntity(type);
-			if ((int)Math.Abs(this.ServerPos.Yaw * 57.295776f) == 90 || (int)Math.Abs(this.ServerPos.Yaw * 57.295776f) == 270)
+			if ((int)Math.Abs(this.Pos.Yaw * 57.295776f) == 90 || (int)Math.Abs(this.Pos.Yaw * 57.295776f) == 270)
 			{
 				offset.X *= 1.1f;
 			}
 			offset.Y = 0.5f;
-			entity.ServerPos.SetFrom(this.ServerPos).Add(offset);
-			//entity.ServerPos.Motion.Add((double)offset.X / 50.0, 0.0, (double)offset.Z / 50.0);
+			entity.Pos.SetFrom(this.Pos).Add(offset);
+			//entity.Pos.Motion.Add((double)offset.X / 50.0, 0.0, (double)offset.Z / 50.0);
 			EntityPlayer entityPlayer = this.launchingEntity as EntityPlayer;
 			IPlayer plr = (entityPlayer != null) ? entityPlayer.Player : null;
 			if (plr != null)
@@ -454,7 +454,7 @@ namespace VSAirshipmod
 			{
 				tier1.TemporalFuelUsage = VSAirshipmodModSystem.Config.Tier1MinutesPerGear * 60 * 1000;
             }
-			entity.Pos.SetFrom(entity.ServerPos);
+			entity.Pos.SetFrom(entity.Pos);
 			this.World.SpawnEntity(entity);
 		}
 

@@ -991,7 +991,7 @@ namespace VSAirshipmod
                 {
                     var stack = new ItemStack(RustyGear, 1);
                     if (!player.TryGiveItemStack(stack))
-                        World.SpawnItemEntity(stack, byEntity.ServerPos.XYZ);
+                        World.SpawnItemEntity(stack, byEntity.Pos.XYZ);
                 }
                 return;
             }
@@ -1025,7 +1025,7 @@ namespace VSAirshipmod
                 //Api.Logger.Notification("Gears Picked Up: " + stack.Attributes.GetInt("TemporalGearCount"));
                 if (!byEntity.TryGiveItemStack(stack))
                 {
-                    World.SpawnItemEntity(stack, ServerPos.XYZ);
+                    World.SpawnItemEntity(stack, Pos.XYZ);
                 }
 
                 Api.World.Logger.Audit("{0} Picked up 1x{1} at {2}.",
