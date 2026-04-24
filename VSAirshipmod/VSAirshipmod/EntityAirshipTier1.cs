@@ -570,7 +570,7 @@ namespace VSAirshipmod
             if (OnGround && HorizontalVelocity == 0) return;
 
 
-            var pos = SidedPos;
+            var pos = Pos;
 
             Vec3d temp = new();
 
@@ -638,7 +638,7 @@ namespace VSAirshipmod
             {
                 float yawDelta = (float)AngularVelocity * dt * 30f;
 
-                if (bh.AdjustCollisionBoxesToYaw(dt, true, SidedPos.Yaw + yawDelta))
+                if (bh.AdjustCollisionBoxesToYaw(dt, true, Pos.Yaw + yawDelta))
                 {
                     pos.Yaw += yawDelta;
                 }
@@ -646,16 +646,16 @@ namespace VSAirshipmod
             }
             else
             {
-                canTurn = bh.AdjustCollisionBoxesToYaw(dt, true, SidedPos.Yaw);
+                canTurn = bh.AdjustCollisionBoxesToYaw(dt, true, Pos.Yaw);
             }
 
             if (!canTurn)
             {
-                if (bh.AdjustCollisionBoxesToYaw(dt, true, SidedPos.Yaw - 0.1f))
+                if (bh.AdjustCollisionBoxesToYaw(dt, true, Pos.Yaw - 0.1f))
                 {
                     pos.Yaw -= 0.0002f;
                 }
-                else if (bh.AdjustCollisionBoxesToYaw(dt, true, SidedPos.Yaw + 0.1f))
+                else if (bh.AdjustCollisionBoxesToYaw(dt, true, Pos.Yaw + 0.1f))
                 {
                     pos.Yaw += 0.0002f;
                 }
@@ -849,7 +849,7 @@ namespace VSAirshipmod
 
                 if (!(seat.Passenger is EntityPlayer))
                 {
-                    seat.Passenger.SidedPos.Yaw = SidedPos.Yaw;
+                    seat.Passenger.Pos.Yaw = Pos.Yaw;
                 }
                 if (seat.Config.BodyYawLimit != null && seat.Passenger is EntityPlayer eplr)
                 {

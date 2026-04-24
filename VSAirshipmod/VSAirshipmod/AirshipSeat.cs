@@ -74,7 +74,7 @@ namespace Vintagestory.GameContent
                     Passenger.AnimManager?.StopAnimation(animation);
                 }
                 Passenger.AnimManager?.StopAnimation(config.Animation);
-                Passenger.SidedPos.Roll = 0;
+                Passenger.Pos.Roll = 0;
             }
 
             base.DidUnmount(entityAgent);
