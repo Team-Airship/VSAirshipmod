@@ -1,8 +1,9 @@
-﻿using CombatOverhaul.RangedSystems;
-using HarmonyLib;
+﻿using HarmonyLib;
 using ProtoBuf;
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
@@ -45,7 +46,7 @@ namespace VSAirshipmod
         public override void Start(ICoreAPI api)
         {
             base.Start(api);
-            
+
             api.RegisterEntity("EntityAirshipTier1", typeof(EntityAirshipTier1));
             api.RegisterEntity("EntityAirshipTier2", typeof(EntityAirshipTier2));
             api.RegisterMountable("airship", EntityAirshipSeat.GetMountable);
@@ -58,9 +59,62 @@ namespace VSAirshipmod
 
             if (api.ModLoader.IsModEnabled("overhaullib")){
                 harmony = new Harmony(Mod.Info.ModID);
-                harmony.PatchAll();
+                TryPatchProjectileInit(api);
             }
             //Mod.Logger.Notification("Hello there from template mod: " + api.Side);
+        }
+
+        private void TryPatchProjectileInit(ICoreAPI api)
+        {
+            try
+            {
+                Type projectileType = AccessTools.TypeByName("CombatOverhaul.RangedSystems.ProjectileEntity");
+                if (projectileType == null)
+                {
+                    api.Logger.Warning("[vsairshipmod] CombatOverhaul projectile type was not found; skipping mount collision patch.");
+                    return;
+                }
+                MethodInfo original = AccessTools.Method(projectileType, "Initialize");
+                MethodInfo postfix = AccessTools.Method(typeof(VSAirshipmodModSystem), nameof(ProjectileInitPostfix));
+                if (original == null || postfix == null)
+                {
+                    api.Logger.Warning("[vsairshipmod] Could not locate projectile Initialize patch points; skipping mount collision patch.");
+                    return;
+                }
+                harmony.Patch(original, postfix: new HarmonyMethod(postfix));
+            }
+            catch (Exception ex)
+            {
+                api.Logger.Warning("[vsairshipmod] Failed applying CombatOverhaul projectile patch: {0}", ex.ToString());
+            }
+        }
+
+        private static void ProjectileInitPostfix(object __instance)
+        {
+            if (__instance is not Entity projectile) return;
+
+            PropertyInfo shooterIdProp = AccessTools.Property(__instance.GetType(), "ShooterId");
+            if (shooterIdProp == null) return;
+
+            object shooterIdRaw = shooterIdProp.GetValue(__instance);
+            if (shooterIdRaw == null) return;
+
+            long shooterId;
+            try { shooterId = Convert.ToInt64(shooterIdRaw); }
+            catch { return; }
+
+            Entity mount = (projectile.Api?.World?.GetEntityById(shooterId) as EntityAgent)?.MountedOn?.Entity;
+            if (mount == null) return;
+
+            object collidedWithRaw = AccessTools.Property(__instance.GetType(), "CollidedWith")?.GetValue(__instance);
+            if (collidedWithRaw is IList<long> typed)
+            {
+                if (!typed.Contains(mount.EntityId)) typed.Add(mount.EntityId);
+            }
+            else if (collidedWithRaw is IList untyped && !untyped.Contains(mount.EntityId))
+            {
+                untyped.Add(mount.EntityId);
+            }
         }
 
         /*public override void StartServerSide(ICoreServerAPI api)
@@ -73,16 +127,6 @@ namespace VSAirshipmod
             Mod.Logger.Notification("Hello from template mod client side: " + Lang.Get("vsairshipmod:hello"));
         }*/
 
-        [HarmonyPatch(typeof(ProjectileEntity), "Initialize")]
-        public class FixMountBug
-        {
-            public static void Postfix(ref ProjectileEntity __instance)
-            {
-                Entity mount = (__instance?.Api.World.GetEntityById(__instance.ShooterId) as EntityAgent)?.MountedOn?.Entity;
-                if(mount is not null)
-                    __instance.CollidedWith.Add(mount.EntityId);
-            }
-        }
         public override void Dispose()
         {
             harmony?.UnpatchAll(Mod.Info.ModID);
