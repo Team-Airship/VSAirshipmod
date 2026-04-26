@@ -21,19 +21,24 @@
     }
   },
   {
-    "ingredientPattern": "L",
+    "ingredientPattern": "LK",
     "ingredients": {
+      "K": {
+        "type": "item",
+        "code": "game:knife-*",
+        "isTool": true
+      },
       "L": {
         "type": "item",
-        "code": "airshipfat",
-        "quantity": 8
+        "code": "game:fat-rendered"
       }
     },
-    "width": 1,
+    "width": 2,
     "height": 1,
     "output": {
       "type": "item",
-      "code": "game:fat"
+      "code": "airshipfat",
+      "quantity": 8
     }
   }
 ]
