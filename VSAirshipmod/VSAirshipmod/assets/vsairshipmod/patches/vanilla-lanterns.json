@@ -2,13 +2,17 @@
     {
         "file": "game:blocktypes/metal/lantern.json",
         "op": "addmerge",
-        "path": "/attributesByType/*-up/attachableToEntity/attachedShapeBySlotCode",
+        "path": "/attributesByType/*-up/attachableToEntityByType",
         "value": {
-            "*storage-tier1": {
-                "base": "vsairshipmod:item/wearable/tier1lantern"
-            },
-            "*storage-tier2": {
-                "base": "vsairshipmod:item/wearable/tier2lanterns"
+            "lantern-*": {
+                "attachedShapeBySlotCode": {
+                    "*storage-tier1": {
+                        "base": "vsairshipmod:item/wearable/tier1lantern"
+                    },
+                    "*storage-tier2": {
+                        "base": "vsairshipmod:item/wearable/tier2lanterns"
+                    }
+                }
             }
         },
         "side": "server"
