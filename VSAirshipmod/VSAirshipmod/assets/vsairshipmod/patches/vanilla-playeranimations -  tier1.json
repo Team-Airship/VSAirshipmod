@@ -218,7 +218,7 @@
 		},
     "file": "game:shapes/entity/humanoid/seraph-faceless.json"
   },
-/*  {
+  {
     "op": "addmerge",
     "path": "/client/animations/-",
 		"value": {
@@ -354,7 +354,7 @@
 			]
 		},
     "file": "game:shapes/entity/humanoid/seraph-faceless.json"
-  }, */
+  },
   {
     "op": "addmerge",
     "path": "/client/animations/-",
