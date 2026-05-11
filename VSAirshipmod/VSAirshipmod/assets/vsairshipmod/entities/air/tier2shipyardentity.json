@@ -96,7 +96,7 @@
 			{ requireStacks: [ 
 				{ type: "item", code: "rope", quantity: 4 },
 				{ type: "block", code: "supportbeam-{wood}", quantity: 8 },
-				{ type: "item", code: "hide-pelt-huge", quantity: 3 }
+				{ type: "item", code: "hide-pelt-large", quantity: 6 }
 			  ],
 				removeElements: [
 					"ORIGIN/T2/ORIGIN10-RollerSplit"
