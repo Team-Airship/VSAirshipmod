@@ -1,5 +1,6 @@
 [
-		{
+	{
+	"enabled": false,
 		ingredientPattern:"_A_,BCD,_E_",
 		ingredients: {
 			"A": { type: "item",  code: "game:inkandquill", "quantity": 1},
@@ -13,6 +14,7 @@
 		output: { type: "item", code: "researchpaperitem", quantity: 2}
 	},
 	{
+	"enabled": false,
 		ingredientPattern:"_A_,BCD,_E_",
 		ingredients: {
 			"A": { type: "item",  code: "game:inkandquill", "quantity": 1},
@@ -26,6 +28,7 @@
 		output: { type: "item", code: "researchpaperitem", quantity: 2}
 	},
 	{
+	"enabled": false,
 		ingredientPattern:"_A_,BCD,_E_",
 		ingredients: {
 			"A": { type: "item",  code: "game:inkandquill", "quantity": 1},
@@ -39,6 +42,7 @@
 		output: { type: "item", code: "researchpaperitem", quantity: 2}
 	},
 	{
+	"enabled": false,
 		ingredientPattern:"_A_,BCD,_E_",
 		ingredients: {
 			"A": { type: "item",  code: "game:inkandquill", "quantity": 1},

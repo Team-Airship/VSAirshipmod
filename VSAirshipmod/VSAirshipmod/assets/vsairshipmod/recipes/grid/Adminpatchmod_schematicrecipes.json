@@ -1,4 +1,5 @@
 [
+	"enabled": false,
 	{
 		"code": "schematic1recipe-tier1-adminitem",
 		ingredientPattern:"ABC,DEF,GHI",
@@ -18,6 +19,7 @@
 		output: { type: "item", code: "schematic-tier1", quantity: 1}
 	},
 	{
+	"enabled": false,
 		"code": "schematic1recipe-tier2-adminitem",
 		ingredientPattern:"ABC,DEF,GHI",
 		ingredients: {

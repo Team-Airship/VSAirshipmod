@@ -1,5 +1,6 @@
 [
 	{
+	"enabled": false,
 		ingredientPattern:"ABC,DED,FGH",
 		ingredients: {
 			"A": { type: "item", code: "game:inkandquill", "quantity": 1},
@@ -22,6 +23,7 @@
 		output: { type: "item", code: "aerostatica", quantity: 1}
 	},
 	{
+	"enabled": false,
 		ingredientPattern:"ABC,DED,FGH",
 		ingredients: {
 			"A": { type: "item", code: "game:inkandquill", "quantity": 1},
@@ -44,6 +46,7 @@
 		output: { type: "item", code: "aerostatica", quantity: 1}
 	},
 	{
+	"enabled": false,
 		ingredientPattern:"ABC,DED,FGH",
 		ingredients: {
 			"A": { type: "item", code: "game:inkandquill", "quantity": 1},
