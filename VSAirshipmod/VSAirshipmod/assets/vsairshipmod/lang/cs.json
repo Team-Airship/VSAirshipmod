@@ -1,0 +1,144 @@
+{
+  "game:tabname-airship": "Mod vzducholodí!",
+
+  //research items
+  "vsairshipmod:item-aerostatica": "Aerostatica!",
+  "vsairshipmod:itemdesc-aerostatica": "Vytříbené shrnutí prozkoumaných technologií týkajících se aerostatů!",
+  "vsairshipmod:item-componentscroll-tier1": "Svitek součásti hořáku Airraftu!",
+  "vsairshipmod:itemdesc-componentscroll-tier1": "Tajemný svitek odhalující poslední vodítko ke stavbě Airraftu 1. úrovně!",
+  "vsairshipmod:item-componentscroll-tier2": "Svitek součásti zplyňovače Airboatu!",
+  "vsairshipmod:itemdesc-componentscroll-tier2": "Tajemný svitek odhalující poslední vodítko ke stavbě Airboatu 2. úrovně!",
+  "vsairshipmod:item-researchpaperitem": "Výzkum aerostatů",
+  "vsairshipmod:itemdesc-researchpaperitem": "Knihy, které jste přepsali, byly přečteny naposledy, než se rozpadly v nečitelný prach. Naštěstí se vám podařilo rozluštit několik užitečných stop a zmínek o zajímavém výzkumu.",
+  "vsairshipmod:item-schematic-tier1": "Schéma Airraftu (1. úroveň)",
+  "vsairshipmod:itemdesc-schematic-tier1": "Schéma popisující, jak postavit Airraft 1. úrovně!",
+  "vsairshipmod:item-schematic-tier2": "Schéma Airboatu (2. úroveň)",
+  "vsairshipmod:itemdesc-schematic-tier2": "Schéma popisující, jak postavit Airboat 2. úrovně!",
+  "vsairshipmod:item-strangecloth": "Podivná látka",
+  "vsairshipmod:itemdesc-strangecloth": "Zvláštní hromádka zbytkové látky. Zdá se, že je vzduchotěsná, hydrofobní a odolná vůči ohni!",
+
+  //General airship items
+  "vsairshipmod:item-airshipmotorshaft": "Hřídel mechanického motoru",
+  "vsairshipmod:itemdesc-airshipmotorshaft": "První ze dvou součástí mechanického motoru.",
+  "vsairshipmod:item-airshipmotorbrace": "Výztuha mechanického motoru",
+  "vsairshipmod:itemdesc-airshipmotorbrace": "Druhá ze dvou součástí mechanického motoru.",
+
+
+  //Balloon cloth pipeline
+  "vsairshipmod:item-coatingmix": "Směs nátěru na balón",
+  "vsairshipmod:itemdesc-coatingmix": "Hustá a lepkavá směs, kterou po smíchání s vodou vytvoříte nátěrovou kapalinu na balón.",
+  "vsairshipmod:item-coatingliquid": "Nátěrová kapalina na balón",
+  "incontainer-item-coatingliquid": "Nátěrová kapalina na balón",
+  "vsairshipmod:item-treatedcloth*": "Ošetřená balónová látka",
+  "vsairshipmod:itemdesc-treatedcloth*": "Ošetřená látka pro stavbu vzducholodí.",
+  "vsairshipmod:item-airshipfat": "Nasekaný tuk",
+  "vsairshipmod:itemdesc-airshipfat": "Živočišný tuk nasekaný na menší kusy pro použití jako palivo do hořáku v <a href=\"handbook://item-vsairshipmod:airship-tier1-oak\">Airraftu 1. úrovně</a>",
+
+  //attachable items
+  "vsairshipmod:item-airshipdeed": "Listina vlastnictví",
+  "vsairshipmod:itemdesc-airshipdeed": "Tento nezáživný dokument popisuje majetkové vlastnictví a řádnou certifikaci bezpečného a odpovědného létání bla bla bla. No páni! Je tu i náhradní kopie pro jistotu. (Určeno jen pro 2. úroveň a výš.)",
+
+  "vsairshipmod:item-airshipchest-golden-aged": "Zestárlá vzducholoďová truhla",
+  "vsairshipmod:item-airshipchest-golden": "Zlatá vzducholoďová truhla",
+  "vsairshipmod:item-airshipchest-owl-aged": "Zestárlá soví vzducholoďová truhla",
+  "vsairshipmod:item-airshipchest-owl": "Soví vzducholoďová truhla",
+  "vsairshipmod:itemdesc-airshipchest-*": "Na spodku jsou vyřezané zářezy, které pomáhají truhlu upevnit na vzducholoď",
+
+  "vsairshipmod:block-figurehead-bear": "Příďová ozdoba vzducholodi (medvěd)",
+  "vsairshipmod:block-figurehead-eidolon": "Příďová ozdoba vzducholodi (eidolon)",
+  "vsairshipmod:block-figurehead-erel": "Příďová ozdoba vzducholodi (erel)",
+  "vsairshipmod:block-figurehead-gear": "Příďová ozdoba vzducholodi (ozubené kolo)",
+  "vsairshipmod:block-figurehead-seamonster": "Příďová ozdoba vzducholodi (mořská příšera)",
+  "vsairshipmod:block-figurehead-siren": "Příďová ozdoba vzducholodi (siréna)",
+  "vsairshipmod:block-figurehead-skull": "Příďová ozdoba vzducholodi (lebka)",
+  "vsairshipmod:block-figurehead-thunderlord": "Příďová ozdoba vzducholodi (pán bouře)",
+  "vsairshipmod:block-figurehead-wolf": "Příďová ozdoba vzducholodi (vlk)",
+  "vsairshipmod:blockdesc-figurehead-*": "Menší a lehčí replika, která pasuje na vzducholodě",
+
+  //tier1 items
+  "vsairshipmod:item-vsairshipmodroller-tier1": "Sada loděnice pro Air-Raft 1. úrovně (14x7)",
+  "vsairshipmod:itemdesc-vsairshipmodroller-tier1": "Pevně sbalená stavební loděnice.",
+  "vsairshipmod:item-*vsairshipmodconstruction-tier1-*": "Loděnice pro Airraft 1. úrovně",
+  "creature-vsairshipmod:vsairshipmodconstruction-tier1-*-SeleAP": "<br><font color='yellow'>• Pult loděnice •</font>",
+  "vsairshipmod:item-airship-tier1-*": "Sbalený Airraft",
+  "vsairshipmod:itemdesc-*airship-tier1-*": "Je dost těžký bez ohledu na to, kolik paliva v něm ještě zbývá.'",
+
+  //tier 2 items
+  "vsairshipmod:item-vsairshipmodroller-tier2": "Sada loděnice pro Air-Boat 2. úrovně (16x11)",
+  "vsairshipmod:itemdesc-vsairshipmodroller-tier2": "Pevně sbalená stavební loděnice.",
+  "vsairshipmod:item-*vsairshipmodconstruction-tier2-*": "Loděnice pro Airboat 2. úrovně",
+  "creature-vsairshipmod:vsairshipmodconstruction-tier2-*-SeleAP": "<br><font color='yellow'>• Pult loděnice •</font>",
+
+  "vsairshipmod:item-*airship-tier2-acacia": " Airboat 2. úrovně (akácie)",
+  "vsairshipmod:item-*airship-tier2-aged": " Airboat 2. úrovně (zestárlý)",
+  "vsairshipmod:item-*airship-tier2-baldcypress": " Airboat 2. úrovně (tisovec)",
+  "vsairshipmod:item-*airship-tier2-birch": " Airboat 2. úrovně (bříza)",
+  "vsairshipmod:item-*airship-tier2-ebony": " Airboat 2. úrovně (eben)",
+  "vsairshipmod:item-*airship-tier2-kapok": " Airboat 2. úrovně (kapok)",
+  "vsairshipmod:item-*airship-tier2-larch": " Airboat 2. úrovně (modřín)",
+  "vsairshipmod:item-*airship-tier2-maple": " Airboat 2. úrovně (javor)",
+  "vsairshipmod:item-*airship-tier2-oak": " Airboat 2. úrovně (dub)",
+  "vsairshipmod:item-*airship-tier2-pine": " Airboat 2. úrovně (borovice)",
+  "vsairshipmod:item-*airship-tier2-purpleheart": " Airboat 2. úrovně (purpleheart)",
+  "vsairshipmod:item-*airship-tier2-redwood": " Airboat 2. úrovně (sekvoj)",
+  "vsairshipmod:item-*airship-tier2-walnut": " Airboat 2. úrovně (ořech)",
+  "vsairshipmod:itemdesc-airship-tier2-*": " Nepodváděj :)'",
+
+  //tier 1 airship
+  "creature-vsairshipmod:airship-tier1-*-lanternstorageAP": "<br><font color='yellow'>• Slot pro lucernu •</font>",
+  "creature-vsairshipmod:airship-tier1-*-riderseatAP": "<br><font color='yellow'>• Sedadlo pilota! •</font>",
+  "creature-vsairshipmod:airship-tier1-*-shieldstorageAP": "<br><font color='yellow'>• Slot pro štít •</font>",
+  "creature-vsairshipmod:airship-tier1-*-burnervalveAP": "<br><font color='yellow'>• Přepnout vznášení •</font>",
+  "vsairshipmod:item-creature-airship-tier1-*": "Airraft 1. úrovně",
+  "vsairshipmod:item-handbooktext-vsairshipmod:vsairshipmodroller-tier1":"Loděnice se umisťují na rovný terén jako stavební zóna a místo spuštění <a href=\"handbooksearch://sbalený airraft\">air-raftu.</a> Pomocí klávesy <hk>toolmodeselect</hk> otevřete malé menu pro změnu orientace náhledového boxu. Věnujte pozornost rozměrům uvedeným v názvu a náhledu umístění. Vzducholoď odstartuje ve směru orientace, kterou zvolíte!<br><br>(Při umisťování budete stát u přední strany loděnice T1.)",
+  "vsairshipmod:item-handbooktext-*airship-tier1-*":"<strong>Jak stavět</strong><br><br>Air-rafty se staví ve vyhrazené stavební loděnici na rovném terénu a odstartují z místa, kde byly postaveny. Po spuštění můžete air-raft nosit jako batoh podržením <hk>shift</hk> a kliknutím na něj pomocí <hk>rightmouse</hk>. (Pokud má připojené doplňky, sbalit ho nepůjde.) Rozbalit a nasadit ho můžete podržením <hk>ctrl</hk> a přesunutím kolečka na slot batohu, poté klikněte <hk>rightmouse</hk> na zem. Air-raft lze také položit jako pozemní úložiště. Podržte <hk>shift</hk> a klikněte <hk>rightmouse</hk>, abyste jej položili na zem. Rozebrat ho za částečnou náhradu materiálů lze podržením <hk>rightmouse</hk> s <a href=\"handbooksearch://pila\">pilou</a> v ruce. Více informací o stavbě najdete v záznamu <a href=\"handbook://vsairshipmod-tier1-buildinfo\">Stavba Air-Raftu</a>.<br><br><strong>Pohyb</strong><br><br>Jakmile svůj air-raft spustíte, klikněte <hk>rightmouse</hk> na horní část palivového sudu a posaďte se na ''sedadlo''. Air-raft může létat pouze tehdy, pokud má <a href=\"handbooksearch://časové ozubené kolo\">Časové ozubené kolo</a> a byl natankován buď <a href=\"handbooksearch://shnilé\">hnilobou</a> a / nebo <a href=\"handbook://item-vsairshipmod:airshipfat\">nasekaným tukem.</a> Držením [Spacebar] zažehnete hořák a air-raft stoupá; když přestanete topit, air-raft začne klesat. Případně můžete podržet klávesu <hk>ctrl</hk> a otevřít horní odvětrávací poklop, abyste okamžitě klesali. Ve vzduchu se můžete pohybovat běžnými ovládacími klávesami. Nejrychlejší způsob cestování na velké vzdálenosti je nabrat výšku a nechat se nést větrnými proudy!<br><br><strong>Pro větrné proudy platí tato pravidla:</strong><br>1. Množství srážek v oblasti ovlivňuje směr větru v dané oblasti.<br>2. Počasí určuje, jak silný vítr vás proudy mohou nést.<br>3. Vaše vzdálenost od země určuje, jak silně do vás vítr tlačí.<br><br>Upřesnění: pokud je aktuální počasí jen \"mírný vánek\", budete v maximální výšce unášeni jen maximální rychlostí mírného vánku.<br><br><strong>VIZUÁLNÍ INDIKACE</strong><br><br>Větrné korouhvičky po vašich stranách ukazují, odkud vítr vane v aktuální výšce.<br><br>Ukazatel na sudu zobrazuje zbývající palivo. <br><br>Skleněný ukazatel za vámi zobrazuje zbývající dojezd aktuálně používaného Časového ozubeného kola.<br><br><strong>PŘEPNUTÍ VZNÁŠENÍ</strong><br><br>Nad hlavou máte ventil, který umožňuje zapnout režim vznášení, jenž pasivně spaluje malé množství navíc. Zároveň také zabraňuje tomu, aby vás ovlivňoval vítr. Tato funkce je určena jako lore-friendly létající pomůcka při stavbě vertikálních konstrukcí. Lze ji také použít jako způsob, jak se zachránit, když vás vítr natlačí do rohu, ze kterého se nemůžete dostat. Tato funkce je dostupná pouze pro Air-Raft 1. úrovně.<br><br><strong>Vybavení</strong><br><br>Doplňky se přidávají pomocí <hk>ctrl</hk> + <hk>rightmouse</hk>.<br><br>Na přední stranu palivového sudu můžete umístit <a href=\"handbooksearch://štít\">štít</a>.<br><br>Na kovovou obruč připevněnou k balónu nad vámi můžete zavěsit <a href=\"handbooksearch://lucerna\">lucernu</a>.",
+  "game:vsairshipmod-tier1-buildinfo-title": "Mechanika modu: Stavba Air-Raftu 1. úrovně",
+  "game:vsairshipmod-tier1-buildinfo-text": "<strong>Stavba Air-Raftu</strong><br><br>Postavení <a href=\"handbook://item-vsairshipmod:airship-tier1-oak\">Air-Raftu 1. úrovně</a> vyžaduje velké množství materiálů a mnoho kroků, ale vše začíná <a href=\"handbook://item-vsairshipmod:vsairshipmodroller-tier1\">sadou loděnice pro Air-Raft 1. úrovně (14x7).</a><br><br>Jakmile přepíšete dostatek <a href=\"handbook://item-vsairshipmod:researchpaperitem\">výzkumu vzducholodí</a> pro výrobu <a href=\"handbook://item-vsairshipmod:aerostatica\">aerostatiky</a>, použijte ji k výrobě <a href=\"handbook://item-vsairshipmod:schematic-tier1\">schématu air-raftu (1. úroveň)</a>. Pomocí tohoto schématu vyrobíte sadu loděnice.<br><br>Pokud držíte sadu loděnice v rychlé liště, objeví se před vámi schématický box ve světě široký 7 bloků a dlouhý 14 bloků. Umístěte sadu loděnice na rovnou plochu a ujistěte se, že loděnice směřuje tam, odkud chcete Air-Raft vypustit. Směr loděnice můžete změnit klávesou [F]. Po umístění budete stát u přední strany loděnice.<br><br>Poté vám při zapnuté nápovědě interakce s bloky (přepíná se pomocí <hk>blockinteractionhelp</hk>) pohled na pult loděnice ukáže další kroky. Budete potřebovat klády a prkna stejného typu dřeva.<br><br>Pro balón Air-Raftu 1. úrovně musíte nasbírat dostatek <a href=\"handbooksearch://lněný provazek\">lněného provazu</a> na výrobu odhadem celkem 100 kusů <a href=\"handbooksearch://čistá látka\">obyčejné látky.</a> Nezapomeňte připravit skleník pro pěstování lnu se správným hnojivem!<br><br>(Vytvořili jsme také samostatný mod, který přidává násobené výstupy výroby v řemeslných strojích poháněných větrným mlýnem, aby pomohl s touto vysokou poptávkou po látce. Mod se jmenuje Clothier's Heirlooms.)<br><br>Všechnu obyčejnou látku je potřeba ošetřit <a href=\"handbook://item-vsairshipmod:coatingliquid\">nátěrovou kapalinou na balón.</a><br><br>Konfigurace modu vám umožní nastavit množství nátěrové kapaliny spotřebované na jedno utěsnění, což vám dovolí změnit výsledkové celkové množství potřebných surovin pro výrobu dostatku <a href=\"handbook://item-vsairshipmod:coatingmix\">směsi nátěru na balón</a> pro proces potahování. Více informací a podrobné vysvětlení najdete na stránce modu na modDB v části COATING LIQUID GRIND CONFIGURATION. Děkujeme!<br><br><a href=\"handbook://item-vsairshipmod:airship-tier1-oak\">Podívejte se na Air-Raft 1. úrovně</a> pro více informací o tom, jak svůj nový air-raft vybavit.<br><br>Air-raft můžete nosit jako batoh podržením <hk>shift</hk> a kliknutím <hk>rightmouse</hk> na něj. (Pokud má připojené doplňky, sbalit ho nepůjde.)<br><br>Jako batoh jej můžete rozbalit a nasadit podržením <hk>ctrl</hk> a přesunutím kolečka na slot batohu, poté klikněte <hk>rightmouse</hk> a umístěte jej na zem.<br><br>Air-raft lze také položit jako pozemní úložiště. Podržte <hk>shift</hk> a klikněte <hk>rightmouse</hk>, abyste jej položili na zem.<br><br>Rozebrat ho za částečnou náhradu materiálů lze podržením <hk>rightmouse</hk> s <a href=\"handbooksearch://pila\">pilou</a> v ruce.",
+
+  //tier 2 airship
+  "creature-vsairshipmod:airship-tier2-*-LanternStorageAP": "<br><font color='yellow'>• Slot pro lucernu •</font>",
+  "creature-vsairshipmod:airship-tier2-*-LeftSeatAP": "<br><font color='yellow'>• Sedadlo spolujezdce •</font>",
+  "creature-vsairshipmod:airship-tier2-*-RightSeatAP": "<br><font color='yellow'>• Sedadlo pilota! •</font>",
+  "creature-vsairshipmod:airship-tier2-*-ShieldStorage*AP": "<br><font color='yellow'>• Slot pro štít •</font>",
+  "creature-vsairshipmod:airship-tier2-*-LeftStorageAP": "<br><font color='yellow'>• Nákladní / pasažérský slot •</font>",
+  "creature-vsairshipmod:airship-tier2-*-RightStorageAP": "<br><font color='yellow'>• Nákladní / pasažérský slot •</font>",
+  "creature-vsairshipmod:airship-tier2-*-ThrottleLockAP": "<br><font color='yellow'>• Zámek plavby •</font>",
+  "creature-vsairshipmod:airship-tier2-*-CoalBarrelAP": "<br><font color='yellow'>• Uhelný sud •</font>",
+  "creature-vsairshipmod:airship-tier2-*-GearCubeAP": "<br><font color='yellow'>• Slot pro osu časového kola •</font>",
+  "creature-vsairshipmod:airship-tier2-*-CookingPotAP": "<br><font color='yellow'>• Ideální místo pro hrnec s dobrotami •</font>",
+  "creature-vsairshipmod:airship-tier2-*-FigureHead*AP": "<br><font color='yellow'>• Slot pro příďovou ozdobu •</font>",
+  "creature-vsairshipmod:airship-tier2-*-DeedBeamAP": "<br><font color='yellow'>• Slot pro listinu vzducholodi •</font>",
+  "creature-vsairshipmod:airship-tier2-*-ToolStorage*AP": "<br><font color='yellow'>• Slot pro sekeru, lopatu, krumpáč nebo prospektorský krumpáč •</font>",
+  "creature-vsairshipmod:airship-tier2-*-LPaqueAP": "<br><font color='yellow'>• Jmenovka •</font>",
+  "creature-vsairshipmod:airship-tier2-*-CargoStorage*AP": "<br><font color='yellow'>• Nákladní sloty pro lůžka nebo vzducholoďové truhly •</font>",
+  "vsairshipmod:item-handbooktext-vsairshipmod:vsairshipmodroller-tier2":"Loděnice se umisťují na rovný terén jako stavební zóna a místo spuštění <a href=\"handbooksearch://airboat 2. úrovně\">air-boatu.</a> Pomocí klávesy <hk>toolmodeselect</hk> otevřete malé menu pro změnu orientace náhledového boxu. Věnujte pozornost rozměrům uvedeným v názvu a náhledu umístění. Vzducholoď odstartuje ve směru orientace, kterou zvolíte!<br><br>(Při umisťování budete stát u pravé strany loděnice T2.)",
+  "game:vsairshipmod-tier2-buildinfo-title": "Mechanika modu: Stavba Air-Boatu 2. úrovně",
+  "game:vsairshipmod-tier2-buildinfo-text": "<strong>Stavba Air-Boatu</strong><br><br>Postavení <a href=\"handbooksearch://airboat 2. úrovně\">Air-Boatu 2. úrovně</a> vyžaduje velké množství materiálů a mnoho kroků, ale vše začíná <a href=\"handbook://item-vsairshipmod:vsairshipmodroller-tier2\">sadou loděnice pro Air-Boat 2. úrovně (16x11).</a><br><br>Jakmile přepíšete dostatek <a href=\"handbook://item-vsairshipmod:researchpaperitem\">výzkumu vzducholodí</a> pro výrobu <a href=\"handbook://item-vsairshipmod:aerostatica\">aerostatiky</a>, použijte ji k výrobě <a href=\"handbook://item-vsairshipmod:schematic-tier2\">schématu air-boatu (2. úroveň)</a>. Pomocí tohoto schématu vyrobíte sadu loděnice. Pokud držíte sadu loděnice v rychlé liště, objeví se před vámi schématický box ve světě široký 16 bloků a dlouhý 11 bloků. Umístěte sadu loděnice na rovnou plochu a ujistěte se, že loděnice směřuje tam, odkud chcete Air-Boat vypustit. Směr loděnice můžete změnit pomocí klávesy <hk>toolmodeselect</hk>. Po umístění budete stát u pravé strany loděnice.<br><br>Poté vám při zapnuté nápovědě interakce s bloky (přepíná se pomocí <hk>blockinteractionhelp</hk>) pohled na pult loděnice ukáže další kroky.<br><br>Budete potřebovat klády a prkna stejného typu dřeva. Pro balón Air-Boatu 2. úrovně musíte nasbírat dostatek <a href=\"handbooksearch://lněný provazek\">lněného provazu</a> na výrobu odhadem celkem 224 kusů <a href=\"handbooksearch://čistá látka\">obyčejné látky.</a> <br><br>Nezapomeňte připravit skleník pro pěstování lnu se správným hnojivem!<br><br>(Vytvořili jsme samostatný mod, který přidává násobené výstupy výroby v řemeslných strojích poháněných větrným mlýnem, aby pomohl s touto vysokou poptávkou po látce. Mod se jmenuje Clothier's Heirlooms.)<br><br>Veškerou látku je potřeba ošetřit <a href=\"handbook://item-vsairshipmod:coatingliquid\">nátěrovou kapalinou na balón.</a> Konfigurace modu vám umožní nastavit množství nátěrové kapaliny spotřebované na jedno utěsnění, což vám dovolí změnit výsledkové celkové množství potřebných surovin pro výrobu dostatku <a href=\"handbook://item-vsairshipmod:coatingmix\">směsi nátěru na balón</a> pro proces potahování.<br><br>Více informací a podrobné vysvětlení najdete na stránce modu na modDB v části COATING LIQUID GRIND CONFIGURATION. Děkujeme!<br><br>Další informace o vybavení nového air-boatu najdete u <a href=\"handbooksearch://airboat 2. úrovně\">Air-Boatu 2. úrovně</a>.<br><br>Rozebrat ho za částečnou náhradu materiálů lze podržením <hk>rightmouse</hk> s <a href=\"handbooksearch://pila\">pilou</a> v ruce.",
+  "vsairshipmod:item-handbooktext-vsairshipmod:airship-tier2-*":"<strong>Jak stavět</strong><br><br> Air-boaty se staví ve vyhrazené stavební loděnici na rovném terénu a odstartují z místa, kde byly postaveny. Nelze je zvednout. Rozebrat je za částečnou náhradu materiálů lze podržením <hk>rightmouse</hk> s <a href=\"handbooksearch://pila\">pilou</a> v ruce. Více informací o stavbě najdete v záznamu <a href=\"handbook://vsairshipmod-tier2-buildinfo\">Stavba Air-Boatu</a>.<br><br><strong>Pohyb</strong><br><br>Jakmile svůj air-boat dokončíte, klikněte <hk>rightmouse</hk> na zadní pravoboké sedadlo (sedadlo obklopené pákami) a posaďte se do něj: právě z tohoto sedadla lze air-boat ovládat. Air-boat může létat pouze tehdy, je-li poháněn <strong>(od nejhoršího paliva po nejlepší) </strong> <a href=\"handbooksearch://dřevěné uhlí\">dřevěným uhlím</a>, <a href=\"handbooksearch://antracit\">antracitem</a>, <a href=\"handbooksearch://černé uhlí\">černým uhlím</a> nebo <a href=\"handbooksearch://hnědé uhlí\">hnědým uhlím.</a><br>Mechanický motor funguje pouze tehdy, pokud má alespoň jedno <a href=\"handbooksearch://časové ozubené kolo\">Časové ozubené kolo.</a><br><br>Držením [Spacebar] otevřete plynový ventil zplyňovače a air-boat začne stoupat. Držením <hk>ctrl</hk> otevřete horní odvětrávací poklop a air-boat začne klesat. Jakmile zplyňovači dojde palivo, budete nuceně ztrácet výšku. (Ačkoli je to sice nereálné, záměrně to slouží herní vyváženosti.) Ve vzduchu se můžete pohybovat běžnými ovládacími klávesami. Případně nebo v nouzi můžete létat i bez motoru tak, že naberete výšku a budete se pomaleji nést výhradně větrnými proudy.<br><br><strong>Pro větrné proudy platí tato pravidla:</strong><br>1. Množství srážek v oblasti ovlivňuje směr větru v dané oblasti.<br>2. Počasí určuje, jak silný vítr vás proudy mohou nést.<br>3. Vaše vzdálenost od země určuje, jak silně do vás vítr tlačí.<br><br>Upřesnění: pokud je aktuální počasí jen \"mírný vánek\", budete v maximální výšce unášeni jen maximální rychlostí mírného vánku.<br><br><strong>VIZUÁLNÍ INDIKACE</strong><br><br>Větrné korouhvičky nad vámi ukazují, odkud vítr vane v aktuální výšce.<br><br>Ukazatel na sudu zobrazuje zbývající palivo. <br><br>Skleněný ukazatel za vámi zobrazuje zbývající dojezd aktuálně používaného <a href=\"handbooksearch://časové ozubené kolo\">Časového ozubeného kola</a>.<br><br><strong>Vybavení</strong><br><br>Doplňky se přidávají pomocí <hk>ctrl</hk> + <hk>rightmouse</hk>.<br><a href=\"handbook://item-vsairshipmod:airshipdeed\">Listina vlastnictví</a> se připevňuje k vodorovnému stěžni a slouží k přihlášení air-boatu.<br><a href=\"handbooksearch://lucerna\">Lucernu</a> lze připevnit na velké dřevěné ozubené kolo na přídi.<br><a href=\"handbooksearch://štít\">Štít</a> lze připevnit na každý ze čtyř vnějších konců příčných nosníků.<br><a href=\"handbooksearch://hrnec\">Hrnec</a> nebo <a href=\"handbooksearch://nádoba\">nádobu</a> lze umístit na zplyňovač.<br><a href=\"handbooksearch://slaměná postel\">Slaměná postel</a> nebo <a href=\"handbooksearch://vzducholoďová truhla\">vzducholoďovou pokladní truhlu</a> lze upevnit do nákladních slotů podél stěžně.<br><a href=\"handbooksearch://příďová ozdoba vzducholodi\">Příďovou ozdobu vzducholodi</a> lze připevnit na oba konce stěžně.<br>Na bok lodi lze zavěsit lopatu, sekeru, krumpáč nebo prospektorský krumpáč.<br>Do dvou předních slotů lze umístit nádobu nebo truhlu.",
+
+  // hYPERION's stuff
+  "vsairshipmod:float-fuel": "Zbývající palivo: {0}",
+  "vsairshipmod:idle": "Vzducholoď stojí na volnoběh",
+  "vsairshipmod:int-temporalgearcount": "Zbývající časová kola: {0}",
+  "vsairshipmod:int-temporalfuelusage": "Další kolo se vyčerpá za: {0}",
+  "vsairshipmod:temporalfueldepletedhorizontal": "Kola vyčerpána: motor nelze provozovat!",
+  "vsairshipmod:int-coalstacksize": "Zbývající kusy uhlí: {0}",
+  "vsairshipmod:coalfueldepletedvertical": "Nedostatek uhlí: nelze udržet vztlak!",
+  "vsairshipmod:int-coalfuelusage": "Celkový zbývající čas letu na uhlí: {0}",
+  "vsairshipmod:cannotremovefuelinflight": "Během letu nelze odebrat palivo!",
+  "vsairshipmod:engineatmax3gears": "Tento motor pojme jen tři kola!",
+  "vsairshipmod:insert-temporal-gear": "Přidat časová kola",
+  "vsairshipmod:toggle-cruise": "Přepnout cestovní režim",
+  "vsairshipmod:remove-coal": "Odebrat uhlí",
+  "vsairshipmod:add-coal": "Přidat uhlí",
+
+  "vsairshipmod:dismount-warning": "Pozor! Jste ve vzduchu! Stiskněte znovu pro sesednutí!",
+  "vsairshipmod:toggleburner": "Přepnout hořák"
+
+
+
+
+
+
+
+}
